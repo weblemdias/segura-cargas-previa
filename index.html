@@ -318,6 +318,9 @@ table.contratacao .acoes-contr .menu-acoes>summary{display:inline-block}
 .parada.na-filial .remover{visibility:hidden}
 .linha-tabela{position:relative}.linha-tabela .sugestoes-mapa{left:0;top:auto}
 table.contratacao tr.com-obs > td{border-bottom:0}table.contratacao tr.linha-obs > td{border-top:0}
+.ci-topo{display:flex;gap:12px;align-items:center;margin-bottom:12px}.ci-icone{width:42px;height:42px;min-width:42px;border-radius:50%;background:var(--ativo-bg);display:flex;align-items:center;justify-content:center;font-size:20px}
+.ci-resumo{margin-bottom:12px}.ci-grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px 18px}
+.ci-grade section,.ci-bloco{border-top:1px solid var(--linha);padding-top:8px}.ci h3{font-size:13px;margin:0 0 4px}.ci p{margin:0}.ci-bloco{margin-top:10px}
 
 :root{color-scheme:light;--faixa:#202327;--faixa-txt:#f3f4f6}
 html,body{background:var(--fundo)}
@@ -1394,7 +1397,7 @@ html,body{background:var(--fundo)}
 
 <section class="cartao regra-fila">
     <div class="agora">
-        <span class="muted">Agora (quinta-feira, 15/10 16:12) · dia útil: vale o rodízio</span>
+        <span class="muted">Agora (quinta-feira, 15/10 16:14) · dia útil: vale o rodízio</span>
         <strong>Próxima carga vai para: Ana Ribeiro</strong>
         <small>Rodízio entre quem está no horário (2 pessoa(s)).</small>
     </div>
@@ -2686,8 +2689,8 @@ html,body{background:var(--fundo)}
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                 <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/3?expires=1794683566&amp;signature=528efc5b57cfc795d9ead62ba93b19e542472548077da64aca74f27c1efec181" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511992570661?text=Ol%C3%A1%21%20A%20carga%20%233%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F3%3Fexpires%3D1794683566%26signature%3D528efc5b57cfc795d9ead62ba93b19e542472548077da64aca74f27c1efec181">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/3?expires=1794683672&amp;signature=5e06a77b9fe7e0f7a7ee0ec3d72c2a4329e3637ac4d10b1919f6c20dc4983ee1" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511992570661?text=Ol%C3%A1%21%20A%20carga%20%233%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F3%3Fexpires%3D1794683672%26signature%3D5e06a77b9fe7e0f7a7ee0ec3d72c2a4329e3637ac4d10b1919f6c20dc4983ee1">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-cargas">
                                 <form method="post" action="#" class="filial-ativa">
@@ -13724,7 +13727,7 @@ html,body{background:var(--fundo)}
             </form>
                                 <div class="topo">
     <h1>Situação em tempo real</h1>
-    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 16:12</small>
+    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 16:14</small>
 </div>
 
 <form class="cartao filtros" method="get">
@@ -14438,7 +14441,7 @@ html,body{background:var(--fundo)}
                     <div class="menu-acoes-lista" role="menu">
                         <button type="button" role="menuitem" data-janela="http://127.0.0.1:8123/cargas/4/acao/preco_sugerido" data-titulo="Preço sugerido · carga #4">$ Preço sugerido</button>
                         <button type="button" role="menuitem" data-janela="http://127.0.0.1:8123/cargas/4/acao/duplicar" data-titulo="Duplicar carga #4">⧉ Duplicar carga</button>
-                    </div>
+                                            </div>
                 </details>
                                                         <a class="btn pequeno" href="#cargas~4~contratar">Contratar</a>
                             </td>
@@ -14500,7 +14503,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <div class="menu-acoes-lista" role="menu">
                         <button type="button" role="menuitem" data-janela="http://127.0.0.1:8123/cargas/5/acao/preco_sugerido" data-titulo="Preço sugerido · carga #5">$ Preço sugerido</button>
                         <button type="button" role="menuitem" data-janela="http://127.0.0.1:8123/cargas/5/acao/duplicar" data-titulo="Duplicar carga #5">⧉ Duplicar carga</button>
-                    </div>
+                                            </div>
                 </details>
                                                         <a class="btn pequeno" href="#cargas~5~contratar">Contratar</a>
                             </td>
@@ -14560,7 +14563,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <div class="menu-acoes-lista" role="menu">
                         <button type="button" role="menuitem" data-janela="http://127.0.0.1:8123/cargas/6/acao/preco_sugerido" data-titulo="Preço sugerido · carga #6">$ Preço sugerido</button>
                         <button type="button" role="menuitem" data-janela="http://127.0.0.1:8123/cargas/6/acao/duplicar" data-titulo="Duplicar carga #6">⧉ Duplicar carga</button>
-                    </div>
+                                            </div>
                 </details>
                                                         <a class="btn pequeno" href="#cargas~6~contratar">Contratar</a>
                             </td>
@@ -14854,6 +14857,24 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
 <table>
     <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Cadastro</th><th>O que mudou</th><th>IP</th></tr></thead>
     <tbody>
+            <tr>
+            <td class="nowrap">15/10/2026 16:14:29</td>
+            <td>Administrador</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">15/10/2026 16:14:13</td>
+            <td>Administrador</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
             <tr>
             <td class="nowrap">15/10/2026 16:12:44</td>
             <td>Administrador</td>
@@ -15508,47 +15529,11 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                             </td>
             <td class="muted nowrap"></td>
         </tr>
-            <tr>
-            <td class="nowrap">14/10/2026 20:46:46</td>
-            <td>Sistema</td>
-            <td><span class="selo neutro">Alterou</span></td>
-            <td><strong>Veículo</strong> #4<br><small>EJF3D88</small></td>
-            <td>
-                                    <div><strong>Gr empresa</strong>:
-                         <span class="muted">(vazio)</span> → Buonny
-                                            </div>
-                                    <div><strong>Gr liberacao</strong>:
-                         <span class="muted">(vazio)</span> → LV-7304
-                                            </div>
-                                    <div><strong>Validade da GR</strong>:
-                         <span class="muted">(vazio)</span> → 2027-01-14 20:46:46
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">14/10/2026 20:46:46</td>
-            <td>Sistema</td>
-            <td><span class="selo neutro">Alterou</span></td>
-            <td><strong>Motorista</strong> #4<br><small>Paulo Teixeira</small></td>
-            <td>
-                                    <div><strong>Gr empresa</strong>:
-                         <span class="muted">(vazio)</span> → Buonny
-                                            </div>
-                                    <div><strong>Gr liberacao</strong>:
-                         <span class="muted">(vazio)</span> → LB-5104
-                                            </div>
-                                    <div><strong>Validade da GR</strong>:
-                         <span class="muted">(vazio)</span> → 2027-02-14 20:46:46
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
         </tbody>
 </table>
 </div>
 <nav class="paginacao">
-                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">87 no total</span>
+                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">89 no total</span>
     </nav>
     </template><template id="p-cargas~1">
                                 <form method="post" action="#" class="filial-ativa">
@@ -16096,7 +16081,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <div class="menu-acoes-lista" role="menu">
                         <button type="button" role="menuitem" data-janela="http://127.0.0.1:8123/cargas/4/acao/preco_sugerido" data-titulo="Preço sugerido · carga #4">$ Preço sugerido</button>
                         <button type="button" role="menuitem" data-janela="http://127.0.0.1:8123/cargas/4/acao/duplicar" data-titulo="Duplicar carga #4">⧉ Duplicar carga</button>
-                    </div>
+                                            </div>
                 </details>
                                                             <button type="button" class="btn sec pequeno" data-ver-indicados data-url="http://127.0.0.1:8123/cargas/4/indicados" aria-expanded="false" aria-controls="ind-4">Ver motoristas indicados</button>
                                         <a class="btn pequeno" href="#cargas~4~contratar">Contratar</a>
@@ -16160,7 +16145,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <div class="menu-acoes-lista" role="menu">
                         <button type="button" role="menuitem" data-janela="http://127.0.0.1:8123/cargas/5/acao/preco_sugerido" data-titulo="Preço sugerido · carga #5">$ Preço sugerido</button>
                         <button type="button" role="menuitem" data-janela="http://127.0.0.1:8123/cargas/5/acao/duplicar" data-titulo="Duplicar carga #5">⧉ Duplicar carga</button>
-                    </div>
+                                            </div>
                 </details>
                                                             <button type="button" class="btn sec pequeno" data-ver-indicados data-url="http://127.0.0.1:8123/cargas/5/indicados" aria-expanded="false" aria-controls="ind-5">Ver motoristas indicados</button>
                                         <a class="btn pequeno" href="#cargas~5~contratar">Contratar</a>
@@ -16222,7 +16207,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <div class="menu-acoes-lista" role="menu">
                         <button type="button" role="menuitem" data-janela="http://127.0.0.1:8123/cargas/6/acao/preco_sugerido" data-titulo="Preço sugerido · carga #6">$ Preço sugerido</button>
                         <button type="button" role="menuitem" data-janela="http://127.0.0.1:8123/cargas/6/acao/duplicar" data-titulo="Duplicar carga #6">⧉ Duplicar carga</button>
-                    </div>
+                                            </div>
                 </details>
                                                             <button type="button" class="btn sec pequeno" data-ver-indicados data-url="http://127.0.0.1:8123/cargas/6/indicados" aria-expanded="false" aria-controls="ind-6">Ver motoristas indicados</button>
                                         <a class="btn pequeno" href="#cargas~6~contratar">Contratar</a>
@@ -16597,8 +16582,8 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                 <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794683566&amp;signature=fe75ff46ca2c54598e0ce7231269d4b66e229e351d0fd14c2680f8d93bb78c0e" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511994826605?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794683566%26signature%3Dfe75ff46ca2c54598e0ce7231269d4b66e229e351d0fd14c2680f8d93bb78c0e">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794683672&amp;signature=7a9ee70f303e75cb5899032bf7e6301eab028a0362945be5949ea66ac70e71ae" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511994826605?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794683672%26signature%3D7a9ee70f303e75cb5899032bf7e6301eab028a0362945be5949ea66ac70e71ae">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-relatorios~comissao-frete">
                                 <form method="post" action="#" class="filial-ativa">
