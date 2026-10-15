@@ -1394,7 +1394,7 @@ html,body{background:var(--fundo)}
 
 <section class="cartao regra-fila">
     <div class="agora">
-        <span class="muted">Agora (quinta-feira, 15/10 11:17) · dia útil: vale o rodízio</span>
+        <span class="muted">Agora (quinta-feira, 15/10 11:19) · dia útil: vale o rodízio</span>
         <strong>Próxima carga vai para: Ana Ribeiro</strong>
         <small>Rodízio entre quem está no horário (2 pessoa(s)).</small>
     </div>
@@ -2686,8 +2686,8 @@ html,body{background:var(--fundo)}
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                 <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/3?expires=1794665880&amp;signature=667c1783889f43a222c338bc5eef7f52089ae92d6e9d3102233720d9cef157fd" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511992570661?text=Ol%C3%A1%21%20A%20carga%20%233%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F3%3Fexpires%3D1794665880%26signature%3D667c1783889f43a222c338bc5eef7f52089ae92d6e9d3102233720d9cef157fd">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/3?expires=1794665947&amp;signature=944c86277e78baa9cbbaf010e5d32d4b41a31c2284d01f47d34974652d2129dc" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511992570661?text=Ol%C3%A1%21%20A%20carga%20%233%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F3%3Fexpires%3D1794665947%26signature%3D944c86277e78baa9cbbaf010e5d32d4b41a31c2284d01f47d34974652d2129dc">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-cargas">
                                 <form method="post" action="#" class="filial-ativa">
@@ -3385,7 +3385,7 @@ html,body{background:var(--fundo)}
         Só o <strong>Shipment ID</strong> pode ser alterado.
     </div>
 
-<form method="post" id="form-carga" action="#">
+<form method="post" id="form-carga" enctype="multipart/form-data" action="#">
           
     <section class="cartao">
         <h2>Cliente e datas</h2>
@@ -3606,6 +3606,10 @@ html,body{background:var(--fundo)}
         </div>
     </section>
 
+    <section class="cartao">
+        <h2>Nota fiscal / XML <small class="muted">(opcional — PDF, imagem ou XML, até 10 arquivos de 15 MB)</small></h2>
+        <input type="file" name="notas[]" multiple accept=".pdf,.jpg,.jpeg,.png,.xml,application/pdf,image/*,text/xml" aria-label="Anexar nota fiscal ou XML">
+                            </section>
     <button class="btn">Salvar alterações</button>
 </form>
     </template><template id="p-liberacao~item~1">
@@ -5281,7 +5285,7 @@ html,body{background:var(--fundo)}
 </div>
 
 
-<form method="post" id="form-carga" action="#">
+<form method="post" id="form-carga" enctype="multipart/form-data" action="#">
         
     <section class="cartao">
         <h2>Cliente e datas</h2>
@@ -5496,6 +5500,10 @@ html,body{background:var(--fundo)}
         </div>
     </section>
 
+    <section class="cartao">
+        <h2>Nota fiscal / XML <small class="muted">(opcional — PDF, imagem ou XML, até 10 arquivos de 15 MB)</small></h2>
+        <input type="file" name="notas[]" multiple accept=".pdf,.jpg,.jpeg,.png,.xml,application/pdf,image/*,text/xml" aria-label="Anexar nota fiscal ou XML">
+                            </section>
     <button class="btn">Cadastrar carga</button>
 </form>
     </template><template id="p-motoristas~6">
@@ -7235,7 +7243,7 @@ html,body{background:var(--fundo)}
         Só o <strong>Shipment ID</strong> pode ser alterado.
     </div>
 
-<form method="post" id="form-carga" action="#">
+<form method="post" id="form-carga" enctype="multipart/form-data" action="#">
           
     <section class="cartao">
         <h2>Cliente e datas</h2>
@@ -7447,6 +7455,10 @@ html,body{background:var(--fundo)}
         </div>
     </section>
 
+    <section class="cartao">
+        <h2>Nota fiscal / XML <small class="muted">(opcional — PDF, imagem ou XML, até 10 arquivos de 15 MB)</small></h2>
+        <input type="file" name="notas[]" multiple accept=".pdf,.jpg,.jpeg,.png,.xml,application/pdf,image/*,text/xml" aria-label="Anexar nota fiscal ou XML">
+                            </section>
     <button class="btn">Salvar alterações</button>
 </form>
     </template><template id="p-motoristas~2">
@@ -10251,7 +10263,7 @@ html,body{background:var(--fundo)}
         Só o <strong>Shipment ID</strong> pode ser alterado.
     </div>
 
-<form method="post" id="form-carga" action="#">
+<form method="post" id="form-carga" enctype="multipart/form-data" action="#">
           
     <section class="cartao">
         <h2>Cliente e datas</h2>
@@ -10463,6 +10475,10 @@ html,body{background:var(--fundo)}
         </div>
     </section>
 
+    <section class="cartao">
+        <h2>Nota fiscal / XML <small class="muted">(opcional — PDF, imagem ou XML, até 10 arquivos de 15 MB)</small></h2>
+        <input type="file" name="notas[]" multiple accept=".pdf,.jpg,.jpeg,.png,.xml,application/pdf,image/*,text/xml" aria-label="Anexar nota fiscal ou XML">
+                            </section>
     <button class="btn">Salvar alterações</button>
 </form>
     </template><template id="p-veiculos~7~edit">
@@ -12209,7 +12225,7 @@ html,body{background:var(--fundo)}
         Só o <strong>Shipment ID</strong> pode ser alterado.
     </div>
 
-<form method="post" id="form-carga" action="#">
+<form method="post" id="form-carga" enctype="multipart/form-data" action="#">
           
     <section class="cartao">
         <h2>Cliente e datas</h2>
@@ -12421,6 +12437,10 @@ html,body{background:var(--fundo)}
         </div>
     </section>
 
+    <section class="cartao">
+        <h2>Nota fiscal / XML <small class="muted">(opcional — PDF, imagem ou XML, até 10 arquivos de 15 MB)</small></h2>
+        <input type="file" name="notas[]" multiple accept=".pdf,.jpg,.jpeg,.png,.xml,application/pdf,image/*,text/xml" aria-label="Anexar nota fiscal ou XML">
+                        <p class="muted" style="margin-bottom:0">Esta carga já tem 2 anexo(s) — veja em ☰ › Anexos. Os novos entram junto.</p>    </section>
     <button class="btn">Salvar alterações</button>
 </form>
     </template><template id="p-motoristas~8~edit">
@@ -13725,7 +13745,7 @@ html,body{background:var(--fundo)}
             </form>
                                 <div class="topo">
     <h1>Situação em tempo real</h1>
-    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 11:17</small>
+    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 11:19</small>
 </div>
 
 <form class="cartao filtros" method="get">
@@ -14603,7 +14623,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
 </div>
 
 
-<form method="post" id="form-carga" action="#">
+<form method="post" id="form-carga" enctype="multipart/form-data" action="#">
           
     <section class="cartao">
         <h2>Cliente e datas</h2>
@@ -14815,6 +14835,10 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
         </div>
     </section>
 
+    <section class="cartao">
+        <h2>Nota fiscal / XML <small class="muted">(opcional — PDF, imagem ou XML, até 10 arquivos de 15 MB)</small></h2>
+        <input type="file" name="notas[]" multiple accept=".pdf,.jpg,.jpeg,.png,.xml,application/pdf,image/*,text/xml" aria-label="Anexar nota fiscal ou XML">
+                            </section>
     <button class="btn">Salvar alterações</button>
 </form>
     </template><template id="p-registro-log">
@@ -14853,6 +14877,15 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
 <table>
     <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Cadastro</th><th>O que mudou</th><th>IP</th></tr></thead>
     <tbody>
+            <tr>
+            <td class="nowrap">15/10/2026 11:19:05</td>
+            <td>Administrador</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
             <tr>
             <td class="nowrap">15/10/2026 11:17:57</td>
             <td>Administrador</td>
@@ -15579,20 +15612,11 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                             </td>
             <td class="muted nowrap">127.0.0.1</td>
         </tr>
-            <tr>
-            <td class="nowrap">14/10/2026 20:25:06</td>
-            <td>Administrador</td>
-            <td><span class="selo neutro">Entrou no sistema</span></td>
-            <td><small></small></td>
-            <td>
-                            </td>
-            <td class="muted nowrap">127.0.0.1</td>
-        </tr>
         </tbody>
 </table>
 </div>
 <nav class="paginacao">
-                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">78 no total</span>
+                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">79 no total</span>
     </nav>
     </template><template id="p-cargas~1">
                                 <form method="post" action="#" class="filial-ativa">
@@ -16314,7 +16338,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
         Só o <strong>Shipment ID</strong> pode ser alterado.
     </div>
 
-<form method="post" id="form-carga" action="#">
+<form method="post" id="form-carga" enctype="multipart/form-data" action="#">
           
     <section class="cartao">
         <h2>Cliente e datas</h2>
@@ -16535,6 +16559,10 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
         </div>
     </section>
 
+    <section class="cartao">
+        <h2>Nota fiscal / XML <small class="muted">(opcional — PDF, imagem ou XML, até 10 arquivos de 15 MB)</small></h2>
+        <input type="file" name="notas[]" multiple accept=".pdf,.jpg,.jpeg,.png,.xml,application/pdf,image/*,text/xml" aria-label="Anexar nota fiscal ou XML">
+                            </section>
     <button class="btn">Salvar alterações</button>
 </form>
     </template><template id="p-comissoes~pagas">
@@ -16639,8 +16667,8 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                 <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794665880&amp;signature=d15e311b8030f775023ab031cedeace56fbe2a95fb48783f19db2797b785c2d6" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511994826605?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794665880%26signature%3Dd15e311b8030f775023ab031cedeace56fbe2a95fb48783f19db2797b785c2d6">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794665947&amp;signature=98437951c94ef7124394cd1f4d59f4bb20996e09f33c6144ef2e5ef9d78b8859" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511994826605?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794665947%26signature%3D98437951c94ef7124394cd1f4d59f4bb20996e09f33c6144ef2e5ef9d78b8859">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-relatorios~comissao-frete">
                                 <form method="post" action="#" class="filial-ativa">
