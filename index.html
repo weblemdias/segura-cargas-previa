@@ -1403,7 +1403,7 @@ html,body{background:var(--fundo)}
 
 <section class="cartao regra-fila">
     <div class="agora">
-        <span class="muted">Agora (quinta-feira, 15/10 10:52) · dia útil: vale o rodízio</span>
+        <span class="muted">Agora (quinta-feira, 15/10 10:56) · dia útil: vale o rodízio</span>
         <strong>Próxima carga vai para: Ana Ribeiro</strong>
         <small>Rodízio entre quem está no horário (2 pessoa(s)).</small>
     </div>
@@ -2694,14 +2694,46 @@ html,body{background:var(--fundo)}
         <button class="btn">Salvar respostas</button>    </form>
     </section>
 <section class="cartao">
-    <h2>Perguntas ao motorista <small class="muted">Juliana Souza</small></h2>
-    <ol style="padding-left:20px">
-                    <li style="margin-bottom:8px">Você recebeu todas as informações da carga antes da coleta?<br>
-                <span class="selo neutro">Aguardando o app</span>                </li>
-                    <li style="margin-bottom:8px">O valor do frete foi o combinado?<br>
-                <span class="selo neutro">Aguardando o app</span>                </li>
-            </ol>
-</section>
+    <h2>Avaliação do motorista <small class="muted">Juliana Souza avalia a empresa, quem contratou, o gestor e a expedição</small></h2>
+                        <h3 style="font-size:14px;margin:10px 0 4px">Empresa</h3>
+        <ul class="historico">
+                            <li>A Segura cumpriu o que foi combinado (valor e prazo de pagamento)?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                            <li>Você faria outra viagem com a Segura?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                    </ul>
+                    <h3 style="font-size:14px;margin:10px 0 4px">Quem contratou <small class="muted">— Ana Ribeiro</small></h3>
+        <ul class="historico">
+                            <li>Quem te contratou foi claro e atencioso?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                            <li>As informações da carga (rota, horários e exigências) estavam corretas?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                    </ul>
+                    <h3 style="font-size:14px;margin:10px 0 4px">Gestor da carga <small class="muted">— Administrador</small></h3>
+        <ul class="historico">
+                            <li>O gestor da carga deu o suporte que você precisou durante a viagem?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                            <li>Os problemas da viagem foram resolvidos rápido?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                    </ul>
+                    <h3 style="font-size:14px;margin:10px 0 4px">Expedição (documentos)</h3>
+        <ul class="historico">
+                            <li>Os documentos (nota fiscal, CT-e, manifesto) vieram corretos?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                            <li>A expedição liberou os documentos sem demora?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                    </ul>
+                    <h3 style="font-size:14px;margin:10px 0 4px">Geral</h3>
+        <ul class="historico">
+                            <li>Você recebeu todas as informações da carga antes da coleta?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                            <li>O valor do frete foi o combinado?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                    </ul>
+                <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/3?expires=1794664574&amp;signature=4af89fb64e1309f69908c70a5aaf10bb9ad7aa7c035f817b8ab70996ea6a5c23" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511992570661?text=Ol%C3%A1%21%20A%20carga%20%233%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F3%3Fexpires%3D1794664574%26signature%3D4af89fb64e1309f69908c70a5aaf10bb9ad7aa7c035f817b8ab70996ea6a5c23">Enviar pelo WhatsApp</a></p>
+    </section>
 </div>
     </template><template id="p-cargas">
                                 <form method="post" action="#" class="filial-ativa">
@@ -5964,7 +5996,7 @@ html,body{background:var(--fundo)}
                     <li style="margin-bottom:6px">
                                     <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 70px auto auto">
                                                  <input name="texto" value="O motorista foi validado na gerenciadora de risco?" aria-label="Pergunta" required>
-                        <input name="ordem" type="number" value="0" aria-label="Ordem" title="Ordem">
+                                                <input name="ordem" type="number" value="0" aria-label="Ordem" title="Ordem">
                         <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativa</label>
                         <button class="btn sec pequeno">Salvar</button>
                     </form>
@@ -5972,7 +6004,7 @@ html,body{background:var(--fundo)}
                     <li style="margin-bottom:6px">
                                     <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 70px auto auto">
                                                  <input name="texto" value="O valor contratado foi negociado com o motorista?" aria-label="Pergunta" required>
-                        <input name="ordem" type="number" value="1" aria-label="Ordem" title="Ordem">
+                                                <input name="ordem" type="number" value="1" aria-label="Ordem" title="Ordem">
                         <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativa</label>
                         <button class="btn sec pequeno">Salvar</button>
                     </form>
@@ -5980,17 +6012,98 @@ html,body{background:var(--fundo)}
                     <li style="margin-bottom:6px">
                                     <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 70px auto auto">
                                                  <input name="texto" value="Os documentos do veículo foram conferidos?" aria-label="Pergunta" required>
-                        <input name="ordem" type="number" value="2" aria-label="Ordem" title="Ordem">
+                                                <input name="ordem" type="number" value="2" aria-label="Ordem" title="Ordem">
                         <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativa</label>
                         <button class="btn sec pequeno">Salvar</button>
                     </form>
                             </li>
             </ol>
             <form method="post" action="#" class="solicitante" style="margin-top:8px;grid-template-columns:1fr auto">
-             <input name="texto" placeholder="Nova pergunta (resposta sim/não)" required aria-label="Nova pergunta"><button class="btn sec pequeno">Incluir pergunta</button>
+             <input name="texto" placeholder="Nova pergunta (resposta sim/não)" required aria-label="Nova pergunta">
+            <button class="btn sec pequeno">Incluir pergunta</button>
         </form>
         <form method="post" action="#" class="solicitante" style="margin-top:8px;grid-template-columns:1fr auto auto">
               <input name="descricao" value="Checklist do contratante" aria-label="Nome do questionário">
+            <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativo</label>
+            <button class="btn sec pequeno">Salvar questionário</button>
+        </form>
+    </section>
+<section class="cartao">
+    <div class="topo" style="margin-bottom:8px">
+        <h2 style="margin:0">Avaliação da viagem pelo motorista <span class="selo neutro">Motorista responde (app)</span> </h2>
+    </div>
+    <ol style="margin:0;padding-left:20px">
+                    <li style="margin-bottom:6px">
+                                    <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 170px 70px auto auto">
+                                                 <input name="texto" value="A Segura cumpriu o que foi combinado (valor e prazo de pagamento)?" aria-label="Pergunta" required>
+                        <select name="avaliado" aria-label="Quem a pergunta avalia"><option value="">Geral</option><option value="empresa" selected>Empresa</option><option value="contratante" >Quem contratou</option><option value="gestor" >Gestor da carga</option><option value="expedicao" >Expedição (documentos)</option></select>                        <input name="ordem" type="number" value="1" aria-label="Ordem" title="Ordem">
+                        <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativa</label>
+                        <button class="btn sec pequeno">Salvar</button>
+                    </form>
+                            </li>
+                    <li style="margin-bottom:6px">
+                                    <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 170px 70px auto auto">
+                                                 <input name="texto" value="Você faria outra viagem com a Segura?" aria-label="Pergunta" required>
+                        <select name="avaliado" aria-label="Quem a pergunta avalia"><option value="">Geral</option><option value="empresa" selected>Empresa</option><option value="contratante" >Quem contratou</option><option value="gestor" >Gestor da carga</option><option value="expedicao" >Expedição (documentos)</option></select>                        <input name="ordem" type="number" value="2" aria-label="Ordem" title="Ordem">
+                        <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativa</label>
+                        <button class="btn sec pequeno">Salvar</button>
+                    </form>
+                            </li>
+                    <li style="margin-bottom:6px">
+                                    <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 170px 70px auto auto">
+                                                 <input name="texto" value="Quem te contratou foi claro e atencioso?" aria-label="Pergunta" required>
+                        <select name="avaliado" aria-label="Quem a pergunta avalia"><option value="">Geral</option><option value="empresa" >Empresa</option><option value="contratante" selected>Quem contratou</option><option value="gestor" >Gestor da carga</option><option value="expedicao" >Expedição (documentos)</option></select>                        <input name="ordem" type="number" value="3" aria-label="Ordem" title="Ordem">
+                        <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativa</label>
+                        <button class="btn sec pequeno">Salvar</button>
+                    </form>
+                            </li>
+                    <li style="margin-bottom:6px">
+                                    <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 170px 70px auto auto">
+                                                 <input name="texto" value="As informações da carga (rota, horários e exigências) estavam corretas?" aria-label="Pergunta" required>
+                        <select name="avaliado" aria-label="Quem a pergunta avalia"><option value="">Geral</option><option value="empresa" >Empresa</option><option value="contratante" selected>Quem contratou</option><option value="gestor" >Gestor da carga</option><option value="expedicao" >Expedição (documentos)</option></select>                        <input name="ordem" type="number" value="4" aria-label="Ordem" title="Ordem">
+                        <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativa</label>
+                        <button class="btn sec pequeno">Salvar</button>
+                    </form>
+                            </li>
+                    <li style="margin-bottom:6px">
+                                    <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 170px 70px auto auto">
+                                                 <input name="texto" value="O gestor da carga deu o suporte que você precisou durante a viagem?" aria-label="Pergunta" required>
+                        <select name="avaliado" aria-label="Quem a pergunta avalia"><option value="">Geral</option><option value="empresa" >Empresa</option><option value="contratante" >Quem contratou</option><option value="gestor" selected>Gestor da carga</option><option value="expedicao" >Expedição (documentos)</option></select>                        <input name="ordem" type="number" value="5" aria-label="Ordem" title="Ordem">
+                        <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativa</label>
+                        <button class="btn sec pequeno">Salvar</button>
+                    </form>
+                            </li>
+                    <li style="margin-bottom:6px">
+                                    <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 170px 70px auto auto">
+                                                 <input name="texto" value="Os problemas da viagem foram resolvidos rápido?" aria-label="Pergunta" required>
+                        <select name="avaliado" aria-label="Quem a pergunta avalia"><option value="">Geral</option><option value="empresa" >Empresa</option><option value="contratante" >Quem contratou</option><option value="gestor" selected>Gestor da carga</option><option value="expedicao" >Expedição (documentos)</option></select>                        <input name="ordem" type="number" value="6" aria-label="Ordem" title="Ordem">
+                        <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativa</label>
+                        <button class="btn sec pequeno">Salvar</button>
+                    </form>
+                            </li>
+                    <li style="margin-bottom:6px">
+                                    <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 170px 70px auto auto">
+                                                 <input name="texto" value="Os documentos (nota fiscal, CT-e, manifesto) vieram corretos?" aria-label="Pergunta" required>
+                        <select name="avaliado" aria-label="Quem a pergunta avalia"><option value="">Geral</option><option value="empresa" >Empresa</option><option value="contratante" >Quem contratou</option><option value="gestor" >Gestor da carga</option><option value="expedicao" selected>Expedição (documentos)</option></select>                        <input name="ordem" type="number" value="7" aria-label="Ordem" title="Ordem">
+                        <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativa</label>
+                        <button class="btn sec pequeno">Salvar</button>
+                    </form>
+                            </li>
+                    <li style="margin-bottom:6px">
+                                    <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 170px 70px auto auto">
+                                                 <input name="texto" value="A expedição liberou os documentos sem demora?" aria-label="Pergunta" required>
+                        <select name="avaliado" aria-label="Quem a pergunta avalia"><option value="">Geral</option><option value="empresa" >Empresa</option><option value="contratante" >Quem contratou</option><option value="gestor" >Gestor da carga</option><option value="expedicao" selected>Expedição (documentos)</option></select>                        <input name="ordem" type="number" value="8" aria-label="Ordem" title="Ordem">
+                        <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativa</label>
+                        <button class="btn sec pequeno">Salvar</button>
+                    </form>
+                            </li>
+            </ol>
+            <form method="post" action="#" class="solicitante" style="margin-top:8px;grid-template-columns:1fr 170px auto">
+             <input name="texto" placeholder="Nova pergunta (resposta sim/não)" required aria-label="Nova pergunta">
+            <select name="avaliado" aria-label="Quem a pergunta avalia"><option value="">Geral</option><option value="empresa">Empresa</option><option value="contratante">Quem contratou</option><option value="gestor">Gestor da carga</option><option value="expedicao">Expedição (documentos)</option></select><button class="btn sec pequeno">Incluir pergunta</button>
+        </form>
+        <form method="post" action="#" class="solicitante" style="margin-top:8px;grid-template-columns:1fr auto auto">
+              <input name="descricao" value="Avaliação da viagem pelo motorista" aria-label="Nome do questionário">
             <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativo</label>
             <button class="btn sec pequeno">Salvar questionário</button>
         </form>
@@ -6001,24 +6114,25 @@ html,body{background:var(--fundo)}
     </div>
     <ol style="margin:0;padding-left:20px">
                     <li style="margin-bottom:6px">
-                                    <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 70px auto auto">
+                                    <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 170px 70px auto auto">
                                                  <input name="texto" value="Você recebeu todas as informações da carga antes da coleta?" aria-label="Pergunta" required>
-                        <input name="ordem" type="number" value="0" aria-label="Ordem" title="Ordem">
+                        <select name="avaliado" aria-label="Quem a pergunta avalia"><option value="">Geral</option><option value="empresa" >Empresa</option><option value="contratante" >Quem contratou</option><option value="gestor" >Gestor da carga</option><option value="expedicao" >Expedição (documentos)</option></select>                        <input name="ordem" type="number" value="0" aria-label="Ordem" title="Ordem">
                         <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativa</label>
                         <button class="btn sec pequeno">Salvar</button>
                     </form>
                             </li>
                     <li style="margin-bottom:6px">
-                                    <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 70px auto auto">
+                                    <form method="post" action="#" class="solicitante" style="grid-template-columns:1fr 170px 70px auto auto">
                                                  <input name="texto" value="O valor do frete foi o combinado?" aria-label="Pergunta" required>
-                        <input name="ordem" type="number" value="1" aria-label="Ordem" title="Ordem">
+                        <select name="avaliado" aria-label="Quem a pergunta avalia"><option value="">Geral</option><option value="empresa" >Empresa</option><option value="contratante" >Quem contratou</option><option value="gestor" >Gestor da carga</option><option value="expedicao" >Expedição (documentos)</option></select>                        <input name="ordem" type="number" value="1" aria-label="Ordem" title="Ordem">
                         <label class="marcas" style="font-weight:400"><input type="hidden" name="ativo" value="0"><input type="checkbox" name="ativo" value="1" checked> ativa</label>
                         <button class="btn sec pequeno">Salvar</button>
                     </form>
                             </li>
             </ol>
-            <form method="post" action="#" class="solicitante" style="margin-top:8px;grid-template-columns:1fr auto">
-             <input name="texto" placeholder="Nova pergunta (resposta sim/não)" required aria-label="Nova pergunta"><button class="btn sec pequeno">Incluir pergunta</button>
+            <form method="post" action="#" class="solicitante" style="margin-top:8px;grid-template-columns:1fr 170px auto">
+             <input name="texto" placeholder="Nova pergunta (resposta sim/não)" required aria-label="Nova pergunta">
+            <select name="avaliado" aria-label="Quem a pergunta avalia"><option value="">Geral</option><option value="empresa">Empresa</option><option value="contratante">Quem contratou</option><option value="gestor">Gestor da carga</option><option value="expedicao">Expedição (documentos)</option></select><button class="btn sec pequeno">Incluir pergunta</button>
         </form>
         <form method="post" action="#" class="solicitante" style="margin-top:8px;grid-template-columns:1fr auto auto">
               <input name="descricao" value="Pesquisa com o motorista" aria-label="Nome do questionário">
@@ -13008,14 +13122,46 @@ html,body{background:var(--fundo)}
         <button class="btn">Salvar respostas</button>    </form>
     </section>
 <section class="cartao">
-    <h2>Perguntas ao motorista <small class="muted">Juliana Souza</small></h2>
-    <ol style="padding-left:20px">
-                    <li style="margin-bottom:8px">Você recebeu todas as informações da carga antes da coleta?<br>
-                <span class="selo neutro">Aguardando o app</span>                </li>
-                    <li style="margin-bottom:8px">O valor do frete foi o combinado?<br>
-                <span class="selo neutro">Aguardando o app</span>                </li>
-            </ol>
-</section>
+    <h2>Avaliação do motorista <small class="muted">Juliana Souza avalia a empresa, quem contratou, o gestor e a expedição</small></h2>
+                        <h3 style="font-size:14px;margin:10px 0 4px">Empresa</h3>
+        <ul class="historico">
+                            <li>A Segura cumpriu o que foi combinado (valor e prazo de pagamento)?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                            <li>Você faria outra viagem com a Segura?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                    </ul>
+                    <h3 style="font-size:14px;margin:10px 0 4px">Quem contratou <small class="muted">— Ana Ribeiro</small></h3>
+        <ul class="historico">
+                            <li>Quem te contratou foi claro e atencioso?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                            <li>As informações da carga (rota, horários e exigências) estavam corretas?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                    </ul>
+                    <h3 style="font-size:14px;margin:10px 0 4px">Gestor da carga <small class="muted">— Administrador</small></h3>
+        <ul class="historico">
+                            <li>O gestor da carga deu o suporte que você precisou durante a viagem?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                            <li>Os problemas da viagem foram resolvidos rápido?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                    </ul>
+                    <h3 style="font-size:14px;margin:10px 0 4px">Expedição (documentos)</h3>
+        <ul class="historico">
+                            <li>Os documentos (nota fiscal, CT-e, manifesto) vieram corretos?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                            <li>A expedição liberou os documentos sem demora?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                    </ul>
+                    <h3 style="font-size:14px;margin:10px 0 4px">Geral</h3>
+        <ul class="historico">
+                            <li>Você recebeu todas as informações da carga antes da coleta?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                            <li>O valor do frete foi o combinado?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                    </ul>
+                <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/3?expires=1794664573&amp;signature=38c105d51fa4a67769ad66da3733e29bd2e95bef62ee39a689d54a33e0b69df7" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511992570661?text=Ol%C3%A1%21%20A%20carga%20%233%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F3%3Fexpires%3D1794664573%26signature%3D38c105d51fa4a67769ad66da3733e29bd2e95bef62ee39a689d54a33e0b69df7">Enviar pelo WhatsApp</a></p>
+    </section>
 </div>
     </template><template id="p-avaliacoes">
                                 <form method="post" action="#" class="filial-ativa">
@@ -13741,7 +13887,7 @@ html,body{background:var(--fundo)}
                                                     <div class="aviso">Você tem 2 carga(s) com perguntas de auditoria para responder. <a href="#auditoria~respostas~gestor">Responder</a></div>
                 <div class="topo">
     <h1>Situação em tempo real</h1>
-    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 10:52</small>
+    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 10:56</small>
 </div>
 
 <form class="cartao filtros" method="get">
@@ -14859,6 +15005,15 @@ html,body{background:var(--fundo)}
     <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Cadastro</th><th>O que mudou</th><th>IP</th></tr></thead>
     <tbody>
             <tr>
+            <td class="nowrap">15/10/2026 10:56:11</td>
+            <td>Administrador</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
             <td class="nowrap">15/10/2026 10:52:04</td>
             <td>Administrador</td>
             <td><span class="selo neutro">Entrou no sistema</span></td>
@@ -15524,20 +15679,11 @@ html,body{background:var(--fundo)}
                             </td>
             <td class="muted nowrap">127.0.0.1</td>
         </tr>
-            <tr>
-            <td class="nowrap">14/10/2026 19:56:25</td>
-            <td>Administrador</td>
-            <td><span class="selo neutro">Entrou no sistema</span></td>
-            <td><small></small></td>
-            <td>
-                            </td>
-            <td class="muted nowrap">127.0.0.1</td>
-        </tr>
         </tbody>
 </table>
 </div>
 <nav class="paginacao">
-                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">67 no total</span>
+                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">68 no total</span>
     </nav>
     </template><template id="p-cargas~1">
                                 <form method="post" action="#" class="filial-ativa">
@@ -16593,14 +16739,18 @@ html,body{background:var(--fundo)}
         <button class="btn">Salvar respostas</button>    </form>
     </section>
 <section class="cartao">
-    <h2>Perguntas ao motorista <small class="muted">Roberto Almeida</small></h2>
-    <ol style="padding-left:20px">
-                    <li style="margin-bottom:8px">Você recebeu todas as informações da carga antes da coleta?<br>
-                <span class="selo neutro">Aguardando o app</span>                </li>
-                    <li style="margin-bottom:8px">O valor do frete foi o combinado?<br>
-                <span class="selo neutro">Aguardando o app</span>                </li>
-            </ol>
-</section>
+    <h2>Avaliação do motorista <small class="muted">Roberto Almeida avalia a empresa, quem contratou, o gestor e a expedição</small></h2>
+                                                        <h3 style="font-size:14px;margin:10px 0 4px">Geral</h3>
+        <ul class="historico">
+                            <li>Você recebeu todas as informações da carga antes da coleta?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                            <li>O valor do frete foi o combinado?
+                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
+                    </ul>
+                <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794664574&amp;signature=40880fb7c32ba55b8a4f7142b55e354e85759a3610b91d71dd83c6bd31d259cd" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511994826605?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794664574%26signature%3D40880fb7c32ba55b8a4f7142b55e354e85759a3610b91d71dd83c6bd31d259cd">Enviar pelo WhatsApp</a></p>
+    </section>
 </div>
     </template><template id="p-relatorios~comissao-frete">
                                 <form method="post" action="#" class="filial-ativa">
