@@ -317,6 +317,7 @@ table.contratacao .acoes-contr .menu-acoes>summary{display:inline-block}
 .coleta-filial{display:block;margin:0 0 10px;font-weight:400}.parada.na-filial input:read-only{background:var(--ativo-bg)}
 .parada.na-filial .remover{visibility:hidden}
 .linha-tabela{position:relative}.linha-tabela .sugestoes-mapa{left:0;top:auto}
+table.contratacao tr.com-obs > td{border-bottom:0}table.contratacao tr.linha-obs > td{border-top:0}
 
 :root{color-scheme:light;--faixa:#202327;--faixa-txt:#f3f4f6}
 html,body{background:var(--fundo)}
@@ -1402,7 +1403,7 @@ html,body{background:var(--fundo)}
 
 <section class="cartao regra-fila">
     <div class="agora">
-        <span class="muted">Agora (quinta-feira, 15/10 10:46) · dia útil: vale o rodízio</span>
+        <span class="muted">Agora (quinta-feira, 15/10 10:52) · dia útil: vale o rodízio</span>
         <strong>Próxima carga vai para: Ana Ribeiro</strong>
         <small>Rodízio entre quem está no horário (2 pessoa(s)).</small>
     </div>
@@ -13740,7 +13741,7 @@ html,body{background:var(--fundo)}
                                                     <div class="aviso">Você tem 2 carga(s) com perguntas de auditoria para responder. <a href="#auditoria~respostas~gestor">Responder</a></div>
                 <div class="topo">
     <h1>Situação em tempo real</h1>
-    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 10:46</small>
+    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 10:52</small>
 </div>
 
 <form class="cartao filtros" method="get">
@@ -14464,14 +14465,14 @@ html,body{background:var(--fundo)}
                                                         <a class="btn pequeno" href="#cargas~4~contratar">Contratar</a>
                             </td>
         </tr>
-                    <tr class="linha-obs"><td colspan="3">
+                    <tr class="linha-obs atrasada"><td colspan="3">
                 <button type="button" class="obs-botao" popovertarget="obs-4" title="Ver observação completa">Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar EPI e paleteira.</button>
                 <div id="obs-4" popover class="popup-rota">
                     <div class="topo" style="margin-bottom:8px"><strong>Informações para contratação · carga #4</strong>
                         <button type="button" class="btn sec pequeno" popovertarget="obs-4" popovertargetaction="hide">Fechar</button></div>
                     <p style="margin:0">Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar EPI e paleteira.</p>
                 </div>
-            </td></tr>
+            </td><td colspan="2"></td></tr>
                                     <tr class="atrasada">
             <td class="carga-celula">
                 <a href="#cargas~5" class="carga-tipo"><strong>#5 - Transporte</strong></a>
@@ -14857,6 +14858,24 @@ html,body{background:var(--fundo)}
 <table>
     <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Cadastro</th><th>O que mudou</th><th>IP</th></tr></thead>
     <tbody>
+            <tr>
+            <td class="nowrap">15/10/2026 10:52:04</td>
+            <td>Administrador</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">15/10/2026 10:51:53</td>
+            <td>Administrador</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
             <tr>
             <td class="nowrap">15/10/2026 10:46:22</td>
             <td>Administrador</td>
@@ -15514,29 +15533,11 @@ html,body{background:var(--fundo)}
                             </td>
             <td class="muted nowrap">127.0.0.1</td>
         </tr>
-            <tr>
-            <td class="nowrap">14/10/2026 19:56:08</td>
-            <td>Administrador</td>
-            <td><span class="selo neutro">Entrou no sistema</span></td>
-            <td><small></small></td>
-            <td>
-                            </td>
-            <td class="muted nowrap">127.0.0.1</td>
-        </tr>
-            <tr>
-            <td class="nowrap">14/10/2026 19:56:07</td>
-            <td>Administrador</td>
-            <td><span class="selo neutro">Entrou no sistema</span></td>
-            <td><small></small></td>
-            <td>
-                            </td>
-            <td class="muted nowrap">127.0.0.1</td>
-        </tr>
         </tbody>
 </table>
 </div>
 <nav class="paginacao">
-                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">65 no total</span>
+                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">67 no total</span>
     </nav>
     </template><template id="p-cargas~1">
                                 <form method="post" action="#" class="filial-ativa">
@@ -16096,14 +16097,14 @@ html,body{background:var(--fundo)}
                                         <a class="btn pequeno" href="#cargas~4~contratar">Contratar</a>
                             </td>
         </tr>
-                    <tr class="linha-obs"><td colspan="3">
+                    <tr class="linha-obs atrasada"><td colspan="3">
                 <button type="button" class="obs-botao" popovertarget="obs-4" title="Ver observação completa">Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar EPI e paleteira.</button>
                 <div id="obs-4" popover class="popup-rota">
                     <div class="topo" style="margin-bottom:8px"><strong>Informações para contratação · carga #4</strong>
                         <button type="button" class="btn sec pequeno" popovertarget="obs-4" popovertargetaction="hide">Fechar</button></div>
                     <p style="margin:0">Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar EPI e paleteira.</p>
                 </div>
-            </td></tr>
+            </td><td colspan="2"></td></tr>
                             <tr class="linha-indicados" id="ind-4" hidden><td colspan="5"><div class="ind-painel"></div></td></tr>
                             <tr class="atrasada">
             <td class="carga-celula">
