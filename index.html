@@ -392,7 +392,6 @@ html,body{background:var(--fundo)}
                             <a href="#relatorios~agregados" class="">Motorista agregado (meta do mês)</a>
                             <a href="#relatorios~kpi" class="">Carregamentos KPI (prazo)</a>
                             <a href="#relatorios~problemas" class="">Problemas em cargas</a>
-                            <a href="#relatorios~indicador-problemas" class="">Indicador de problemas (12 meses)</a>
                             <a href="#relatorios~termos" class="">Cargas x termos</a>
                             <a href="#relatorios~historico-rota" class="">Histórico da rota</a>
                         </details>
@@ -1295,9 +1294,9 @@ html,body{background:var(--fundo)}
 
 <section class="cartao regra-fila">
     <div class="agora">
-        <span class="muted">Agora (quinta-feira, 15/10 18:50) · dia útil: vale o rodízio</span>
+        <span class="muted">Agora (quinta-feira, 15/10 19:45) · dia útil: vale o rodízio</span>
         <strong>Próxima carga vai para: Ana Ribeiro</strong>
-        <small>Rodízio entre quem está no horário (2 pessoa(s)).</small>
+        <small>Ninguém no horário: vai para quem entra primeiro (07:00).</small>
     </div>
     <ul class="muted regras">
         <li><strong>Dia útil:</strong> rodízio entre quem está no horário, na ordem da posição.</li>
@@ -1323,7 +1322,7 @@ html,body{background:var(--fundo)}
             <td><strong>Ana Ribeiro</strong>
                 <span class="selo ativo" title="É o próximo do rodízio entre quem está no horário">próximo</span>                </td>
             <td class="nowrap">07:00 às 19:00
-                <br><small class="online">no horário agora</small></td>
+                </td>
             <td><span class="muted">—</span></td>
             <td>
                 <span class="selo ok">Recebendo</span>                                    <form method="post" action="#" class="inline"><button class="link-botao">pausar</button></form>
@@ -1343,7 +1342,7 @@ html,body{background:var(--fundo)}
             <td><strong>Carlos Mendes</strong>
                                 </td>
             <td class="nowrap">07:00 às 19:00
-                <br><small class="online">no horário agora</small></td>
+                </td>
             <td><span class="selo atencao">Plantão</span></td>
             <td>
                 <span class="selo ok">Recebendo</span>                                    <form method="post" action="#" class="inline"><button class="link-botao">pausar</button></form>
@@ -2575,72 +2574,6 @@ html,body{background:var(--fundo)}
                     <li><strong>FTR4E21</strong> · Carreta · motorista <a href="#motoristas~1">Roberto Almeida</a></li>
             </ul>
 </section>
-    </template><template id="p-auditoria~carga~3">
-                                <form method="post" action="#" class="filial-ativa">
-                                <label for="filial-ativa">Usar sistema como filial:</label>
-                <select id="filial-ativa" name="filial_id" >
-                    <option value="">Todas as filiais</option>
-                                            <option value="1" >Matriz</option>
-                                            <option value="2" >Segura - Betim - MG</option>
-                                            <option value="3" >Segura - Cariacica - ES</option>
-                                            <option value="4" >Segura - Esteio - RS</option>
-                                            <option value="5" >Segura - Goiânia - GO</option>
-                                            <option value="6" >Segura - Itapevi - SP</option>
-                                            <option value="7" >Segura - Pinhais - PR</option>
-                                            <option value="8" >Segura - Rio de Janeiro - RJ</option>
-                                            <option value="9" >Segura - Sapucaia do Sul - RS</option>
-                                            <option value="10" >Segura - Sorocaba - SP</option>
-                                            <option value="11" >Segura Maringá - PR</option>
-                                            <option value="12" >Segura Pirapozinho - SP</option>
-                                    </select>
-                <noscript><button class="btn sec pequeno">Trocar</button></noscript>
-            </form>
-                                <div class="topo">
-    <h1>Auditoria <small class="muted">carga <a href="#cargas~3">#3</a> · Farma Bem Estar · gestor Administrador</small></h1>
-    <a class="btn sec" href="#motoristas~1">Voltar</a>
-</div>
-
-<section class="cartao">
-    <h2>Avaliação do motorista <small class="muted">Juliana Souza avalia a empresa, quem contratou, o gestor e a expedição</small></h2>
-                        <h3 style="font-size:14px;margin:10px 0 4px">Empresa</h3>
-        <ul class="historico">
-                            <li>A Segura cumpriu o que foi combinado (valor e prazo de pagamento)?
-                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
-                            <li>Você faria outra viagem com a Segura?
-                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
-                    </ul>
-                    <h3 style="font-size:14px;margin:10px 0 4px">Quem contratou <small class="muted">— Ana Ribeiro</small></h3>
-        <ul class="historico">
-                            <li>Quem te contratou foi claro e atencioso?
-                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
-                            <li>As informações da carga (rota, horários e exigências) estavam corretas?
-                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
-                    </ul>
-                    <h3 style="font-size:14px;margin:10px 0 4px">Gestor da carga <small class="muted">— Administrador</small></h3>
-        <ul class="historico">
-                            <li>O gestor da carga deu o suporte que você precisou durante a viagem?
-                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
-                            <li>Os problemas da viagem foram resolvidos rápido?
-                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
-                    </ul>
-                    <h3 style="font-size:14px;margin:10px 0 4px">Expedição (documentos)</h3>
-        <ul class="historico">
-                            <li>Os documentos (nota fiscal, CT-e, manifesto) vieram corretos?
-                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
-                            <li>A expedição liberou os documentos sem demora?
-                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
-                    </ul>
-                    <h3 style="font-size:14px;margin:10px 0 4px">Geral</h3>
-        <ul class="historico">
-                            <li>Você recebeu todas as informações da carga antes da coleta?
-                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
-                            <li>O valor do frete foi o combinado?
-                    <span class="selo neutro">Aguardando o motorista</span>                    </li>
-                    </ul>
-                <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/3?expires=1794685917&amp;signature=61cfadd59d23eaf7b43106e0ae9190921150c19ce46e114e31fe2ec2f1003cb7" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511992570661?text=Ol%C3%A1%21%20A%20carga%20%233%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F3%3Fexpires%3D1794685917%26signature%3D61cfadd59d23eaf7b43106e0ae9190921150c19ce46e114e31fe2ec2f1003cb7">Enviar pelo WhatsApp</a></p>
-    </section>
     </template><template id="p-cargas">
                                 <form method="post" action="#" class="filial-ativa">
                                 <label for="filial-ativa">Usar sistema como filial:</label>
@@ -9952,55 +9885,6 @@ html,body{background:var(--fundo)}
             <tfoot><tr><th class="num">Média</th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num">0h00</th><th class="num"></th></tr></tfoot>
     </table>
 </div>
-    </template><template id="p-relatorios~indicador-problemas">
-                                <form method="post" action="#" class="filial-ativa">
-                                <label for="filial-ativa">Usar sistema como filial:</label>
-                <select id="filial-ativa" name="filial_id" >
-                    <option value="">Todas as filiais</option>
-                                            <option value="1" >Matriz</option>
-                                            <option value="2" >Segura - Betim - MG</option>
-                                            <option value="3" >Segura - Cariacica - ES</option>
-                                            <option value="4" >Segura - Esteio - RS</option>
-                                            <option value="5" >Segura - Goiânia - GO</option>
-                                            <option value="6" >Segura - Itapevi - SP</option>
-                                            <option value="7" >Segura - Pinhais - PR</option>
-                                            <option value="8" >Segura - Rio de Janeiro - RJ</option>
-                                            <option value="9" >Segura - Sapucaia do Sul - RS</option>
-                                            <option value="10" >Segura - Sorocaba - SP</option>
-                                            <option value="11" >Segura Maringá - PR</option>
-                                            <option value="12" >Segura Pirapozinho - SP</option>
-                                    </select>
-                <noscript><button class="btn sec pequeno">Trocar</button></noscript>
-            </form>
-                                <div class="topo">
-    <h1>Indicador de problemas (12 meses)</h1>
-    <a class="btn sec" href="#relatorios~indicador-problemas">Exportar CSV (Excel)</a>
-</div>
-<p class="muted" style="margin-top:-8px">Embarques do mês (contratadas, em andamento e entregues) e % de cargas com problema de carga/descarga e erro de lançamento.</p>
-<form class="cartao filtros" method="get">
-            <div><label for="r-mes">Mês</label><input id="r-mes" type="month" name="mes" value="2026-10"></div>            <div><label for="r-filial_id">Filial</label><select id="r-filial_id" name="filial_id"><option value="">Todas</option><option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>    <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>                                                        <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~indicador-problemas">Limpar</a></div>
-</form>
-<section class="cartao"><div class="valores"><div><span>Embarques (12 meses)</span><strong>24</strong></div><div><span>Realizado sem problema</span><strong>100,0%</strong></div><div><span>Lançados corretos</span><strong>100,0%</strong></div></div></section>
-<div class="tabela">
-<table class="relatorio">
-    <thead><tr><th>Mês</th><th>Embarques</th><th>Prob. carga/descarga</th><th>% problemas</th><th>% realizado</th><th>Erros de lançamento</th><th>% erros</th><th>% corretos</th></tr></thead>
-    <tbody>
-            <tr><td class="">Nov/25</td><td class="num">0</td><td class="num">0</td><td class="">—</td><td class="">—</td><td class="num">0</td><td class="">—</td><td class="">—</td></tr>
-            <tr><td class="">Dez/25</td><td class="num">0</td><td class="num">0</td><td class="">—</td><td class="">—</td><td class="num">0</td><td class="">—</td><td class="">—</td></tr>
-            <tr><td class="">Jan/26</td><td class="num">0</td><td class="num">0</td><td class="">—</td><td class="">—</td><td class="num">0</td><td class="">—</td><td class="">—</td></tr>
-            <tr><td class="">Fev/26</td><td class="num">0</td><td class="num">0</td><td class="">—</td><td class="">—</td><td class="num">0</td><td class="">—</td><td class="">—</td></tr>
-            <tr><td class="">Mar/26</td><td class="num">0</td><td class="num">0</td><td class="">—</td><td class="">—</td><td class="num">0</td><td class="">—</td><td class="">—</td></tr>
-            <tr><td class="">Abr/26</td><td class="num">0</td><td class="num">0</td><td class="">—</td><td class="">—</td><td class="num">0</td><td class="">—</td><td class="">—</td></tr>
-            <tr><td class="">Mai/26</td><td class="num">0</td><td class="num">0</td><td class="">—</td><td class="">—</td><td class="num">0</td><td class="">—</td><td class="">—</td></tr>
-            <tr><td class="">Jun/26</td><td class="num">0</td><td class="num">0</td><td class="">—</td><td class="">—</td><td class="num">0</td><td class="">—</td><td class="">—</td></tr>
-            <tr><td class="">Jul/26</td><td class="num">0</td><td class="num">0</td><td class="">—</td><td class="">—</td><td class="num">0</td><td class="">—</td><td class="">—</td></tr>
-            <tr><td class="">Ago/26</td><td class="num">0</td><td class="num">0</td><td class="">—</td><td class="">—</td><td class="num">0</td><td class="">—</td><td class="">—</td></tr>
-            <tr><td class="">Set/26</td><td class="num">0</td><td class="num">0</td><td class="">—</td><td class="">—</td><td class="num">0</td><td class="">—</td><td class="">—</td></tr>
-            <tr><td class="">Out/26</td><td class="num">24</td><td class="num">0</td><td class="num">0,00%</td><td class="num">100,00%</td><td class="num">0</td><td class="num">0,00%</td><td class="num">100,00%</td></tr>
-        </tbody>
-            <tfoot><tr><th class="num">Total</th><th class="num">24</th><th class="num">0</th><th class="num">0,00%</th><th class="num"></th><th class="num">0</th><th class="num">0,00%</th><th class="num"></th></tr></tfoot>
-    </table>
-</div>
     </template><template id="p-liberacao~extra">
                                 <form method="post" action="#" class="filial-ativa">
                                 <label for="filial-ativa">Usar sistema como filial:</label>
@@ -10461,13 +10345,13 @@ html,body{background:var(--fundo)}
     <h1>Problemas em cargas</h1>
     <a class="btn sec" href="#relatorios~problemas">Exportar CSV (Excel)</a>
 </div>
-<p class="muted" style="margin-top:-8px">Problemas informados (carga/descarga e lançamento), ocorrências da entrega e avaliações de motorista abaixo de 5.</p>
+<p class="muted" style="margin-top:-8px">Problemas de carga/descarga informados, ocorrências da entrega e avaliações de motorista abaixo de 5.</p>
 <form class="cartao filtros" method="get">
     <div><label for="r-carga_id">Nº da carga</label><input id="r-carga_id" name="carga_id" value="" inputmode="numeric"></div>            <div><label for="r-de">Período de</label><input id="r-de" type="date" name="de" value=""></div>
         <div><label for="r-ate">até</label><input id="r-ate" type="date" name="ate" value=""></div>
-                        <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>                                        <div><label for="r-etapa">Tipo</label><select id="r-etapa" name="etapa"><option value="">Todos</option><option value="carga/descarga">Problema de carga/descarga</option><option value="lançamento">Erro de lançamento</option><option value="entrega">Ocorrência na entrega</option><option value="avaliacao">Avaliação abaixo de 5</option></select></div>                <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~problemas">Limpar</a></div>
+                        <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>                                        <div><label for="r-etapa">Tipo</label><select id="r-etapa" name="etapa"><option value="">Todos</option><option value="carga/descarga">Problema de carga/descarga</option><option value="entrega">Ocorrência na entrega</option><option value="avaliacao">Avaliação abaixo de 5</option></select></div>                <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~problemas">Limpar</a></div>
 </form>
-<section class="cartao"><div class="valores"><div><span>Carga/descarga</span><strong>0</strong></div><div><span>Lançamento</span><strong>0</strong></div><div><span>Outras ocorrências</span><strong>0</strong></div><div><span>Avaliações abaixo de 5</span><strong>0</strong></div></div></section>
+<section class="cartao"><div class="valores"><div><span>Carga/descarga</span><strong>0</strong></div><div><span>Outras ocorrências</span><strong>0</strong></div><div><span>Avaliações abaixo de 5</span><strong>0</strong></div></div></section>
 <div class="tabela">
 <table class="relatorio">
     <thead><tr><th>Data</th><th>Carga</th><th>Cliente</th><th>Tipo</th><th>Descrição</th><th>Informado por</th></tr></thead>
@@ -11226,51 +11110,6 @@ html,body{background:var(--fundo)}
     <thead><tr><th>Motorista</th><th style="text-align:right">Comissão</th><th style="text-align:right">Pago</th><th style="text-align:right">Saldo</th></tr></thead>
     <tbody>
             <tr><td colspan="4" class="muted">Nenhum saldo.</td></tr>
-        </tbody>
-</table>
-</div>
-    </template><template id="p-relatorios~valor-lucro">
-                                <form method="post" action="#" class="filial-ativa">
-                                <label for="filial-ativa">Usar sistema como filial:</label>
-                <select id="filial-ativa" name="filial_id" >
-                    <option value="">Todas as filiais</option>
-                                            <option value="1" >Matriz</option>
-                                            <option value="2" >Segura - Betim - MG</option>
-                                            <option value="3" >Segura - Cariacica - ES</option>
-                                            <option value="4" >Segura - Esteio - RS</option>
-                                            <option value="5" >Segura - Goiânia - GO</option>
-                                            <option value="6" >Segura - Itapevi - SP</option>
-                                            <option value="7" >Segura - Pinhais - PR</option>
-                                            <option value="8" >Segura - Rio de Janeiro - RJ</option>
-                                            <option value="9" >Segura - Sapucaia do Sul - RS</option>
-                                            <option value="10" >Segura - Sorocaba - SP</option>
-                                            <option value="11" >Segura Maringá - PR</option>
-                                            <option value="12" >Segura Pirapozinho - SP</option>
-                                    </select>
-                <noscript><button class="btn sec pequeno">Trocar</button></noscript>
-            </form>
-                                <div class="topo">
-    <h1>Valor sugerido x pago</h1>
-    <a class="btn sec" href="#relatorios~valor-lucro">Exportar CSV (Excel)</a>
-</div>
-<p class="muted" style="margin-top:-8px">Quanto foi pago a menos (positivo) ou a mais (negativo) que o valor sugerido.</p>
-<form class="cartao filtros" method="get">
-            <div><label for="r-de">De</label><input id="r-de" type="date" name="de" value="2026-10-01"></div>
-        <div><label for="r-ate">Até</label><input id="r-ate" type="date" name="ate" value="2026-10-15"></div>
-                <div><label for="r-fil">Filial</label><select id="r-fil" name="filial_id"><option value="">Todas</option><option value="1" >Matriz</option><option value="2" >Segura - Betim - MG</option><option value="3" >Segura - Cariacica - ES</option><option value="4" >Segura - Esteio - RS</option><option value="5" >Segura - Goiânia - GO</option><option value="6" >Segura - Itapevi - SP</option><option value="7" >Segura - Pinhais - PR</option><option value="8" >Segura - Rio de Janeiro - RJ</option><option value="9" >Segura - Sapucaia do Sul - RS</option><option value="10" >Segura - Sorocaba - SP</option><option value="11" >Segura Maringá - PR</option><option value="12" >Segura Pirapozinho - SP</option></select></div>
-                <div><label for="r-cli">Cliente</label><select id="r-cli" name="cliente_id"><option value="">Todos</option><option value="2" >Alimentos Vale Verde</option><option value="1" >Cosméticos Aurora</option><option value="3" >Farma Bem Estar</option><option value="4" >Química Paulista</option></select></div>
-            <div style="display:flex;gap:6px"><button class="btn">Gerar</button></div>
-</form>
-<section class="cartao"><div class="valores"><div><span>Economia total</span><strong>R$ 485,48</strong></div><div><span>Acima do sugerido</span><strong>1</strong></div></div></section>
-<div class="tabela">
-<table>
-    <thead><tr><th>Data</th><th>Carga</th><th>Filial</th><th>KM</th><th>Sugerido</th><th>Pago</th><th>Diferença</th></tr></thead>
-    <tbody>
-            <tr><td>14/10/2026</td><td>#1</td><td>Matriz</td><td>290</td><td>R$ 2.787,48</td><td>R$ 2.650,00</td><td>R$ 137,48</td></tr>
-            <tr><td>14/10/2026</td><td>#2</td><td>Matriz</td><td>105</td><td>R$ 1.404,00</td><td>R$ 1.150,00</td><td>R$ 254,00</td></tr>
-            <tr><td>14/10/2026</td><td>#3</td><td>Matriz</td><td>95</td><td>R$ 918,00</td><td>R$ 980,00</td><td>R$ -62,00</td></tr>
-            <tr><td>14/10/2026</td><td>#7</td><td>Matriz</td><td>95</td><td>R$ 918,00</td><td>R$ 900,00</td><td>R$ 18,00</td></tr>
-            <tr><td>02/10/2026</td><td>#9</td><td>Matriz</td><td>100</td><td>R$ 918,00</td><td>R$ 780,00</td><td>R$ 138,00</td></tr>
         </tbody>
 </table>
 </div>
@@ -12893,7 +12732,7 @@ html,body{background:var(--fundo)}
             </form>
                                 <div class="topo">
     <h1>Situação em tempo real</h1>
-    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 18:50</small>
+    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 19:45</small>
 </div>
 
 <form class="cartao filtros" method="get">
@@ -12936,7 +12775,7 @@ html,body{background:var(--fundo)}
                 <small class="online">✓ 15/10 09:09</small></div>
             <div><span>Entrega</span>15/10 16:09
                 </div>
-            <div><span>Última localização</span>há 3 horas</div>
+            <div><span>Última localização</span>há 4 horas</div>
             <div><span>Parada mais próxima</span>Jundiaí/SP · 3,3 km</div>
             <div><span>Falta até a entrega</span>38,2 km (linha reta)</div>
             <div><span>Distância da rota</span>105 km</div>
@@ -12963,7 +12802,7 @@ html,body{background:var(--fundo)}
                 <small class="online">✓ 15/10 12:09</small></div>
             <div><span>Entrega</span>15/10 21:09
                 </div>
-            <div><span>Última localização</span>há 1 hora</div>
+            <div><span>Última localização</span>há 2 horas</div>
             <div><span>Parada mais próxima</span>Ribeirão Preto/SP · 100,7 km</div>
             <div><span>Falta até a entrega</span>100,7 km (linha reta)</div>
             <div><span>Distância da rota</span>290 km</div>
@@ -12979,7 +12818,7 @@ html,body{background:var(--fundo)}
                 <div class="muted">São José dos Campos/SP → São Paulo/SP</div>
             </div>
             <div style="text-align:right">
-                                <span class="selo erro">Motorista sem sinal do app</span> <span class="selo erro">Localização desatualizada</span>                 <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-23.18,-45.87" target="_blank" rel="noopener">Ver no mapa</a>            </div>
+                                <span class="selo erro">Coleta atrasada</span> <span class="selo erro">Motorista sem sinal do app</span> <span class="selo erro">Localização desatualizada</span>                 <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-23.18,-45.87" target="_blank" rel="noopener">Ver no mapa</a>            </div>
         </div>
         <div class="rt-dados">
             <div><span>Motorista</span>Juliana Souza
@@ -12990,7 +12829,7 @@ html,body{background:var(--fundo)}
                 </div>
             <div><span>Entrega</span>16/10 01:09
                 </div>
-            <div><span>Última localização</span>há 1 hora</div>
+            <div><span>Última localização</span>há 2 horas</div>
             <div><span>Parada mais próxima</span>São José dos Campos/SP · 1,8 km</div>
             <div><span>Falta até a entrega</span>88,1 km (linha reta)</div>
             <div><span>Distância da rota</span>95 km</div>
@@ -14108,6 +13947,15 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
 <table>
     <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Cadastro</th><th>O que mudou</th><th>IP</th></tr></thead>
     <tbody>
+            <tr>
+            <td class="nowrap">15/10/2026 19:45:49</td>
+            <td>Administrador</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
             <tr>
             <td class="nowrap">15/10/2026 18:50:12</td>
             <td>Administrador</td>
@@ -15542,38 +15390,11 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                             </td>
             <td class="muted nowrap"></td>
         </tr>
-            <tr>
-            <td class="nowrap">15/10/2026 17:09:47</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Rota da carga</strong> #53<br><small>Rota da carga #53</small></td>
-            <td>
-                                    <div><strong>Ordem</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Cidade</strong>:
-                         Cajamar
-                                            </div>
-                                    <div><strong>UF</strong>:
-                         SP
-                                            </div>
-                                    <div><strong>Lat</strong>:
-                         -23.3253
-                                            </div>
-                                    <div><strong>Lng</strong>:
-                         -46.8743
-                                            </div>
-                                    <div><strong>Carga</strong>:
-                         26
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
         </tbody>
 </table>
 </div>
 <nav class="paginacao">
-                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                    <a href="#registro-log">3</a>                    <a href="#registro-log">4</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">393 no total</span>
+                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                    <a href="#registro-log">3</a>                    <a href="#registro-log">4</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">394 no total</span>
     </nav>
     </template><template id="p-cargas~1">
                                 <form method="post" action="#" class="filial-ativa">
@@ -16630,8 +16451,8 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                         <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794693014&amp;signature=7e7b136b139ca7fc3ae6d20a5eb964b77b50ee31b999b18e39f7a5065c6c1b35" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511999022600?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794693014%26signature%3D7e7b136b139ca7fc3ae6d20a5eb964b77b50ee31b999b18e39f7a5065c6c1b35">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794696351&amp;signature=5b0ece5065d3baf337da288f103cd38fd549054ed06ee601e39d5d3fdff6be77" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511999022600?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794696351%26signature%3D5b0ece5065d3baf337da288f103cd38fd549054ed06ee601e39d5d3fdff6be77">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-relatorios~comissao-frete">
                                 <form method="post" action="#" class="filial-ativa">
@@ -17328,7 +17149,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td>—</td>
             <td><a class="btn sec pequeno" href="#adiantamentos~2">Abrir</a></td>
         </tr>
-                    <tr class="">
+                    <tr class="atrasada">
             <td>15/10/2026 17:09</td>
             <td><a href="#cargas~3"><strong>#3</strong></a><br><small class="muted">São José dos Campos/SP → São Paulo/SP</small></td>
             <td><strong>Fechamento de carga</strong>
@@ -17955,12 +17776,9 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
     <p style="margin-bottom:0"><button class="btn">Duplicar carga #6</button></p>
 </form>
 </template><template id="tpl-janela-cargas~4~acao~problema"><form method="post" action="#" class="janela-form">
-        <div class="grade">
-        <div><label for="pr-tipo">Tipo *</label>
-            <select id="pr-tipo" name="etapa" required><option value="">—</option>
-                <option value="carga/descarga">Problema de carga/descarga</option><option value="lançamento">Erro de lançamento</option></select></div>
-        <div><label for="pr-id">Identificação *</label><input id="pr-id" name="identificacao" maxlength="120" required placeholder="Ex.: avaria, NF errada, atraso no carregamento"></div>
-    </div>
+        <input type="hidden" name="etapa" value="carga/descarga">
+    <label for="pr-id">Identificação *</label>
+    <input id="pr-id" name="identificacao" maxlength="120" required placeholder="Ex.: avaria, falta de volume, atraso no carregamento">
     <label for="pr-desc" style="margin-top:8px">Descrição *</label>
     <textarea id="pr-desc" name="descricao" rows="3" required></textarea>
     <button class="btn pequeno" style="margin-top:8px">Gravar</button>
@@ -18272,12 +18090,9 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <p style="margin:12px 0 0"><a href="#cargas~1">Abrir a carga completa</a></p>
 </div>
 </template><template id="tpl-janela-cargas~3~acao~problema"><form method="post" action="#" class="janela-form">
-        <div class="grade">
-        <div><label for="pr-tipo">Tipo *</label>
-            <select id="pr-tipo" name="etapa" required><option value="">—</option>
-                <option value="carga/descarga">Problema de carga/descarga</option><option value="lançamento">Erro de lançamento</option></select></div>
-        <div><label for="pr-id">Identificação *</label><input id="pr-id" name="identificacao" maxlength="120" required placeholder="Ex.: avaria, NF errada, atraso no carregamento"></div>
-    </div>
+        <input type="hidden" name="etapa" value="carga/descarga">
+    <label for="pr-id">Identificação *</label>
+    <input id="pr-id" name="identificacao" maxlength="120" required placeholder="Ex.: avaria, falta de volume, atraso no carregamento">
     <label for="pr-desc" style="margin-top:8px">Descrição *</label>
     <textarea id="pr-desc" name="descricao" rows="3" required></textarea>
     <button class="btn pequeno" style="margin-top:8px">Gravar</button>
@@ -18328,12 +18143,9 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
     <p style="margin-bottom:0"><button class="btn">Duplicar carga #1</button></p>
 </form>
 </template><template id="tpl-janela-cargas~2~acao~problema"><form method="post" action="#" class="janela-form">
-        <div class="grade">
-        <div><label for="pr-tipo">Tipo *</label>
-            <select id="pr-tipo" name="etapa" required><option value="">—</option>
-                <option value="carga/descarga">Problema de carga/descarga</option><option value="lançamento">Erro de lançamento</option></select></div>
-        <div><label for="pr-id">Identificação *</label><input id="pr-id" name="identificacao" maxlength="120" required placeholder="Ex.: avaria, NF errada, atraso no carregamento"></div>
-    </div>
+        <input type="hidden" name="etapa" value="carga/descarga">
+    <label for="pr-id">Identificação *</label>
+    <input id="pr-id" name="identificacao" maxlength="120" required placeholder="Ex.: avaria, falta de volume, atraso no carregamento">
     <label for="pr-desc" style="margin-top:8px">Descrição *</label>
     <textarea id="pr-desc" name="descricao" rows="3" required></textarea>
     <button class="btn pequeno" style="margin-top:8px">Gravar</button>
@@ -18633,12 +18445,9 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
 </table>
 </div>
 </template><template id="tpl-janela-cargas~1~acao~problema"><form method="post" action="#" class="janela-form">
-        <div class="grade">
-        <div><label for="pr-tipo">Tipo *</label>
-            <select id="pr-tipo" name="etapa" required><option value="">—</option>
-                <option value="carga/descarga">Problema de carga/descarga</option><option value="lançamento">Erro de lançamento</option></select></div>
-        <div><label for="pr-id">Identificação *</label><input id="pr-id" name="identificacao" maxlength="120" required placeholder="Ex.: avaria, NF errada, atraso no carregamento"></div>
-    </div>
+        <input type="hidden" name="etapa" value="carga/descarga">
+    <label for="pr-id">Identificação *</label>
+    <input id="pr-id" name="identificacao" maxlength="120" required placeholder="Ex.: avaria, falta de volume, atraso no carregamento">
     <label for="pr-desc" style="margin-top:8px">Descrição *</label>
     <textarea id="pr-desc" name="descricao" rows="3" required></textarea>
     <button class="btn pequeno" style="margin-top:8px">Gravar</button>
@@ -18841,24 +18650,18 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
 </table>
 </div>
 </template><template id="tpl-janela-cargas~6~acao~problema"><form method="post" action="#" class="janela-form">
-        <div class="grade">
-        <div><label for="pr-tipo">Tipo *</label>
-            <select id="pr-tipo" name="etapa" required><option value="">—</option>
-                <option value="carga/descarga">Problema de carga/descarga</option><option value="lançamento">Erro de lançamento</option></select></div>
-        <div><label for="pr-id">Identificação *</label><input id="pr-id" name="identificacao" maxlength="120" required placeholder="Ex.: avaria, NF errada, atraso no carregamento"></div>
-    </div>
+        <input type="hidden" name="etapa" value="carga/descarga">
+    <label for="pr-id">Identificação *</label>
+    <input id="pr-id" name="identificacao" maxlength="120" required placeholder="Ex.: avaria, falta de volume, atraso no carregamento">
     <label for="pr-desc" style="margin-top:8px">Descrição *</label>
     <textarea id="pr-desc" name="descricao" rows="3" required></textarea>
     <button class="btn pequeno" style="margin-top:8px">Gravar</button>
 </form>
 </template><template id="tpl-janela-cargas~5~acao~situacoes"><p class="aviso">Nenhuma situação relatada para esta carga até o momento.</p>
 </template><template id="tpl-janela-cargas~5~acao~problema"><form method="post" action="#" class="janela-form">
-        <div class="grade">
-        <div><label for="pr-tipo">Tipo *</label>
-            <select id="pr-tipo" name="etapa" required><option value="">—</option>
-                <option value="carga/descarga">Problema de carga/descarga</option><option value="lançamento">Erro de lançamento</option></select></div>
-        <div><label for="pr-id">Identificação *</label><input id="pr-id" name="identificacao" maxlength="120" required placeholder="Ex.: avaria, NF errada, atraso no carregamento"></div>
-    </div>
+        <input type="hidden" name="etapa" value="carga/descarga">
+    <label for="pr-id">Identificação *</label>
+    <input id="pr-id" name="identificacao" maxlength="120" required placeholder="Ex.: avaria, falta de volume, atraso no carregamento">
     <label for="pr-desc" style="margin-top:8px">Descrição *</label>
     <textarea id="pr-desc" name="descricao" rows="3" required></textarea>
     <button class="btn pequeno" style="margin-top:8px">Gravar</button>
