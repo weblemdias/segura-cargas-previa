@@ -1281,7 +1281,7 @@ html,body{background:var(--fundo)}
 
 <section class="cartao regra-fila">
     <div class="agora">
-        <span class="muted">Agora (quinta-feira, 15/10 16:43) · dia útil: vale o rodízio</span>
+        <span class="muted">Agora (quinta-feira, 15/10 16:46) · dia útil: vale o rodízio</span>
         <strong>Próxima carga vai para: Ana Ribeiro</strong>
         <small>Rodízio entre quem está no horário (2 pessoa(s)).</small>
     </div>
@@ -1834,6 +1834,12 @@ html,body{background:var(--fundo)}
                     <input id="f_nome" type="text" name="nome" value="Juliana Souza" required >
                 </div>
             <div class="" >
+            <label for="f_tipo_pessoa">Tipo de pessoa * <small class="muted">(proprietário = dono do próprio veículo; funcionário = frota da Segura)</small></label>
+                    <select id="f_tipo_pessoa" name="tipo_pessoa" required >
+                <option value="">—</option>
+                <option value="1" selected>Motorista</option><option value="3" >Motorista / Proprietário</option><option value="4" >Motorista / Funcionário</option>            </select>
+                </div>
+            <div class="" >
             <label for="f_sexo">Sexo </label>
                     <select id="f_sexo" name="sexo"  >
                 <option value="">—</option>
@@ -2222,6 +2228,8 @@ html,body{background:var(--fundo)}
 <form class="cartao filtros" method="get">
     <div style="grid-column:span 2"><label for="m-q">Nome, CPF ou WhatsApp</label><input id="m-q" name="q" value=""></div>
     <div><label for="m-placa">Placa</label><input id="m-placa" name="placa" value=""></div>
+    <div><label for="m-tp">Tipo</label>
+        <select id="m-tp" name="tipo_pessoa"><option value="">Todos</option><option value="1" >Motorista</option><option value="3" >Motorista / Proprietário</option><option value="4" >Motorista / Funcionário</option></select></div>
     <div><label for="m-uf">UF</label><input id="m-uf" name="uf" maxlength="2" value="" style="text-transform:uppercase"></div>
     <div><label for="m-sit">Situação</label>
         <select id="m-sit" name="situacao">
@@ -2239,7 +2247,7 @@ html,body{background:var(--fundo)}
     <thead><tr><th>Motorista</th><th>CPF</th><th>WhatsApp</th><th>CNH</th><th>Veículos</th><th>Nota</th><th>Situação</th></tr></thead>
     <tbody>
                     <tr>
-            <td><a href="#" data-fora="1"><strong>Cleber Nunes Santana</strong></a><br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#" data-fora="1"><strong>Cleber Nunes Santana</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
             <td>837.485.210-06</td>
             <td>11987089931</td>
             <td>E <br><small class="muted">14/10/2028</small></td>
@@ -2248,7 +2256,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#" data-fora="1"><strong>Deolindo Cruz Antunes</strong></a><br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#" data-fora="1"><strong>Deolindo Cruz Antunes</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
             <td>792.721.283-40</td>
             <td>11982373120</td>
             <td>E <br><small class="muted">14/10/2028</small></td>
@@ -2257,7 +2265,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~7"><strong>Evandro Manzato</strong></a><br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#motoristas~7"><strong>Evandro Manzato</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
             <td>858.129.165-19</td>
             <td>11989291730</td>
             <td>E <br><small class="muted">14/10/2028</small></td>
@@ -2266,7 +2274,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~5"><strong>Helio Francisco Paula</strong></a><br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#motoristas~5"><strong>Helio Francisco Paula</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
             <td>814.647.732-11</td>
             <td>11985260742</td>
             <td>E <br><small class="muted">14/10/2028</small></td>
@@ -2275,7 +2283,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#" data-fora="1"><strong>Jonatas Sales Prado</strong></a><br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#" data-fora="1"><strong>Jonatas Sales Prado</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
             <td>595.975.987-01</td>
             <td>11981021875</td>
             <td>E <br><small class="muted">14/10/2028</small></td>
@@ -2284,7 +2292,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~3"><strong>Juliana Souza</strong></a><br><small class="muted">Cajamar/SP</small></td>
+            <td><a href="#motoristas~3"><strong>Juliana Souza</strong></a> <br><small class="muted">Cajamar/SP</small></td>
             <td>108.506.625-83</td>
             <td>11992570661</td>
             <td>E <br><small class="muted">14/10/2028</small></td>
@@ -2293,7 +2301,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~2"><strong>Marcos Vieira</strong></a><br><small class="muted">Cajamar/SP</small></td>
+            <td><a href="#motoristas~2"><strong>Marcos Vieira</strong></a> <br><small class="muted">Cajamar/SP</small></td>
             <td>213.940.561-76</td>
             <td>11994287904</td>
             <td>E <br><small class="muted">14/10/2028</small></td>
@@ -2302,7 +2310,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~6"><strong>Osmar Souza Lima</strong></a><br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#motoristas~6"><strong>Osmar Souza Lima</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
             <td>099.040.676-86</td>
             <td>11981803495</td>
             <td>E <br><small class="muted">14/10/2028</small></td>
@@ -2311,7 +2319,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~4"><strong>Paulo Teixeira</strong></a><br><small class="muted">Cajamar/SP</small></td>
+            <td><a href="#motoristas~4"><strong>Paulo Teixeira</strong></a> <br><small class="muted">Cajamar/SP</small></td>
             <td>218.139.057-62</td>
             <td>11991408739</td>
             <td>E <br><small class="muted">14/10/2028</small></td>
@@ -2320,7 +2328,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~8"><strong>Renato Lucas Prado</strong></a><br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#motoristas~8"><strong>Renato Lucas Prado</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
             <td>240.808.631-01</td>
             <td>11981088119</td>
             <td>E <br><small class="muted">14/10/2028</small></td>
@@ -2329,7 +2337,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~1"><strong>Roberto Almeida</strong></a><br><small class="muted">Cajamar/SP</small></td>
+            <td><a href="#motoristas~1"><strong>Roberto Almeida</strong></a> <br><small class="muted">Cajamar/SP</small></td>
             <td>157.210.993-99</td>
             <td>11994826605</td>
             <td>E <br><small class="muted">14/10/2028</small></td>
@@ -2338,7 +2346,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#" data-fora="1"><strong>Wesley Sales Mendes</strong></a><br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#" data-fora="1"><strong>Wesley Sales Mendes</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
             <td>142.163.897-59</td>
             <td>11981722826</td>
             <td>E <br><small class="muted">14/10/2028</small></td>
@@ -2572,8 +2580,8 @@ html,body{background:var(--fundo)}
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                 <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/3?expires=1794685413&amp;signature=46bda53f528810b58accd12075c30351b87d4c70f7df5c8579cfad5a4b77f585" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511992570661?text=Ol%C3%A1%21%20A%20carga%20%233%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F3%3Fexpires%3D1794685413%26signature%3D46bda53f528810b58accd12075c30351b87d4c70f7df5c8579cfad5a4b77f585">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/3?expires=1794685603&amp;signature=0332e9e65ababe94ca81d320bbbbcfc0e669c1f560e35be01f3255923a57519f" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511992570661?text=Ol%C3%A1%21%20A%20carga%20%233%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F3%3Fexpires%3D1794685603%26signature%3D0332e9e65ababe94ca81d320bbbbcfc0e669c1f560e35be01f3255923a57519f">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-cargas">
                                 <form method="post" action="#" class="filial-ativa">
@@ -4514,6 +4522,12 @@ html,body{background:var(--fundo)}
                     <input id="f_nome" type="text" name="nome" value="Paulo Teixeira" required >
                 </div>
             <div class="" >
+            <label for="f_tipo_pessoa">Tipo de pessoa * <small class="muted">(proprietário = dono do próprio veículo; funcionário = frota da Segura)</small></label>
+                    <select id="f_tipo_pessoa" name="tipo_pessoa" required >
+                <option value="">—</option>
+                <option value="1" selected>Motorista</option><option value="3" >Motorista / Proprietário</option><option value="4" >Motorista / Funcionário</option>            </select>
+                </div>
+            <div class="" >
             <label for="f_sexo">Sexo </label>
                     <select id="f_sexo" name="sexo"  >
                 <option value="">—</option>
@@ -4842,6 +4856,12 @@ html,body{background:var(--fundo)}
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Nome completo * </label>
                     <input id="f_nome" type="text" name="nome" value="Marcos Vieira" required >
+                </div>
+            <div class="" >
+            <label for="f_tipo_pessoa">Tipo de pessoa * <small class="muted">(proprietário = dono do próprio veículo; funcionário = frota da Segura)</small></label>
+                    <select id="f_tipo_pessoa" name="tipo_pessoa" required >
+                <option value="">—</option>
+                <option value="1" selected>Motorista</option><option value="3" >Motorista / Proprietário</option><option value="4" >Motorista / Funcionário</option>            </select>
                 </div>
             <div class="" >
             <label for="f_sexo">Sexo </label>
@@ -5404,6 +5424,7 @@ html,body{background:var(--fundo)}
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
                 <div><dt>CPF</dt><dd>099.040.676-86</dd></div>
+                <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
                 <div><dt>WhatsApp</dt><dd>11981803495</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
@@ -5952,6 +5973,7 @@ html,body{background:var(--fundo)}
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
                 <div><dt>CPF</dt><dd>108.506.625-83</dd></div>
+                <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
                 <div><dt>WhatsApp</dt><dd>11992570661</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
@@ -6096,6 +6118,12 @@ html,body{background:var(--fundo)}
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Nome completo * </label>
                     <input id="f_nome" type="text" name="nome" value="Roberto Almeida" required >
+                </div>
+            <div class="" >
+            <label for="f_tipo_pessoa">Tipo de pessoa * <small class="muted">(proprietário = dono do próprio veículo; funcionário = frota da Segura)</small></label>
+                    <select id="f_tipo_pessoa" name="tipo_pessoa" required >
+                <option value="">—</option>
+                <option value="1" selected>Motorista</option><option value="3" >Motorista / Proprietário</option><option value="4" >Motorista / Funcionário</option>            </select>
                 </div>
             <div class="" >
             <label for="f_sexo">Sexo </label>
@@ -6833,6 +6861,7 @@ html,body{background:var(--fundo)}
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
                 <div><dt>CPF</dt><dd>858.129.165-19</dd></div>
+                <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
                 <div><dt>WhatsApp</dt><dd>11989291730</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
@@ -6968,6 +6997,7 @@ html,body{background:var(--fundo)}
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
             <span class="foto-exemplo"  alt="Foto de Roberto Almeida" style="width:96px;height:96px;object-fit:cover;border-radius:8px">foto</span>            <dl class="dados" style="flex:1;min-width:0">
                 <div><dt>CPF</dt><dd>157.210.993-99</dd></div>
+                <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
                 <div><dt>WhatsApp</dt><dd>11994826605</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
@@ -7356,6 +7386,7 @@ html,body{background:var(--fundo)}
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
                 <div><dt>CPF</dt><dd>213.940.561-76</dd></div>
+                <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
                 <div><dt>WhatsApp</dt><dd>11994287904</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
@@ -7922,6 +7953,12 @@ html,body{background:var(--fundo)}
                     <input id="f_nome" type="text" name="nome" value="" required >
                 </div>
             <div class="" >
+            <label for="f_tipo_pessoa">Tipo de pessoa * <small class="muted">(proprietário = dono do próprio veículo; funcionário = frota da Segura)</small></label>
+                    <select id="f_tipo_pessoa" name="tipo_pessoa" required >
+                <option value="">—</option>
+                <option value="1" selected>Motorista</option><option value="3" >Motorista / Proprietário</option><option value="4" >Motorista / Funcionário</option>            </select>
+                </div>
+            <div class="" >
             <label for="f_sexo">Sexo </label>
                     <select id="f_sexo" name="sexo"  >
                 <option value="">—</option>
@@ -8438,6 +8475,7 @@ html,body{background:var(--fundo)}
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
                 <div><dt>CPF</dt><dd>814.647.732-11</dd></div>
+                <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
                 <div><dt>WhatsApp</dt><dd>11985260742</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
@@ -9260,6 +9298,12 @@ html,body{background:var(--fundo)}
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Nome completo * </label>
                     <input id="f_nome" type="text" name="nome" value="Evandro Manzato" required >
+                </div>
+            <div class="" >
+            <label for="f_tipo_pessoa">Tipo de pessoa * <small class="muted">(proprietário = dono do próprio veículo; funcionário = frota da Segura)</small></label>
+                    <select id="f_tipo_pessoa" name="tipo_pessoa" required >
+                <option value="">—</option>
+                <option value="1" selected>Motorista</option><option value="3" >Motorista / Proprietário</option><option value="4" >Motorista / Funcionário</option>            </select>
                 </div>
             <div class="" >
             <label for="f_sexo">Sexo </label>
@@ -10819,6 +10863,12 @@ html,body{background:var(--fundo)}
                     <input id="f_nome" type="text" name="nome" value="Osmar Souza Lima" required >
                 </div>
             <div class="" >
+            <label for="f_tipo_pessoa">Tipo de pessoa * <small class="muted">(proprietário = dono do próprio veículo; funcionário = frota da Segura)</small></label>
+                    <select id="f_tipo_pessoa" name="tipo_pessoa" required >
+                <option value="">—</option>
+                <option value="1" selected>Motorista</option><option value="3" >Motorista / Proprietário</option><option value="4" >Motorista / Funcionário</option>            </select>
+                </div>
+            <div class="" >
             <label for="f_sexo">Sexo </label>
                     <select id="f_sexo" name="sexo"  >
                 <option value="">—</option>
@@ -11134,6 +11184,7 @@ html,body{background:var(--fundo)}
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
                 <div><dt>CPF</dt><dd>240.808.631-01</dd></div>
+                <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
                 <div><dt>WhatsApp</dt><dd>11981088119</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
@@ -11868,6 +11919,12 @@ html,body{background:var(--fundo)}
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Nome completo * </label>
                     <input id="f_nome" type="text" name="nome" value="Renato Lucas Prado" required >
+                </div>
+            <div class="" >
+            <label for="f_tipo_pessoa">Tipo de pessoa * <small class="muted">(proprietário = dono do próprio veículo; funcionário = frota da Segura)</small></label>
+                    <select id="f_tipo_pessoa" name="tipo_pessoa" required >
+                <option value="">—</option>
+                <option value="1" selected>Motorista</option><option value="3" >Motorista / Proprietário</option><option value="4" >Motorista / Funcionário</option>            </select>
                 </div>
             <div class="" >
             <label for="f_sexo">Sexo </label>
@@ -12982,7 +13039,7 @@ html,body{background:var(--fundo)}
             </form>
                                 <div class="topo">
     <h1>Situação em tempo real</h1>
-    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 16:43</small>
+    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 16:46</small>
 </div>
 
 <form class="cartao filtros" method="get">
@@ -13472,6 +13529,7 @@ html,body{background:var(--fundo)}
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
                 <div><dt>CPF</dt><dd>218.139.057-62</dd></div>
+                <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
                 <div><dt>WhatsApp</dt><dd>11991408739</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
@@ -14113,6 +14171,15 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
     <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Cadastro</th><th>O que mudou</th><th>IP</th></tr></thead>
     <tbody>
             <tr>
+            <td class="nowrap">15/10/2026 16:46:42</td>
+            <td>Administrador</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
             <td class="nowrap">15/10/2026 16:43:31</td>
             <td>Administrador</td>
             <td><span class="selo neutro">Entrou no sistema</span></td>
@@ -14733,29 +14800,11 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                             </td>
             <td class="muted nowrap"></td>
         </tr>
-            <tr>
-            <td class="nowrap">14/10/2026 20:46:46</td>
-            <td>Sistema</td>
-            <td><span class="selo neutro">Alterou</span></td>
-            <td><strong>Motorista</strong> #7<br><small>Evandro Manzato</small></td>
-            <td>
-                                    <div><strong>Gr empresa</strong>:
-                         <span class="muted">(vazio)</span> → Buonny
-                                            </div>
-                                    <div><strong>Gr liberacao</strong>:
-                         <span class="muted">(vazio)</span> → LB-5107
-                                            </div>
-                                    <div><strong>Validade da GR</strong>:
-                         <span class="muted">(vazio)</span> → 2027-02-14 20:46:46
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
         </tbody>
 </table>
 </div>
 <nav class="paginacao">
-                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">93 no total</span>
+                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">94 no total</span>
     </nav>
     </template><template id="p-cargas~1">
                                 <form method="post" action="#" class="filial-ativa">
@@ -15804,8 +15853,8 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                 <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794685413&amp;signature=ba4e99b51c51a699f06386433ede7a626604c99f062f74b3788b38722ba69d34" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511994826605?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794685413%26signature%3Dba4e99b51c51a699f06386433ede7a626604c99f062f74b3788b38722ba69d34">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794685603&amp;signature=acac45aa6588f54365134b249ee75d2846c25d75a5848b89df0684bc8f7160a0" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511994826605?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794685603%26signature%3Dacac45aa6588f54365134b249ee75d2846c25d75a5848b89df0684bc8f7160a0">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-relatorios~comissao-frete">
                                 <form method="post" action="#" class="filial-ativa">
@@ -15987,6 +16036,12 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Nome completo * </label>
                     <input id="f_nome" type="text" name="nome" value="Helio Francisco Paula" required >
+                </div>
+            <div class="" >
+            <label for="f_tipo_pessoa">Tipo de pessoa * <small class="muted">(proprietário = dono do próprio veículo; funcionário = frota da Segura)</small></label>
+                    <select id="f_tipo_pessoa" name="tipo_pessoa" required >
+                <option value="">—</option>
+                <option value="1" selected>Motorista</option><option value="3" >Motorista / Proprietário</option><option value="4" >Motorista / Funcionário</option>            </select>
                 </div>
             <div class="" >
             <label for="f_sexo">Sexo </label>
