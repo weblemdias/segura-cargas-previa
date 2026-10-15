@@ -1394,7 +1394,7 @@ html,body{background:var(--fundo)}
 
 <section class="cartao regra-fila">
     <div class="agora">
-        <span class="muted">Agora (quinta-feira, 15/10 16:09) · dia útil: vale o rodízio</span>
+        <span class="muted">Agora (quinta-feira, 15/10 16:12) · dia útil: vale o rodízio</span>
         <strong>Próxima carga vai para: Ana Ribeiro</strong>
         <small>Rodízio entre quem está no horário (2 pessoa(s)).</small>
     </div>
@@ -2686,8 +2686,8 @@ html,body{background:var(--fundo)}
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                 <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/3?expires=1794683370&amp;signature=dcf9b02b1a8032531f845642224400d9186bc9e51f0a4b9c99f91e86ee2851e2" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511992570661?text=Ol%C3%A1%21%20A%20carga%20%233%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F3%3Fexpires%3D1794683370%26signature%3Ddcf9b02b1a8032531f845642224400d9186bc9e51f0a4b9c99f91e86ee2851e2">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/3?expires=1794683525&amp;signature=d480257d4b4c0f040b5e050781a603144d510d716ffc51d1b13a4f8765b84986" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511992570661?text=Ol%C3%A1%21%20A%20carga%20%233%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F3%3Fexpires%3D1794683525%26signature%3Dd480257d4b4c0f040b5e050781a603144d510d716ffc51d1b13a4f8765b84986">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-cargas">
                                 <form method="post" action="#" class="filial-ativa">
@@ -3662,7 +3662,7 @@ html,body{background:var(--fundo)}
             <div><dt>Nº adiantamento</dt><dd>AD-7781</dd></div>
             <div><dt>CIOT</dt><dd>0412-5531-2201</dd></div>            <div><dt>Contratado por</dt><dd>Ana Ribeiro</dd></div>
             <div><dt>Enviado por</dt><dd>Ana Ribeiro · 14/10/2026 12:17</dd></div>
-                            <div><dt>Contrato</dt><dd><span class="selo ok">Assinado pelo motorista</span></dd></div>
+                            <div><dt>Contrato</dt><dd><span class="selo atencao">Não assinado</span></dd></div>
                     </dl>
     </section>
 
@@ -11281,7 +11281,7 @@ html,body{background:var(--fundo)}
     
     <section class="cartao">
         <h2>Envio</h2>
-                            <p style="margin-top:0">Ao confirmar, o contrato é gerado e vai para o motorista assinar. O financeiro recebe o e-mail quando ele assinar.</p>
+                            <p style="margin-top:0">Ao confirmar, o contrato é gerado e vai só para o proprietário do veículo assinar (sem proprietário, o próprio motorista). O financeiro recebe o e-mail quando ele assinar.</p>
             <form method="post" action="#"> <button class="btn">Confirmar e enviar</button></form>
                     </section>
 
@@ -12045,21 +12045,20 @@ html,body{background:var(--fundo)}
 
 <div class="tabela">
 <table>
-    <thead><tr><th>Carga</th><th>Motorista</th><th>Proprietário</th><th>Contratante</th><th>Enviado em</th><th>Financeiro</th><th>Ações</th></tr></thead>
+    <thead><tr><th>Carga</th><th>Motorista</th><th>Assina (dono do veículo)</th><th>Contratante</th><th>Enviado em</th><th>Financeiro</th><th>Ações</th></tr></thead>
     <tbody>
             <tr>
             <td><a href="#adiantamentos~1"><strong>#1</strong></a><br><small class="muted">Cosméticos Aurora</small></td>
-            <td>Roberto Almeida<br><span class="selo ok">Assinado 14/10 12:17</span>
-                </td>
+                        <td>Roberto Almeida</td>
             <td>Almeida Transportes Ltda<br><span class="selo atencao">Pendente</span>
-                    <br><small class="muted">11988887777</small>                    <br><button type="button" class="copiar btn sec pequeno" data-link="http://localhost:8000/assinatura-simulada/SIM-AZNTVFRTJC/proprietario?expires=1792595821&amp;signature=1104476cf7fa41c435d50e4bd376265ba493a62bbd73447daa4e24ce47e157e2">Copiar link</button>                </td>
+                <br><small class="muted">11988887777</small>                <br><button type="button" class="copiar btn sec pequeno" data-link="http://localhost:8000/assinatura-simulada/SIM-AZNTVFRTJC/proprietario?expires=1792595821&amp;signature=1104476cf7fa41c435d50e4bd376265ba493a62bbd73447daa4e24ce47e157e2">Copiar link</button></td>
             <td>Ana Ribeiro</td>
             <td>14/10/2026 12:17</td>
             <td>14/10 12:17</td>
             <td>
                 <div class="acoes">
-                                                                <form method="post" action="#"> <input type="hidden" name="quem" value="proprietario"><button class="btn sec pequeno">Reenviar proprietário</button></form>
-                                                                <form method="post" action="#"> <button class="btn sec pequeno">Reenviar e-mail</button></form>
+                                            <form method="post" action="#"> <input type="hidden" name="quem" value="proprietario"><button class="btn sec pequeno">Reenviar para assinar</button></form>
+                                                                <form method="post" action="#" data-x="('Cancelar o contrato da carga #1? O adiantamento volta para edição.')">  <button class="btn sec pequeno">Cancelar</button></form>
                                     </div>
             </td>
         </tr>
@@ -12163,9 +12162,9 @@ html,body{background:var(--fundo)}
     <section class="cartao">
         <h2>Envio</h2>
                             <dl class="dados">
-                <div><dt>Motorista</dt><dd><span class="selo ok">Assinou 14/10 12:17</span></dd></div>
-                                <div><dt>Proprietário</dt><dd><span class="selo atencao">Pendente</span></dd></div>
-                                <div><dt>E-mail ao financeiro</dt><dd>14/10/2026 12:17</dd></div>
+                <div><dt>Assina (dono do veículo)</dt><dd>Almeida Transportes Ltda
+                    <span class="selo atencao">Pendente</span></dd></div>
+                <div><dt>E-mail ao financeiro</dt><dd>14/10/2026 12:17</dd></div>
             </dl>
             <p style="margin-bottom:0"><a href="#contratos">Ver em Contrato de adiantamento</a></p>
                             <p style="margin:10px 0 0">Pagamento: <span class="selo atencao">Pendente</span></p>
@@ -13725,7 +13724,7 @@ html,body{background:var(--fundo)}
             </form>
                                 <div class="topo">
     <h1>Situação em tempo real</h1>
-    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 16:09</small>
+    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 16:12</small>
 </div>
 
 <form class="cartao filtros" method="get">
@@ -14856,6 +14855,15 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
     <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Cadastro</th><th>O que mudou</th><th>IP</th></tr></thead>
     <tbody>
             <tr>
+            <td class="nowrap">15/10/2026 16:12:02</td>
+            <td>Administrador</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
             <td class="nowrap">15/10/2026 16:09:28</td>
             <td>Administrador</td>
             <td><span class="selo neutro">Entrou no sistema</span></td>
@@ -15545,29 +15553,11 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                             </td>
             <td class="muted nowrap"></td>
         </tr>
-            <tr>
-            <td class="nowrap">14/10/2026 20:46:46</td>
-            <td>Sistema</td>
-            <td><span class="selo neutro">Alterou</span></td>
-            <td><strong>Motorista</strong> #3<br><small>Juliana Souza</small></td>
-            <td>
-                                    <div><strong>Gr empresa</strong>:
-                         <span class="muted">(vazio)</span> → Buonny
-                                            </div>
-                                    <div><strong>Gr liberacao</strong>:
-                         <span class="muted">(vazio)</span> → LB-5103
-                                            </div>
-                                    <div><strong>Validade da GR</strong>:
-                         <span class="muted">(vazio)</span> → 2027-02-14 20:46:46
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
         </tbody>
 </table>
 </div>
 <nav class="paginacao">
-                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">85 no total</span>
+                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">86 no total</span>
     </nav>
     </template><template id="p-cargas~1">
                                 <form method="post" action="#" class="filial-ativa">
@@ -15826,7 +15816,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                 Frete R$ 2.650,00<br>Adto R$ 1.855,00 · Abast. R$ 265,00                             </td>
             <td>Ana Ribeiro<br><small class="muted">14/10 12:17</small></td>
             <td><span class="selo atencao">Pendente</span>
-                </td>
+                <br><small class="muted">contrato não assinado</small></td>
             <td><a class="btn sec pequeno" href="#liberacao~item~1">Abrir</a></td>
         </tr>
         </tbody>
@@ -16616,8 +16606,8 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                 <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794683370&amp;signature=1579a5ce5aff40bca59cd3814f8dd689878c5282a1320367a41c2ab263ab7fa7" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511994826605?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794683370%26signature%3D1579a5ce5aff40bca59cd3814f8dd689878c5282a1320367a41c2ab263ab7fa7">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794683525&amp;signature=ff2bb4814ae47598e9591918f9611cd6c2dfe6be207afaba93d1c408672a096f" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511994826605?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794683525%26signature%3Dff2bb4814ae47598e9591918f9611cd6c2dfe6be207afaba93d1c408672a096f">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-relatorios~comissao-frete">
                                 <form method="post" action="#" class="filial-ativa">
