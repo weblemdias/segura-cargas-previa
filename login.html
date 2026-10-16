@@ -431,6 +431,11 @@ a.torre-num.ativo{background:var(--tinta);color:#fff}
 .portaria-painel .port-card{padding:12px 14px;border:1px solid var(--linha);border-left-width:6px;border-radius:8px;margin-bottom:10px}
 .portaria-painel .port-chegou{animation:port-pisca 1.2s ease-in-out 3}
 @keyframes port-pisca{50%{box-shadow:0 0 0 4px var(--erro-bg)}}
+/* Torre: busca acha a documentação já enviada */
+.torre-enviadas{border-left:6px solid var(--ativo)}
+.torre-enviada{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 0;border-top:1px solid var(--linha)}
+.torre-enviada:first-of-type{border-top:0}
+.torre-enviada .torre-numero{font-size:20px;margin-right:6px}
 
 html,body{background:var(--fundo)}
 .previa{background:var(--laranja-claro);color:#7a3a00;border-bottom:1px solid #f6c89b;padding:8px 16px;font-size:13px}</style></head><body>
