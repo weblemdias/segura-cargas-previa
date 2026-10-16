@@ -1371,7 +1371,7 @@ html,body{background:var(--fundo)}
 
 <section class="cartao regra-fila">
     <div class="agora">
-        <span class="muted">Agora (sexta-feira, 16/10 12:26) · dia útil: vale o rodízio</span>
+        <span class="muted">Agora (sexta-feira, 16/10 14:14) · dia útil: vale o rodízio</span>
         <strong>Próxima carga vai para: Ana Ribeiro</strong>
         <small>Rodízio entre quem está no horário (2 pessoa(s)).</small>
     </div>
@@ -2589,15 +2589,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
            <section class="cartao">
         <h2>Identificação</h2>
         <div class="grade">
+                        
+            <div><label for="tipo-fixo">Tipo</label><input id="tipo-fixo" value="Pessoa jurídica" readonly disabled></div>
+            <input type="hidden" name="tipo_pessoa" value="pj">
             <div class="" >
-            <label for="f_tipo_pessoa">Tipo * </label>
-                    <select id="f_tipo_pessoa" name="tipo_pessoa" required >
-                <option value="">—</option>
-                <option value="pj" selected>Pessoa jurídica</option><option value="pf" >Pessoa física</option>            </select>
-                </div>
-            <div class="" >
-            <label for="f_documento">CNPJ / CPF * </label>
-                    <input id="f_documento" type="text" name="documento" value="12.345.678/0001-95" required inputmode="numeric">
+            <label for="f_documento">CNPJ * </label>
+                    <input id="f_documento" type="text" name="documento" value="12.345.678/0001-95" required inputmode="numeric" data-cnpj="http://127.0.0.1:8123/proprietarios/cnpj/00000000000000">
                 </div>
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Razão social / nome * </label>
@@ -11025,7 +11022,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             </div>
             <div class="port-status">
                 <span class="port-passo">Chegou — aguardando a resposta da portaria</span>
-                <small class="muted">chegou há 1 hora  · o motorista vê no app </small>
+                <small class="muted">chegou há 2 horas  · o motorista vê no app </small>
             </div>
             <div class="port-acoes">
                         <form method="post" action="#" class="port-form"> <input type="hidden" name="passo" value="aguarde">
@@ -13922,7 +13919,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             </form>
                                 <div class="topo">
     <h1>Situação em tempo real</h1>
-    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 12:26</small>
+    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 14:14</small>
 </div>
 
 <form class="cartao filtros" method="get">
@@ -13965,7 +13962,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <small class="online">✓ 16/10 03:28</small></div>
             <div><span>Entrega</span>16/10 10:28
                 </div>
-            <div><span>Última localização</span>há 2 horas</div>
+            <div><span>Última localização</span>há 4 horas</div>
             <div><span>Parada mais próxima</span>Jundiaí/SP · 3,3 km</div>
             <div><span>Falta até a entrega</span>38,2 km (linha reta)</div>
             <div><span>Distância da rota</span>105 km</div>
@@ -13992,7 +13989,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <small class="online">✓ 16/10 06:28</small></div>
             <div><span>Entrega</span>16/10 15:28
                 </div>
-            <div><span>Última localização</span>há 1 hora</div>
+            <div><span>Última localização</span>há 2 horas</div>
             <div><span>Parada mais próxima</span>Ribeirão Preto/SP · 100,7 km</div>
             <div><span>Falta até a entrega</span>100,7 km (linha reta)</div>
             <div><span>Distância da rota</span>290 km</div>
@@ -14008,7 +14005,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <div class="muted">São José dos Campos/SP → São Paulo/SP</div>
             </div>
             <div style="text-align:right">
-                                <span class="selo erro">Motorista sem sinal do app</span> <span class="selo erro">Localização desatualizada</span>                 <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-23.18,-45.87" target="_blank" rel="noopener">Ver no mapa</a>            </div>
+                                <span class="selo erro">Coleta atrasada</span> <span class="selo erro">Motorista sem sinal do app</span> <span class="selo erro">Localização desatualizada</span>                 <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-23.18,-45.87" target="_blank" rel="noopener">Ver no mapa</a>            </div>
         </div>
         <div class="rt-dados">
             <div><span>Motorista</span>Juliana Souza
@@ -14019,7 +14016,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 </div>
             <div><span>Entrega</span>16/10 19:28
                 </div>
-            <div><span>Última localização</span>há 59 minutos</div>
+            <div><span>Última localização</span>há 2 horas</div>
             <div><span>Parada mais próxima</span>São José dos Campos/SP · 1,8 km</div>
             <div><span>Falta até a entrega</span>88,1 km (linha reta)</div>
             <div><span>Distância da rota</span>95 km</div>
@@ -14112,15 +14109,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
          <section class="cartao">
         <h2>Identificação</h2>
         <div class="grade">
+                        
+            <div><label for="tipo-fixo">Tipo</label><input id="tipo-fixo" value="Pessoa jurídica" readonly disabled></div>
+            <input type="hidden" name="tipo_pessoa" value="pj">
             <div class="" >
-            <label for="f_tipo_pessoa">Tipo * </label>
-                    <select id="f_tipo_pessoa" name="tipo_pessoa" required >
-                <option value="">—</option>
-                <option value="pj" selected>Pessoa jurídica</option><option value="pf" >Pessoa física</option>            </select>
-                </div>
-            <div class="" >
-            <label for="f_documento">CNPJ / CPF * </label>
-                    <input id="f_documento" type="text" name="documento" value="" required inputmode="numeric">
+            <label for="f_documento">CNPJ * </label>
+                    <input id="f_documento" type="text" name="documento" value="" required inputmode="numeric" data-cnpj="http://127.0.0.1:8123/proprietarios/cnpj/00000000000000">
                 </div>
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Razão social / nome * </label>
@@ -15321,6 +15315,60 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
 <table>
     <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Cadastro</th><th>O que mudou</th><th>IP</th></tr></thead>
     <tbody>
+            <tr>
+            <td class="nowrap">16/10/2026 14:13:59</td>
+            <td>Usuário de teste</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 14:13:59</td>
+            <td>Usuário de teste</td>
+            <td><span class="selo neutro">Código de acesso enviado</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 13:43:08</td>
+            <td>Sistema</td>
+            <td><span class="selo neutro">Alterou</span></td>
+            <td><strong>PainelTv</strong> #1<br><small>TV teste</small></td>
+            <td>
+                                    <div><strong>Ultimo acesso em</strong>:
+                         <span class="muted">2026-10-16 13:42:46</span> → 2026-10-16 13:43:08
+                                            </div>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 13:42:46</td>
+            <td>Sistema</td>
+            <td><span class="selo neutro">Alterou</span></td>
+            <td><strong>PainelTv</strong> #1<br><small>TV teste</small></td>
+            <td>
+                                    <div><strong>Ultimo acesso em</strong>:
+                         <span class="muted">2026-10-16 13:42:09</span> → 2026-10-16 13:42:46
+                                            </div>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 13:42:09</td>
+            <td>Sistema</td>
+            <td><span class="selo neutro">Alterou</span></td>
+            <td><strong>PainelTv</strong> #1<br><small>TV teste</small></td>
+            <td>
+                                    <div><strong>Ultimo acesso em</strong>:
+                         <span class="muted">2026-10-16 12:24:21</span> → 2026-10-16 13:42:09
+                                            </div>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
             <tr>
             <td class="nowrap">16/10/2026 12:26:17</td>
             <td>Usuário de teste</td>
@@ -16635,176 +16683,11 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                             </td>
             <td class="muted nowrap"></td>
         </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:28:57</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Veículo</strong> #12<br><small>DCA8H90</small></td>
-            <td>
-                                    <div><strong>Ativo</strong>:
-                         Sim
-                                            </div>
-                                    <div><strong>Motorista</strong>:
-                         12
-                                            </div>
-                                    <div><strong>Placa</strong>:
-                         DCA8H90
-                                            </div>
-                                    <div><strong>Tipo de veículo</strong>:
-                         10
-                                            </div>
-                                    <div><strong>Tipo carroceria</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Gr empresa</strong>:
-                         Buonny
-                                            </div>
-                                    <div><strong>Gr liberacao</strong>:
-                         LV-7307
-                                            </div>
-                                    <div><strong>Validade da GR</strong>:
-                         2027-01-16 11:28:57
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:28:57</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Motorista</strong> #12<br><small>Deolindo Cruz Antunes</small></td>
-            <td>
-                                    <div><strong>Ativo</strong>:
-                         Sim
-                                            </div>
-                                    <div><strong>Nome</strong>:
-                         Deolindo Cruz Antunes
-                                            </div>
-                                    <div><strong>CPF</strong>:
-                         00841661421
-                                            </div>
-                                    <div><strong>WhatsApp</strong>:
-                         11983207486
-                                            </div>
-                                    <div><strong>Cnh numero</strong>:
-                         08130733968
-                                            </div>
-                                    <div><strong>Cnh categoria</strong>:
-                         E
-                                            </div>
-                                    <div><strong>Validade da CNH</strong>:
-                         2028-10-16 11:28:57
-                                            </div>
-                                    <div><strong>Cidade</strong>:
-                         Sorocaba
-                                            </div>
-                                    <div><strong>UF</strong>:
-                         SP
-                                            </div>
-                                    <div><strong>Gr empresa</strong>:
-                         Buonny
-                                            </div>
-                                    <div><strong>Gr liberacao</strong>:
-                         LB-5107
-                                            </div>
-                                    <div><strong>Validade da GR</strong>:
-                         2027-02-16 11:28:57
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:28:57</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Contratação</strong> #22<br><small>Contratação #22</small></td>
-            <td>
-                                    <div><strong>Carga</strong>:
-                         26
-                                            </div>
-                                    <div><strong>Veículo</strong>:
-                         11
-                                            </div>
-                                    <div><strong>Valor</strong>:
-                         2900
-                                            </div>
-                                    <div><strong>Contratada em</strong>:
-                         2026-07-03 08:00:00
-                                            </div>
-                                    <div><strong>Contratado por</strong>:
-                         3
-                                            </div>
-                                    <div><strong>Adiantamento percentual</strong>:
-                         70
-                                            </div>
-                                    <div><strong>Abastecimento percentual</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Valor ajudante</strong>:
-                         0
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:28:57</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Rota da carga</strong> #54<br><small>Rota da carga #54</small></td>
-            <td>
-                                    <div><strong>Ordem</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Cidade</strong>:
-                         Bauru
-                                            </div>
-                                    <div><strong>UF</strong>:
-                         SP
-                                            </div>
-                                    <div><strong>Lat</strong>:
-                         -22.3246
-                                            </div>
-                                    <div><strong>Lng</strong>:
-                         -49.0871
-                                            </div>
-                                    <div><strong>Carga</strong>:
-                         26
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:28:57</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Rota da carga</strong> #53<br><small>Rota da carga #53</small></td>
-            <td>
-                                    <div><strong>Ordem</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Cidade</strong>:
-                         Cajamar
-                                            </div>
-                                    <div><strong>UF</strong>:
-                         SP
-                                            </div>
-                                    <div><strong>Lat</strong>:
-                         -23.3253
-                                            </div>
-                                    <div><strong>Lng</strong>:
-                         -46.8743
-                                            </div>
-                                    <div><strong>Carga</strong>:
-                         26
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
         </tbody>
 </table>
 </div>
 <nav class="paginacao">
-                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                    <a href="#registro-log">3</a>                    <a href="#registro-log">4</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">410 no total</span>
+                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                    <a href="#registro-log">3</a>                    <a href="#registro-log">4</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">415 no total</span>
     </nav>
     </template><template id="p-cargas~1">
                                 <form method="post" action="#" class="filial-ativa">
@@ -17876,8 +17759,8 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                         <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794756379&amp;signature=3156fe96c644c8f92dc0c553353098745707e1b991c8086aac43200953ac042e" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511996135530?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794756379%26signature%3D3156fe96c644c8f92dc0c553353098745707e1b991c8086aac43200953ac042e">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794762842&amp;signature=4d73219c78c3689f6b868ae726667ed71a70f0cbde1bc3a6cc8523d82a9e2484" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511996135530?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794762842%26signature%3D4d73219c78c3689f6b868ae726667ed71a70f0cbde1bc3a6cc8523d82a9e2484">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-relatorios~comissao-frete">
                                 <form method="post" action="#" class="filial-ativa">
@@ -18739,7 +18622,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <td>—</td>
             <td><a class="btn sec pequeno" href="#adiantamentos~2">Abrir</a></td>
         </tr>
-                    <tr class="">
+                    <tr class="atrasada">
             <td>16/10/2026 11:28</td>
             <td><a href="#cargas~3"><strong>#3</strong></a><br><small class="muted">São José dos Campos/SP → São Paulo/SP</small></td>
             <td><strong>Fechamento de carga</strong>
@@ -18812,7 +18695,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <div class="torre-status">
                 <span class="torre-etapa">Pendente</span>
                 <span class="selo neutro">Aguardando</span>
-                <small class="muted">coleta em 19 horas</small>
+                <small class="muted">coleta em 17 horas</small>
             </div>
         </div>
     </section>
@@ -18832,7 +18715,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <div class="torre-status">
                 <span class="torre-etapa">Pendente</span>
                 <span class="selo atencao">Em contratação</span>
-                <small class="muted">coleta em 21 horas</small>
+                <small class="muted">coleta em 19 horas</small>
             </div>
         </div>
     </section>
