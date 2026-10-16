@@ -384,6 +384,10 @@ table.contratacao tbody tr:not(.linha-obs):not(.linha-indicados):not(:first-chil
 .torre-resumo{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .torre-num{background:var(--branco);border:1px solid var(--linha);border-left:5px solid var(--linha);border-radius:6px;padding:6px 12px}
 .torre-num strong{font-size:18px;margin-right:4px}
+a.torre-num{color:var(--tinta);text-decoration:none;cursor:pointer}a.torre-num:hover{background:var(--fundo);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+a.torre-num.ativo{background:var(--tinta);color:#fff}
+.t-pendentes{border-left-color:#7c3aed}.t-emissao{border-left-color:var(--ativo)}
+.torre-todas{align-self:center}
 .torre-lista{display:grid;gap:12px}
 .torre-card{margin:0;border-left:6px solid var(--linha)}
 .t-carregado{border-left-color:#16a34a}.t-carregando{border-left-color:#2563eb}.t-aguardando{border-left-color:#d97706}.t-nao_chegou{border-left-color:#9ca3af}
