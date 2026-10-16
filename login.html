@@ -436,6 +436,8 @@ a.torre-num.ativo{background:var(--tinta);color:#fff}
 .torre-enviada{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 0;border-top:1px solid var(--linha)}
 .torre-enviada:first-of-type{border-top:0}
 .torre-enviada .torre-numero{font-size:20px;margin-right:6px}
+.torre-adto summary .selo{margin-left:6px}
+.torre-adto-grade{grid-template-columns:repeat(auto-fill,minmax(170px,1fr));margin-top:8px}
 
 html,body{background:var(--fundo)}
 .previa{background:var(--laranja-claro);color:#7a3a00;border-bottom:1px solid #f6c89b;padding:8px 16px;font-size:13px}</style></head><body>
@@ -461,8 +463,7 @@ Teste também um e-mail de fora (ex.: ana@gmail.com) e código errado. <a href="
     <div class="marca">Segura <span>Logística</span></div>
     <div class="cartao">
         <h3 style="margin-top:0">Verificação em 2 etapas</h3>
-        <div class="aviso ok" id="aviso-ok"></div>                    
-                <form method="post" action="#">
+                        <form method="post" action="#">
                         <p style="margin-top:0">
                 <label for="codigo">Código enviado para se••••@seguralogistica.com.br</label>
                 <input id="codigo" name="codigo" required autofocus inputmode="numeric" autocomplete="one-time-code" maxlength="6"
