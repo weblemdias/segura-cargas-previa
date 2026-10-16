@@ -363,6 +363,23 @@ table.relatorio tfoot th{background:var(--fundo);border-top:2px solid var(--linh
 .contador[hidden]{display:none}
 /* Contratação/Pesquisa: linha mais escura entre uma carga e outra */
 table.contratacao tbody tr:not(.linha-obs):not(.linha-indicados):not(:first-child) > td{border-top:2px solid #9ca3af}
+/* Portaria eletrônica */
+.portaria-lista{display:grid;gap:10px}
+.port-card{margin:0;border-left:6px solid var(--linha)}
+.port-chegou{border-left-color:var(--erro);background:#fff5f5}
+.port-aguarde{border-left-color:#d97706}
+.port-entrar{border-left-color:#16a34a}
+.port-carregando{border-left-color:#2563eb}
+.port-liberado{opacity:.6}
+.port-topo{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.port-placa{font-size:20px;letter-spacing:1px}
+.port-status{text-align:right}
+.port-passo{font-weight:700;font-size:16px}
+.port-chegou .port-passo{color:var(--erro)}
+.port-acoes{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.port-form{display:flex;gap:4px;align-items:center}
+.port-form select{width:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 :root{color-scheme:light;--faixa:#202327;--faixa-txt:#f3f4f6}
 html,body{background:var(--fundo)}
@@ -409,6 +426,7 @@ html,body{background:var(--fundo)}
             <a href="#carregamentos" class="">Carregamentos (app)</a>
             <a href="#carregamentos~usuarios" class="">Usuários (app)</a>
             <a href="#docas" class="">Docas</a>
+            <a href="#portaria" class="">Portaria</a>
             </details>
             <details class="grupo"><summary>Comunicação</summary>
             <a href="#mensagens" class="">Mensagens <span class="contador">1</span></a>
@@ -426,7 +444,6 @@ html,body{background:var(--fundo)}
                             <a href="#relatorios~agregados" class="">Motorista agregado (meta do mês)</a>
                             <a href="#relatorios~kpi" class="">Carregamentos KPI (prazo)</a>
                             <a href="#relatorios~problemas" class="">Problemas em cargas</a>
-                            <a href="#relatorios~termos" class="">Cargas x termos</a>
                             <a href="#relatorios~historico-rota" class="">Histórico da rota</a>
                         </details>
             <details class="grupo"><summary>Tabelas auxiliares</summary>
@@ -1286,7 +1303,7 @@ html,body{background:var(--fundo)}
 <form class="cartao filtros" method="get">
     <div><label for="r-carga_id">Nº da carga</label><input id="r-carga_id" name="carga_id" value="" inputmode="numeric"></div>            <div><label for="r-de">Coleta prevista de</label><input id="r-de" type="date" name="de" value=""></div>
         <div><label for="r-ate">até</label><input id="r-ate" type="date" name="ate" value=""></div>
-                    <div><label for="r-filial_id">Filial</label><select id="r-filial_id" name="filial_id"><option value="">Todas</option><option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>    <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>                                                        <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~kpi">Limpar</a></div>
+                    <div><label for="r-filial_id">Filial</label><select id="r-filial_id" name="filial_id"><option value="">Todas</option><option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>    <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>                                                    <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~kpi">Limpar</a></div>
 </form>
 <section class="cartao"><div class="valores"><div><span>Cargas</span><strong>4</strong></div><div><span>Coletas no prazo</span><strong>100,0%</strong></div><div><span>Entregas no prazo</span><strong>100,0%</strong></div><div><span>Entregas medidas</span><strong>1</strong></div></div></section>
 <div class="tabela">
@@ -1329,7 +1346,7 @@ html,body{background:var(--fundo)}
 
 <section class="cartao regra-fila">
     <div class="agora">
-        <span class="muted">Agora (quinta-feira, 15/10 20:15) · dia útil: vale o rodízio</span>
+        <span class="muted">Agora (quinta-feira, 15/10 20:59) · dia útil: vale o rodízio</span>
         <strong>Próxima carga vai para: Ana Ribeiro</strong>
         <small>Ninguém no horário: vai para quem entra primeiro (07:00).</small>
     </div>
@@ -2284,6 +2301,7 @@ html,body{background:var(--fundo)}
     <div><label for="m-sit">Situação</label>
         <select id="m-sit" name="situacao">
                             <option value="ativos" selected>Ativos</option>
+                            <option value="app" >📱 Cadastro pelo app (em análise)</option>
                             <option value="bloqueados" >Bloqueados</option>
                             <option value="cnh_vencida" >CNH vencida</option>
                             <option value="inativos" >Inativos</option>
@@ -2297,7 +2315,7 @@ html,body{background:var(--fundo)}
     <thead><tr><th>Motorista</th><th>CPF</th><th>WhatsApp</th><th>CNH</th><th>Veículos</th><th>Nota</th><th>Situação</th></tr></thead>
     <tbody>
                     <tr>
-            <td><a href="#" data-fora="1"><strong>Cleber Nunes Santana</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#" data-fora="1"><strong>Cleber Nunes Santana</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
             <td>669.341.766-34</td>
             <td>11989831354</td>
             <td>E <br><small class="muted">15/10/2028</small></td>
@@ -2306,7 +2324,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#" data-fora="1"><strong>Deolindo Cruz Antunes</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#" data-fora="1"><strong>Deolindo Cruz Antunes</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
             <td>247.311.262-23</td>
             <td>11987864058</td>
             <td>E <br><small class="muted">15/10/2028</small></td>
@@ -2315,7 +2333,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~7"><strong>Evandro Manzato</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#motoristas~7"><strong>Evandro Manzato</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
             <td>535.131.298-07</td>
             <td>11988708225</td>
             <td>E <br><small class="muted">15/10/2028</small></td>
@@ -2324,7 +2342,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~5"><strong>Helio Francisco Paula</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#motoristas~5"><strong>Helio Francisco Paula</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
             <td>348.296.860-81</td>
             <td>11985451441</td>
             <td>E <br><small class="muted">15/10/2028</small></td>
@@ -2333,7 +2351,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#" data-fora="1"><strong>Jonatas Sales Prado</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#" data-fora="1"><strong>Jonatas Sales Prado</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
             <td>012.386.786-02</td>
             <td>11982434833</td>
             <td>E <br><small class="muted">15/10/2028</small></td>
@@ -2342,7 +2360,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~3"><strong>Juliana Souza</strong></a> <br><small class="muted">Cajamar/SP</small></td>
+            <td><a href="#motoristas~3"><strong>Juliana Souza</strong></a>  <br><small class="muted">Cajamar/SP</small></td>
             <td>748.551.247-10</td>
             <td>11998323154</td>
             <td>E <br><small class="muted">15/10/2028</small></td>
@@ -2351,7 +2369,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~2"><strong>Marcos Vieira</strong></a> <br><small class="muted">Cajamar/SP</small></td>
+            <td><a href="#motoristas~2"><strong>Marcos Vieira</strong></a>  <br><small class="muted">Cajamar/SP</small></td>
             <td>440.129.679-67</td>
             <td>11993098240</td>
             <td>E <br><small class="muted">15/10/2028</small></td>
@@ -2360,7 +2378,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~6"><strong>Osmar Souza Lima</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#motoristas~6"><strong>Osmar Souza Lima</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
             <td>897.869.177-31</td>
             <td>11988780303</td>
             <td>E <br><small class="muted">15/10/2028</small></td>
@@ -2369,7 +2387,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~4"><strong>Paulo Teixeira</strong></a> <br><small class="muted">Cajamar/SP</small></td>
+            <td><a href="#motoristas~4"><strong>Paulo Teixeira</strong></a>  <br><small class="muted">Cajamar/SP</small></td>
             <td>352.743.814-99</td>
             <td>11991651522</td>
             <td>E <br><small class="muted">15/10/2028</small></td>
@@ -2378,7 +2396,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~8"><strong>Renato Lucas Prado</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#motoristas~8"><strong>Renato Lucas Prado</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
             <td>451.556.598-25</td>
             <td>11989786185</td>
             <td>E <br><small class="muted">15/10/2028</small></td>
@@ -2387,7 +2405,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#motoristas~1"><strong>Roberto Almeida</strong></a> <br><small class="muted">Cajamar/SP</small></td>
+            <td><a href="#motoristas~1"><strong>Roberto Almeida</strong></a>  <br><small class="muted">Cajamar/SP</small></td>
             <td>070.637.722-28</td>
             <td>11993252262</td>
             <td>E <br><small class="muted">15/10/2028</small></td>
@@ -2396,7 +2414,7 @@ html,body{background:var(--fundo)}
             <td><span class="selo ok">Apto</span></td>
         </tr>
                     <tr>
-            <td><a href="#" data-fora="1"><strong>Wesley Sales Mendes</strong></a> <br><small class="muted">Sorocaba/SP</small></td>
+            <td><a href="#" data-fora="1"><strong>Wesley Sales Mendes</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
             <td>374.821.081-73</td>
             <td>11983117598</td>
             <td>E <br><small class="muted">15/10/2028</small></td>
@@ -3939,7 +3957,7 @@ html,body{background:var(--fundo)}
 </div>
 <p class="muted" style="margin-top:-8px">Carga válida = frete pago até o valor sugerido. Quem faz a meta de cargas válidas no mês é candidato a agregado.</p>
 <form class="cartao filtros" method="get">
-    <div><label for="r-carga_id">Nº da carga</label><input id="r-carga_id" name="carga_id" value="" inputmode="numeric"></div>        <div><label for="r-mes">Mês</label><input id="r-mes" type="month" name="mes" value="2026-10"></div>    <div><label for="r-meta">Meta (cargas válidas)</label><input id="r-meta" type="number" name="meta" min="1" max="30" value="3"></div>    <div><label for="r-situacao">Meta</label><select id="r-situacao" name="situacao"><option value="">Todos</option><option value="atingiu">Atingiu</option><option value="nao">Não atingiu</option></select></div>            <div><label for="r-contratante_id">Contratante</label><select id="r-contratante_id" name="contratante_id"><option value="">Todos</option><option value="1">Administrador</option><option value="2">Ana Ribeiro</option><option value="3">Carlos Mendes</option></select></div>    <div><label for="r-motorista">Motorista</label><input id="r-motorista" name="motorista" value="" ></div>    <div><label for="r-tipo_veiculo_id">Veículo</label><select id="r-tipo_veiculo_id" name="tipo_veiculo_id"><option value="">Todos</option><option value="5">3/4</option><option value="10">Carreta</option><option value="11">Carreta LS</option><option value="12">Cavalo mecânico</option><option value="8">Cavalo toco</option><option value="9">Cavalo truck</option><option value="1">Fiorino</option><option value="3">HR</option><option value="13">Implemento (carreta)</option><option value="6">Toco</option><option value="7">Truck</option><option value="4">VUC</option><option value="2">Van</option></select></div>            <div><label for="r-uf_origem">UF origem</label><select id="r-uf_origem" name="uf_origem"><option value="">Todas</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select></div>                                <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~agregados">Limpar</a></div>
+    <div><label for="r-carga_id">Nº da carga</label><input id="r-carga_id" name="carga_id" value="" inputmode="numeric"></div>        <div><label for="r-mes">Mês</label><input id="r-mes" type="month" name="mes" value="2026-10"></div>    <div><label for="r-meta">Meta (cargas válidas)</label><input id="r-meta" type="number" name="meta" min="1" max="30" value="3"></div>    <div><label for="r-situacao">Meta</label><select id="r-situacao" name="situacao"><option value="">Todos</option><option value="atingiu">Atingiu</option><option value="nao">Não atingiu</option></select></div>            <div><label for="r-contratante_id">Contratante</label><select id="r-contratante_id" name="contratante_id"><option value="">Todos</option><option value="1">Administrador</option><option value="2">Ana Ribeiro</option><option value="3">Carlos Mendes</option></select></div>    <div><label for="r-motorista">Motorista</label><input id="r-motorista" name="motorista" value="" ></div>    <div><label for="r-tipo_veiculo_id">Veículo</label><select id="r-tipo_veiculo_id" name="tipo_veiculo_id"><option value="">Todos</option><option value="5">3/4</option><option value="10">Carreta</option><option value="11">Carreta LS</option><option value="12">Cavalo mecânico</option><option value="8">Cavalo toco</option><option value="9">Cavalo truck</option><option value="1">Fiorino</option><option value="3">HR</option><option value="13">Implemento (carreta)</option><option value="6">Toco</option><option value="7">Truck</option><option value="4">VUC</option><option value="2">Van</option></select></div>            <div><label for="r-uf_origem">UF origem</label><select id="r-uf_origem" name="uf_origem"><option value="">Todas</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select></div>                            <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~agregados">Limpar</a></div>
 </form>
 <section class="cartao"><div class="valores"><div><span>Motoristas</span><strong>5</strong></div><div><span>Atingiram a meta</span><strong>0</strong></div></div></section>
 <div class="tabela">
@@ -6323,7 +6341,7 @@ html,body{background:var(--fundo)}
 <form class="cartao filtros" method="get">
                 <div><label for="r-de">Período de</label><input id="r-de" type="date" name="de" value=""></div>
         <div><label for="r-ate">até</label><input id="r-ate" type="date" name="ate" value=""></div>
-                    <div><label for="r-filial_id">Filial</label><select id="r-filial_id" name="filial_id"><option value="">Todas</option><option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>        <div><label for="r-contratante_id">Contratante</label><select id="r-contratante_id" name="contratante_id"><option value="">Todos</option><option value="1">Administrador</option><option value="2">Ana Ribeiro</option><option value="3">Carlos Mendes</option></select></div>                                            <div><label for="r-agrupar">Agrupar por</label><select id="r-agrupar" name="agrupar"><option value="">Usuário</option><option value="dia">Usuário e dia</option></select></div>        <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~contratacoes-usuarios">Limpar</a></div>
+                    <div><label for="r-filial_id">Filial</label><select id="r-filial_id" name="filial_id"><option value="">Todas</option><option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>        <div><label for="r-contratante_id">Contratante</label><select id="r-contratante_id" name="contratante_id"><option value="">Todos</option><option value="1">Administrador</option><option value="2">Ana Ribeiro</option><option value="3">Carlos Mendes</option></select></div>                                        <div><label for="r-agrupar">Agrupar por</label><select id="r-agrupar" name="agrupar"><option value="">Usuário</option><option value="dia">Usuário e dia</option></select></div>        <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~contratacoes-usuarios">Limpar</a></div>
 </form>
 <section class="cartao"><div class="valores"><div><span>Contratações</span><strong>5</strong></div><div><span>Usuários</span><strong>1</strong></div></div></section>
 <div class="tabela">
@@ -7368,6 +7386,34 @@ html,body{background:var(--fundo)}
                     </ul>
     </section>
 </div>
+</div>
+    </template><template id="p-portaria">
+                                <form method="post" action="#" class="filial-ativa">
+                                <label for="filial-ativa">Usar sistema como filial:</label>
+                <select id="filial-ativa" name="filial_id" >
+                    <option value="">Todas as filiais</option>
+                                            <option value="1" >Matriz</option>
+                                            <option value="2" >Segura - Betim - MG</option>
+                                            <option value="3" >Segura - Cariacica - ES</option>
+                                            <option value="4" >Segura - Esteio - RS</option>
+                                            <option value="5" >Segura - Goiânia - GO</option>
+                                            <option value="6" >Segura - Itapevi - SP</option>
+                                            <option value="7" >Segura - Pinhais - PR</option>
+                                            <option value="8" >Segura - Rio de Janeiro - RJ</option>
+                                            <option value="9" >Segura - Sapucaia do Sul - RS</option>
+                                            <option value="10" >Segura - Sorocaba - SP</option>
+                                            <option value="11" >Segura Maringá - PR</option>
+                                            <option value="12" >Segura Pirapozinho - SP</option>
+                                    </select>
+                <noscript><button class="btn sec pequeno">Trocar</button></noscript>
+            </form>
+                                <div class="topo">
+    <h1>Portaria <small class="muted">Matriz · 15/10/2026</small></h1>
+            <form method="get"><select name="filial_id"  aria-label="Filial"><option value="1" selected>Matriz</option><option value="2" >Segura - Betim - MG</option><option value="3" >Segura - Cariacica - ES</option><option value="4" >Segura - Esteio - RS</option><option value="5" >Segura - Goiânia - GO</option><option value="6" >Segura - Itapevi - SP</option><option value="7" >Segura - Pinhais - PR</option><option value="8" >Segura - Rio de Janeiro - RJ</option><option value="9" >Segura - Sapucaia do Sul - RS</option><option value="10" >Segura - Sorocaba - SP</option><option value="11" >Segura Maringá - PR</option><option value="12" >Segura Pirapozinho - SP</option></select></form>
+    </div>
+<p class="muted" style="margin-top:-8px">O motorista avisa pelo app quando chega (sozinho, a 500 m da filial). Cada botão aparece na hora no celular dele, com som. A tela atualiza a cada 30 s.</p>
+<div class="portaria-lista">
+    <p class="muted">Nenhum carregamento nas docas hoje.</p>
 </div>
     </template><template id="p-clientes~3~edit">
                                 <form method="post" action="#" class="filial-ativa">
@@ -8935,7 +8981,7 @@ html,body{background:var(--fundo)}
 <form class="cartao filtros" method="get">
     <div style="grid-column:span 2"><label for="p-q">Nome ou documento</label><input id="p-q" name="q" value=""></div>
     <div><label for="p-at">Situação</label>
-        <select id="p-at" name="ativo"><option value="1" >Ativos</option><option value="0" >Inativos</option><option value="todos" >Todos</option></select></div>
+        <select id="p-at" name="ativo"><option value="1" >Ativos</option><option value="app" >📱 Frota pelo app (em análise)</option><option value="0" >Inativos</option><option value="todos" >Todos</option></select></div>
     <div style="display:flex;gap:6px"><button class="btn">Filtrar</button><a class="btn sec" href="#proprietarios">Limpar</a></div>
 </form>
 <div class="tabela">
@@ -8943,7 +8989,7 @@ html,body{background:var(--fundo)}
     <thead><tr><th>Nome</th><th>Documento</th><th>RNTRC</th><th>Contato</th><th>Veículos</th><th></th></tr></thead>
     <tbody>
             <tr>
-            <td><strong>Almeida Transportes Ltda</strong> </td>
+            <td><strong>Almeida Transportes Ltda</strong>  </td>
             <td>12.345.678/0001-95</td>
             <td>—</td>
             <td>11988887777</td>
@@ -9394,7 +9440,7 @@ html,body{background:var(--fundo)}
 <form class="cartao filtros" method="get">
     <div><label for="r-carga_id">Nº da carga</label><input id="r-carga_id" name="carga_id" value="" inputmode="numeric"></div>            <div><label for="r-de">Período de</label><input id="r-de" type="date" name="de" value=""></div>
         <div><label for="r-ate">até</label><input id="r-ate" type="date" name="ate" value=""></div>
-                        <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>    <div><label for="r-contratante_id">Contratante</label><select id="r-contratante_id" name="contratante_id"><option value="">Todos</option><option value="1">Administrador</option><option value="2">Ana Ribeiro</option><option value="3">Carlos Mendes</option></select></div>    <div><label for="r-motorista">Motorista</label><input id="r-motorista" name="motorista" value="" ></div>    <div><label for="r-tipo_veiculo_id">Veículo</label><select id="r-tipo_veiculo_id" name="tipo_veiculo_id"><option value="">Todos</option><option value="5">3/4</option><option value="10">Carreta</option><option value="11">Carreta LS</option><option value="12">Cavalo mecânico</option><option value="8">Cavalo toco</option><option value="9">Cavalo truck</option><option value="1">Fiorino</option><option value="3">HR</option><option value="13">Implemento (carreta)</option><option value="6">Toco</option><option value="7">Truck</option><option value="4">VUC</option><option value="2">Van</option></select></div>    <div><label for="r-tipo_carroceria_id">Carroceria</label><select id="r-tipo_carroceria_id" name="tipo_carroceria_id"><option value="">Todas</option><option value="1">Baú</option><option value="3">Grade baixa</option><option value="4">Graneleiro</option><option value="6">Plataforma</option><option value="5">Refrigerado</option><option value="2">Sider</option></select></div>                                    <div><label class="marcas" style="font-weight:400;margin-top:22px"><input type="checkbox" name="so_origem" value="1" > Só a origem (qualquer destino)</label></div>    <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~historico-rota">Limpar</a></div>
+                        <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>    <div><label for="r-contratante_id">Contratante</label><select id="r-contratante_id" name="contratante_id"><option value="">Todos</option><option value="1">Administrador</option><option value="2">Ana Ribeiro</option><option value="3">Carlos Mendes</option></select></div>    <div><label for="r-motorista">Motorista</label><input id="r-motorista" name="motorista" value="" ></div>    <div><label for="r-tipo_veiculo_id">Veículo</label><select id="r-tipo_veiculo_id" name="tipo_veiculo_id"><option value="">Todos</option><option value="5">3/4</option><option value="10">Carreta</option><option value="11">Carreta LS</option><option value="12">Cavalo mecânico</option><option value="8">Cavalo toco</option><option value="9">Cavalo truck</option><option value="1">Fiorino</option><option value="3">HR</option><option value="13">Implemento (carreta)</option><option value="6">Toco</option><option value="7">Truck</option><option value="4">VUC</option><option value="2">Van</option></select></div>    <div><label for="r-tipo_carroceria_id">Carroceria</label><select id="r-tipo_carroceria_id" name="tipo_carroceria_id"><option value="">Todas</option><option value="1">Baú</option><option value="3">Grade baixa</option><option value="4">Graneleiro</option><option value="6">Plataforma</option><option value="5">Refrigerado</option><option value="2">Sider</option></select></div>                                <div><label class="marcas" style="font-weight:400;margin-top:22px"><input type="checkbox" name="so_origem" value="1" > Só a origem (qualquer destino)</label></div>    <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~historico-rota">Limpar</a></div>
 </form>
 <div class="tabela">
 <table class="relatorio">
@@ -9845,7 +9891,7 @@ html,body{background:var(--fundo)}
 <form class="cartao filtros" method="get">
                 <div><label for="r-de">Coleta de</label><input id="r-de" type="date" name="de" value=""></div>
         <div><label for="r-ate">até</label><input id="r-ate" type="date" name="ate" value=""></div>
-                    <div><label for="r-filial_id">Filial</label><select id="r-filial_id" name="filial_id"><option value="">Todas</option><option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>    <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>        <div><label for="r-motorista">Motorista</label><input id="r-motorista" name="motorista" value="" ></div>    <div><label for="r-tipo_veiculo_id">Veículo</label><select id="r-tipo_veiculo_id" name="tipo_veiculo_id"><option value="">Todos</option><option value="5">3/4</option><option value="10">Carreta</option><option value="11">Carreta LS</option><option value="12">Cavalo mecânico</option><option value="8">Cavalo toco</option><option value="9">Cavalo truck</option><option value="1">Fiorino</option><option value="3">HR</option><option value="13">Implemento (carreta)</option><option value="6">Toco</option><option value="7">Truck</option><option value="4">VUC</option><option value="2">Van</option></select></div>                        <div><label for="r-status">Status</label><select id="r-status" name="status"><option value="">Todos</option><option value="1">Aguardando</option><option value="2">Motorista contratado</option><option value="3">Em andamento</option><option value="4">Entregue</option><option value="5">Cancelada</option><option value="6">Aguardando aprovação GR</option><option value="7">Serviço especial</option><option value="8">Em contratação</option><option value="9">Aguardando rastreamento</option><option value="10">Dados divergentes</option><option value="11">Aguardando aprovação</option><option value="12">Aguardando informação da operação</option><option value="13">Alteração de data/rota/veículo</option></select></div>                    <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~contratacoes">Limpar</a></div>
+                    <div><label for="r-filial_id">Filial</label><select id="r-filial_id" name="filial_id"><option value="">Todas</option><option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>    <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>        <div><label for="r-motorista">Motorista</label><input id="r-motorista" name="motorista" value="" ></div>    <div><label for="r-tipo_veiculo_id">Veículo</label><select id="r-tipo_veiculo_id" name="tipo_veiculo_id"><option value="">Todos</option><option value="5">3/4</option><option value="10">Carreta</option><option value="11">Carreta LS</option><option value="12">Cavalo mecânico</option><option value="8">Cavalo toco</option><option value="9">Cavalo truck</option><option value="1">Fiorino</option><option value="3">HR</option><option value="13">Implemento (carreta)</option><option value="6">Toco</option><option value="7">Truck</option><option value="4">VUC</option><option value="2">Van</option></select></div>                        <div><label for="r-status">Status</label><select id="r-status" name="status"><option value="">Todos</option><option value="1">Aguardando</option><option value="2">Motorista contratado</option><option value="3">Em andamento</option><option value="4">Entregue</option><option value="5">Cancelada</option><option value="6">Aguardando aprovação GR</option><option value="7">Serviço especial</option><option value="8">Em contratação</option><option value="9">Aguardando rastreamento</option><option value="10">Dados divergentes</option><option value="11">Aguardando aprovação</option><option value="12">Aguardando informação da operação</option><option value="13">Alteração de data/rota/veículo</option></select></div>                <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~contratacoes">Limpar</a></div>
 </form>
 <section class="cartao"><div class="valores"><div><span>Cargas</span><strong>5</strong></div><div><span>Sem motorista</span><strong>0</strong></div></div></section>
 <div class="tabela">
@@ -9925,7 +9971,7 @@ html,body{background:var(--fundo)}
 <form class="cartao filtros" method="get">
                 <div><label for="r-de">Contratada em de</label><input id="r-de" type="date" name="de" value=""></div>
         <div><label for="r-ate">até</label><input id="r-ate" type="date" name="ate" value=""></div>
-                    <div><label for="r-filial_id">Filial</label><select id="r-filial_id" name="filial_id"><option value="">Todas</option><option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>    <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>                                                        <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~fechamento">Limpar</a></div>
+                    <div><label for="r-filial_id">Filial</label><select id="r-filial_id" name="filial_id"><option value="">Todas</option><option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>    <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>                                                    <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~fechamento">Limpar</a></div>
 </form>
 <section class="cartao"><div class="valores"><div><span>Cargas</span><strong>4</strong></div><div><span>Tempo médio</span><strong>0h00</strong></div><div><span>Contratadas depois da coleta</span><strong>1</strong></div></div></section>
 <div class="tabela">
@@ -10404,7 +10450,7 @@ html,body{background:var(--fundo)}
 <form class="cartao filtros" method="get">
     <div><label for="r-carga_id">Nº da carga</label><input id="r-carga_id" name="carga_id" value="" inputmode="numeric"></div>            <div><label for="r-de">Período de</label><input id="r-de" type="date" name="de" value=""></div>
         <div><label for="r-ate">até</label><input id="r-ate" type="date" name="ate" value=""></div>
-                        <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>                                        <div><label for="r-etapa">Tipo</label><select id="r-etapa" name="etapa"><option value="">Todos</option><option value="carga/descarga">Problema de carga/descarga</option><option value="entrega">Ocorrência na entrega</option><option value="avaliacao">Avaliação abaixo de 5</option></select></div>                <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~problemas">Limpar</a></div>
+                        <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>                                        <div><label for="r-etapa">Tipo</label><select id="r-etapa" name="etapa"><option value="">Todos</option><option value="carga/descarga">Problema de carga/descarga</option><option value="entrega">Ocorrência na entrega</option><option value="avaliacao">Avaliação abaixo de 5</option></select></div>            <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~problemas">Limpar</a></div>
 </form>
 <section class="cartao"><div class="valores"><div><span>Carga/descarga</span><strong>0</strong></div><div><span>Outras ocorrências</span><strong>0</strong></div><div><span>Avaliações abaixo de 5</span><strong>0</strong></div></div></section>
 <div class="tabela">
@@ -12092,7 +12138,7 @@ html,body{background:var(--fundo)}
 <form class="cartao filtros" method="get">
     <div><label for="r-carga_id">Nº da carga</label><input id="r-carga_id" name="carga_id" value="" inputmode="numeric"></div>            <div><label for="r-de">Contratada em de</label><input id="r-de" type="date" name="de" value=""></div>
         <div><label for="r-ate">até</label><input id="r-ate" type="date" name="ate" value=""></div>
-                    <div><label for="r-filial_id">Filial</label><select id="r-filial_id" name="filial_id"><option value="">Todas</option><option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>    <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>    <div><label for="r-contratante_id">Contratante</label><select id="r-contratante_id" name="contratante_id"><option value="">Todos</option><option value="1">Administrador</option><option value="2">Ana Ribeiro</option><option value="3">Carlos Mendes</option></select></div>        <div><label for="r-tipo_veiculo_id">Veículo</label><select id="r-tipo_veiculo_id" name="tipo_veiculo_id"><option value="">Todos</option><option value="5">3/4</option><option value="10">Carreta</option><option value="11">Carreta LS</option><option value="12">Cavalo mecânico</option><option value="8">Cavalo toco</option><option value="9">Cavalo truck</option><option value="1">Fiorino</option><option value="3">HR</option><option value="13">Implemento (carreta)</option><option value="6">Toco</option><option value="7">Truck</option><option value="4">VUC</option><option value="2">Van</option></select></div>    <div><label for="r-tipo_carroceria_id">Carroceria</label><select id="r-tipo_carroceria_id" name="tipo_carroceria_id"><option value="">Todas</option><option value="1">Baú</option><option value="3">Grade baixa</option><option value="4">Graneleiro</option><option value="6">Plataforma</option><option value="5">Refrigerado</option><option value="2">Sider</option></select></div>    <div><label for="r-origem">Cidade de origem</label><input id="r-origem" name="origem" value="" ></div>    <div><label for="r-uf_origem">UF origem</label><select id="r-uf_origem" name="uf_origem"><option value="">Todas</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select></div>    <div><label for="r-destino">Cidade de destino</label><input id="r-destino" name="destino" value="" ></div>    <div><label for="r-uf_destino">UF destino</label><select id="r-uf_destino" name="uf_destino"><option value="">Todas</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select></div>                        <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~valor-sugerido">Limpar</a></div>
+                    <div><label for="r-filial_id">Filial</label><select id="r-filial_id" name="filial_id"><option value="">Todas</option><option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>    <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>    <div><label for="r-contratante_id">Contratante</label><select id="r-contratante_id" name="contratante_id"><option value="">Todos</option><option value="1">Administrador</option><option value="2">Ana Ribeiro</option><option value="3">Carlos Mendes</option></select></div>        <div><label for="r-tipo_veiculo_id">Veículo</label><select id="r-tipo_veiculo_id" name="tipo_veiculo_id"><option value="">Todos</option><option value="5">3/4</option><option value="10">Carreta</option><option value="11">Carreta LS</option><option value="12">Cavalo mecânico</option><option value="8">Cavalo toco</option><option value="9">Cavalo truck</option><option value="1">Fiorino</option><option value="3">HR</option><option value="13">Implemento (carreta)</option><option value="6">Toco</option><option value="7">Truck</option><option value="4">VUC</option><option value="2">Van</option></select></div>    <div><label for="r-tipo_carroceria_id">Carroceria</label><select id="r-tipo_carroceria_id" name="tipo_carroceria_id"><option value="">Todas</option><option value="1">Baú</option><option value="3">Grade baixa</option><option value="4">Graneleiro</option><option value="6">Plataforma</option><option value="5">Refrigerado</option><option value="2">Sider</option></select></div>    <div><label for="r-origem">Cidade de origem</label><input id="r-origem" name="origem" value="" ></div>    <div><label for="r-uf_origem">UF origem</label><select id="r-uf_origem" name="uf_origem"><option value="">Todas</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select></div>    <div><label for="r-destino">Cidade de destino</label><input id="r-destino" name="destino" value="" ></div>    <div><label for="r-uf_destino">UF destino</label><select id="r-uf_destino" name="uf_destino"><option value="">Todas</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select></div>                    <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~valor-sugerido">Limpar</a></div>
 </form>
 <section class="cartao"><div class="valores"><div><span>Contratações</span><strong>5</strong></div><div><span>Com tabela</span><strong>5</strong></div><div><span>Economia (pagou menos)</span><strong>R$ 547,48</strong></div><div><span>Acima do sugerido</span><strong>1 · R$ 62,00</strong></div><div><span>Resultado geral</span><strong>-7,0%</strong></div></div></section>
 <div class="tabela">
@@ -12150,7 +12196,21 @@ html,body{background:var(--fundo)}
         <tr>
         <td colspan="4">
             <form method="post" action="#" class="linha-tabela">
+                                 <input id="i10_nome" name="nome" value="Carregado (saiu da coleta)" placeholder="Nome" aria-label="Nome" title="Nome"><label class="marcas" style="font-weight:400"><input type="hidden" name="marca_coleta" value="0"><input type="checkbox" id="i10_marca_coleta" name="marca_coleta" value="1" checked> Conta como coleta</label><label class="marcas" style="font-weight:400"><input type="hidden" name="marca_finalizacao" value="0"><input type="checkbox" id="i10_marca_finalizacao" name="marca_finalizacao" value="1"> Conta como finalização</label>                <button class="btn sec pequeno">Salvar</button>
+                                                </form>
+                    </td>
+    </tr>
+        <tr>
+        <td colspan="4">
+            <form method="post" action="#" class="linha-tabela">
                                  <input id="i5_nome" name="nome" value="Chegou na coleta" placeholder="Nome" aria-label="Nome" title="Nome"><label class="marcas" style="font-weight:400"><input type="hidden" name="marca_coleta" value="0"><input type="checkbox" id="i5_marca_coleta" name="marca_coleta" value="1"> Conta como coleta</label><label class="marcas" style="font-weight:400"><input type="hidden" name="marca_finalizacao" value="0"><input type="checkbox" id="i5_marca_finalizacao" name="marca_finalizacao" value="1"> Conta como finalização</label>                <button class="btn sec pequeno">Salvar</button>
+                                                </form>
+                    </td>
+    </tr>
+        <tr>
+        <td colspan="4">
+            <form method="post" action="#" class="linha-tabela">
+                                 <input id="i9_nome" name="nome" value="Chegou na coleta" placeholder="Nome" aria-label="Nome" title="Nome"><label class="marcas" style="font-weight:400"><input type="hidden" name="marca_coleta" value="0"><input type="checkbox" id="i9_marca_coleta" name="marca_coleta" value="1"> Conta como coleta</label><label class="marcas" style="font-weight:400"><input type="hidden" name="marca_finalizacao" value="0"><input type="checkbox" id="i9_marca_finalizacao" name="marca_finalizacao" value="1"> Conta como finalização</label>                <button class="btn sec pequeno">Salvar</button>
                                                 </form>
                     </td>
     </tr>
@@ -12787,7 +12847,7 @@ html,body{background:var(--fundo)}
             </form>
                                 <div class="topo">
     <h1>Situação em tempo real</h1>
-    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 20:15</small>
+    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 20:59</small>
 </div>
 
 <form class="cartao filtros" method="get">
@@ -12830,7 +12890,7 @@ html,body{background:var(--fundo)}
                 <small class="online">✓ 15/10 11:58</small></div>
             <div><span>Entrega</span>15/10 18:58
                 </div>
-            <div><span>Última localização</span>há 1 hora</div>
+            <div><span>Última localização</span>há 2 horas</div>
             <div><span>Parada mais próxima</span>Jundiaí/SP · 3,3 km</div>
             <div><span>Falta até a entrega</span>38,2 km (linha reta)</div>
             <div><span>Distância da rota</span>105 km</div>
@@ -12846,7 +12906,7 @@ html,body{background:var(--fundo)}
                 <div class="muted">Cajamar/SP → Ribeirão Preto/SP</div>
             </div>
             <div style="text-align:right">
-                                <span class="selo erro">Motorista sem sinal do app</span>                 <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-22.05,-47.55" target="_blank" rel="noopener">Ver no mapa</a>            </div>
+                                <span class="selo erro">Motorista sem sinal do app</span> <span class="selo erro">Localização desatualizada</span>                 <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-22.05,-47.55" target="_blank" rel="noopener">Ver no mapa</a>            </div>
         </div>
         <div class="rt-dados">
             <div><span>Motorista</span>Roberto Almeida
@@ -12857,7 +12917,7 @@ html,body{background:var(--fundo)}
                 <small class="online">✓ 15/10 14:58</small></div>
             <div><span>Entrega</span>15/10 23:58
                 </div>
-            <div><span>Última localização</span>há 20 minutos</div>
+            <div><span>Última localização</span>há 1 hora</div>
             <div><span>Parada mais próxima</span>Ribeirão Preto/SP · 100,7 km</div>
             <div><span>Falta até a entrega</span>100,7 km (linha reta)</div>
             <div><span>Distância da rota</span>290 km</div>
@@ -12873,7 +12933,7 @@ html,body{background:var(--fundo)}
                 <div class="muted">São José dos Campos/SP → São Paulo/SP</div>
             </div>
             <div style="text-align:right">
-                                <span class="selo erro">Motorista sem sinal do app</span>                 <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-23.18,-45.87" target="_blank" rel="noopener">Ver no mapa</a>            </div>
+                                <span class="selo erro">Motorista sem sinal do app</span> <span class="selo erro">Localização desatualizada</span>                 <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-23.18,-45.87" target="_blank" rel="noopener">Ver no mapa</a>            </div>
         </div>
         <div class="rt-dados">
             <div><span>Motorista</span>Juliana Souza
@@ -12884,7 +12944,7 @@ html,body{background:var(--fundo)}
                 </div>
             <div><span>Entrega</span>16/10 03:58
                 </div>
-            <div><span>Última localização</span>há 18 minutos</div>
+            <div><span>Última localização</span>há 1 hora</div>
             <div><span>Parada mais próxima</span>São José dos Campos/SP · 1,8 km</div>
             <div><span>Falta até a entrega</span>88,1 km (linha reta)</div>
             <div><span>Distância da rota</span>95 km</div>
@@ -14009,6 +14069,15 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
 <table>
     <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Cadastro</th><th>O que mudou</th><th>IP</th></tr></thead>
     <tbody>
+            <tr>
+            <td class="nowrap">15/10/2026 20:59:20</td>
+            <td>Administrador</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
             <tr>
             <td class="nowrap">15/10/2026 20:15:25</td>
             <td>Administrador</td>
@@ -15566,65 +15635,11 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                             </td>
             <td class="muted nowrap"></td>
         </tr>
-            <tr>
-            <td class="nowrap">15/10/2026 19:58:44</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Carga</strong> #25<br><small>Carga #25</small></td>
-            <td>
-                                    <div><strong>Filial</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Gestor</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Responsavel</strong>:
-                         2
-                                            </div>
-                                    <div><strong>Cliente</strong>:
-                         2
-                                            </div>
-                                    <div><strong>Status em</strong>:
-                         2026-10-15 19:58:44
-                                            </div>
-                                    <div><strong>Criado por</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Cubagem</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Paletes</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Status</strong>:
-                         4
-                                            </div>
-                                    <div><strong>Coleta</strong>:
-                         2026-08-09 08:00:00
-                                            </div>
-                                    <div><strong>Entrega</strong>:
-                         2026-08-09 16:00:00
-                                            </div>
-                                    <div><strong>Entregue em</strong>:
-                         2026-08-09 08:00:00
-                                            </div>
-                                    <div><strong>Distância</strong>:
-                         555
-                                            </div>
-                                    <div><strong>Receita</strong>:
-                         5670
-                                            </div>
-                                    <div><strong>Valor NF</strong>:
-                         60000
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
         </tbody>
 </table>
 </div>
 <nav class="paginacao">
-                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                    <a href="#registro-log">3</a>                    <a href="#registro-log">4</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">394 no total</span>
+                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                    <a href="#registro-log">3</a>                    <a href="#registro-log">4</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">395 no total</span>
     </nav>
     </template><template id="p-cargas~1">
                                 <form method="post" action="#" class="filial-ativa">
@@ -16692,8 +16707,8 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                         <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794698127&amp;signature=6b3aab140ebb2df5b0b70ddb476437340b539f147aa474361ba947034f2b24c8" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511993252262?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794698127%26signature%3D6b3aab140ebb2df5b0b70ddb476437340b539f147aa474361ba947034f2b24c8">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794700763&amp;signature=7d93ffeb995ef02d674683a04766968f2cc656504ae877be31e9ad472c522787" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511993252262?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794700763%26signature%3D7d93ffeb995ef02d674683a04766968f2cc656504ae877be31e9ad472c522787">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-relatorios~comissao-frete">
                                 <form method="post" action="#" class="filial-ativa">
@@ -16723,7 +16738,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
 <form class="cartao filtros" method="get">
     <div><label for="r-carga_id">Nº da carga</label><input id="r-carga_id" name="carga_id" value="" inputmode="numeric"></div>            <div><label for="r-de">Contratada em de</label><input id="r-de" type="date" name="de" value=""></div>
         <div><label for="r-ate">até</label><input id="r-ate" type="date" name="ate" value=""></div>
-                    <div><label for="r-filial_id">Filial</label><select id="r-filial_id" name="filial_id"><option value="">Todas</option><option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>    <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>            <div><label for="r-tipo_veiculo_id">Veículo</label><select id="r-tipo_veiculo_id" name="tipo_veiculo_id"><option value="">Todos</option><option value="5">3/4</option><option value="10">Carreta</option><option value="11">Carreta LS</option><option value="12">Cavalo mecânico</option><option value="8">Cavalo toco</option><option value="9">Cavalo truck</option><option value="1">Fiorino</option><option value="3">HR</option><option value="13">Implemento (carreta)</option><option value="6">Toco</option><option value="7">Truck</option><option value="4">VUC</option><option value="2">Van</option></select></div>    <div><label for="r-tipo_carroceria_id">Carroceria</label><select id="r-tipo_carroceria_id" name="tipo_carroceria_id"><option value="">Todas</option><option value="1">Baú</option><option value="3">Grade baixa</option><option value="4">Graneleiro</option><option value="6">Plataforma</option><option value="5">Refrigerado</option><option value="2">Sider</option></select></div>    <div><label for="r-origem">Cidade de origem</label><input id="r-origem" name="origem" value="" ></div>    <div><label for="r-uf_origem">UF origem</label><select id="r-uf_origem" name="uf_origem"><option value="">Todas</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select></div>    <div><label for="r-destino">Cidade de destino</label><input id="r-destino" name="destino" value="" ></div>    <div><label for="r-uf_destino">UF destino</label><select id="r-uf_destino" name="uf_destino"><option value="">Todas</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select></div>                        <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~comissao-frete">Limpar</a></div>
+                    <div><label for="r-filial_id">Filial</label><select id="r-filial_id" name="filial_id"><option value="">Todas</option><option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>    <div><label for="r-cliente_id">Cliente</label><select id="r-cliente_id" name="cliente_id"><option value="">Todos</option><option value="2">Alimentos Vale Verde</option><option value="1">Cosméticos Aurora</option><option value="3">Farma Bem Estar</option><option value="4">Química Paulista</option></select></div>            <div><label for="r-tipo_veiculo_id">Veículo</label><select id="r-tipo_veiculo_id" name="tipo_veiculo_id"><option value="">Todos</option><option value="5">3/4</option><option value="10">Carreta</option><option value="11">Carreta LS</option><option value="12">Cavalo mecânico</option><option value="8">Cavalo toco</option><option value="9">Cavalo truck</option><option value="1">Fiorino</option><option value="3">HR</option><option value="13">Implemento (carreta)</option><option value="6">Toco</option><option value="7">Truck</option><option value="4">VUC</option><option value="2">Van</option></select></div>    <div><label for="r-tipo_carroceria_id">Carroceria</label><select id="r-tipo_carroceria_id" name="tipo_carroceria_id"><option value="">Todas</option><option value="1">Baú</option><option value="3">Grade baixa</option><option value="4">Graneleiro</option><option value="6">Plataforma</option><option value="5">Refrigerado</option><option value="2">Sider</option></select></div>    <div><label for="r-origem">Cidade de origem</label><input id="r-origem" name="origem" value="" ></div>    <div><label for="r-uf_origem">UF origem</label><select id="r-uf_origem" name="uf_origem"><option value="">Todas</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select></div>    <div><label for="r-destino">Cidade de destino</label><input id="r-destino" name="destino" value="" ></div>    <div><label for="r-uf_destino">UF destino</label><select id="r-uf_destino" name="uf_destino"><option value="">Todas</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select></div>                    <div style="display:flex;gap:6px;align-items:end"><button class="btn">Gerar</button><a class="btn sec" href="#relatorios~comissao-frete">Limpar</a></div>
 </form>
 <section class="cartao"><div class="valores"><div><span>Contratações</span><strong>5</strong></div><div><span>Frete/km médio</span><strong>R$ 9,43</strong></div><div><span>Margem média</span><strong>37,3%</strong></div></div></section>
 <div class="tabela">
