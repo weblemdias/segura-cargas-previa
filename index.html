@@ -462,7 +462,7 @@ html,body{background:var(--fundo)}
 .foto-exemplo{display:inline-grid;place-items:center;width:100%;aspect-ratio:4/3;background:var(--neutro-bg);color:var(--cinza);border-radius:6px;font-size:12px}
 .conteudo{min-width:0}
 </style>
-<div class="previa" role="note"><strong>Prévia com dados de exemplo.</strong> <a href="login.html">Ver o login (código por e-mail)</a>. Todas as telas do novo sistema para navegar; nada é salvo aqui. Na nova carga, escolha <em>Cosméticos Aurora</em>, Toco ou Truck, rota em SP e uma distância para ver a receita sair da tabela do cliente. Em <em>Contratações › Contratação</em>, clique em <em>Ver motoristas indicados</em> e use <em>Não vai fazer</em> para puxar o próximo da fila.</div>
+<div class="previa" role="note"><strong>Prévia com dados de exemplo.</strong> <a href="login.html">Ver o login (código por e-mail)</a>. <a href="tv.html">Ver a Gestão à vista (TV)</a>. Todas as telas do novo sistema para navegar; nada é salvo aqui. Na nova carga, escolha <em>Cosméticos Aurora</em>, Toco ou Truck, rota em SP e uma distância para ver a receita sair da tabela do cliente. Em <em>Contratações › Contratação</em>, clique em <em>Ver motoristas indicados</em> e use <em>Não vai fazer</em> para puxar o próximo da fila.</div>
 <div class="app">
 <aside class="lateral">
         <div class="marca">Segura <span>Logística</span></div>
@@ -470,7 +470,7 @@ html,body{background:var(--fundo)}
             data-url="http://127.0.0.1:8123/chamados/contador" data-ultimo=""  hidden >0</span></a>
         <nav class="menu">
                                                 <details class="grupo"><summary>Cargas</summary>
-            <a href="#cargas">Lista</a>            <a href="#clientes" class="">Clientes</a>            <a href="#adiantamentos" class="">Solicitação de adiantamento</a>            <a href="#contratos" class="">Contrato de adiantamento</a>            <a href="#situacao-tempo-real" class="">Situação em tempo real</a>            </details>
+            <a href="#cargas">Lista</a>            <a href="#clientes" class="">Clientes</a>            <a href="#adiantamentos" class="">Solicitação de adiantamento</a>            <a href="#contratos" class="">Contrato de adiantamento</a>            <a href="#situacao-tempo-real" class="">Situação em tempo real</a>            <a href="#" data-fora="1" class="">📺 Gestão à vista (TV)</a>            </details>
                                     <details class="grupo"><summary>Contratações</summary>
             <a href="#contratacoes" class="">Contratação</a>            <a href="#contratacoes~pesquisa" class="">Pesquisa contratação</a>            <a href="#liberacao~adiantamento" class="">Liberação de adiantamento</a>            <a href="#liberacao~extra" class="">Liberação de extra</a>            </details>
                                     <details class="grupo"><summary>Cadastro de motorista</summary>
@@ -1371,7 +1371,7 @@ html,body{background:var(--fundo)}
 
 <section class="cartao regra-fila">
     <div class="agora">
-        <span class="muted">Agora (sexta-feira, 16/10 11:30) · dia útil: vale o rodízio</span>
+        <span class="muted">Agora (sexta-feira, 16/10 12:26) · dia útil: vale o rodízio</span>
         <strong>Próxima carga vai para: Ana Ribeiro</strong>
         <small>Rodízio entre quem está no horário (2 pessoa(s)).</small>
     </div>
@@ -5838,7 +5838,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <div><dt>Gerenc. de risco</dt><dd>—</dd></div>
                 <div><dt>Banco</dt><dd>—</dd></div>
                 <div><dt>Emergência</dt><dd>—</dd></div>
-                <div><dt>App</dt><dd><span class="online">● online</span></dd></div>
+                <div><dt>App</dt><dd><span class="offline">● offline</span></dd></div>
             </dl>
         </div>
             </section>
@@ -7034,7 +7034,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <div><dt>Gerenc. de risco</dt><dd>—</dd></div>
                 <div><dt>Banco</dt><dd>—</dd></div>
                 <div><dt>Emergência</dt><dd>—</dd></div>
-                <div><dt>App</dt><dd><span class="online">● online</span></dd></div>
+                <div><dt>App</dt><dd><span class="offline">● offline</span></dd></div>
             </dl>
         </div>
             </section>
@@ -7744,6 +7744,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="adiantamentos" > Solicitação de adiantamento</label>
                             <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="contratos" > Contrato de adiantamento</label>
                             <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="tempo_real" checked> Situação em tempo real</label>
+                            <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="gestao_vista" > Gestão à vista (torre para TV)</label>
                     </fieldset>
             <fieldset class="niveis-grupo">
             <legend><label><input type="checkbox" data-grupo> Contratações</label></legend>
@@ -8427,6 +8428,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="adiantamentos" checked> Solicitação de adiantamento</label>
                             <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="contratos" checked> Contrato de adiantamento</label>
                             <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="tempo_real" > Situação em tempo real</label>
+                            <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="gestao_vista" > Gestão à vista (torre para TV)</label>
                     </fieldset>
             <fieldset class="niveis-grupo">
             <legend><label><input type="checkbox" data-grupo> Contratações</label></legend>
@@ -11023,7 +11025,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             </div>
             <div class="port-status">
                 <span class="port-passo">Chegou — aguardando a resposta da portaria</span>
-                <small class="muted">chegou há 5 minutos  · o motorista vê no app </small>
+                <small class="muted">chegou há 1 hora  · o motorista vê no app </small>
             </div>
             <div class="port-acoes">
                         <form method="post" action="#" class="port-form"> <input type="hidden" name="passo" value="aguarde">
@@ -13089,6 +13091,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="adiantamentos" > Solicitação de adiantamento</label>
                             <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="contratos" > Contrato de adiantamento</label>
                             <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="tempo_real" checked> Situação em tempo real</label>
+                            <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="gestao_vista" > Gestão à vista (torre para TV)</label>
                     </fieldset>
             <fieldset class="niveis-grupo">
             <legend><label><input type="checkbox" data-grupo> Contratações</label></legend>
@@ -13919,7 +13922,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             </form>
                                 <div class="topo">
     <h1>Situação em tempo real</h1>
-    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 11:30</small>
+    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 12:26</small>
 </div>
 
 <form class="cartao filtros" method="get">
@@ -13962,7 +13965,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <small class="online">✓ 16/10 03:28</small></div>
             <div><span>Entrega</span>16/10 10:28
                 </div>
-            <div><span>Última localização</span>há 1 hora</div>
+            <div><span>Última localização</span>há 2 horas</div>
             <div><span>Parada mais próxima</span>Jundiaí/SP · 3,3 km</div>
             <div><span>Falta até a entrega</span>38,2 km (linha reta)</div>
             <div><span>Distância da rota</span>105 km</div>
@@ -13970,7 +13973,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                     <div class="linha-tempo">
                 <span>16/10 03:28 · Carregado (saiu da coleta)</span>            </div>
             </article>
-        <article class="rt-item">
+        <article class="rt-item alerta">
         <div class="rt-cab">
             <div>
                 <strong><a href="#cargas~1">#1</a> · Cosméticos Aurora</strong>
@@ -13978,18 +13981,18 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <div class="muted">Cajamar/SP → Ribeirão Preto/SP</div>
             </div>
             <div style="text-align:right">
-                                                <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-22.05,-47.55" target="_blank" rel="noopener">Ver no mapa</a>            </div>
+                                <span class="selo erro">Motorista sem sinal do app</span> <span class="selo erro">Localização desatualizada</span>                 <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-22.05,-47.55" target="_blank" rel="noopener">Ver no mapa</a>            </div>
         </div>
         <div class="rt-dados">
             <div><span>Motorista</span>Roberto Almeida
-                <small class="online">● online</small></div>
+                <small class="offline">● offline</small></div>
             <div><span>Placa</span>FTR4E21</div>
             <div><span>Gestor</span>Administrador</div>
             <div><span>Coleta</span>16/10 05:28
                 <small class="online">✓ 16/10 06:28</small></div>
             <div><span>Entrega</span>16/10 15:28
                 </div>
-            <div><span>Última localização</span>há 5 minutos</div>
+            <div><span>Última localização</span>há 1 hora</div>
             <div><span>Parada mais próxima</span>Ribeirão Preto/SP · 100,7 km</div>
             <div><span>Falta até a entrega</span>100,7 km (linha reta)</div>
             <div><span>Distância da rota</span>290 km</div>
@@ -13997,7 +14000,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                     <div class="linha-tempo">
                 <span>16/10 04:28 · Chegou na coleta</span><span>16/10 06:28 · Carregado (saiu da coleta)</span><span>16/10 07:28 · Em trânsito</span>            </div>
             </article>
-        <article class="rt-item">
+        <article class="rt-item alerta">
         <div class="rt-cab">
             <div>
                 <strong><a href="#cargas~3">#3</a> · Farma Bem Estar</strong>
@@ -14005,18 +14008,18 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <div class="muted">São José dos Campos/SP → São Paulo/SP</div>
             </div>
             <div style="text-align:right">
-                                                <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-23.18,-45.87" target="_blank" rel="noopener">Ver no mapa</a>            </div>
+                                <span class="selo erro">Motorista sem sinal do app</span> <span class="selo erro">Localização desatualizada</span>                 <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-23.18,-45.87" target="_blank" rel="noopener">Ver no mapa</a>            </div>
         </div>
         <div class="rt-dados">
             <div><span>Motorista</span>Juliana Souza
-                <small class="online">● online</small></div>
+                <small class="offline">● offline</small></div>
             <div><span>Placa</span>BRA7C19</div>
             <div><span>Gestor</span>Administrador</div>
             <div><span>Coleta</span>16/10 13:28
                 </div>
             <div><span>Entrega</span>16/10 19:28
                 </div>
-            <div><span>Última localização</span>há 3 minutos</div>
+            <div><span>Última localização</span>há 59 minutos</div>
             <div><span>Parada mais próxima</span>São José dos Campos/SP · 1,8 km</div>
             <div><span>Falta até a entrega</span>88,1 km (linha reta)</div>
             <div><span>Distância da rota</span>95 km</div>
@@ -14051,7 +14054,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <tbody>
             <tr>
             <td><strong>Contratação</strong></td><td></td>
-            <td>10 de 35</td>
+            <td>10 de 36</td>
             <td><a href="#usuarios">1</a></td>
             <td><span class="selo ok">Ativo</span></td>
             <td class="nowrap"><a class="btn sec pequeno" href="#niveis-acesso~1~edit">Editar</a>
@@ -14060,7 +14063,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         </tr>
             <tr>
             <td><strong>Expedição</strong></td><td></td>
-            <td>5 de 35</td>
+            <td>5 de 36</td>
             <td><a href="#usuarios">0</a></td>
             <td><span class="selo ok">Ativo</span></td>
             <td class="nowrap"><a class="btn sec pequeno" href="#niveis-acesso~2~edit">Editar</a>
@@ -14070,7 +14073,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         </tr>
             <tr>
             <td><strong>Financeiro</strong></td><td></td>
-            <td>6 de 35</td>
+            <td>6 de 36</td>
             <td><a href="#usuarios">0</a></td>
             <td><span class="selo ok">Ativo</span></td>
             <td class="nowrap"><a class="btn sec pequeno" href="#niveis-acesso~3~edit">Editar</a>
@@ -14383,6 +14386,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="adiantamentos" > Solicitação de adiantamento</label>
                             <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="contratos" > Contrato de adiantamento</label>
                             <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="tempo_real" > Situação em tempo real</label>
+                            <label class="niveis-tela"><input type="checkbox" name="permissoes[]" value="gestao_vista" > Gestão à vista (torre para TV)</label>
                     </fieldset>
             <fieldset class="niveis-grupo">
             <legend><label><input type="checkbox" data-grupo> Contratações</label></legend>
@@ -15317,6 +15321,96 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
 <table>
     <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Cadastro</th><th>O que mudou</th><th>IP</th></tr></thead>
     <tbody>
+            <tr>
+            <td class="nowrap">16/10/2026 12:26:17</td>
+            <td>Usuário de teste</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 12:26:17</td>
+            <td>Usuário de teste</td>
+            <td><span class="selo neutro">Código de acesso enviado</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 12:25:17</td>
+            <td>Usuário de teste</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 12:25:17</td>
+            <td>Usuário de teste</td>
+            <td><span class="selo neutro">Código de acesso enviado</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 12:24:21</td>
+            <td>Sistema</td>
+            <td><span class="selo neutro">Alterou</span></td>
+            <td><strong>PainelTv</strong> #1<br><small>TV teste</small></td>
+            <td>
+                                    <div><strong>Ultimo acesso em</strong>:
+                         <span class="muted">2026-10-16 12:23:45</span> → 2026-10-16 12:24:21
+                                            </div>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 12:23:45</td>
+            <td>Sistema</td>
+            <td><span class="selo neutro">Alterou</span></td>
+            <td><strong>PainelTv</strong> #1<br><small>TV teste</small></td>
+            <td>
+                                    <div><strong>Ultimo acesso em</strong>:
+                         <span class="muted">2026-10-16 12:23:24</span> → 2026-10-16 12:23:45
+                                            </div>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 12:23:24</td>
+            <td>Sistema</td>
+            <td><span class="selo neutro">Alterou</span></td>
+            <td><strong>PainelTv</strong> #1<br><small>TV teste</small></td>
+            <td>
+                                    <div><strong>Ultimo acesso em</strong>:
+                         <span class="muted">(vazio)</span> → 2026-10-16 12:23:24
+                                            </div>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 12:23:01</td>
+            <td>Sistema</td>
+            <td><span class="selo ok">Criou</span></td>
+            <td><strong>PainelTv</strong> #1<br><small>TV teste</small></td>
+            <td>
+                                    <div><strong>Nome</strong>:
+                         TV teste
+                                            </div>
+                                    <div><strong>Token hash</strong>:
+                         (alterado)
+                                            </div>
+                                    <div><strong>Criado por</strong>:
+                         1
+                                            </div>
+                            </td>
+            <td class="muted nowrap"></td>
+        </tr>
             <tr>
             <td class="nowrap">16/10/2026 11:30:00</td>
             <td>Usuário de teste</td>
@@ -16706,293 +16800,11 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                             </td>
             <td class="muted nowrap"></td>
         </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:28:57</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Carga</strong> #26<br><small>Carga #26</small></td>
-            <td>
-                                    <div><strong>Filial</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Gestor</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Responsavel</strong>:
-                         3
-                                            </div>
-                                    <div><strong>Cliente</strong>:
-                         3
-                                            </div>
-                                    <div><strong>Status em</strong>:
-                         2026-10-16 11:28:57
-                                            </div>
-                                    <div><strong>Criado por</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Cubagem</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Paletes</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Status</strong>:
-                         4
-                                            </div>
-                                    <div><strong>Coleta</strong>:
-                         2026-07-04 08:00:00
-                                            </div>
-                                    <div><strong>Entrega</strong>:
-                         2026-07-04 16:00:00
-                                            </div>
-                                    <div><strong>Entregue em</strong>:
-                         2026-07-04 08:00:00
-                                            </div>
-                                    <div><strong>Distância</strong>:
-                         330
-                                            </div>
-                                    <div><strong>Receita</strong>:
-                         3915
-                                            </div>
-                                    <div><strong>Valor NF</strong>:
-                         60000
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:28:57</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Contratação</strong> #21<br><small>Contratação #21</small></td>
-            <td>
-                                    <div><strong>Carga</strong>:
-                         25
-                                            </div>
-                                    <div><strong>Veículo</strong>:
-                         11
-                                            </div>
-                                    <div><strong>Valor</strong>:
-                         4200
-                                            </div>
-                                    <div><strong>Contratada em</strong>:
-                         2026-08-09 08:00:00
-                                            </div>
-                                    <div><strong>Contratado por</strong>:
-                         3
-                                            </div>
-                                    <div><strong>Adiantamento percentual</strong>:
-                         70
-                                            </div>
-                                    <div><strong>Abastecimento percentual</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Valor ajudante</strong>:
-                         0
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:28:57</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Rota da carga</strong> #52<br><small>Rota da carga #52</small></td>
-            <td>
-                                    <div><strong>Ordem</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Cidade</strong>:
-                         Presidente Prudente
-                                            </div>
-                                    <div><strong>UF</strong>:
-                         SP
-                                            </div>
-                                    <div><strong>Lat</strong>:
-                         -22.1256
-                                            </div>
-                                    <div><strong>Lng</strong>:
-                         -51.3889
-                                            </div>
-                                    <div><strong>Carga</strong>:
-                         25
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:28:57</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Rota da carga</strong> #51<br><small>Rota da carga #51</small></td>
-            <td>
-                                    <div><strong>Ordem</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Cidade</strong>:
-                         Cajamar
-                                            </div>
-                                    <div><strong>UF</strong>:
-                         SP
-                                            </div>
-                                    <div><strong>Lat</strong>:
-                         -23.3253
-                                            </div>
-                                    <div><strong>Lng</strong>:
-                         -46.8743
-                                            </div>
-                                    <div><strong>Carga</strong>:
-                         25
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:28:57</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Carga</strong> #25<br><small>Carga #25</small></td>
-            <td>
-                                    <div><strong>Filial</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Gestor</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Responsavel</strong>:
-                         3
-                                            </div>
-                                    <div><strong>Cliente</strong>:
-                         2
-                                            </div>
-                                    <div><strong>Status em</strong>:
-                         2026-10-16 11:28:57
-                                            </div>
-                                    <div><strong>Criado por</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Cubagem</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Paletes</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Status</strong>:
-                         4
-                                            </div>
-                                    <div><strong>Coleta</strong>:
-                         2026-08-10 08:00:00
-                                            </div>
-                                    <div><strong>Entrega</strong>:
-                         2026-08-10 16:00:00
-                                            </div>
-                                    <div><strong>Entregue em</strong>:
-                         2026-08-10 08:00:00
-                                            </div>
-                                    <div><strong>Distância</strong>:
-                         555
-                                            </div>
-                                    <div><strong>Receita</strong>:
-                         5670
-                                            </div>
-                                    <div><strong>Valor NF</strong>:
-                         60000
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:28:57</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Contratação</strong> #20<br><small>Contratação #20</small></td>
-            <td>
-                                    <div><strong>Carga</strong>:
-                         24
-                                            </div>
-                                    <div><strong>Veículo</strong>:
-                         11
-                                            </div>
-                                    <div><strong>Valor</strong>:
-                         4300
-                                            </div>
-                                    <div><strong>Contratada em</strong>:
-                         2026-09-15 08:00:00
-                                            </div>
-                                    <div><strong>Contratado por</strong>:
-                         3
-                                            </div>
-                                    <div><strong>Adiantamento percentual</strong>:
-                         70
-                                            </div>
-                                    <div><strong>Abastecimento percentual</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Valor ajudante</strong>:
-                         0
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:28:57</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Rota da carga</strong> #50<br><small>Rota da carga #50</small></td>
-            <td>
-                                    <div><strong>Ordem</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Cidade</strong>:
-                         Presidente Prudente
-                                            </div>
-                                    <div><strong>UF</strong>:
-                         SP
-                                            </div>
-                                    <div><strong>Lat</strong>:
-                         -22.1256
-                                            </div>
-                                    <div><strong>Lng</strong>:
-                         -51.3889
-                                            </div>
-                                    <div><strong>Carga</strong>:
-                         24
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:28:57</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Rota da carga</strong> #49<br><small>Rota da carga #49</small></td>
-            <td>
-                                    <div><strong>Ordem</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Cidade</strong>:
-                         Cajamar
-                                            </div>
-                                    <div><strong>UF</strong>:
-                         SP
-                                            </div>
-                                    <div><strong>Lat</strong>:
-                         -23.3253
-                                            </div>
-                                    <div><strong>Lng</strong>:
-                         -46.8743
-                                            </div>
-                                    <div><strong>Carga</strong>:
-                         24
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
         </tbody>
 </table>
 </div>
 <nav class="paginacao">
-                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                    <a href="#registro-log">3</a>                    <a href="#registro-log">4</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">402 no total</span>
+                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                    <a href="#registro-log">3</a>                    <a href="#registro-log">4</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">410 no total</span>
     </nav>
     </template><template id="p-cargas~1">
                                 <form method="post" action="#" class="filial-ativa">
@@ -18030,7 +17842,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             </form>
                                 <div class="topo">
     <h1>Auditoria <small class="muted">carga <a href="#cargas~1">#1</a> · Cosméticos Aurora · gestor Administrador</small></h1>
-    <a class="btn sec" href="#liberacao~item~1">Voltar</a>
+    <a class="btn sec" href="#" data-fora="1">Voltar</a>
 </div>
 
 <section class="cartao">
@@ -18064,8 +17876,8 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                         <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794753002&amp;signature=839e33ca174318364d9c56d447b4376e24bcd4c8f97c5f54e1247303b731bda9" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511996135530?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794753002%26signature%3D839e33ca174318364d9c56d447b4376e24bcd4c8f97c5f54e1247303b731bda9">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794756379&amp;signature=3156fe96c644c8f92dc0c553353098745707e1b991c8086aac43200953ac042e" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511996135530?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794756379%26signature%3D3156fe96c644c8f92dc0c553353098745707e1b991c8086aac43200953ac042e">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-relatorios~comissao-frete">
                                 <form method="post" action="#" class="filial-ativa">
@@ -19000,7 +18812,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <div class="torre-status">
                 <span class="torre-etapa">Pendente</span>
                 <span class="selo neutro">Aguardando</span>
-                <small class="muted">coleta em 20 horas</small>
+                <small class="muted">coleta em 19 horas</small>
             </div>
         </div>
     </section>
@@ -19020,7 +18832,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <div class="torre-status">
                 <span class="torre-etapa">Pendente</span>
                 <span class="selo atencao">Em contratação</span>
-                <small class="muted">coleta em 22 horas</small>
+                <small class="muted">coleta em 21 horas</small>
             </div>
         </div>
     </section>

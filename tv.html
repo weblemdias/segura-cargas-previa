@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Torre de controle · Geral — todas as filiais</title>
+<style>
+:root{--fundo:#0b1220;--painel:#121b2e;--painel2:#18233a;--linha:#24324d;--texto:#e8eef9;--fraco:#8fa0bf;--laranja:#f07c00;
+  --ok:#22c55e;--atencao:#f5b301;--erro:#ef4444;--ativo:#38bdf8;--neutro:#94a3b8}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--fundo);color:var(--texto);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow:hidden}
+a{color:inherit}
+.tv{display:grid;grid-template-rows:auto auto 1fr auto;height:100vh;padding:1.2vh 1.4vw;gap:1.2vh}
+/* Topo */
+.topo{display:flex;align-items:center;gap:1.4vw}
+.marca{font-weight:800;font-size:clamp(16px,1.5vw,30px);letter-spacing:.5px}.marca span{color:var(--laranja)}
+.titulo{flex:1;min-width:0}
+.titulo h1{margin:0;font-size:clamp(18px,1.9vw,40px);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.titulo small{color:var(--fraco);font-size:clamp(12px,.95vw,20px)}
+.vivo{display:flex;align-items:center;gap:8px;color:var(--fraco);font-size:clamp(12px,.9vw,18px);white-space:nowrap}
+.vivo i{width:12px;height:12px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(34,197,94,.7);animation:pulso 2s infinite}
+.vivo.off i{background:var(--erro);animation:none}
+@keyframes pulso{70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.relogio{font-variant-numeric:tabular-nums;font-weight:800;font-size:clamp(22px,2.6vw,56px);line-height:1}
+.relogio small{display:block;font-size:.35em;font-weight:500;color:var(--fraco);text-align:right}
+.ctl{display:flex;gap:6px;align-items:center}
+.ctl select,.ctl button,.ctl a{background:var(--painel2);color:var(--texto);border:1px solid var(--linha);border-radius:8px;padding:6px 10px;font-size:14px;cursor:pointer;text-decoration:none}
+/* Abas das telas + barra de tempo */
+.abas{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.aba{border:1px solid var(--linha);background:var(--painel);color:var(--fraco);border-radius:999px;padding:4px 12px;font-size:clamp(11px,.85vw,17px);cursor:pointer}
+.aba b{color:var(--texto);margin-left:4px}.aba.erro b{color:var(--erro)}
+.aba.ativa{background:var(--laranja);border-color:var(--laranja);color:#fff}.aba.ativa b{color:#fff}
+.barra{height:4px;background:var(--linha);border-radius:4px;overflow:hidden;flex:1;min-width:80px}
+.barra i{display:block;height:100%;width:0;background:var(--laranja)}
+/* Conteúdo */
+.tela{min-height:0;overflow:hidden;animation:entra .5s ease}
+@keyframes entra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1vw}
+.kpi{background:var(--painel);border:1px solid var(--linha);border-radius:14px;padding:1.4vh 1vw;position:relative;overflow:hidden}
+.kpi::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--cor,var(--ativo))}
+.kpi h3{margin:0;color:var(--fraco);font-weight:600;font-size:clamp(12px,.95vw,20px)}
+.kpi .n{font-size:clamp(34px,4.6vw,110px);font-weight:800;line-height:1.05;font-variant-numeric:tabular-nums}
+.kpi .s{font-size:clamp(12px,.95vw,20px);color:var(--fraco)}
+.kpi .s b.erro{color:var(--erro)}.kpi .s b.ok{color:var(--ok)}
+.geral{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:1vw;margin-top:1.4vh;min-height:0;height:calc(100% - 1.4vh - var(--kpih,22vh))}
+.bloco{background:var(--painel);border:1px solid var(--linha);border-radius:14px;padding:1.2vh 1vw;min-height:0;overflow:hidden;display:flex;flex-direction:column}
+.bloco h2{margin:0 0 1vh;font-size:clamp(14px,1.2vw,26px);display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.bloco h2 small{color:var(--fraco);font-weight:500;font-size:.7em}
+.funil{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8vw;margin-bottom:1.2vh}
+.etapa{background:var(--painel2);border-radius:10px;padding:1vh .8vw;text-align:center;border-top:4px solid var(--cor)}
+.etapa .n{font-size:clamp(26px,3vw,70px);font-weight:800;line-height:1}.etapa div{color:var(--fraco);font-size:clamp(11px,.85vw,18px)}
+.etapa .x{color:var(--erro);font-weight:700}
+.sub{display:flex;height:clamp(16px,2.4vh,36px);border-radius:8px;overflow:hidden;margin:.6vh 0 .4vh;background:var(--painel2)}
+.sub span{display:flex;align-items:center;justify-content:center;font-size:clamp(10px,.8vw,16px);font-weight:700;color:#0b1220;min-width:0;white-space:nowrap;overflow:hidden}
+.legenda{display:flex;gap:1vw;flex-wrap:wrap;color:var(--fraco);font-size:clamp(10px,.8vw,16px)}.legenda i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px}
+table{width:100%;border-collapse:collapse;font-size:clamp(12px,1vw,22px)}
+th{color:var(--fraco);font-weight:600;text-align:right;padding:.6vh .5vw;border-bottom:1px solid var(--linha)}th:first-child,td:first-child{text-align:left}
+td{padding:.7vh .5vw;border-bottom:1px solid var(--linha);text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+td em{font-style:normal;color:var(--erro);font-size:.8em;margin-left:4px}
+.exc{list-style:none;margin:0;padding:0;overflow:hidden}
+.exc li{display:grid;grid-template-columns:auto 1fr auto;gap:.6vw;align-items:center;padding:.8vh .4vw;border-bottom:1px solid var(--linha);font-size:clamp(12px,1vw,22px)}
+.exc .id{font-weight:800;color:var(--erro)}.exc .al{color:var(--erro);font-weight:700;text-align:right}.exc small{color:var(--fraco);display:block}
+.vazio{color:var(--fraco);font-size:clamp(16px,1.6vw,34px);display:flex;align-items:center;justify-content:center;height:100%;gap:12px}
+/* Cards das fases */
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(240px,19vw,460px),1fr));gap:.8vw;align-content:start;height:100%;overflow:hidden}
+.card{background:var(--painel);border:1px solid var(--linha);border-left:6px solid var(--cor,var(--ativo));border-radius:12px;padding:1vh .8vw;min-width:0}
+.card .l1{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.card .id{font-weight:800;font-size:clamp(16px,1.35vw,30px)}.card .fil{color:var(--fraco);font-size:clamp(10px,.75vw,16px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .cli{font-weight:600;font-size:clamp(12px,.95vw,20px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .rota,.card .mot{color:var(--fraco);font-size:clamp(11px,.85vw,18px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .al{margin-top:.5vh;font-weight:700;font-size:clamp(11px,.9vw,19px);color:var(--cor)}
+.card .et{display:inline-block;margin-top:.4vh;font-size:clamp(10px,.75vw,16px);background:var(--painel2);border-radius:999px;padding:1px 8px;color:var(--fraco)}
+.t-erro{--cor:var(--erro)}.t-atencao{--cor:var(--atencao)}.t-ok{--cor:var(--ok)}.t-ativo{--cor:var(--ativo)}.t-neutro{--cor:var(--neutro)}
+.t-erro.card{background:linear-gradient(90deg,rgba(239,68,68,.16),var(--painel) 60%)}
+.mais{color:var(--fraco);text-align:center;font-size:clamp(12px,1vw,20px);padding:.6vh}
+.kanban{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8vw;height:100%;min-height:0}
+.kanban .col{display:flex;flex-direction:column;min-height:0;background:var(--painel);border-radius:12px;padding:.8vh .6vw;border-top:4px solid var(--cor)}
+.kanban .col h3{margin:0 0 .8vh;font-size:clamp(13px,1.1vw,24px);display:flex;justify-content:space-between}
+.kanban .lista{display:flex;flex-direction:column;gap:.6vh;overflow:hidden;min-height:0}
+.kanban .card{border-radius:10px}
+/* Rodapé (letreiro de atrasos) */
+.rodape{display:flex;align-items:center;gap:1vw;background:var(--painel);border:1px solid var(--linha);border-radius:10px;overflow:hidden;height:clamp(28px,4vh,60px)}
+.rodape b{background:var(--erro);color:#fff;height:100%;display:flex;align-items:center;padding:0 1vw;font-size:clamp(12px,1vw,22px);white-space:nowrap}
+.rodape b.ok{background:var(--ok)}
+.letreiro{flex:1;overflow:hidden;white-space:nowrap;font-size:clamp(12px,1.05vw,24px)}
+.letreiro span{display:inline-block;padding-left:100%;animation:corre var(--dur,40s) linear infinite}
+@keyframes corre{to{transform:translateX(-100%)}}
+dialog{background:var(--painel);color:var(--texto);border:1px solid var(--linha);border-radius:14px;max-width:720px;width:95vw}
+dialog input,dialog select{background:var(--painel2);color:var(--texto);border:1px solid var(--linha);border-radius:8px;padding:8px;width:100%}
+dialog .linha{display:grid;grid-template-columns:2fr 1.4fr auto;gap:8px;align-items:end;margin:10px 0}
+dialog button{background:var(--laranja);color:#fff;border:0;border-radius:8px;padding:9px 14px;cursor:pointer}
+dialog .sec{background:var(--painel2);border:1px solid var(--linha)}
+dialog table{font-size:14px}dialog td{font-weight:400}
+.link{background:#052e16;border:1px solid var(--ok);padding:10px;border-radius:8px;word-break:break-all;font-family:monospace}
+@media (max-width:900px){html,body{overflow:auto}.tv{height:auto}.kpis{grid-template-columns:repeat(2,1fr)}.geral{grid-template-columns:1fr;height:auto}.kanban{grid-template-columns:1fr 1fr;height:auto}.topo{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="tv">
+    <header class="topo">
+        <div class="marca">Segura <span>Logística</span></div>
+        <div class="titulo"><h1 id="nome-tela">Visão geral</h1><small>Torre de controle · Geral — todas as filiais</small></div>
+                <div class="ctl">
+                            <select aria-label="Filial" onchange="location.search = this.value ? '?filial=' + this.value : ''">
+                    <option value="">Geral (todas)</option>
+                    <option value="1" >Matriz</option><option value="2" >Segura - Betim - MG</option><option value="3" >Segura - Cariacica - ES</option><option value="4" >Segura - Esteio - RS</option><option value="5" >Segura - Goiânia - GO</option><option value="6" >Segura - Itapevi - SP</option><option value="7" >Segura - Pinhais - PR</option><option value="8" >Segura - Rio de Janeiro - RJ</option><option value="9" >Segura - Sapucaia do Sul - RS</option><option value="10" >Segura - Sorocaba - SP</option><option value="11" >Segura Maringá - PR</option><option value="12" >Segura Pirapozinho - SP</option>                </select>
+                        <button type="button" id="pausar" title="Pausar a troca de telas (espaço)">⏸</button>
+            <button type="button" onclick="document.documentElement.requestFullscreen?.()" title="Tela cheia">⛶</button>
+            <button type="button" onclick="document.getElementById('tvs').showModal()">📺 Links de TV</button>            <a href="http://127.0.0.1:8123" title="Voltar ao sistema">✕</a>
+        </div>
+                <div class="vivo" id="vivo"><i></i><span id="atualizado">conectando…</span></div>
+        <div class="relogio" id="relogio">--:--<small id="data"></small></div>
+    </header>
+
+    <nav class="abas" id="abas" aria-label="Telas"></nav>
+    <main class="tela" id="tela"><div class="vazio">Carregando a torre de controle…</div></main>
+    <footer class="rodape"><b id="rod-tit">Em atraso</b><div class="letreiro"><span id="letreiro"></span></div></footer>
+</div>
+
+<dialog id="tvs" >
+    <h2 style="margin-top:0">📺 Links de TV (sem login, só leitura, sem valores)</h2>
+            <form method="post" action="http://127.0.0.1:8123/gestao-a-vista/tvs" class="linha"><input type="hidden" name="_token" value="IUm4FTgzhIk6XRqAycaJBugZ5ElRyaCttI5Gk82J" autocomplete="off">        <div><label for="tv-nome">Nome da TV</label><input id="tv-nome" name="nome" maxlength="80" required placeholder="TV da operação Cajamar"></div>
+        <div><label for="tv-fil">Filial</label><select id="tv-fil" name="filial_id"><option value="">Geral (todas)</option>
+            <option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>
+        <button>Criar link</button>
+    </form>
+    <table>
+        <tr><th>TV</th><th>Filial</th><th>Último acesso</th><th></th></tr>
+                    <tr><td>TV teste</td><td>Geral</td><td>16/10 12:24</td>
+                <td><form method="post" action="http://127.0.0.1:8123/gestao-a-vista/tvs/1" onsubmit="return confirm('Desativar? O link para de funcionar.')"><input type="hidden" name="_token" value="IUm4FTgzhIk6XRqAycaJBugZ5ElRyaCttI5Gk82J" autocomplete="off"> <input type="hidden" name="_method" value="delete"><button class="sec">Desativar</button></form></td></tr>
+            </table>
+    <p style="text-align:right;margin-bottom:0"><button class="sec" onclick="document.getElementById('tvs').close()">Fechar</button></p>
+</dialog>
+
+<script>
+(() => {
+  const URL_DADOS = "http:\/\/127.0.0.1:8123\/gestao-a-vista\/dados";
+  const q = new URLSearchParams(location.search);
+  const TEMPO = Math.max(8, parseInt(q.get('tempo') || '20', 10)) * 1000; // segundos por tela (?tempo=30)
+  const FIXA = q.get('tela');                                              // ?tela=geral deixa uma tela só
+  const ATUALIZA = 30000;
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const COR_ETAPA = {nao_chegou:'#94a3b8', aguardando:'#f5b301', carregando:'#38bdf8', carregado:'#22c55e'};
+  const NOME_ETAPA = {nao_chegou:'Não chegou', aguardando:'Aguardando', carregando:'Carregando', carregado:'Carregado'};
+  let dados = {"atualizado_em":"2026-10-16T12:26:25-03:00","filial":null,"kpis":{"contratar":{"total":3,"atraso":0,"hoje":0},"contratadas_hoje":0,"carregamento":{"total":1,"atraso":0,"nao_chegou":0,"aguardando":1,"carregando":0,"carregado":0},"viagem":{"total":2,"atraso":1,"hoje":0},"entregues":{"total":0,"no_prazo":0,"percentual":null},"otd_mes":100,"chamados_urgentes":1},"por_filial":[{"filial":"Matriz","contratar":3,"contratar_atraso":0,"carregamento":1,"carregamento_atraso":0,"viagem":2,"viagem_atraso":1,"entregues":0}],"excecoes":[{"id":2,"filial":"Matriz","filial_id":1,"cliente":"Alimentos Vale Verde","origem":"S\u00e3o Paulo\/SP","destino":"Campinas\/SP","coleta":"16\/10 02:28","entrega":"16\/10 10:28","placa":"GHK2B47","motorista":"Marcos Vieira","hoje":false,"etapa":"Em viagem","alerta":"Entrega atrasada h\u00e1 1h57","tom":"erro","atraso_min":117,"fase":"viagem","fase_nome":"Em viagem"}],"fases":{"contratar":[{"id":4,"filial":"Matriz","filial_id":1,"cliente":"Cosm\u00e9ticos Aurora","origem":"Cajamar\/SP","destino":"Presidente Prudente\/SP","coleta":"17\/10 08:00","entrega":"18\/10 14:00","placa":null,"motorista":null,"hoje":false,"etapa":"Aguardando","alerta":"Alto \u00b7 coleta amanh\u00e3","tom":"atencao","atraso_min":0},{"id":5,"filial":"Matriz","filial_id":1,"cliente":"Qu\u00edmica Paulista","origem":"Sorocaba\/SP","destino":"S\u00e3o Paulo\/SP","coleta":"17\/10 10:00","entrega":"17\/10 17:00","placa":null,"motorista":null,"hoje":false,"etapa":"Em contrata\u00e7\u00e3o","alerta":"Alto \u00b7 coleta amanh\u00e3","tom":"atencao","atraso_min":0},{"id":6,"filial":"Matriz","filial_id":1,"cliente":"Farma Bem Estar","origem":"S\u00e3o Paulo\/SP","destino":"Sorocaba\/SP","coleta":"18\/10 07:30","entrega":"18\/10 15:00","placa":null,"motorista":null,"hoje":false,"etapa":"Aguardando aprova\u00e7\u00e3o GR","alerta":"Moderado \u00b7 coleta em 2 dias","tom":"atencao","atraso_min":0}],"carregamento":[{"id":3,"filial":"Matriz","filial_id":1,"cliente":"Farma Bem Estar","origem":"S\u00e3o Jos\u00e9 dos Campos\/SP","destino":"S\u00e3o Paulo\/SP","coleta":"16\/10 13:28","entrega":"16\/10 19:28","placa":"BRA7C19","motorista":"Juliana Souza","hoje":false,"etapa":"Aguardando carregamento","etapa_chave":"aguardando","alerta":null,"tom":"ativo","atraso_min":0}],"viagem":[{"id":2,"filial":"Matriz","filial_id":1,"cliente":"Alimentos Vale Verde","origem":"S\u00e3o Paulo\/SP","destino":"Campinas\/SP","coleta":"16\/10 02:28","entrega":"16\/10 10:28","placa":"GHK2B47","motorista":"Marcos Vieira","hoje":false,"etapa":"Em viagem","alerta":"Entrega atrasada h\u00e1 1h57","tom":"erro","atraso_min":117},{"id":1,"filial":"Matriz","filial_id":1,"cliente":"Cosm\u00e9ticos Aurora","origem":"Cajamar\/SP","destino":"Ribeir\u00e3o Preto\/SP","coleta":"16\/10 05:28","entrega":"16\/10 15:28","placa":"FTR4E21","motorista":"Roberto Almeida","hoje":false,"etapa":"Em viagem","alerta":"Entrega hoje \u00e0s 15:28","tom":"atencao","atraso_min":0}],"entregues":[]}}, idx = 0, inicio = Date.now(), pausado = false;
+
+  const telas = () => {
+    if (!dados) return [];
+    const f = dados.fases, k = dados.kpis;
+    const t = [
+      {id:'geral', nome:'Visão geral', n:null, render:geral},
+      {id:'contratar', nome:'Pendentes de contratação', n:k.contratar.total, erro:k.contratar.atraso, render:() => grade(f.contratar, 'Nenhuma carga pendente de contratação 👍')},
+      {id:'carregamento', nome:'Carregamento', n:k.carregamento.total, erro:k.carregamento.atraso, render:kanban},
+      {id:'viagem', nome:'Em viagem', n:k.viagem.total, erro:k.viagem.atraso, render:() => grade(f.viagem, 'Nenhum veículo em viagem')},
+      {id:'entregues', nome:'Entregues hoje', n:k.entregues.total, render:() => grade(f.entregues, 'Nenhuma entrega concluída hoje ainda')},
+      {id:'atrasos', nome:'Em atraso', n:dados.excecoes.length, erro:dados.excecoes.length, render:() => grade(dados.excecoes, 'Nada em atraso agora ✅', true)},
+    ];
+    if (dados.por_filial.length > 1) t.splice(1, 0, {id:'filiais', nome:'Por filial', n:dados.por_filial.length, render:porFilial});
+    return FIXA ? t.filter(x => x.id === FIXA) : t.filter(x => x.id === 'geral' || x.id === 'filiais' || x.n);
+  };
+
+  function kpi(titulo, n, sub, cor) { return `<div class="kpi" style="--cor:${cor}"><h3>${titulo}</h3><div class="n">${n ?? '—'}</div><div class="s">${sub}</div></div>`; }
+  const pct = v => v === null || v === undefined ? '—' : v + '%';
+  const corPct = v => v === null ? 'var(--neutro)' : v >= 95 ? 'var(--ok)' : v >= 85 ? 'var(--atencao)' : 'var(--erro)';
+
+  function geral() {
+    const k = dados.kpis, c = k.carregamento;
+    const tot = Math.max(1, c.total);
+    const sub = Object.keys(NOME_ETAPA).map(e => c[e] ? `<span style="width:${c[e] / tot * 100}%;background:${COR_ETAPA[e]}">${c[e]}</span>` : '').join('');
+    const exc = dados.excecoes.slice(0, 9).map(i => `<li><span class="id">#${i.id}</span><span>${esc(i.cliente)} <small>${esc(i.fase_nome)}${i.filial && !dados.filial ? ' · ' + esc(i.filial) : ''} · ${esc(i.origem)} → ${esc(i.destino)}</small></span><span class="al">${esc(i.alerta)}</span></li>`).join('');
+    const filiais = dados.por_filial.length > 1 ? tabelaFiliais(dados.por_filial.slice(0, 8)) : '';
+    return `<div class="kpis" id="kpis">
+        ${kpi('Pendentes de contratação', k.contratar.total, `<b class="${k.contratar.atraso ? 'erro' : 'ok'}">${k.contratar.atraso} em atraso/crítica</b> · ${k.contratar.hoje} coletam hoje`, k.contratar.atraso ? 'var(--erro)' : 'var(--atencao)')}
+        ${kpi('Contratadas hoje', k.contratadas_hoje, 'motoristas fechados no dia', 'var(--laranja)')}
+        ${kpi('Em carregamento', c.total, `<b class="${c.atraso ? 'erro' : 'ok'}">${c.atraso} com atraso</b> · ${c.carregado} carregados`, c.atraso ? 'var(--erro)' : 'var(--ativo)')}
+        ${kpi('Em viagem', k.viagem.total, `<b class="${k.viagem.atraso ? 'erro' : 'ok'}">${k.viagem.atraso} atrasadas</b> · ${k.viagem.hoje} entregam hoje`, k.viagem.atraso ? 'var(--erro)' : 'var(--ativo)')}
+        ${kpi('Entregues hoje', k.entregues.total, `<b class="ok">${pct(k.entregues.percentual)} no prazo</b>`, 'var(--ok)')}
+        ${kpi('No prazo no mês', pct(k.otd_mes), `entregas no prazo (OTD)${k.chamados_urgentes ? ` · <b class="erro">${k.chamados_urgentes} chamado(s) urgente(s)</b>` : ''}`, corPct(k.otd_mes))}
+      </div>
+      <div class="geral">
+        <div class="bloco"><h2>Fluxo da operação <small>agora</small></h2>
+          <div class="funil">
+            <div class="etapa" style="--cor:var(--atencao)"><div>A contratar</div><div class="n">${k.contratar.total}</div><div class="x">${k.contratar.atraso ? k.contratar.atraso + ' em atraso' : '&nbsp;'}</div></div>
+            <div class="etapa" style="--cor:var(--ativo)"><div>Carregamento</div><div class="n">${c.total}</div><div class="x">${c.atraso ? c.atraso + ' com atraso' : '&nbsp;'}</div></div>
+            <div class="etapa" style="--cor:#a78bfa"><div>Em viagem</div><div class="n">${k.viagem.total}</div><div class="x">${k.viagem.atraso ? k.viagem.atraso + ' atrasadas' : '&nbsp;'}</div></div>
+            <div class="etapa" style="--cor:var(--ok)"><div>Entregues hoje</div><div class="n">${k.entregues.total}</div><div class="x" style="color:var(--ok)">${pct(k.entregues.percentual)} no prazo</div></div>
+          </div>
+          <h2 style="margin-top:.6vh">Carregamento por etapa</h2>
+          <div class="sub">${sub || '<span style="width:100%;color:var(--fraco)">nenhum carregamento</span>'}</div>
+          <div class="legenda">${Object.keys(NOME_ETAPA).map(e => `<span><i style="background:${COR_ETAPA[e]}"></i>${NOME_ETAPA[e]} ${c[e]}</span>`).join('')}</div>
+          ${filiais ? `<h2 style="margin-top:1.4vh">Por filial</h2>${filiais}` : proximas()}
+        </div>
+        <div class="bloco"><h2>⚠ Em atraso agora <small>${dados.excecoes.length} no total</small></h2>
+          ${exc ? `<ul class="exc">${exc}</ul>` : '<div class="vazio">Nada em atraso ✅</div>'}</div>
+      </div>`;
+  }
+
+  // Sem quadro por filial: as próximas coletas que ainda precisam de motorista
+  function proximas() {
+    const l = dados.fases.contratar.slice(0, 6);
+    if (!l.length) return '';
+    return `<h2 style="margin-top:1.4vh">Próximas a contratar <small>pela urgência</small></h2><ul class="exc">${l.map(i => `<li><span class="id" style="color:var(--${i.tom === 'erro' ? 'erro' : i.tom === 'atencao' ? 'atencao' : 'fraco'})">#${i.id}</span><span>${esc(i.cliente)} <small>${esc(i.origem)} → ${esc(i.destino)} · coleta ${esc(i.coleta)}</small></span><span class="al" style="color:var(--${i.tom === 'erro' ? 'erro' : i.tom === 'atencao' ? 'atencao' : 'fraco'})">${esc(i.alerta || i.etapa)}</span></li>`).join('')}</ul>`;
+  }
+
+  function tabelaFiliais(lista) {
+    const td = (n, x) => `${n}${x ? `<em>${x}⚠</em>` : ''}`;
+    return `<table><tr><th>Filial</th><th>A contratar</th><th>Carregamento</th><th>Em viagem</th><th>Entregues hoje</th></tr>
+      ${lista.map(f => `<tr><td>${esc(f.filial)}</td><td>${td(f.contratar, f.contratar_atraso)}</td><td>${td(f.carregamento, f.carregamento_atraso)}</td><td>${td(f.viagem, f.viagem_atraso)}</td><td>${f.entregues}</td></tr>`).join('')}</table>`;
+  }
+  function porFilial() { return `<div class="bloco" style="height:100%"><h2>Cenário por filial <small>⚠ = em atraso</small></h2>${tabelaFiliais(dados.por_filial)}</div>`; }
+
+  function card(i, comFase) {
+    return `<div class="card t-${esc(i.tom)}">
+      <div class="l1"><span class="id">#${i.id}</span><span class="fil">${!dados.filial ? esc(i.filial) : ''}</span></div>
+      <div class="cli">${esc(i.cliente)}</div>
+      <div class="rota">${esc(i.origem)} → ${esc(i.destino)}</div>
+      <div class="rota">Coleta ${esc(i.coleta)}${i.entrega ? ' · Entrega ' + esc(i.entrega) : ''}</div>
+      ${i.placa || i.motorista ? `<div class="mot">🚚 ${esc(i.placa)} ${i.motorista ? '· ' + esc(i.motorista) : ''}</div>` : ''}
+      ${i.alerta ? `<div class="al">${esc(i.alerta)}</div>` : ''}
+      <span class="et">${comFase ? esc(i.fase_nome) : esc(i.etapa)}</span></div>`;
+  }
+  function grade(lista, vazio, comFase) {
+    if (!lista.length) return `<div class="vazio">${vazio}</div>`;
+    return `<div class="grade">${lista.map(i => card(i, comFase)).join('')}</div>`;
+  }
+  function kanban() {
+    const l = dados.fases.carregamento;
+    if (!l.length) return '<div class="vazio">Nenhum carregamento agora</div>';
+    return `<div class="kanban">${Object.keys(NOME_ETAPA).map(e => { const it = l.filter(i => i.etapa_chave === e);
+      return `<div class="col" style="--cor:${COR_ETAPA[e]}"><h3>${NOME_ETAPA[e]} <span>${it.length}</span></h3><div class="lista">${it.map(i => card(i)).join('') || '<div class="mais">—</div>'}</div></div>`; }).join('')}</div>`;
+  }
+
+  // Esconde o que não cabe e mostra "+N" (TV não rola)
+  function cortar() {
+    document.querySelectorAll('.grade,.kanban .lista').forEach(g => {
+      const lim = g.getBoundingClientRect().bottom; let fora = 0;
+      [...g.children].forEach(c => { if (c.getBoundingClientRect().bottom > lim + 1) { c.style.display = 'none'; fora++; } });
+      if (fora) { const m = document.createElement('div'); m.className = 'mais'; m.textContent = `+ ${fora} — ver no sistema`; g.appendChild(m); }
+    });
+  }
+
+  function desenhar(trocou) {
+    const t = telas(); if (!t.length) return;
+    idx = idx % t.length;
+    const atual = t[idx];
+    document.getElementById('nome-tela').textContent = atual.nome;
+    document.getElementById('abas').innerHTML = t.map((x, i) => `<button type="button" class="aba ${i === idx ? 'ativa' : ''} ${x.erro ? 'erro' : ''}" data-i="${i}">${esc(x.nome)}${x.n !== null && x.n !== undefined ? `<b>${x.n}</b>` : ''}</button>`).join('')
+      + '<div class="barra"><i id="barra"></i></div>';
+    const tela = document.getElementById('tela');
+    if (trocou) { tela.style.animation = 'none'; tela.offsetHeight; tela.style.animation = ''; }
+    tela.innerHTML = atual.render();
+    const k = document.getElementById('kpis'); if (k) tela.style.setProperty('--kpih', k.offsetHeight + 'px');
+    cortar();
+    // Letreiro: o que está em atraso
+    const exc = dados.excecoes;
+    const rod = document.getElementById('rod-tit'); rod.className = exc.length ? '' : 'ok'; rod.textContent = exc.length ? `⚠ ${exc.length} em atraso` : '✅ Sem atrasos';
+    const txt = exc.length ? exc.map(i => `#${i.id} ${i.cliente ?? ''} (${i.fase_nome}${i.filial && !dados.filial ? ' · ' + i.filial : ''}): ${i.alerta}`).join('   •   ')
+      : `Contratação ${dados.kpis.contratar.total} · Carregamento ${dados.kpis.carregamento.total} · Em viagem ${dados.kpis.viagem.total} · Entregues hoje ${dados.kpis.entregues.total}`;
+    const l = document.getElementById('letreiro'); if (l.textContent !== txt) { l.textContent = txt; l.style.setProperty('--dur', Math.max(25, txt.length / 8) + 's'); }
+  }
+
+  async function buscar() {
+    try {
+      const r = await fetch(URL_DADOS, {headers: {Accept: 'application/json'}, cache: 'no-store'});
+      if (!r.ok) throw new Error(r.status);
+      dados = await r.json();
+      document.getElementById('vivo').classList.remove('off');
+      document.getElementById('atualizado').textContent = 'ao vivo · ' + new Date(dados.atualizado_em).toLocaleTimeString('pt-BR');
+      desenhar(false);
+    } catch (e) {
+      document.getElementById('vivo').classList.add('off');
+      document.getElementById('atualizado').textContent = 'sem conexão — tentando de novo';
+    }
+  }
+
+  function relogio() {
+    const d = new Date();
+    document.getElementById('relogio').firstChild.textContent = d.toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'});
+    document.getElementById('data').textContent = d.toLocaleDateString('pt-BR', {weekday:'short', day:'2-digit', month:'2-digit'});
+  }
+
+  function proxima(passo = 1) { const n = telas().length; if (!n) return; idx = (idx + passo + n) % n; inicio = Date.now(); desenhar(true); }
+  setInterval(() => {
+    relogio();
+    const b = document.getElementById('barra');
+    if (pausado || FIXA) { if (b) b.style.width = pausado ? '0' : '100%'; return; }
+    const p = (Date.now() - inicio) / TEMPO; if (b) b.style.width = Math.min(100, p * 100) + '%';
+    if (p >= 1) proxima();
+  }, 250);
+  document.getElementById('abas').addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (b) { idx = +b.dataset.i - 1; proxima(); } });
+  const pausa = document.getElementById('pausar');
+  const alternar = () => { pausado = !pausado; inicio = Date.now(); if (pausa) pausa.textContent = pausado ? '▶' : '⏸'; };
+  pausa?.addEventListener('click', alternar);
+  document.addEventListener('keydown', e => { if (e.key === 'ArrowRight') proxima(); if (e.key === 'ArrowLeft') proxima(-1); if (e.key === ' ') { e.preventDefault(); alternar(); } });
+  window.addEventListener('resize', () => dados && desenhar(false));
+  relogio(); if (dados) { document.getElementById('atualizado').textContent = 'ao vivo · ' + new Date(dados.atualizado_em).toLocaleTimeString('pt-BR'); desenhar(false); }
+  setInterval(buscar, ATUALIZA);
+})();
+</script>
+</body>
+</html>
