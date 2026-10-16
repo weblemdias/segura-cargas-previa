@@ -379,6 +379,31 @@ table.contratacao tbody tr:not(.linha-obs):not(.linha-indicados):not(:first-chil
 .port-form{display:flex;gap:4px;align-items:center}
 .port-form select{width:auto}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* Torre de controle da expedição */
+.torre-busca{display:flex;gap:6px}.torre-busca input{width:260px}
+.torre-resumo{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.torre-num{background:var(--branco);border:1px solid var(--linha);border-left:5px solid var(--linha);border-radius:6px;padding:6px 12px}
+.torre-num strong{font-size:18px;margin-right:4px}
+.torre-lista{display:grid;gap:12px}
+.torre-card{margin:0;border-left:6px solid var(--linha)}
+.t-carregado{border-left-color:#16a34a}.t-carregando{border-left-color:#2563eb}.t-aguardando{border-left-color:#d97706}.t-nao_chegou{border-left-color:#9ca3af}
+.t-atrasado{border-left-color:var(--erro)}
+.torre-card.t-carregado{background:#f3fbf5}
+.torre-atrasado{border-left-color:var(--erro);background:#fff5f5}
+.torre-topo{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.torre-status{text-align:right}
+.torre-etapa{font-weight:700;font-size:16px}
+.t-carregado .torre-etapa{color:#15803d}.t-carregando .torre-etapa{color:#1d4ed8}.t-aguardando .torre-etapa{color:#b45309}
+.erro-texto{color:var(--erro);font-weight:700}
+.torre-inicio{font-size:16px;padding:10px 22px}
+.torre-anexos{margin:8px 0 0}.torre-anexos a{margin-right:10px}
+.torre-docs{margin-top:10px;border-top:1px solid var(--linha);padding-top:8px}
+.torre-docs summary{cursor:pointer;font-weight:600}
+.torre-pdfs{margin:6px 0;padding-left:18px}
+.torre-upload input[type=file]{width:auto}
+.torre-destino{display:block;margin:3px 0}
+.torre-zap{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+@media (max-width:640px){.torre-status{text-align:left}.torre-busca input{width:100%}}
 
 html,body{background:var(--fundo)}
 .previa{background:var(--laranja-claro);color:#7a3a00;border-bottom:1px solid #f6c89b;padding:8px 16px;font-size:13px}</style></head><body>
