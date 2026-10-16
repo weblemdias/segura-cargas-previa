@@ -439,6 +439,20 @@ a.torre-num.ativo{background:var(--tinta);color:#fff}
 .torre-enviada .torre-numero{font-size:20px;margin-right:6px}
 .torre-adto summary .selo{margin-left:6px}
 .torre-adto-grade{grid-template-columns:repeat(auto-fill,minmax(170px,1fr));margin-top:8px}
+/* Portaria em cards finos (Docas e portaria) */
+.portaria-painel .port-fino{display:grid;grid-template-columns:minmax(260px,1.3fr) minmax(200px,1fr) auto;gap:6px 14px;align-items:center;padding:6px 12px;margin-bottom:6px;font-size:14px}
+.port-fino .port-placa{font-size:16px}
+.port-fino .port-status{text-align:left;display:flex;flex-direction:column}
+.port-fino .port-passo{font-size:14px}
+.port-fino .port-acoes{margin-top:0;justify-content:flex-end}
+.port-fino .port-form select{padding:4px 6px}
+.port-agendado{border-left-color:var(--linha)}
+.port-documentacao{border-left-color:#7c3aed}
+.port-doc_entregue{border-left-color:#0891b2;background:#f0fdff}
+.port-espera{font-size:12px;max-width:260px}
+.pf-chegaram strong{color:var(--erro)}
+.pf-liberar strong{color:#0891b2}
+@media (max-width:900px){.portaria-painel .port-fino{grid-template-columns:1fr}.port-fino .port-acoes{justify-content:flex-start}}
 
 :root{color-scheme:light;--faixa:#202327;--faixa-txt:#f3f4f6}
 html,body{background:var(--fundo)}
@@ -731,7 +745,7 @@ html,body{background:var(--fundo)}
         <dl class="dados">
             <div><dt>Cliente</dt><dd>Farma Bem Estar</dd></div>
             <div><dt>Rota</dt><dd>São José dos Campos/SP → São Paulo/SP</dd></div>
-            <div><dt>Coleta</dt><dd>16/10/2026 13:12</dd></div>
+            <div><dt>Coleta</dt><dd>16/10/2026 13:28</dd></div>
             <div><dt>Motorista</dt><dd>Juliana Souza</dd></div>
             <div><dt>Placa</dt><dd>BRA7C19</dd></div>
             <div><dt>Contratado por</dt><dd>Ana Ribeiro</dd></div>
@@ -862,7 +876,7 @@ html,body{background:var(--fundo)}
         <h2>Histórico</h2>
         <ul class="historico">
                             <li>
-                    <small>14/10/2026 11:12 · Administrador</small><br>
+                    <small>14/10/2026 11:28 · Administrador</small><br>
                      Carga cadastrada                                     </li>
                     </ul>
     </section>
@@ -1233,7 +1247,7 @@ html,body{background:var(--fundo)}
                             </div>
             <div>
                 <label for="cnpj">CNPJ *</label>
-                <input id="cnpj" name="cnpj" value="09.872.729/0001-22" required inputmode="numeric" placeholder="00.000.000/0000-00">
+                <input id="cnpj" name="cnpj" value="40.538.089/0001-69" required inputmode="numeric" placeholder="00.000.000/0000-00">
                             </div>
             <div class="largo">
                                 <label for="pgr_categoria_id">Categoria do PGR</label>
@@ -1357,7 +1371,7 @@ html,body{background:var(--fundo)}
 
 <section class="cartao regra-fila">
     <div class="agora">
-        <span class="muted">Agora (sexta-feira, 16/10 11:20) · dia útil: vale o rodízio</span>
+        <span class="muted">Agora (sexta-feira, 16/10 11:30) · dia útil: vale o rodízio</span>
         <strong>Próxima carga vai para: Ana Ribeiro</strong>
         <small>Rodízio entre quem está no horário (2 pessoa(s)).</small>
     </div>
@@ -1691,8 +1705,8 @@ html,body{background:var(--fundo)}
                             <span class="seta">→</span>                <span><strong>São Paulo/SP</strong></span>
                     </div>
         <dl class="dados" style="margin-top:14px">
-            <div><dt>Coleta</dt><dd>13/10/2026 11:12</dd></div>
-            <div><dt>Entrega</dt><dd>14/10/2026 11:12</dd></div>
+            <div><dt>Coleta</dt><dd>13/10/2026 11:28</dd></div>
+            <div><dt>Entrega</dt><dd>14/10/2026 11:28</dd></div>
             <div><dt>Distância</dt><dd>95,0 km</dd></div>
             <div><dt>Entregue em</dt><dd>14/10/2026</dd></div>        </dl>
     </section>
@@ -1725,8 +1739,8 @@ html,body{background:var(--fundo)}
         <section class="cartao">
         <h2>Situações enviadas pelo motorista</h2>
         <ul class="historico">
-                            <li><strong>Carregado (saiu da coleta)</strong> <small>13/10/2026 13:12</small></li>
-                            <li><strong>Comprovante de entrega</strong> <small>14/10/2026 09:12</small></li>
+                            <li><strong>Carregado (saiu da coleta)</strong> <small>13/10/2026 13:28</small></li>
+                            <li><strong>Comprovante de entrega</strong> <small>14/10/2026 09:28</small></li>
                     </ul>
     </section>
     </div>
@@ -1738,7 +1752,7 @@ html,body{background:var(--fundo)}
                 <div><dt>Motorista</dt><dd>Paulo Teixeira</dd></div>
                 <div><dt>Placa</dt><dd>EJF3D88</dd></div>
                 <div><dt>Valor contratado</dt><dd>R$ 900,00</dd></div>
-                <div><dt>Contratado em</dt><dd>15/10/2026 11:12</dd></div>
+                <div><dt>Contratado em</dt><dd>15/10/2026 11:28</dd></div>
             </dl>
                             <p style="margin:10px 0 0"><span class="muted">Valor sugerido:</span>
                             <strong>R$ 918,00</strong> <small class="muted">(base Toco, margem 8%)</small>
@@ -1776,11 +1790,11 @@ html,body{background:var(--fundo)}
         <h2>Histórico</h2>
         <ul class="historico">
                             <li>
-                    <small>14/10/2026 11:12 · Ana Ribeiro</small><br>
+                    <small>14/10/2026 11:28 · Ana Ribeiro</small><br>
                      Status: Em andamento → <strong>Entregue</strong>
                                                             </li>
                             <li>
-                    <small>14/10/2026 11:12 · Administrador</small><br>
+                    <small>14/10/2026 11:28 · Administrador</small><br>
                      Carga cadastrada                                     </li>
                     </ul>
     </section>
@@ -1931,7 +1945,7 @@ html,body{background:var(--fundo)}
         <div class="grade">
             <div class="" >
             <label for="f_cpf">CPF * </label>
-                    <input id="f_cpf" type="text" name="cpf" value="575.726.761-54" required inputmode="numeric">
+                    <input id="f_cpf" type="text" name="cpf" value="047.798.750-80" required inputmode="numeric">
                 </div>
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Nome completo * </label>
@@ -1999,7 +2013,7 @@ html,body{background:var(--fundo)}
                 </div>
             <div class="" >
             <label for="f_whatsapp">WhatsApp (com DDD) * </label>
-                    <input id="f_whatsapp" type="text" name="whatsapp" value="11995615216" required inputmode="tel">
+                    <input id="f_whatsapp" type="text" name="whatsapp" value="11999934852" required inputmode="tel">
                 </div>
             <div class="" >
             <label for="f_email">E-mail </label>
@@ -2091,7 +2105,7 @@ html,body{background:var(--fundo)}
         <div class="grade">
             <div class="" >
             <label for="f_cnh_numero">Nº da CNH * </label>
-                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="03004676648" required inputmode="numeric">
+                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="01826217451" required inputmode="numeric">
                 </div>
             <div class="" >
             <label for="f_cnh_categoria">Categoria * </label>
@@ -2171,7 +2185,7 @@ html,body{background:var(--fundo)}
                     <label for="doc_1">CNH * <small class="muted">JPG, JPEG, PNG, PDF</small></label>
                     <input id="doc_1" type="file" name="documentos[1][arquivo]" accept=".jpg,.jpeg,.png,.pdf" form="form-motorista">
                                                                 <small>Atual: <span class="selo ok">Aprovado</span>
-                             validade 16/09/2027                            · <a href="#" data-fora="1" target="_blank">ver arquivo</a></small>
+                             validade 16/07/2027                            · <a href="#" data-fora="1" target="_blank">ver arquivo</a></small>
                                                                             </div>
                                                                             <div class="anexo">
                     <label for="doc_2">Comprovante de residência * <small class="muted">JPG, JPEG, PNG, PDF</small></label>
@@ -2212,13 +2226,13 @@ html,body{background:var(--fundo)}
                 <ul class="historico">
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/09/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/07/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
             </details>
@@ -2377,8 +2391,8 @@ html,body{background:var(--fundo)}
     <tbody>
                     <tr>
             <td><a href="#" data-fora="1"><strong>Cleber Nunes Santana</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
-            <td>195.412.120-26</td>
-            <td>11983652258</td>
+            <td>199.848.121-20</td>
+            <td>11987511438</td>
             <td>E <br><small class="muted">16/10/2028</small></td>
             <td>1</td>
             <td>—</td>
@@ -2386,8 +2400,8 @@ html,body{background:var(--fundo)}
         </tr>
                     <tr>
             <td><a href="#" data-fora="1"><strong>Deolindo Cruz Antunes</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
-            <td>324.930.571-55</td>
-            <td>11982056644</td>
+            <td>008.416.614-21</td>
+            <td>11983207486</td>
             <td>E <br><small class="muted">16/10/2028</small></td>
             <td>1</td>
             <td>—</td>
@@ -2395,8 +2409,8 @@ html,body{background:var(--fundo)}
         </tr>
                     <tr>
             <td><a href="#motoristas~7"><strong>Evandro Manzato</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
-            <td>020.296.115-06</td>
-            <td>11989645230</td>
+            <td>546.613.175-05</td>
+            <td>11989954441</td>
             <td>E <br><small class="muted">16/10/2028</small></td>
             <td>1</td>
             <td>—</td>
@@ -2404,8 +2418,8 @@ html,body{background:var(--fundo)}
         </tr>
                     <tr>
             <td><a href="#motoristas~5"><strong>Helio Francisco Paula</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
-            <td>673.536.071-06</td>
-            <td>11982094631</td>
+            <td>627.196.860-00</td>
+            <td>11989233925</td>
             <td>E <br><small class="muted">16/10/2028</small></td>
             <td>1</td>
             <td>—</td>
@@ -2413,8 +2427,8 @@ html,body{background:var(--fundo)}
         </tr>
                     <tr>
             <td><a href="#" data-fora="1"><strong>Jonatas Sales Prado</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
-            <td>247.383.953-00</td>
-            <td>11981088779</td>
+            <td>663.364.774-36</td>
+            <td>11989176419</td>
             <td>E <br><small class="muted">16/10/2028</small></td>
             <td>1</td>
             <td>—</td>
@@ -2422,8 +2436,8 @@ html,body{background:var(--fundo)}
         </tr>
                     <tr>
             <td><a href="#motoristas~3"><strong>Juliana Souza</strong></a>  <br><small class="muted">Cajamar/SP</small></td>
-            <td>575.726.761-54</td>
-            <td>11995615216</td>
+            <td>047.798.750-80</td>
+            <td>11999934852</td>
             <td>E <br><small class="muted">16/10/2028</small></td>
             <td>1</td>
             <td>—</td>
@@ -2431,8 +2445,8 @@ html,body{background:var(--fundo)}
         </tr>
                     <tr>
             <td><a href="#motoristas~2"><strong>Marcos Vieira</strong></a>  <br><small class="muted">Cajamar/SP</small></td>
-            <td>183.331.295-36</td>
-            <td>11997021773</td>
+            <td>269.961.403-31</td>
+            <td>11996222828</td>
             <td>E <br><small class="muted">16/10/2028</small></td>
             <td>1</td>
             <td>—</td>
@@ -2440,8 +2454,8 @@ html,body{background:var(--fundo)}
         </tr>
                     <tr>
             <td><a href="#motoristas~6"><strong>Osmar Souza Lima</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
-            <td>016.699.379-41</td>
-            <td>11984927506</td>
+            <td>264.770.643-32</td>
+            <td>11984574817</td>
             <td>E <br><small class="muted">16/10/2028</small></td>
             <td>1</td>
             <td>—</td>
@@ -2449,8 +2463,8 @@ html,body{background:var(--fundo)}
         </tr>
                     <tr>
             <td><a href="#motoristas~4"><strong>Paulo Teixeira</strong></a>  <br><small class="muted">Cajamar/SP</small></td>
-            <td>981.322.127-54</td>
-            <td>11993690274</td>
+            <td>975.436.976-37</td>
+            <td>11997029459</td>
             <td>E <br><small class="muted">16/10/2028</small></td>
             <td>1</td>
             <td>—</td>
@@ -2458,8 +2472,8 @@ html,body{background:var(--fundo)}
         </tr>
                     <tr>
             <td><a href="#motoristas~8"><strong>Renato Lucas Prado</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
-            <td>294.377.889-36</td>
-            <td>11988482078</td>
+            <td>987.186.255-50</td>
+            <td>11981736386</td>
             <td>E <br><small class="muted">16/10/2028</small></td>
             <td>1</td>
             <td>—</td>
@@ -2467,8 +2481,8 @@ html,body{background:var(--fundo)}
         </tr>
                     <tr>
             <td><a href="#motoristas~1"><strong>Roberto Almeida</strong></a>  <br><small class="muted">Cajamar/SP</small></td>
-            <td>985.460.412-88</td>
-            <td>11993513594</td>
+            <td>947.972.170-81</td>
+            <td>11996135530</td>
             <td>E <br><small class="muted">16/10/2028</small></td>
             <td>1</td>
             <td>—</td>
@@ -2476,8 +2490,8 @@ html,body{background:var(--fundo)}
         </tr>
                     <tr>
             <td><a href="#" data-fora="1"><strong>Wesley Sales Mendes</strong></a>  <br><small class="muted">Sorocaba/SP</small></td>
-            <td>657.536.025-41</td>
-            <td>11988876936</td>
+            <td>402.305.484-40</td>
+            <td>11985287802</td>
             <td>E <br><small class="muted">16/10/2028</small></td>
             <td>1</td>
             <td>—</td>
@@ -2850,8 +2864,8 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <td>Farma Bem Estar</td>
             <td>São José dos Campos/SP → São Paulo/SP
                 </td>
-            <td>16/10/2026 13:12</td>
-            <td>16/10/2026 19:12</td>
+            <td>16/10/2026 13:28</td>
+            <td>16/10/2026 19:28</td>
             <td>Juliana Souza
                 <br><small class="muted">BRA7C19</small></td>
             <td>R$ 1.650,00</td>
@@ -2873,8 +2887,8 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <td>Cosméticos Aurora</td>
             <td>Cajamar/SP → Ribeirão Preto/SP
                 </td>
-            <td>16/10/2026 05:12</td>
-            <td>16/10/2026 15:12</td>
+            <td>16/10/2026 05:28</td>
+            <td>16/10/2026 15:28</td>
             <td>Roberto Almeida
                 <br><small class="muted">FTR4E21</small></td>
             <td>R$ 4.200,00</td>
@@ -2896,8 +2910,8 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <td>Alimentos Vale Verde</td>
             <td>São Paulo/SP → Campinas/SP
                 <br><small class="muted">+1 parada(s)</small></td>
-            <td>16/10/2026 02:12</td>
-            <td>16/10/2026 10:12</td>
+            <td>16/10/2026 02:28</td>
+            <td>16/10/2026 10:28</td>
             <td>Marcos Vieira
                 <br><small class="muted">GHK2B47</small></td>
             <td>R$ 1.900,00</td>
@@ -2954,8 +2968,8 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <span class="seta">→</span>                <span><strong>Campinas/SP</strong></span>
                     </div>
         <dl class="dados" style="margin-top:14px">
-            <div><dt>Coleta</dt><dd>16/10/2026 02:12</dd></div>
-            <div><dt>Entrega</dt><dd>16/10/2026 10:12</dd></div>
+            <div><dt>Coleta</dt><dd>16/10/2026 02:28</dd></div>
+            <div><dt>Entrega</dt><dd>16/10/2026 10:28</dd></div>
             <div><dt>Distância</dt><dd>105,0 km</dd></div>
                     </dl>
     </section>
@@ -2988,7 +3002,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <section class="cartao">
         <h2>Situações enviadas pelo motorista</h2>
         <ul class="historico">
-                            <li><strong>Carregado (saiu da coleta)</strong> <small>16/10/2026 03:12</small></li>
+                            <li><strong>Carregado (saiu da coleta)</strong> <small>16/10/2026 03:28</small></li>
                     </ul>
     </section>
     </div>
@@ -3000,7 +3014,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <div><dt>Motorista</dt><dd>Marcos Vieira</dd></div>
                 <div><dt>Placa</dt><dd>GHK2B47</dd></div>
                 <div><dt>Valor contratado</dt><dd>R$ 1.150,00</dd></div>
-                <div><dt>Contratado em</dt><dd>15/10/2026 11:12</dd></div>
+                <div><dt>Contratado em</dt><dd>15/10/2026 11:28</dd></div>
             </dl>
                             <p style="margin:10px 0 0"><span class="muted">Valor sugerido:</span>
                             <strong>R$ 1.404,00</strong> <small class="muted">(base Truck, margem 8%)</small>
@@ -3038,15 +3052,15 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <h2>Histórico</h2>
         <ul class="historico">
                             <li>
-                    <small>16/10/2026 11:12 · Ana Ribeiro</small><br>
+                    <small>16/10/2026 11:28 · Ana Ribeiro</small><br>
                      Alterou:
                         <br><small>Chamado aberto (URGENTE): ⏰ Atraso na coleta/entrega — Motorista parado na balança de Jundiaí, previsão de atraso de 2 h na entrega.</small>                                                            </li>
                             <li>
-                    <small>16/10/2026 11:12 · Administrador</small><br>
+                    <small>16/10/2026 11:28 · Administrador</small><br>
                      Alterou:
                         <br><small>Extra #2/1 lançado: Diária, receita R$ 450,00 — Motorista aguardou a descarga das 8h às 18h; cliente autorizou diária.</small>                                                            </li>
                             <li>
-                    <small>14/10/2026 11:12 · Administrador</small><br>
+                    <small>14/10/2026 11:28 · Administrador</small><br>
                      Carga cadastrada                                     </li>
                     </ul>
     </section>
@@ -3444,11 +3458,11 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             </div>
             <div>
                 <label for="coleta_em">Coleta *</label>
-                <input id="coleta_em" type="datetime-local" name="coleta_em" value="2026-10-16T02:12" required>
+                <input id="coleta_em" type="datetime-local" name="coleta_em" value="2026-10-16T02:28" required>
                             </div>
             <div>
                 <label for="entrega_em">Entrega *</label>
-                <input id="entrega_em" type="datetime-local" name="entrega_em" value="2026-10-16T10:12" required>
+                <input id="entrega_em" type="datetime-local" name="entrega_em" value="2026-10-16T10:28" required>
                             </div>
         </div>
     </section>
@@ -3692,7 +3706,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <div><dt>Manifesto</dt><dd>MDF-33190</dd></div>
             <div><dt>Nº adiantamento</dt><dd>AD-7781</dd></div>
             <div><dt>CIOT</dt><dd>0412-5531-2201</dd></div>            <div><dt>Contratado por</dt><dd>Ana Ribeiro</dd></div>
-            <div><dt>Enviado por</dt><dd>Ana Ribeiro · 16/10/2026 11:12</dd></div>
+            <div><dt>Enviado por</dt><dd>Ana Ribeiro · 16/10/2026 11:28</dd></div>
                             <div><dt>Contrato</dt><dd><span class="selo ok">Assinado pelo proprietário</span></dd></div>
                     </dl>
     </section>
@@ -3847,7 +3861,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <h2>Histórico</h2>
         <ul class="historico">
                             <li>
-                    <small>14/10/2026 11:12 · Administrador</small><br>
+                    <small>14/10/2026 11:28 · Administrador</small><br>
                      Carga cadastrada                                     </li>
                     </ul>
     </section>
@@ -4043,11 +4057,11 @@ document.querySelectorAll('.torre-drop').forEach(z => {
 <table class="relatorio">
     <thead><tr><th>Motorista</th><th>Meta</th><th>WhatsApp</th><th>UF origem</th><th>Veículo</th><th>Contratante</th><th>Cargas válidas</th><th>Cargas no mês</th></tr></thead>
     <tbody>
-            <tr><td class="">Helio Francisco Paula</td><td class="">1/3 válidas</td><td class="num">11982094631</td><td class="">SP</td><td class="">Toco</td><td class="">Ana Ribeiro</td><td class="">#9</td><td class="num">1</td></tr>
-            <tr><td class="">Roberto Almeida</td><td class="">1/3 válidas</td><td class="num">11993513594</td><td class="">SP</td><td class="">Carreta</td><td class="">Ana Ribeiro</td><td class="">#1</td><td class="num">1</td></tr>
-            <tr><td class="">Marcos Vieira</td><td class="">1/3 válidas</td><td class="num">11997021773</td><td class="">SP</td><td class="">Truck</td><td class="">Ana Ribeiro</td><td class="">#2</td><td class="num">1</td></tr>
-            <tr><td class="">Paulo Teixeira</td><td class="">1/3 válidas</td><td class="num">11993690274</td><td class="">SP</td><td class="">Toco</td><td class="">Ana Ribeiro</td><td class="">#7</td><td class="num">1</td></tr>
-            <tr><td class="">Juliana Souza</td><td class="">0/3 válidas</td><td class="num">11995615216</td><td class="">SP</td><td class="">Toco</td><td class="">Ana Ribeiro</td><td class=""></td><td class="num">1</td></tr>
+            <tr><td class="">Helio Francisco Paula</td><td class="">1/3 válidas</td><td class="num">11989233925</td><td class="">SP</td><td class="">Toco</td><td class="">Ana Ribeiro</td><td class="">#9</td><td class="num">1</td></tr>
+            <tr><td class="">Roberto Almeida</td><td class="">1/3 válidas</td><td class="num">11996135530</td><td class="">SP</td><td class="">Carreta</td><td class="">Ana Ribeiro</td><td class="">#1</td><td class="num">1</td></tr>
+            <tr><td class="">Marcos Vieira</td><td class="">1/3 válidas</td><td class="num">11996222828</td><td class="">SP</td><td class="">Truck</td><td class="">Ana Ribeiro</td><td class="">#2</td><td class="num">1</td></tr>
+            <tr><td class="">Paulo Teixeira</td><td class="">1/3 válidas</td><td class="num">11997029459</td><td class="">SP</td><td class="">Toco</td><td class="">Ana Ribeiro</td><td class="">#7</td><td class="num">1</td></tr>
+            <tr><td class="">Juliana Souza</td><td class="">0/3 válidas</td><td class="num">11999934852</td><td class="">SP</td><td class="">Toco</td><td class="">Ana Ribeiro</td><td class=""></td><td class="num">1</td></tr>
         </tbody>
     </table>
 </div>
@@ -4089,8 +4103,8 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <span class="seta">→</span>                <span><strong>São Paulo/SP</strong></span>
                     </div>
         <dl class="dados" style="margin-top:14px">
-            <div><dt>Coleta</dt><dd>16/10/2026 13:12</dd></div>
-            <div><dt>Entrega</dt><dd>16/10/2026 19:12</dd></div>
+            <div><dt>Coleta</dt><dd>16/10/2026 13:28</dd></div>
+            <div><dt>Entrega</dt><dd>16/10/2026 19:28</dd></div>
             <div><dt>Distância</dt><dd>95,0 km</dd></div>
                     </dl>
     </section>
@@ -4129,7 +4143,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <div><dt>Motorista</dt><dd>Juliana Souza</dd></div>
                 <div><dt>Placa</dt><dd>BRA7C19</dd></div>
                 <div><dt>Valor contratado</dt><dd>R$ 980,00</dd></div>
-                <div><dt>Contratado em</dt><dd>15/10/2026 11:12</dd></div>
+                <div><dt>Contratado em</dt><dd>15/10/2026 11:28</dd></div>
             </dl>
                             <p style="margin:10px 0 0"><span class="muted">Valor sugerido:</span>
                             <strong>R$ 918,00</strong> <small class="muted">(base Toco, margem 8%)</small>
@@ -4167,7 +4181,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <h2>Histórico</h2>
         <ul class="historico">
                             <li>
-                    <small>14/10/2026 11:12 · Administrador</small><br>
+                    <small>14/10/2026 11:28 · Administrador</small><br>
                      Carga cadastrada                                     </li>
                     </ul>
     </section>
@@ -4391,7 +4405,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="grade">
             <div class="" >
             <label for="f_cpf">CPF * </label>
-                    <input id="f_cpf" type="text" name="cpf" value="981.322.127-54" required inputmode="numeric">
+                    <input id="f_cpf" type="text" name="cpf" value="975.436.976-37" required inputmode="numeric">
                 </div>
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Nome completo * </label>
@@ -4459,7 +4473,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 </div>
             <div class="" >
             <label for="f_whatsapp">WhatsApp (com DDD) * </label>
-                    <input id="f_whatsapp" type="text" name="whatsapp" value="11993690274" required inputmode="tel">
+                    <input id="f_whatsapp" type="text" name="whatsapp" value="11997029459" required inputmode="tel">
                 </div>
             <div class="" >
             <label for="f_email">E-mail </label>
@@ -4551,7 +4565,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="grade">
             <div class="" >
             <label for="f_cnh_numero">Nº da CNH * </label>
-                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="03125604071" required inputmode="numeric">
+                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="04994390229" required inputmode="numeric">
                 </div>
             <div class="" >
             <label for="f_cnh_categoria">Categoria * </label>
@@ -4631,7 +4645,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                     <label for="doc_1">CNH * <small class="muted">JPG, JPEG, PNG, PDF</small></label>
                     <input id="doc_1" type="file" name="documentos[1][arquivo]" accept=".jpg,.jpeg,.png,.pdf" form="form-motorista">
                                                                 <small>Atual: <span class="selo ok">Aprovado</span>
-                             validade 16/08/2027                            · <a href="#" data-fora="1" target="_blank">ver arquivo</a></small>
+                             validade 16/02/2028                            · <a href="#" data-fora="1" target="_blank">ver arquivo</a></small>
                                                                             </div>
                                                                             <div class="anexo">
                     <label for="doc_2">Comprovante de residência * <small class="muted">JPG, JPEG, PNG, PDF</small></label>
@@ -4672,13 +4686,13 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <ul class="historico">
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/08/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/02/2028</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
             </details>
@@ -4727,7 +4741,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="grade">
             <div class="" >
             <label for="f_cpf">CPF * </label>
-                    <input id="f_cpf" type="text" name="cpf" value="183.331.295-36" required inputmode="numeric">
+                    <input id="f_cpf" type="text" name="cpf" value="269.961.403-31" required inputmode="numeric">
                 </div>
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Nome completo * </label>
@@ -4795,7 +4809,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 </div>
             <div class="" >
             <label for="f_whatsapp">WhatsApp (com DDD) * </label>
-                    <input id="f_whatsapp" type="text" name="whatsapp" value="11997021773" required inputmode="tel">
+                    <input id="f_whatsapp" type="text" name="whatsapp" value="11996222828" required inputmode="tel">
                 </div>
             <div class="" >
             <label for="f_email">E-mail </label>
@@ -4887,7 +4901,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="grade">
             <div class="" >
             <label for="f_cnh_numero">Nº da CNH * </label>
-                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="08988098840" required inputmode="numeric">
+                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="04153257435" required inputmode="numeric">
                 </div>
             <div class="" >
             <label for="f_cnh_categoria">Categoria * </label>
@@ -4967,7 +4981,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                     <label for="doc_1">CNH * <small class="muted">JPG, JPEG, PNG, PDF</small></label>
                     <input id="doc_1" type="file" name="documentos[1][arquivo]" accept=".jpg,.jpeg,.png,.pdf" form="form-motorista">
                                                                 <small>Atual: <span class="selo ok">Aprovado</span>
-                             validade 16/09/2027                            · <a href="#" data-fora="1" target="_blank">ver arquivo</a></small>
+                             validade 16/01/2027                            · <a href="#" data-fora="1" target="_blank">ver arquivo</a></small>
                                                                             </div>
                                                                             <div class="anexo">
                     <label for="doc_2">Comprovante de residência * <small class="muted">JPG, JPEG, PNG, PDF</small></label>
@@ -5008,13 +5022,13 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <ul class="historico">
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/09/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/01/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
             </details>
@@ -5299,10 +5313,10 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <section class="cartao">
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
-                <div><dt>CPF</dt><dd>016.699.379-41</dd></div>
+                <div><dt>CPF</dt><dd>264.770.643-32</dd></div>
                 <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
-                <div><dt>WhatsApp</dt><dd>11984927506</dd></div>
+                <div><dt>WhatsApp</dt><dd>11984574817</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
                 <div><dt>Cidade</dt><dd>Sorocaba/SP</dd></div>
                 <div><dt>CNH</dt><dd>E · vence 16/10/2028</dd></div>
@@ -5329,12 +5343,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <li>
             <strong>CRLV</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/05/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>RNTRC / ANTT do veículo</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/05/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -5367,12 +5381,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/05/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -5430,7 +5444,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
 <section class="cartao">
     <dl class="dados">
         <div><dt>Arquivo</dt><dd><a href="#" data-fora="1">Tabela Aurora 2026 (exemplo).xlsx</a></dd></div>
-        <div><dt>Importada em</dt><dd>16/10/2026 11:12 · Administrador</dd></div>
+        <div><dt>Importada em</dt><dd>16/10/2026 11:28 · Administrador</dd></div>
         <div><dt>Preços</dt><dd>21</dd></div>
         <div><dt>Situação</dt><dd><span class="selo ok">Ativa</span></dd></div>
     </dl>
@@ -5812,10 +5826,10 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <section class="cartao">
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
-                <div><dt>CPF</dt><dd>575.726.761-54</dd></div>
+                <div><dt>CPF</dt><dd>047.798.750-80</dd></div>
                 <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
-                <div><dt>WhatsApp</dt><dd>11995615216</dd></div>
+                <div><dt>WhatsApp</dt><dd>11999934852</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
                 <div><dt>Cidade</dt><dd>Cajamar/SP</dd></div>
                 <div><dt>CNH</dt><dd>E · vence 16/10/2028</dd></div>
@@ -5841,13 +5855,13 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                     <ul class="historico">
             <li>
             <strong>CRLV</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/12/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/04/2028</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>RNTRC / ANTT do veículo</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/02/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/06/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -5877,13 +5891,13 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                                 <ul class="historico">
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/09/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/07/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -5961,9 +5975,9 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <a class="torre-numero" href="#cargas~3">#3</a>
                 <div class="torre-motorista">Juliana Souza</div>
                 <div><strong class="torre-placa">BRA7C19</strong> <span class="muted">Toco</span></div>
-                                <div class="torre-fone">📞 (11) 99561-5216 · <a href="https://wa.me/5511995615216" target="_blank" rel="noopener">WhatsApp</a> </div>
+                                <div class="torre-fone">📞 (11) 99993-4852 · <a href="https://wa.me/5511999934852" target="_blank" rel="noopener">WhatsApp</a> </div>
                 <small class="muted">Farma Bem Estar · São José dos Campos → São Paulo<br>
-                    coleta 16/10 13:12 · doca 1 às 11:42 · Matriz</small>
+                    coleta 16/10 13:28 · doca 1 às 11:58 · Matriz</small>
             </div>
 
             
@@ -6019,22 +6033,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <noscript><button class="btn sec pequeno">Anexar PDF</button></noscript>
             </form>
 
-            
-            <form method="post" action="#" class="torre-envio">                                <p style="margin:10px 0 4px"><strong>Enviar para:</strong></p>
-                                                        <label class="torre-destino"><input type="checkbox" name="destinos[]" value="motorista" >
-                        Motorista (WhatsApp)
-                        <small class="muted">· (11) 99561-5216 · API ainda não ligada: abre o WhatsApp</small></label>
-                                                        <label class="torre-destino"><input type="checkbox" name="destinos[]" value="gestor" >
-                        Gestor da carga (e-mail)
-                        <small class="muted"> · admin@seguralogistica.com.br</small></label>
-                                                        <label class="torre-destino"><input type="checkbox" name="destinos[]" value="carregamento" >
-                        Carregamento (e-mail)
-                        <small class="muted"> · doca.matriz@segura.local</small></label>
-                                <label class="sr" for="obs-3">Observação</label>
-                <input id="obs-3" name="obs" maxlength="500" placeholder="Observação (opcional, vai no e-mail)" style="margin-top:6px">
-                                <button class="btn" style="margin-top:8px" disabled>📤 Enviar documentação</button>
-                <small class="muted">Anexe os PDFs acima para liberar o envio.</small>            </form>
-            <form method="post" action="#" class="port-form" style="margin-top:10px" data-x="('Documento entregue em mãos?')">                <input name="obs" maxlength="500" placeholder="Obs. (opcional)" aria-label="Observação da entrega em mãos">
+                        <form method="post" action="#" class="port-form" style="margin-top:10px" data-x="('Documento entregue em mãos?')">                <input name="obs" maxlength="500" placeholder="Obs. (opcional)" aria-label="Observação da entrega em mãos">
                 <button class="btn sec pequeno">Entregue em mãos</button></form>
                     </details>
     </section>
@@ -6097,7 +6096,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="grade">
             <div class="" >
             <label for="f_cpf">CPF * </label>
-                    <input id="f_cpf" type="text" name="cpf" value="985.460.412-88" required inputmode="numeric">
+                    <input id="f_cpf" type="text" name="cpf" value="947.972.170-81" required inputmode="numeric">
                 </div>
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Nome completo * </label>
@@ -6165,7 +6164,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 </div>
             <div class="" >
             <label for="f_whatsapp">WhatsApp (com DDD) * </label>
-                    <input id="f_whatsapp" type="text" name="whatsapp" value="11993513594" required inputmode="tel">
+                    <input id="f_whatsapp" type="text" name="whatsapp" value="11996135530" required inputmode="tel">
                 </div>
             <div class="" >
             <label for="f_email">E-mail </label>
@@ -6257,7 +6256,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="grade">
             <div class="" >
             <label for="f_cnh_numero">Nº da CNH * </label>
-                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="07802691137" required inputmode="numeric">
+                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="06367624522" required inputmode="numeric">
                 </div>
             <div class="" >
             <label for="f_cnh_categoria">Categoria * </label>
@@ -6337,7 +6336,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                     <label for="doc_1">CNH * <small class="muted">JPG, JPEG, PNG, PDF</small></label>
                     <input id="doc_1" type="file" name="documentos[1][arquivo]" accept=".jpg,.jpeg,.png,.pdf" form="form-motorista">
                                                                 <small>Atual: <span class="selo ok">Aprovado</span>
-                             validade 16/09/2027                            · <a href="#" data-fora="1" target="_blank">ver arquivo</a></small>
+                             validade 16/11/2026                            · <a href="#" data-fora="1" target="_blank">ver arquivo</a></small>
                                                                             </div>
                                                                             <div class="anexo">
                     <label for="doc_2">Comprovante de residência * <small class="muted">JPG, JPEG, PNG, PDF</small></label>
@@ -6378,13 +6377,13 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <ul class="historico">
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/09/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/11/2026</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
             </details>
@@ -6829,7 +6828,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <dl class="dados">
             <div><dt>Cliente</dt><dd>Alimentos Vale Verde</dd></div>
             <div><dt>Rota</dt><dd>Campinas/SP → São Paulo/SP</dd></div>
-            <div><dt>Coleta</dt><dd>13/10/2026 11:12</dd></div>
+            <div><dt>Coleta</dt><dd>13/10/2026 11:28</dd></div>
             <div><dt>Motorista</dt><dd>Paulo Teixeira</dd></div>
             <div><dt>Placa</dt><dd>EJF3D88</dd></div>
             <div><dt>Contratado por</dt><dd>Ana Ribeiro</dd></div>
@@ -6887,10 +6886,10 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <section class="cartao">
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
-                <div><dt>CPF</dt><dd>020.296.115-06</dd></div>
+                <div><dt>CPF</dt><dd>546.613.175-05</dd></div>
                 <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
-                <div><dt>WhatsApp</dt><dd>11989645230</dd></div>
+                <div><dt>WhatsApp</dt><dd>11989954441</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
                 <div><dt>Cidade</dt><dd>Sorocaba/SP</dd></div>
                 <div><dt>CNH</dt><dd>E · vence 16/10/2028</dd></div>
@@ -6917,12 +6916,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <li>
             <strong>CRLV</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/06/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>RNTRC / ANTT do veículo</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/06/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -6957,12 +6956,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/06/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -7023,10 +7022,10 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <section class="cartao">
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
-                <div><dt>CPF</dt><dd>985.460.412-88</dd></div>
+                <div><dt>CPF</dt><dd>947.972.170-81</dd></div>
                 <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
-                <div><dt>WhatsApp</dt><dd>11993513594</dd></div>
+                <div><dt>WhatsApp</dt><dd>11996135530</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
                 <div><dt>Cidade</dt><dd>Cajamar/SP</dd></div>
                 <div><dt>CNH</dt><dd>E · vence 16/10/2028</dd></div>
@@ -7052,13 +7051,13 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                     <ul class="historico">
             <li>
             <strong>CRLV</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/04/2028</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/03/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>RNTRC / ANTT do veículo</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/03/2028</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/06/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -7088,13 +7087,13 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                                 <ul class="historico">
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/09/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/11/2026</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -7397,10 +7396,10 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <section class="cartao">
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
-                <div><dt>CPF</dt><dd>183.331.295-36</dd></div>
+                <div><dt>CPF</dt><dd>269.961.403-31</dd></div>
                 <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
-                <div><dt>WhatsApp</dt><dd>11997021773</dd></div>
+                <div><dt>WhatsApp</dt><dd>11996222828</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
                 <div><dt>Cidade</dt><dd>Cajamar/SP</dd></div>
                 <div><dt>CNH</dt><dd>E · vence 16/10/2028</dd></div>
@@ -7426,13 +7425,13 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                     <ul class="historico">
             <li>
             <strong>CRLV</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/03/2028</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/07/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>RNTRC / ANTT do veículo</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/11/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/10/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -7462,13 +7461,13 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                                 <ul class="historico">
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/09/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/01/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -7552,7 +7551,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="9" >
                     <div class="ind-quem">
                         <strong>Wesley Sales Mendes</strong>
-                        <small>(11) 98887-6936 · <a href="https://wa.me/5511988876936" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 98528-7802 · <a href="https://wa.me/5511985287802" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 990</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>2</b> na rota</span>
@@ -7581,7 +7580,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="10" >
                     <div class="ind-quem">
                         <strong>Cleber Nunes Santana</strong>
-                        <small>(11) 98365-2258 · <a href="https://wa.me/5511983652258" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 98751-1438 · <a href="https://wa.me/5511987511438" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 1.020</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>2</b> na rota</span>
@@ -7610,7 +7609,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="2" >
                     <div class="ind-quem">
                         <strong>Marcos Vieira</strong>
-                        <small>(11) 99702-1773 · <a href="https://wa.me/5511997021773" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 99622-2828 · <a href="https://wa.me/5511996222828" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 1.110</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>1</b> na rota</span>
@@ -7858,7 +7857,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             </div>
             <div>
                 <label for="cnpj">CNPJ *</label>
-                <input id="cnpj" name="cnpj" value="63.954.769/0001-69" required inputmode="numeric" placeholder="00.000.000/0000-00">
+                <input id="cnpj" name="cnpj" value="97.724.394/0001-62" required inputmode="numeric" placeholder="00.000.000/0000-00">
                             </div>
             <div class="largo">
                                 <label for="pgr_categoria_id">Categoria do PGR</label>
@@ -8748,10 +8747,10 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <section class="cartao">
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
-                <div><dt>CPF</dt><dd>673.536.071-06</dd></div>
+                <div><dt>CPF</dt><dd>627.196.860-00</dd></div>
                 <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
-                <div><dt>WhatsApp</dt><dd>11982094631</dd></div>
+                <div><dt>WhatsApp</dt><dd>11989233925</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
                 <div><dt>Cidade</dt><dd>Sorocaba/SP</dd></div>
                 <div><dt>CNH</dt><dd>E · vence 16/10/2028</dd></div>
@@ -8778,12 +8777,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <li>
             <strong>CRLV</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/04/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>RNTRC / ANTT do veículo</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/04/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -8820,12 +8819,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/04/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -8887,7 +8886,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <label for="f_motorista_id">Motorista * </label>
                     <select id="f_motorista_id" name="motorista_id" required >
                 <option value="">—</option>
-                <option value="10" >Cleber Nunes Santana · 19541212026</option><option value="12" >Deolindo Cruz Antunes · 32493057155</option><option value="7" >Evandro Manzato · 02029611506</option><option value="5" >Helio Francisco Paula · 67353607106</option><option value="11" >Jonatas Sales Prado · 24738395300</option><option value="3" >Juliana Souza · 57572676154</option><option value="2" >Marcos Vieira · 18333129536</option><option value="6" >Osmar Souza Lima · 01669937941</option><option value="4" >Paulo Teixeira · 98132212754</option><option value="8" >Renato Lucas Prado · 29437788936</option><option value="1" >Roberto Almeida · 98546041288</option><option value="9" >Wesley Sales Mendes · 65753602541</option>            </select>
+                <option value="10" >Cleber Nunes Santana · 19984812120</option><option value="12" >Deolindo Cruz Antunes · 00841661421</option><option value="7" >Evandro Manzato · 54661317505</option><option value="5" >Helio Francisco Paula · 62719686000</option><option value="11" >Jonatas Sales Prado · 66336477436</option><option value="3" >Juliana Souza · 04779875080</option><option value="2" >Marcos Vieira · 26996140331</option><option value="6" >Osmar Souza Lima · 26477064332</option><option value="4" >Paulo Teixeira · 97543697637</option><option value="8" >Renato Lucas Prado · 98718625550</option><option value="1" >Roberto Almeida · 94797217081</option><option value="9" >Wesley Sales Mendes · 40230548440</option>            </select>
                 </div>
                         <div class="" style="text-transform:uppercase">
             <label for="f_placa">Placa * </label>
@@ -9628,7 +9627,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="grade">
             <div class="" >
             <label for="f_cpf">CPF * </label>
-                    <input id="f_cpf" type="text" name="cpf" value="020.296.115-06" required inputmode="numeric">
+                    <input id="f_cpf" type="text" name="cpf" value="546.613.175-05" required inputmode="numeric">
                 </div>
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Nome completo * </label>
@@ -9696,7 +9695,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 </div>
             <div class="" >
             <label for="f_whatsapp">WhatsApp (com DDD) * </label>
-                    <input id="f_whatsapp" type="text" name="whatsapp" value="11989645230" required inputmode="tel">
+                    <input id="f_whatsapp" type="text" name="whatsapp" value="11989954441" required inputmode="tel">
                 </div>
             <div class="" >
             <label for="f_email">E-mail </label>
@@ -9788,7 +9787,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="grade">
             <div class="" >
             <label for="f_cnh_numero">Nº da CNH * </label>
-                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="03814246731" required inputmode="numeric">
+                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="01943274736" required inputmode="numeric">
                 </div>
             <div class="" >
             <label for="f_cnh_categoria">Categoria * </label>
@@ -9910,12 +9909,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/06/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
             </details>
@@ -10097,11 +10096,11 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             </div>
             <div>
                 <label for="coleta_em">Coleta *</label>
-                <input id="coleta_em" type="datetime-local" name="coleta_em" value="2026-10-16T13:12" required>
+                <input id="coleta_em" type="datetime-local" name="coleta_em" value="2026-10-16T13:28" required>
                             </div>
             <div>
                 <label for="entrega_em">Entrega *</label>
-                <input id="entrega_em" type="datetime-local" name="entrega_em" value="2026-10-16T19:12" required>
+                <input id="entrega_em" type="datetime-local" name="entrega_em" value="2026-10-16T19:28" required>
                             </div>
         </div>
     </section>
@@ -10487,12 +10486,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
 <table class="relatorio">
     <thead><tr><th>Carga</th><th>Coleta</th><th>Cliente</th><th>Origem</th><th>Destino</th><th>Veículo</th><th>Receita</th><th>Frete</th><th>% adiant.</th><th>Adiantamento</th><th>Filial</th><th>Peso</th><th>Motorista</th><th>WhatsApp</th><th>Pedágio</th><th>Status</th></tr></thead>
     <tbody>
-            <tr><td class="">#13</td><td class="">01/10/2026 08:00</td><td class="">Cosméticos Aurora</td><td class="">Sorocaba/SP</td><td class="">São Paulo/SP</td><td class="">Toco</td><td class="num">R$ 1.148,00</td><td class="num">R$ 850,00</td><td class="num">70%</td><td class="num">R$ 595,00</td><td class="">Matriz</td><td class="">—</td><td class="">Osmar Souza Lima</td><td class="num">11984927506</td><td class=""></td><td class="">Entregue</td></tr>
-            <tr><td class="">#9</td><td class="">04/10/2026 08:00</td><td class="">Cosméticos Aurora</td><td class="">Sorocaba/SP</td><td class="">São Paulo/SP</td><td class="">Toco</td><td class="num">R$ 1.053,00</td><td class="num">R$ 780,00</td><td class="num">70%</td><td class="num">R$ 546,00</td><td class="">Matriz</td><td class="">—</td><td class="">Helio Francisco Paula</td><td class="num">11982094631</td><td class=""></td><td class="">Entregue</td></tr>
-            <tr><td class="">#7</td><td class="">13/10/2026 11:12</td><td class="">Alimentos Vale Verde</td><td class="">Campinas/SP</td><td class="">São Paulo/SP</td><td class="">Toco</td><td class="num">R$ 1.500,00</td><td class="num">R$ 900,00</td><td class="num">70%</td><td class="num">R$ 630,00</td><td class="">Matriz</td><td class="">—</td><td class="">Paulo Teixeira</td><td class="num">11993690274</td><td class=""></td><td class="">Entregue</td></tr>
-            <tr><td class="">#2</td><td class="">16/10/2026 02:12</td><td class="">Alimentos Vale Verde</td><td class="">São Paulo/SP</td><td class="">Campinas/SP</td><td class="">Truck</td><td class="num">R$ 1.900,00</td><td class="num">R$ 1.150,00</td><td class="num">70%</td><td class="num">R$ 805,00</td><td class="">Matriz</td><td class="">—</td><td class="">Marcos Vieira</td><td class="num">11997021773</td><td class=""></td><td class="">Em andamento</td></tr>
-            <tr><td class="">#1</td><td class="">16/10/2026 05:12</td><td class="">Cosméticos Aurora</td><td class="">Cajamar/SP</td><td class="">Ribeirão Preto/SP</td><td class="">Carreta</td><td class="num">R$ 4.200,00</td><td class="num">R$ 2.650,00</td><td class="num">70%</td><td class="num">R$ 1.855,00</td><td class="">Matriz</td><td class="">—</td><td class="">Roberto Almeida</td><td class="num">11993513594</td><td class=""></td><td class="">Em andamento</td></tr>
-            <tr><td class="">#3</td><td class="">16/10/2026 13:12</td><td class="">Farma Bem Estar</td><td class="">São José dos Campos/SP</td><td class="">São Paulo/SP</td><td class="">Toco</td><td class="num">R$ 1.650,00</td><td class="num">R$ 980,00</td><td class="num">70%</td><td class="num">R$ 686,00</td><td class="">Matriz</td><td class="">—</td><td class="">Juliana Souza</td><td class="num">11995615216</td><td class=""></td><td class="">Motorista contratado</td></tr>
+            <tr><td class="">#13</td><td class="">01/10/2026 08:00</td><td class="">Cosméticos Aurora</td><td class="">Sorocaba/SP</td><td class="">São Paulo/SP</td><td class="">Toco</td><td class="num">R$ 1.148,00</td><td class="num">R$ 850,00</td><td class="num">70%</td><td class="num">R$ 595,00</td><td class="">Matriz</td><td class="">—</td><td class="">Osmar Souza Lima</td><td class="num">11984574817</td><td class=""></td><td class="">Entregue</td></tr>
+            <tr><td class="">#9</td><td class="">04/10/2026 08:00</td><td class="">Cosméticos Aurora</td><td class="">Sorocaba/SP</td><td class="">São Paulo/SP</td><td class="">Toco</td><td class="num">R$ 1.053,00</td><td class="num">R$ 780,00</td><td class="num">70%</td><td class="num">R$ 546,00</td><td class="">Matriz</td><td class="">—</td><td class="">Helio Francisco Paula</td><td class="num">11989233925</td><td class=""></td><td class="">Entregue</td></tr>
+            <tr><td class="">#7</td><td class="">13/10/2026 11:28</td><td class="">Alimentos Vale Verde</td><td class="">Campinas/SP</td><td class="">São Paulo/SP</td><td class="">Toco</td><td class="num">R$ 1.500,00</td><td class="num">R$ 900,00</td><td class="num">70%</td><td class="num">R$ 630,00</td><td class="">Matriz</td><td class="">—</td><td class="">Paulo Teixeira</td><td class="num">11997029459</td><td class=""></td><td class="">Entregue</td></tr>
+            <tr><td class="">#2</td><td class="">16/10/2026 02:28</td><td class="">Alimentos Vale Verde</td><td class="">São Paulo/SP</td><td class="">Campinas/SP</td><td class="">Truck</td><td class="num">R$ 1.900,00</td><td class="num">R$ 1.150,00</td><td class="num">70%</td><td class="num">R$ 805,00</td><td class="">Matriz</td><td class="">—</td><td class="">Marcos Vieira</td><td class="num">11996222828</td><td class=""></td><td class="">Em andamento</td></tr>
+            <tr><td class="">#1</td><td class="">16/10/2026 05:28</td><td class="">Cosméticos Aurora</td><td class="">Cajamar/SP</td><td class="">Ribeirão Preto/SP</td><td class="">Carreta</td><td class="num">R$ 4.200,00</td><td class="num">R$ 2.650,00</td><td class="num">70%</td><td class="num">R$ 1.855,00</td><td class="">Matriz</td><td class="">—</td><td class="">Roberto Almeida</td><td class="num">11996135530</td><td class=""></td><td class="">Em andamento</td></tr>
+            <tr><td class="">#3</td><td class="">16/10/2026 13:28</td><td class="">Farma Bem Estar</td><td class="">São José dos Campos/SP</td><td class="">São Paulo/SP</td><td class="">Toco</td><td class="num">R$ 1.650,00</td><td class="num">R$ 980,00</td><td class="num">70%</td><td class="num">R$ 686,00</td><td class="">Matriz</td><td class="">—</td><td class="">Juliana Souza</td><td class="num">11999934852</td><td class=""></td><td class="">Motorista contratado</td></tr>
         </tbody>
             <tfoot><tr><th class="num">Totais</th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num">R$ 11.451,00</th><th class="num">R$ 7.310,00</th><th class="num"></th><th class="num">R$ 5.117,00</th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num"></th></tr></tfoot>
     </table>
@@ -10673,10 +10672,10 @@ document.querySelectorAll('.torre-drop').forEach(z => {
 <table class="relatorio">
     <thead><tr><th>Carga</th><th>Filial</th><th>Cliente</th><th>Pedido</th><th>Última alteração</th><th>Coleta</th><th>Entrega</th><th>Contratada em</th><th>Tempo</th><th>Depois da coleta?</th></tr></thead>
     <tbody>
-            <tr><td class="">#1</td><td class="">Matriz</td><td class="">Cosméticos Aurora</td><td class="">16/10/2026 11:12</td><td class="">—</td><td class="">16/10/2026 05:12</td><td class="">16/10/2026 15:12</td><td class="">15/10/2026 11:12</td><td class="">0h00</td><td class="">Não</td></tr>
-            <tr><td class="">#2</td><td class="">Matriz</td><td class="">Alimentos Vale Verde</td><td class="">16/10/2026 11:12</td><td class="">—</td><td class="">16/10/2026 02:12</td><td class="">16/10/2026 10:12</td><td class="">15/10/2026 11:12</td><td class="">0h00</td><td class="">Não</td></tr>
-            <tr><td class="">#3</td><td class="">Matriz</td><td class="">Farma Bem Estar</td><td class="">16/10/2026 11:12</td><td class="">—</td><td class="">16/10/2026 13:12</td><td class="">16/10/2026 19:12</td><td class="">15/10/2026 11:12</td><td class="">0h00</td><td class="">Não</td></tr>
-            <tr><td class="">#7</td><td class="">Matriz</td><td class="">Alimentos Vale Verde</td><td class="">16/10/2026 11:12</td><td class="">—</td><td class="">13/10/2026 11:12</td><td class="">14/10/2026 11:12</td><td class="">15/10/2026 11:12</td><td class="">0h00</td><td class="">Sim</td></tr>
+            <tr><td class="">#1</td><td class="">Matriz</td><td class="">Cosméticos Aurora</td><td class="">16/10/2026 11:28</td><td class="">—</td><td class="">16/10/2026 05:28</td><td class="">16/10/2026 15:28</td><td class="">15/10/2026 11:28</td><td class="">0h00</td><td class="">Não</td></tr>
+            <tr><td class="">#2</td><td class="">Matriz</td><td class="">Alimentos Vale Verde</td><td class="">16/10/2026 11:28</td><td class="">—</td><td class="">16/10/2026 02:28</td><td class="">16/10/2026 10:28</td><td class="">15/10/2026 11:28</td><td class="">0h00</td><td class="">Não</td></tr>
+            <tr><td class="">#3</td><td class="">Matriz</td><td class="">Farma Bem Estar</td><td class="">16/10/2026 11:28</td><td class="">—</td><td class="">16/10/2026 13:28</td><td class="">16/10/2026 19:28</td><td class="">15/10/2026 11:28</td><td class="">0h00</td><td class="">Não</td></tr>
+            <tr><td class="">#7</td><td class="">Matriz</td><td class="">Alimentos Vale Verde</td><td class="">16/10/2026 11:28</td><td class="">—</td><td class="">13/10/2026 11:28</td><td class="">14/10/2026 11:28</td><td class="">15/10/2026 11:28</td><td class="">0h00</td><td class="">Sim</td></tr>
         </tbody>
             <tfoot><tr><th class="num">Média</th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num"></th><th class="num">0h00</th><th class="num"></th></tr></tfoot>
     </table>
@@ -10733,7 +10732,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <td style="font-size:13px;font-variant-numeric:tabular-nums">
                 Receita R$ 4.200,00<br>
                  Extra R$ 250,00            </td>
-            <td>Ana Ribeiro<br><small class="muted">16/10 11:12</small></td>
+            <td>Ana Ribeiro<br><small class="muted">16/10 11:28</small></td>
             <td><span class="selo atencao">Pendente</span>
                 </td>
             <td><a class="btn sec pequeno" href="#liberacao~item~3">Abrir</a></td>
@@ -11007,29 +11006,34 @@ document.querySelectorAll('.torre-drop').forEach(z => {
 
 
 <section class="cartao portaria-painel" id="portaria">
-    <h2>Portaria — motoristas na filial (1)
+    <h2>Portaria — carregamentos nas docas
         <span class="selo erro">1 esperando resposta</span></h2>
-                    <div class="port-card port-chegou" data-chegou="1">
-            <div class="port-topo">
-                <div>
-                    <strong class="port-placa">BRA7C19</strong> <span class="muted">Toco</span><br>
-                    Juliana Souza <small class="muted">· (11) 99561-5216</small><br>
-                    <small class="muted">Carga #3 · Farma Bem Estar · <strong>programado 11:42 na doca 1</strong></small>
-                </div>
-                <div class="port-status">
-                    <span class="port-passo">Chegou — aguardando a resposta da portaria</span>
-                    <br><small>chegou há 11 minutos</small>                    <br><small class="muted">o motorista vê esta mensagem no app</small>
-                </div>
+    <nav class="torre-resumo" aria-label="Filtrar a portaria">
+                    <a href="#docas" class="torre-num pf-agendados" ><strong>0</strong> Agendados</a>
+                    <a href="#docas" class="torre-num pf-chegaram" ><strong>1</strong> Chegaram</a>
+                    <a href="#docas" class="torre-num pf-carregando" ><strong>0</strong> Em carregamento</a>
+                    <a href="#docas" class="torre-num pf-documentacao" ><strong>0</strong> Aguardando documentação</a>
+                    <a href="#docas" class="torre-num pf-liberar" ><strong>0</strong> Para liberar</a>
+                    <a href="#docas" class="torre-num pf-liberados" ><strong>0</strong> Liberados</a>
+                    </nav>
+                    <div class="port-card port-fino port-chegou" data-chegou="1">
+            <div class="port-quem">
+                <strong class="port-placa">BRA7C19</strong> <span class="muted">Toco</span>
+                · Juliana Souza <small class="muted">(11) 99993-4852</small>                <br><small class="muted"><a href="#cargas~3">#3</a> · Farma Bem Estar · <strong>11:58 · doca 1</strong></small>
+            </div>
+            <div class="port-status">
+                <span class="port-passo">Chegou — aguardando a resposta da portaria</span>
+                <small class="muted">chegou há 5 minutos  · o motorista vê no app </small>
             </div>
             <div class="port-acoes">
-        <form method="post" action="#" class="port-form"> <input type="hidden" name="passo" value="aguarde">
-        <label class="sr" for="min-1-p">Tempo</label>
-        <select id="min-1-p" name="minutos"><option value="">sem tempo</option><option value="10">~10 min</option><option value="15">~15 min</option><option value="20">~20 min</option><option value="30">~30 min</option><option value="45">~45 min</option><option value="60">~60 min</option><option value="90">~90 min</option></select>
-        <button class="btn sec pequeno">⏳ Aguarde, em breve liberaremos</button></form>
-            <form method="post" action="#" class="port-form"> <input type="hidden" name="passo" value="entrar">
-        <label class="sr" for="doca-1-p">Doca</label>
-        <select id="doca-1-p" name="doca"><option value="1" selected>doca 1</option><option value="2" >doca 2</option></select>
-        <button class="btn pequeno">✅ Liberado para entrar</button></form>
+                        <form method="post" action="#" class="port-form"> <input type="hidden" name="passo" value="aguarde">
+                <label class="sr" for="min-1-p">Tempo</label>
+                <select id="min-1-p" name="minutos"><option value="">sem tempo</option><option value="10">~10 min</option><option value="15">~15 min</option><option value="20">~20 min</option><option value="30">~30 min</option><option value="45">~45 min</option><option value="60">~60 min</option><option value="90">~90 min</option></select>
+                <button class="btn sec pequeno">⏳ Aguarde, em breve liberaremos</button></form>
+                                <form method="post" action="#" class="port-form"> <input type="hidden" name="passo" value="entrar">
+                <label class="sr" for="doca-1-p">Doca</label>
+                <select id="doca-1-p" name="doca"><option value="1" selected>doca 1</option><option value="2" >doca 2</option></select>
+                <button class="btn pequeno">✅ Liberado para entrar</button></form>
             </div>
         </div>
     </section>
@@ -11158,7 +11162,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <form class="cartao" method="post" action="#" id="form-adiantamento">
                  <h2>Dados do adiantamento</h2>
                     <div class="aviso ok" style="margin-bottom:12px">
-                 Enviado em 16/10/2026 11:12 por Ana Ribeiro. Os dados não podem mais ser alterados.
+                 Enviado em 16/10/2026 11:28 por Ana Ribeiro. Os dados não podem mais ser alterados.
                             </div>
                 <fieldset style="border:0;padding:0;margin:0" disabled>
         <div class="grade">
@@ -11202,7 +11206,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <dl class="dados">
             <div><dt>Cliente</dt><dd>Cosméticos Aurora</dd></div>
             <div><dt>Rota</dt><dd>Cajamar/SP → Ribeirão Preto/SP</dd></div>
-            <div><dt>Coleta</dt><dd>16/10/2026 05:12</dd></div>
+            <div><dt>Coleta</dt><dd>16/10/2026 05:28</dd></div>
             <div><dt>Motorista</dt><dd>Roberto Almeida</dd></div>
             <div><dt>Placa</dt><dd>FTR4E21</dd></div>
             <div><dt>Contratado por</dt><dd>Ana Ribeiro</dd></div>
@@ -11212,12 +11216,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     
     <section class="cartao">
         <h2>Envio</h2>
-                            <p style="margin:0">Enviado ao financeiro em 16/10/2026 11:12.</p>
+                            <p style="margin:0">Enviado ao financeiro em 16/10/2026 11:28.</p>
                             <p style="margin:10px 0 0">Pagamento: <span class="selo atencao">Pendente</span></p>
             </section>
 
     <section class="cartao acoes">
-                    <span class="muted">Finalizada em 16/10/2026 11:12 por Ana Ribeiro.</span>
+                    <span class="muted">Finalizada em 16/10/2026 11:28 por Ana Ribeiro.</span>
                             <form method="post" action="#"> <input type="hidden" name="reabrir" value="1"><button class="btn sec pequeno">Reabrir</button></form>
                                 </section>
 </div>
@@ -11334,7 +11338,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <dl class="dados">
             <div><dt>Cliente</dt><dd>Alimentos Vale Verde</dd></div>
             <div><dt>Rota</dt><dd>São Paulo/SP → Jundiaí/SP → Campinas/SP</dd></div>
-            <div><dt>Coleta</dt><dd>16/10/2026 02:12</dd></div>
+            <div><dt>Coleta</dt><dd>16/10/2026 02:28</dd></div>
             <div><dt>Motorista</dt><dd>Marcos Vieira</dd></div>
             <div><dt>Placa</dt><dd>GHK2B47</dd></div>
             <div><dt>Contratado por</dt><dd>Ana Ribeiro</dd></div>
@@ -11507,7 +11511,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="grade">
             <div class="" >
             <label for="f_cpf">CPF * </label>
-                    <input id="f_cpf" type="text" name="cpf" value="016.699.379-41" required inputmode="numeric">
+                    <input id="f_cpf" type="text" name="cpf" value="264.770.643-32" required inputmode="numeric">
                 </div>
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Nome completo * </label>
@@ -11575,7 +11579,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 </div>
             <div class="" >
             <label for="f_whatsapp">WhatsApp (com DDD) * </label>
-                    <input id="f_whatsapp" type="text" name="whatsapp" value="11984927506" required inputmode="tel">
+                    <input id="f_whatsapp" type="text" name="whatsapp" value="11984574817" required inputmode="tel">
                 </div>
             <div class="" >
             <label for="f_email">E-mail </label>
@@ -11667,7 +11671,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="grade">
             <div class="" >
             <label for="f_cnh_numero">Nº da CNH * </label>
-                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="08182047543" required inputmode="numeric">
+                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="07757899565" required inputmode="numeric">
                 </div>
             <div class="" >
             <label for="f_cnh_categoria">Categoria * </label>
@@ -11789,12 +11793,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/05/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
             </details>
@@ -11834,10 +11838,10 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <section class="cartao">
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
-                <div><dt>CPF</dt><dd>294.377.889-36</dd></div>
+                <div><dt>CPF</dt><dd>987.186.255-50</dd></div>
                 <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
-                <div><dt>WhatsApp</dt><dd>11988482078</dd></div>
+                <div><dt>WhatsApp</dt><dd>11981736386</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
                 <div><dt>Cidade</dt><dd>Sorocaba/SP</dd></div>
                 <div><dt>CNH</dt><dd>E · vence 16/10/2028</dd></div>
@@ -11864,12 +11868,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <li>
             <strong>CRLV</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/07/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>RNTRC / ANTT do veículo</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/07/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -11900,12 +11904,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/07/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -12090,11 +12094,11 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <tr>
             <td><a href="#adiantamentos~1"><strong>#1</strong></a><br><small class="muted">Cosméticos Aurora</small></td>
                         <td>Roberto Almeida</td>
-            <td>Almeida Transportes Ltda<br><span class="selo ok">Assinado 16/10 11:12</span>
+            <td>Almeida Transportes Ltda<br><span class="selo ok">Assinado 16/10 11:28</span>
                 <br><small class="muted">11988887777</small>                </td>
             <td>Ana Ribeiro</td>
-            <td>16/10/2026 11:12</td>
-            <td>16/10 11:12</td>
+            <td>16/10/2026 11:28</td>
+            <td>16/10 11:28</td>
             <td>
                 <div class="acoes">
                                                                 <form method="post" action="#"> <button class="btn sec pequeno">Reenviar e-mail</button></form>
@@ -12134,7 +12138,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <form class="cartao" method="post" action="#" id="form-adiantamento">
                  <h2>Dados do adiantamento</h2>
                     <div class="aviso ok" style="margin-bottom:12px">
-                 Enviado em 16/10/2026 11:12 por Ana Ribeiro. Os dados não podem mais ser alterados.
+                 Enviado em 16/10/2026 11:28 por Ana Ribeiro. Os dados não podem mais ser alterados.
                             </div>
                 <fieldset style="border:0;padding:0;margin:0" disabled>
         <div class="grade">
@@ -12180,7 +12184,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <dl class="dados">
             <div><dt>Cliente</dt><dd>Cosméticos Aurora</dd></div>
             <div><dt>Rota</dt><dd>Cajamar/SP → Ribeirão Preto/SP</dd></div>
-            <div><dt>Coleta</dt><dd>16/10/2026 05:12</dd></div>
+            <div><dt>Coleta</dt><dd>16/10/2026 05:28</dd></div>
             <div><dt>Motorista</dt><dd>Roberto Almeida</dd></div>
             <div><dt>Placa</dt><dd>FTR4E21</dd></div>
             <div><dt>Contratado por</dt><dd>Ana Ribeiro</dd></div>
@@ -12202,15 +12206,15 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <h2>Envio</h2>
                             <dl class="dados">
                 <div><dt>Assina (dono do veículo)</dt><dd>Almeida Transportes Ltda
-                    <span class="selo ok">Assinou 16/10 11:12</span></dd></div>
-                <div><dt>E-mail ao financeiro</dt><dd>16/10/2026 11:12</dd></div>
+                    <span class="selo ok">Assinou 16/10 11:28</span></dd></div>
+                <div><dt>E-mail ao financeiro</dt><dd>16/10/2026 11:28</dd></div>
             </dl>
             <p style="margin-bottom:0"><a href="#contratos">Ver em Contrato de adiantamento</a></p>
                             <p style="margin:10px 0 0">Pagamento: <span class="selo atencao">Pendente</span></p>
             </section>
 
     <section class="cartao acoes">
-                    <span class="muted">Finalizada em 16/10/2026 11:12 por Ana Ribeiro.</span>
+                    <span class="muted">Finalizada em 16/10/2026 11:28 por Ana Ribeiro.</span>
                             <form method="post" action="#"> <input type="hidden" name="reabrir" value="1"><button class="btn sec pequeno">Reabrir</button></form>
                                 </section>
 </div>
@@ -12273,11 +12277,11 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             </div>
             <div>
                 <label for="coleta_em">Coleta *</label>
-                <input id="coleta_em" type="datetime-local" name="coleta_em" value="2026-10-16T05:12" required>
+                <input id="coleta_em" type="datetime-local" name="coleta_em" value="2026-10-16T05:28" required>
                             </div>
             <div>
                 <label for="entrega_em">Entrega *</label>
-                <input id="entrega_em" type="datetime-local" name="entrega_em" value="2026-10-16T15:12" required>
+                <input id="entrega_em" type="datetime-local" name="entrega_em" value="2026-10-16T15:28" required>
                             </div>
         </div>
     </section>
@@ -12501,7 +12505,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="grade">
             <div class="" >
             <label for="f_cpf">CPF * </label>
-                    <input id="f_cpf" type="text" name="cpf" value="294.377.889-36" required inputmode="numeric">
+                    <input id="f_cpf" type="text" name="cpf" value="987.186.255-50" required inputmode="numeric">
                 </div>
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Nome completo * </label>
@@ -12569,7 +12573,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 </div>
             <div class="" >
             <label for="f_whatsapp">WhatsApp (com DDD) * </label>
-                    <input id="f_whatsapp" type="text" name="whatsapp" value="11988482078" required inputmode="tel">
+                    <input id="f_whatsapp" type="text" name="whatsapp" value="11981736386" required inputmode="tel">
                 </div>
             <div class="" >
             <label for="f_email">E-mail </label>
@@ -12661,7 +12665,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="grade">
             <div class="" >
             <label for="f_cnh_numero">Nº da CNH * </label>
-                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="07992288422" required inputmode="numeric">
+                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="09160626355" required inputmode="numeric">
                 </div>
             <div class="" >
             <label for="f_cnh_categoria">Categoria * </label>
@@ -12783,12 +12787,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/07/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
             </details>
@@ -13466,7 +13470,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             </div>
             <div>
                 <label for="cnpj">CNPJ *</label>
-                <input id="cnpj" name="cnpj" value="11.406.519/0001-90" required inputmode="numeric" placeholder="00.000.000/0000-00">
+                <input id="cnpj" name="cnpj" value="12.254.236/0001-33" required inputmode="numeric" placeholder="00.000.000/0000-00">
                             </div>
             <div class="largo">
                                 <label for="pgr_categoria_id">Categoria do PGR</label>
@@ -13687,7 +13691,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="7" >
                     <div class="ind-quem">
                         <strong>Evandro Manzato</strong>
-                        <small>(11) 98964-5230 · <a href="https://wa.me/5511989645230" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 98995-4441 · <a href="https://wa.me/5511989954441" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 730</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>3</b> na rota</span>
@@ -13716,7 +13720,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="5" >
                     <div class="ind-quem">
                         <strong>Helio Francisco Paula</strong>
-                        <small>(11) 98209-4631 · <a href="https://wa.me/5511982094631" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 98923-3925 · <a href="https://wa.me/5511989233925" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 780</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>4</b> na rota</span>
@@ -13745,7 +13749,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="6" >
                     <div class="ind-quem">
                         <strong>Osmar Souza Lima</strong>
-                        <small>(11) 98492-7506 · <a href="https://wa.me/5511984927506" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 98457-4817 · <a href="https://wa.me/5511984574817" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 860</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>2</b> na rota</span>
@@ -13774,7 +13778,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="4" >
                     <div class="ind-quem">
                         <strong>Paulo Teixeira</strong>
-                        <small>(11) 99369-0274 · <a href="https://wa.me/5511993690274" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 99702-9459 · <a href="https://wa.me/5511997029459" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 930</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>1</b> na rota</span>
@@ -13803,7 +13807,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="3" >
                     <div class="ind-quem">
                         <strong>Juliana Souza</strong>
-                        <small>(11) 99561-5216 · <a href="https://wa.me/5511995615216" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 99993-4852 · <a href="https://wa.me/5511999934852" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 1.020</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>1</b> na rota</span>
@@ -13832,7 +13836,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="8" >
                     <div class="ind-quem">
                         <strong>Renato Lucas Prado</strong>
-                        <small>(11) 98848-2078 · <a href="https://wa.me/5511988482078" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 98173-6386 · <a href="https://wa.me/5511981736386" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 1.030</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span>outra rota</span>
@@ -13915,7 +13919,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             </form>
                                 <div class="topo">
     <h1>Situação em tempo real</h1>
-    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 11:20</small>
+    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 11:30</small>
 </div>
 
 <form class="cartao filtros" method="get">
@@ -13954,9 +13958,9 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <small class="offline">● offline</small></div>
             <div><span>Placa</span>GHK2B47</div>
             <div><span>Gestor</span>Administrador</div>
-            <div><span>Coleta</span>16/10 02:12
-                <small class="online">✓ 16/10 03:12</small></div>
-            <div><span>Entrega</span>16/10 10:12
+            <div><span>Coleta</span>16/10 02:28
+                <small class="online">✓ 16/10 03:28</small></div>
+            <div><span>Entrega</span>16/10 10:28
                 </div>
             <div><span>Última localização</span>há 1 hora</div>
             <div><span>Parada mais próxima</span>Jundiaí/SP · 3,3 km</div>
@@ -13964,7 +13968,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <div><span>Distância da rota</span>105 km</div>
         </div>
                     <div class="linha-tempo">
-                <span>16/10 03:12 · Carregado (saiu da coleta)</span>            </div>
+                <span>16/10 03:28 · Carregado (saiu da coleta)</span>            </div>
             </article>
         <article class="rt-item">
         <div class="rt-cab">
@@ -13981,17 +13985,17 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <small class="online">● online</small></div>
             <div><span>Placa</span>FTR4E21</div>
             <div><span>Gestor</span>Administrador</div>
-            <div><span>Coleta</span>16/10 05:12
-                <small class="online">✓ 16/10 06:12</small></div>
-            <div><span>Entrega</span>16/10 15:12
+            <div><span>Coleta</span>16/10 05:28
+                <small class="online">✓ 16/10 06:28</small></div>
+            <div><span>Entrega</span>16/10 15:28
                 </div>
-            <div><span>Última localização</span>há 11 minutos</div>
+            <div><span>Última localização</span>há 5 minutos</div>
             <div><span>Parada mais próxima</span>Ribeirão Preto/SP · 100,7 km</div>
             <div><span>Falta até a entrega</span>100,7 km (linha reta)</div>
             <div><span>Distância da rota</span>290 km</div>
         </div>
                     <div class="linha-tempo">
-                <span>16/10 04:12 · Chegou na coleta</span><span>16/10 06:12 · Carregado (saiu da coleta)</span><span>16/10 07:12 · Em trânsito</span>            </div>
+                <span>16/10 04:28 · Chegou na coleta</span><span>16/10 06:28 · Carregado (saiu da coleta)</span><span>16/10 07:28 · Em trânsito</span>            </div>
             </article>
         <article class="rt-item">
         <div class="rt-cab">
@@ -14008,11 +14012,11 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                 <small class="online">● online</small></div>
             <div><span>Placa</span>BRA7C19</div>
             <div><span>Gestor</span>Administrador</div>
-            <div><span>Coleta</span>16/10 13:12
+            <div><span>Coleta</span>16/10 13:28
                 </div>
-            <div><span>Entrega</span>16/10 19:12
+            <div><span>Entrega</span>16/10 19:28
                 </div>
-            <div><span>Última localização</span>há 9 minutos</div>
+            <div><span>Última localização</span>há 3 minutos</div>
             <div><span>Parada mais próxima</span>São José dos Campos/SP · 1,8 km</div>
             <div><span>Falta até a entrega</span>88,1 km (linha reta)</div>
             <div><span>Distância da rota</span>95 km</div>
@@ -14331,7 +14335,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <h2>Histórico</h2>
         <ul class="historico">
                             <li>
-                    <small>14/10/2026 11:12 · Administrador</small><br>
+                    <small>14/10/2026 11:28 · Administrador</small><br>
                      Carga cadastrada                                     </li>
                     </ul>
     </section>
@@ -14502,7 +14506,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <div><dt>Manifesto</dt><dd>MDF-33190</dd></div>
             <div><dt>Nº adiantamento</dt><dd>AD-7795</dd></div>
                         <div><dt>Contratado por</dt><dd>Ana Ribeiro</dd></div>
-            <div><dt>Enviado por</dt><dd>Ana Ribeiro · 16/10/2026 11:12</dd></div>
+            <div><dt>Enviado por</dt><dd>Ana Ribeiro · 16/10/2026 11:28</dd></div>
                     </dl>
     </section>
 
@@ -14686,10 +14690,10 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <section class="cartao">
         <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
                         <dl class="dados" style="flex:1;min-width:0">
-                <div><dt>CPF</dt><dd>981.322.127-54</dd></div>
+                <div><dt>CPF</dt><dd>975.436.976-37</dd></div>
                 <div><dt>Tipo de pessoa</dt><dd>Motorista</dd></div>
                 <div><dt>Nascimento</dt><dd>—</dd></div>
-                <div><dt>WhatsApp</dt><dd>11993690274</dd></div>
+                <div><dt>WhatsApp</dt><dd>11997029459</dd></div>
                 <div><dt>E-mail</dt><dd>—</dd></div>
                 <div><dt>Cidade</dt><dd>Cajamar/SP</dd></div>
                 <div><dt>CNH</dt><dd>E · vence 16/10/2028</dd></div>
@@ -14715,13 +14719,13 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                     <ul class="historico">
             <li>
             <strong>CRLV</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/01/2028</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/06/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>RNTRC / ANTT do veículo</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/02/2028</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/09/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -14751,13 +14755,13 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                                 <ul class="historico">
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
-            <small>validade 16/08/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <small>validade 16/02/2028</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
 <form method="post" action="#" enctype="multipart/form-data" class="solicitante" style="margin-top:10px">
@@ -15314,7 +15318,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
     <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Cadastro</th><th>O que mudou</th><th>IP</th></tr></thead>
     <tbody>
             <tr>
-            <td class="nowrap">16/10/2026 11:20:25</td>
+            <td class="nowrap">16/10/2026 11:30:00</td>
             <td>Usuário de teste</td>
             <td><span class="selo neutro">Entrou no sistema</span></td>
             <td><small></small></td>
@@ -15323,7 +15327,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap">127.0.0.1</td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:20:25</td>
+            <td class="nowrap">16/10/2026 11:29:59</td>
             <td>Usuário de teste</td>
             <td><span class="selo neutro">Código de acesso enviado</span></td>
             <td><small></small></td>
@@ -15332,25 +15336,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap">127.0.0.1</td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:46</td>
-            <td>Usuário de teste</td>
-            <td><span class="selo neutro">Entrou no sistema</span></td>
-            <td><small></small></td>
-            <td>
-                            </td>
-            <td class="muted nowrap">127.0.0.1</td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:12:46</td>
-            <td>Usuário de teste</td>
-            <td><span class="selo neutro">Código de acesso enviado</span></td>
-            <td><small></small></td>
-            <td>
-                            </td>
-            <td class="muted nowrap">127.0.0.1</td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo neutro">Alterou</span></td>
             <td><strong>Tabela de frete</strong> #1<br><small>Tabela de frete #1</small></td>
@@ -15362,7 +15348,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #21<br><small>Item da tabela de frete #21</small></td>
@@ -15398,7 +15384,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #20<br><small>Item da tabela de frete #20</small></td>
@@ -15434,7 +15420,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #19<br><small>Item da tabela de frete #19</small></td>
@@ -15470,7 +15456,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #18<br><small>Item da tabela de frete #18</small></td>
@@ -15506,7 +15492,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #17<br><small>Item da tabela de frete #17</small></td>
@@ -15542,7 +15528,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #16<br><small>Item da tabela de frete #16</small></td>
@@ -15578,7 +15564,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #15<br><small>Item da tabela de frete #15</small></td>
@@ -15614,7 +15600,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #14<br><small>Item da tabela de frete #14</small></td>
@@ -15650,7 +15636,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #13<br><small>Item da tabela de frete #13</small></td>
@@ -15686,7 +15672,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #12<br><small>Item da tabela de frete #12</small></td>
@@ -15722,7 +15708,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #11<br><small>Item da tabela de frete #11</small></td>
@@ -15758,7 +15744,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #10<br><small>Item da tabela de frete #10</small></td>
@@ -15794,7 +15780,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #9<br><small>Item da tabela de frete #9</small></td>
@@ -15830,7 +15816,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #8<br><small>Item da tabela de frete #8</small></td>
@@ -15866,7 +15852,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #7<br><small>Item da tabela de frete #7</small></td>
@@ -15902,7 +15888,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #6<br><small>Item da tabela de frete #6</small></td>
@@ -15938,7 +15924,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #5<br><small>Item da tabela de frete #5</small></td>
@@ -15974,7 +15960,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #4<br><small>Item da tabela de frete #4</small></td>
@@ -16010,7 +15996,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #3<br><small>Item da tabela de frete #3</small></td>
@@ -16046,7 +16032,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #2<br><small>Item da tabela de frete #2</small></td>
@@ -16082,7 +16068,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Item da tabela de frete</strong> #1<br><small>Item da tabela de frete #1</small></td>
@@ -16118,7 +16104,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Tabela de frete</strong> #1<br><small>Tabela de frete #1</small></td>
@@ -16145,7 +16131,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Contratação</strong> #24<br><small>Contratação #24</small></td>
@@ -16178,7 +16164,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Rota da carga</strong> #58<br><small>Rota da carga #58</small></td>
@@ -16205,7 +16191,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Rota da carga</strong> #57<br><small>Rota da carga #57</small></td>
@@ -16232,7 +16218,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Carga</strong> #28<br><small>Carga #28</small></td>
@@ -16250,7 +16236,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                          2
                                             </div>
                                     <div><strong>Status em</strong>:
-                         2026-10-16 11:12:35
+                         2026-10-16 11:28:57
                                             </div>
                                     <div><strong>Criado por</strong>:
                          1
@@ -16286,7 +16272,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Contratação</strong> #23<br><small>Contratação #23</small></td>
@@ -16319,7 +16305,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Rota da carga</strong> #56<br><small>Rota da carga #56</small></td>
@@ -16346,7 +16332,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Rota da carga</strong> #55<br><small>Rota da carga #55</small></td>
@@ -16373,7 +16359,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Carga</strong> #27<br><small>Carga #27</small></td>
@@ -16391,7 +16377,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                          1
                                             </div>
                                     <div><strong>Status em</strong>:
-                         2026-10-16 11:12:35
+                         2026-10-16 11:28:57
                                             </div>
                                     <div><strong>Criado por</strong>:
                          1
@@ -16427,7 +16413,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Documento</strong> #48<br><small>Documento #48</small></td>
@@ -16442,13 +16428,13 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                          exemplo.pdf
                                             </div>
                                     <div><strong>Validade</strong>:
-                         2027-11-16 11:12:35
+                         2027-11-16 11:28:57
                                             </div>
                                     <div><strong>Status</strong>:
                          aprovado
                                             </div>
                                     <div><strong>Analisado em</strong>:
-                         2026-10-16 11:12:35
+                         2026-10-16 11:28:57
                                             </div>
                                     <div><strong>Documentavel</strong>:
                          12
@@ -16460,7 +16446,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Documento</strong> #47<br><small>Documento #47</small></td>
@@ -16475,13 +16461,13 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                          exemplo.pdf
                                             </div>
                                     <div><strong>Validade</strong>:
-                         2027-11-16 11:12:35
+                         2027-11-16 11:28:57
                                             </div>
                                     <div><strong>Status</strong>:
                          aprovado
                                             </div>
                                     <div><strong>Analisado em</strong>:
-                         2026-10-16 11:12:35
+                         2026-10-16 11:28:57
                                             </div>
                                     <div><strong>Documentavel</strong>:
                          12
@@ -16493,7 +16479,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Documento</strong> #46<br><small>Documento #46</small></td>
@@ -16511,7 +16497,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                          aprovado
                                             </div>
                                     <div><strong>Analisado em</strong>:
-                         2026-10-16 11:12:35
+                         2026-10-16 11:28:57
                                             </div>
                                     <div><strong>Documentavel</strong>:
                          12
@@ -16523,7 +16509,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Documento</strong> #45<br><small>Documento #45</small></td>
@@ -16538,13 +16524,13 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                          exemplo.pdf
                                             </div>
                                     <div><strong>Validade</strong>:
-                         2027-11-16 11:12:35
+                         2027-11-16 11:28:57
                                             </div>
                                     <div><strong>Status</strong>:
                          aprovado
                                             </div>
                                     <div><strong>Analisado em</strong>:
-                         2026-10-16 11:12:35
+                         2026-10-16 11:28:57
                                             </div>
                                     <div><strong>Documentavel</strong>:
                          12
@@ -16556,7 +16542,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Veículo</strong> #12<br><small>DCA8H90</small></td>
@@ -16583,13 +16569,13 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                          LV-7307
                                             </div>
                                     <div><strong>Validade da GR</strong>:
-                         2027-01-16 11:12:35
+                         2027-01-16 11:28:57
                                             </div>
                             </td>
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Motorista</strong> #12<br><small>Deolindo Cruz Antunes</small></td>
@@ -16601,19 +16587,19 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                          Deolindo Cruz Antunes
                                             </div>
                                     <div><strong>CPF</strong>:
-                         32493057155
+                         00841661421
                                             </div>
                                     <div><strong>WhatsApp</strong>:
-                         11982056644
+                         11983207486
                                             </div>
                                     <div><strong>Cnh numero</strong>:
-                         08981640639
+                         08130733968
                                             </div>
                                     <div><strong>Cnh categoria</strong>:
                          E
                                             </div>
                                     <div><strong>Validade da CNH</strong>:
-                         2028-10-16 11:12:35
+                         2028-10-16 11:28:57
                                             </div>
                                     <div><strong>Cidade</strong>:
                          Sorocaba
@@ -16628,13 +16614,13 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                          LB-5107
                                             </div>
                                     <div><strong>Validade da GR</strong>:
-                         2027-02-16 11:12:35
+                         2027-02-16 11:28:57
                                             </div>
                             </td>
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Contratação</strong> #22<br><small>Contratação #22</small></td>
@@ -16667,7 +16653,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Rota da carga</strong> #54<br><small>Rota da carga #54</small></td>
@@ -16694,7 +16680,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Rota da carga</strong> #53<br><small>Rota da carga #53</small></td>
@@ -16721,7 +16707,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Carga</strong> #26<br><small>Carga #26</small></td>
@@ -16739,7 +16725,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                          3
                                             </div>
                                     <div><strong>Status em</strong>:
-                         2026-10-16 11:12:35
+                         2026-10-16 11:28:57
                                             </div>
                                     <div><strong>Criado por</strong>:
                          1
@@ -16775,7 +16761,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Contratação</strong> #21<br><small>Contratação #21</small></td>
@@ -16808,7 +16794,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Rota da carga</strong> #52<br><small>Rota da carga #52</small></td>
@@ -16835,7 +16821,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Rota da carga</strong> #51<br><small>Rota da carga #51</small></td>
@@ -16862,7 +16848,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Carga</strong> #25<br><small>Carga #25</small></td>
@@ -16880,7 +16866,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                          2
                                             </div>
                                     <div><strong>Status em</strong>:
-                         2026-10-16 11:12:35
+                         2026-10-16 11:28:57
                                             </div>
                                     <div><strong>Criado por</strong>:
                          1
@@ -16916,7 +16902,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td class="muted nowrap"></td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12:35</td>
+            <td class="nowrap">16/10/2026 11:28:57</td>
             <td>Sistema</td>
             <td><span class="selo ok">Criou</span></td>
             <td><strong>Contratação</strong> #20<br><small>Contratação #20</small></td>
@@ -16948,11 +16934,65 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                             </td>
             <td class="muted nowrap"></td>
         </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 11:28:57</td>
+            <td>Sistema</td>
+            <td><span class="selo ok">Criou</span></td>
+            <td><strong>Rota da carga</strong> #50<br><small>Rota da carga #50</small></td>
+            <td>
+                                    <div><strong>Ordem</strong>:
+                         1
+                                            </div>
+                                    <div><strong>Cidade</strong>:
+                         Presidente Prudente
+                                            </div>
+                                    <div><strong>UF</strong>:
+                         SP
+                                            </div>
+                                    <div><strong>Lat</strong>:
+                         -22.1256
+                                            </div>
+                                    <div><strong>Lng</strong>:
+                         -51.3889
+                                            </div>
+                                    <div><strong>Carga</strong>:
+                         24
+                                            </div>
+                            </td>
+            <td class="muted nowrap"></td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 11:28:57</td>
+            <td>Sistema</td>
+            <td><span class="selo ok">Criou</span></td>
+            <td><strong>Rota da carga</strong> #49<br><small>Rota da carga #49</small></td>
+            <td>
+                                    <div><strong>Ordem</strong>:
+                         0
+                                            </div>
+                                    <div><strong>Cidade</strong>:
+                         Cajamar
+                                            </div>
+                                    <div><strong>UF</strong>:
+                         SP
+                                            </div>
+                                    <div><strong>Lat</strong>:
+                         -23.3253
+                                            </div>
+                                    <div><strong>Lng</strong>:
+                         -46.8743
+                                            </div>
+                                    <div><strong>Carga</strong>:
+                         24
+                                            </div>
+                            </td>
+            <td class="muted nowrap"></td>
+        </tr>
         </tbody>
 </table>
 </div>
 <nav class="paginacao">
-                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                    <a href="#registro-log">3</a>                    <a href="#registro-log">4</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">404 no total</span>
+                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                    <a href="#registro-log">3</a>                    <a href="#registro-log">4</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">402 no total</span>
     </nav>
     </template><template id="p-cargas~1">
                                 <form method="post" action="#" class="filial-ativa">
@@ -16992,8 +17032,8 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                             <span class="seta">→</span>                <span><strong>Ribeirão Preto/SP</strong></span>
                     </div>
         <dl class="dados" style="margin-top:14px">
-            <div><dt>Coleta</dt><dd>16/10/2026 05:12</dd></div>
-            <div><dt>Entrega</dt><dd>16/10/2026 15:12</dd></div>
+            <div><dt>Coleta</dt><dd>16/10/2026 05:28</dd></div>
+            <div><dt>Entrega</dt><dd>16/10/2026 15:28</dd></div>
             <div><dt>Distância</dt><dd>290,0 km</dd></div>
                     </dl>
     </section>
@@ -17026,9 +17066,9 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
         <section class="cartao">
         <h2>Situações enviadas pelo motorista</h2>
         <ul class="historico">
-                            <li><strong>Chegou na coleta</strong> <small>16/10/2026 04:12</small></li>
-                            <li><strong>Carregado (saiu da coleta)</strong> <small>16/10/2026 06:12</small></li>
-                            <li><strong>Em trânsito</strong> <small>16/10/2026 07:12</small></li>
+                            <li><strong>Chegou na coleta</strong> <small>16/10/2026 04:28</small></li>
+                            <li><strong>Carregado (saiu da coleta)</strong> <small>16/10/2026 06:28</small></li>
+                            <li><strong>Em trânsito</strong> <small>16/10/2026 07:28</small></li>
                     </ul>
     </section>
     </div>
@@ -17040,7 +17080,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                 <div><dt>Motorista</dt><dd>Roberto Almeida</dd></div>
                 <div><dt>Placa</dt><dd>FTR4E21</dd></div>
                 <div><dt>Valor contratado</dt><dd>R$ 2.650,00</dd></div>
-                <div><dt>Contratado em</dt><dd>15/10/2026 11:12</dd></div>
+                <div><dt>Contratado em</dt><dd>15/10/2026 11:28</dd></div>
             </dl>
                             <p style="margin:10px 0 0"><span class="muted">Valor sugerido:</span>
                             <strong>R$ 2.787,48</strong> <small class="muted">(base Carreta, margem 8%)</small>
@@ -17050,10 +17090,10 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
         <section class="cartao">
         <h2>Adiantamentos</h2>
         <ul class="historico">
-                            <li><a href="#adiantamentos~5"><strong>Extra #1/1 - Ajudante</strong></a>
-                     · R$ 250,00                    <br><small>Finalizada 16/10 11:12</small></li>
                             <li><a href="#adiantamentos~1"><strong>Fechamento de carga</strong></a>
-                                        <br><small>Finalizada 16/10 11:12</small></li>
+                                        <br><small>Finalizada 16/10 11:28</small></li>
+                            <li><a href="#adiantamentos~5"><strong>Extra #1/1 - Ajudante</strong></a>
+                     · R$ 250,00                    <br><small>Finalizada 16/10 11:28</small></li>
                     </ul>
                     <button type="button" class="btn sec pequeno" style="margin-top:10px" data-janela="http://127.0.0.1:8123/cargas/1/acao/extra" data-titulo="Pagamento extra · carga #1">+ Pagamento extra</button>
             </section>
@@ -17080,33 +17120,33 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
         <h2>Histórico</h2>
         <ul class="historico">
                             <li>
-                    <small>16/10/2026 11:12 · Administrador</small><br>
+                    <small>16/10/2026 11:28 · Administrador</small><br>
                      Alterou:
                         <br><small>Chamado aberto: 📄 Documento / NF — Cliente pediu a NF de transferência antes da descarga.</small>                                                            </li>
                             <li>
-                    <small>16/10/2026 11:12 · Ana Ribeiro</small><br>
+                    <small>16/10/2026 11:28 · Ana Ribeiro</small><br>
                      Alterou:
                         <br><small>Extra #1/1 (Ajudante): valor R$ 250,00 · Conta bancária</small>                                                            </li>
                             <li>
-                    <small>16/10/2026 11:12 · Administrador</small><br>
+                    <small>16/10/2026 11:28 · Administrador</small><br>
                      Alterou:
                         <br><small>Extra #1/1 lançado: Ajudante, receita R$ 380,00 — Ajudante extra na descarga, pedido pelo cliente.</small>                                                            </li>
                             <li>
-                    <small>16/10/2026 11:12 · Ana Ribeiro</small><br>
+                    <small>16/10/2026 11:28 · Ana Ribeiro</small><br>
                      Alterou:
                         <br><small>Expedição concluída (documentação e adiantamento enviados): saiu da torre</small>                                                            </li>
                             <li>
-                    <small>16/10/2026 06:12 · Ana Ribeiro</small><br>
+                    <small>16/10/2026 06:28 · Ana Ribeiro</small><br>
                      Status: Motorista contratado → <strong>Em andamento</strong>
                                                             </li>
                             <li>
-                    <small>15/10/2026 11:12 · Ana Ribeiro</small><br>
+                    <small>15/10/2026 11:28 · Ana Ribeiro</small><br>
                      Alterou:
                                                                             <br><small><strong>Shipment ID</strong>: (vazio) → SHP-87990</small>
                                                     <br><small><strong>Paletes</strong>: 22 → 24</small>
                                                             </li>
                             <li>
-                    <small>14/10/2026 11:12 · Administrador</small><br>
+                    <small>14/10/2026 11:28 · Administrador</small><br>
                      Carga cadastrada                                     </li>
                     </ul>
     </section>
@@ -17219,7 +17259,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <td style="font-size:13px;font-variant-numeric:tabular-nums">
                 Receita R$ 4.200,00<br>
                 Frete R$ 2.650,00<br>Adto R$ 1.855,00 · Abast. R$ 265,00                             </td>
-            <td>Ana Ribeiro<br><small class="muted">16/10 11:12</small></td>
+            <td>Ana Ribeiro<br><small class="muted">16/10 11:28</small></td>
             <td><span class="selo atencao">Pendente</span>
                 </td>
             <td><a class="btn sec pequeno" href="#liberacao~item~1">Abrir</a></td>
@@ -17264,7 +17304,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                             </div>
             <div>
                 <label for="cnpj">CNPJ *</label>
-                <input id="cnpj" name="cnpj" value="11.965.409/0001-69" required inputmode="numeric" placeholder="00.000.000/0000-00">
+                <input id="cnpj" name="cnpj" value="07.006.450/0001-30" required inputmode="numeric" placeholder="00.000.000/0000-00">
                             </div>
             <div class="largo">
                                 <label for="pgr_categoria_id">Categoria do PGR</label>
@@ -17436,7 +17476,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
     <td class="carga-celula">
         <a href="#cargas~2" class="carga-tipo"><strong>#2/1</strong></a>
         <div><span class="selo atencao">Extra - Diária</span></div>
-        <div class="datas"><span><small class="muted">Col.</small> 16/10 02:12</span> <span><small class="muted">Ent.</small> 16/10 10:12</span></div>
+        <div class="datas"><span><small class="muted">Col.</small> 16/10 02:28</span> <span><small class="muted">Ent.</small> 16/10 10:28</span></div>
         <small class="muted">Administrador · Matriz</small>
     </td>
     <td>
@@ -17453,7 +17493,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
     </td>
     <td rowspan="2">
         <small class="muted">Responsável</small><br><strong>Ana Ribeiro</strong>
-        <div class="contr-info">Marcos Vieira<br><small class="muted">lançado 16/10 11:12</small></div>
+        <div class="contr-info">Marcos Vieira<br><small class="muted">lançado 16/10 11:28</small></div>
     </td>
     <td rowspan="2" class="acoes-contr">
                     <button type="button" class="btn pequeno" data-janela="http://127.0.0.1:8123/extras/2/valor" data-titulo="Informar valor · extra #2/1">Informar valor</button>
@@ -18024,8 +18064,8 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                         <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794752428&amp;signature=65d2d88637a46d39e168645f84a81f6dd2e8fb467d1803031438529454c0b736" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511993513594?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794752428%26signature%3D65d2d88637a46d39e168645f84a81f6dd2e8fb467d1803031438529454c0b736">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794753002&amp;signature=839e33ca174318364d9c56d447b4376e24bcd4c8f97c5f54e1247303b731bda9" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511996135530?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794753002%26signature%3D839e33ca174318364d9c56d447b4376e24bcd4c8f97c5f54e1247303b731bda9">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-relatorios~comissao-frete">
                                 <form method="post" action="#" class="filial-ativa">
@@ -18150,7 +18190,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                                         <strong>Alimentos Vale Verde</strong>
                 </div>
             </td>
-            <td>09.872.729/0001-22</td>
+            <td>40.538.089/0001-69</td>
             <td>0</td>
             <td><a href="#cargas">9</a></td>
             <td><span class="selo ok">Ativo</span></td>
@@ -18162,7 +18202,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                                         <strong>Cosméticos Aurora</strong>
                 </div>
             </td>
-            <td>11.406.519/0001-90</td>
+            <td>12.254.236/0001-33</td>
             <td>1</td>
             <td><a href="#cargas">10</a></td>
             <td><span class="selo ok">Ativo</span></td>
@@ -18174,7 +18214,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                                         <strong>Farma Bem Estar</strong>
                 </div>
             </td>
-            <td>63.954.769/0001-69</td>
+            <td>97.724.394/0001-62</td>
             <td>0</td>
             <td><a href="#cargas">6</a></td>
             <td><span class="selo ok">Ativo</span></td>
@@ -18186,7 +18226,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                                         <strong>Química Paulista</strong>
                 </div>
             </td>
-            <td>11.965.409/0001-69</td>
+            <td>07.006.450/0001-30</td>
             <td>0</td>
             <td><a href="#cargas">3</a></td>
             <td><span class="selo ok">Ativo</span></td>
@@ -18235,7 +18275,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
         <div class="grade">
             <div class="" >
             <label for="f_cpf">CPF * </label>
-                    <input id="f_cpf" type="text" name="cpf" value="673.536.071-06" required inputmode="numeric">
+                    <input id="f_cpf" type="text" name="cpf" value="627.196.860-00" required inputmode="numeric">
                 </div>
             <div class="" style="grid-column:span 2">
             <label for="f_nome">Nome completo * </label>
@@ -18303,7 +18343,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                 </div>
             <div class="" >
             <label for="f_whatsapp">WhatsApp (com DDD) * </label>
-                    <input id="f_whatsapp" type="text" name="whatsapp" value="11982094631" required inputmode="tel">
+                    <input id="f_whatsapp" type="text" name="whatsapp" value="11989233925" required inputmode="tel">
                 </div>
             <div class="" >
             <label for="f_email">E-mail </label>
@@ -18395,7 +18435,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
         <div class="grade">
             <div class="" >
             <label for="f_cnh_numero">Nº da CNH * </label>
-                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="03724668861" required inputmode="numeric">
+                    <input id="f_cnh_numero" type="text" name="cnh_numero" value="06863965805" required inputmode="numeric">
                 </div>
             <div class="" >
             <label for="f_cnh_categoria">Categoria * </label>
@@ -18517,12 +18557,12 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
             <li>
             <strong>CNH</strong> <span class="selo ok">Aprovado</span>
             <small>validade 16/04/2027</small>            · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
             <li>
             <strong>Comprovante de residência</strong> <span class="selo ok">Aprovado</span>
                         · <a href="#" data-fora="1" target="_blank">ver arquivo</a>
-            <br><small>16/10/2026 11:12</small>
+            <br><small>16/10/2026 11:28</small>
                                 </li>
     </ul>
             </details>
@@ -18637,9 +18677,9 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                 <a class="torre-numero" href="#cargas~3">#3</a>
                 <div class="torre-motorista">Juliana Souza</div>
                 <div><strong class="torre-placa">BRA7C19</strong> <span class="muted">Toco</span></div>
-                                <div class="torre-fone">📞 (11) 99561-5216 · <a href="https://wa.me/5511995615216" target="_blank" rel="noopener">WhatsApp</a> </div>
+                                <div class="torre-fone">📞 (11) 99993-4852 · <a href="https://wa.me/5511999934852" target="_blank" rel="noopener">WhatsApp</a> </div>
                 <small class="muted">Farma Bem Estar · São José dos Campos → São Paulo<br>
-                    coleta 16/10 13:12 · doca 1 às 11:42 · Matriz</small>
+                    coleta 16/10 13:28 · doca 1 às 11:58 · Matriz</small>
             </div>
 
             
@@ -18695,22 +18735,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                 <noscript><button class="btn sec pequeno">Anexar PDF</button></noscript>
             </form>
 
-            
-            <form method="post" action="#" class="torre-envio">                                <p style="margin:10px 0 4px"><strong>Enviar para:</strong></p>
-                                                        <label class="torre-destino"><input type="checkbox" name="destinos[]" value="motorista" >
-                        Motorista (WhatsApp)
-                        <small class="muted">· (11) 99561-5216 · API ainda não ligada: abre o WhatsApp</small></label>
-                                                        <label class="torre-destino"><input type="checkbox" name="destinos[]" value="gestor" >
-                        Gestor da carga (e-mail)
-                        <small class="muted"> · admin@seguralogistica.com.br</small></label>
-                                                        <label class="torre-destino"><input type="checkbox" name="destinos[]" value="carregamento" >
-                        Carregamento (e-mail)
-                        <small class="muted"> · doca.matriz@segura.local</small></label>
-                                <label class="sr" for="obs-3">Observação</label>
-                <input id="obs-3" name="obs" maxlength="500" placeholder="Observação (opcional, vai no e-mail)" style="margin-top:6px">
-                                <button class="btn" style="margin-top:8px" disabled>📤 Enviar documentação</button>
-                <small class="muted">Anexe os PDFs acima para liberar o envio.</small>            </form>
-            <form method="post" action="#" class="port-form" style="margin-top:10px" data-x="('Documento entregue em mãos?')">                <input name="obs" maxlength="500" placeholder="Obs. (opcional)" aria-label="Observação da entrega em mãos">
+                        <form method="post" action="#" class="port-form" style="margin-top:10px" data-x="('Documento entregue em mãos?')">                <input name="obs" maxlength="500" placeholder="Obs. (opcional)" aria-label="Observação da entrega em mãos">
                 <button class="btn sec pequeno">Entregue em mãos</button></form>
                     </details>
     </section>
@@ -18877,11 +18902,11 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <thead><tr><th>Aberta em</th><th>Carga</th><th>Solicitação</th><th>Coleta</th><th>Valor</th><th>Adiantamento</th><th>Finalizada</th><th></th></tr></thead>
     <tbody>
                     <tr class="atrasada">
-            <td>16/10/2026 11:12</td>
+            <td>16/10/2026 11:28</td>
             <td><a href="#cargas~7"><strong>#7</strong></a><br><small class="muted">Campinas/SP → São Paulo/SP</small></td>
             <td><strong>Fechamento de carga</strong>
                 <br><small class="muted">Alimentos Vale Verde · Paulo Teixeira</small></td>
-            <td>13/10/2026 11:12</td>
+            <td>13/10/2026 11:28</td>
             <td>—</td>
             <td>
                 <span class="selo neutro">Não preenchido</span>
@@ -18890,11 +18915,11 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <td><a class="btn sec pequeno" href="#adiantamentos~4">Abrir</a></td>
         </tr>
                     <tr class="atrasada">
-            <td>16/10/2026 11:12</td>
+            <td>16/10/2026 11:28</td>
             <td><a href="#cargas~2"><strong>#2</strong></a><br><small class="muted">São Paulo/SP → Campinas/SP</small></td>
             <td><strong>Fechamento de carga</strong>
                 <br><small class="muted">Alimentos Vale Verde · Marcos Vieira</small></td>
-            <td>16/10/2026 02:12</td>
+            <td>16/10/2026 02:28</td>
             <td>—</td>
             <td>
                 <span class="selo atencao">Rascunho</span>
@@ -18903,11 +18928,11 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <td><a class="btn sec pequeno" href="#adiantamentos~2">Abrir</a></td>
         </tr>
                     <tr class="">
-            <td>16/10/2026 11:12</td>
+            <td>16/10/2026 11:28</td>
             <td><a href="#cargas~3"><strong>#3</strong></a><br><small class="muted">São José dos Campos/SP → São Paulo/SP</small></td>
             <td><strong>Fechamento de carga</strong>
                 <br><small class="muted">Farma Bem Estar · Juliana Souza</small></td>
-            <td>16/10/2026 13:12</td>
+            <td>16/10/2026 13:28</td>
             <td>—</td>
             <td>
                 <span class="selo neutro">Não preenchido</span>
@@ -19100,7 +19125,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="9" >
                     <div class="ind-quem">
                         <strong>Wesley Sales Mendes</strong>
-                        <small>(11) 98887-6936 · <a href="https://wa.me/5511988876936" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 98528-7802 · <a href="https://wa.me/5511985287802" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 990</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>2</b> na rota</span>
@@ -19129,7 +19154,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="10" >
                     <div class="ind-quem">
                         <strong>Cleber Nunes Santana</strong>
-                        <small>(11) 98365-2258 · <a href="https://wa.me/5511983652258" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 98751-1438 · <a href="https://wa.me/5511987511438" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 1.020</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>2</b> na rota</span>
@@ -19158,7 +19183,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="2" >
                     <div class="ind-quem">
                         <strong>Marcos Vieira</strong>
-                        <small>(11) 99702-1773 · <a href="https://wa.me/5511997021773" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 99622-2828 · <a href="https://wa.me/5511996222828" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 1.110</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>1</b> na rota</span>
@@ -19235,7 +19260,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="7" >
                     <div class="ind-quem">
                         <strong>Evandro Manzato</strong>
-                        <small>(11) 98964-5230 · <a href="https://wa.me/5511989645230" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 98995-4441 · <a href="https://wa.me/5511989954441" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 730</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>3</b> na rota</span>
@@ -19264,7 +19289,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="5" >
                     <div class="ind-quem">
                         <strong>Helio Francisco Paula</strong>
-                        <small>(11) 98209-4631 · <a href="https://wa.me/5511982094631" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 98923-3925 · <a href="https://wa.me/5511989233925" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 780</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>4</b> na rota</span>
@@ -19293,7 +19318,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="6" >
                     <div class="ind-quem">
                         <strong>Osmar Souza Lima</strong>
-                        <small>(11) 98492-7506 · <a href="https://wa.me/5511984927506" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 98457-4817 · <a href="https://wa.me/5511984574817" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 860</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>2</b> na rota</span>
@@ -19322,7 +19347,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="4" >
                     <div class="ind-quem">
                         <strong>Paulo Teixeira</strong>
-                        <small>(11) 99369-0274 · <a href="https://wa.me/5511993690274" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 99702-9459 · <a href="https://wa.me/5511997029459" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 930</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>1</b> na rota</span>
@@ -19351,7 +19376,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="3" >
                     <div class="ind-quem">
                         <strong>Juliana Souza</strong>
-                        <small>(11) 99561-5216 · <a href="https://wa.me/5511995615216" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 99993-4852 · <a href="https://wa.me/5511999934852" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 1.020</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span><b>1</b> na rota</span>
@@ -19380,7 +19405,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                             <li class="ind-card" data-mot="8" >
                     <div class="ind-quem">
                         <strong>Renato Lucas Prado</strong>
-                        <small>(11) 98848-2078 · <a href="https://wa.me/5511988482078" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
+                        <small>(11) 98173-6386 · <a href="https://wa.me/5511981736386" target="_blank" rel="noopener">WhatsApp</a></small>                    </div>
                     <div class="ind-valor"><strong>R$ 1.030</strong><small>valor estimado</small></div>
                     <div class="ind-dados">
                         <span>outra rota</span>
@@ -19423,7 +19448,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <thead><tr><th>Data</th><th>Usuário</th><th>O que mudou</th></tr></thead>
     <tbody>
             <tr>
-            <td class="nowrap">14/10/2026 11:12</td>
+            <td class="nowrap">14/10/2026 11:28</td>
             <td>Administrador</td>
             <td>
                  Carga cadastrada                             </td>
@@ -19436,7 +19461,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="ci-icone" aria-hidden="true">🚚</div>
         <div><strong>Carga #2</strong> · Alimentos Vale Verde <span class="selo ativo">Em andamento</span>
             <br><small class="muted">São Paulo/SP → Campinas/SP · contratada por
-                Ana Ribeiro em 15/10/2026 11:12</small></div>
+                Ana Ribeiro em 15/10/2026 11:28</small></div>
     </div>
 
     <div class="valores ci-resumo">
@@ -19449,8 +19474,8 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <div class="ci-grade">
         <section>
             <h3>Motorista</h3>
-            <p><strong>Marcos Vieira</strong><br><small>CPF 183.331.295-36 · Cajamar/SP</small>
-                <br><small>11997021773 · <a href="https://wa.me/5511997021773" target="_blank" rel="noopener">WhatsApp</a></small>                                <br><a href="#motoristas~2" target="_blank" rel="noopener"><small>Abrir cadastro</small></a></p>
+            <p><strong>Marcos Vieira</strong><br><small>CPF 269.961.403-31 · Cajamar/SP</small>
+                <br><small>11996222828 · <a href="https://wa.me/5511996222828" target="_blank" rel="noopener">WhatsApp</a></small>                                <br><a href="#motoristas~2" target="_blank" rel="noopener"><small>Abrir cadastro</small></a></p>
         </section>
         <section>
             <h3>Veículo</h3>
@@ -19600,37 +19625,37 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <thead><tr><th>Data</th><th>Usuário</th><th>O que mudou</th></tr></thead>
     <tbody>
             <tr>
-            <td class="nowrap">16/10/2026 11:12</td>
+            <td class="nowrap">16/10/2026 11:28</td>
             <td>Administrador</td>
             <td>
                                     Chamado aberto: 📄 Documento / NF — Cliente pediu a NF de transferência antes da descarga.                                                </td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12</td>
+            <td class="nowrap">16/10/2026 11:28</td>
             <td>Ana Ribeiro</td>
             <td>
                                     Extra #1/1 (Ajudante): valor R$ 250,00 · Conta bancária                                                </td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12</td>
+            <td class="nowrap">16/10/2026 11:28</td>
             <td>Administrador</td>
             <td>
                                     Extra #1/1 lançado: Ajudante, receita R$ 380,00 — Ajudante extra na descarga, pedido pelo cliente.                                                </td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12</td>
+            <td class="nowrap">16/10/2026 11:28</td>
             <td>Ana Ribeiro</td>
             <td>
                                     Expedição concluída (documentação e adiantamento enviados): saiu da torre                                                </td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 06:12</td>
+            <td class="nowrap">16/10/2026 06:28</td>
             <td>Ana Ribeiro</td>
             <td>
                  Status: Motorista contratado → <strong>Em andamento</strong>                            </td>
         </tr>
             <tr>
-            <td class="nowrap">15/10/2026 11:12</td>
+            <td class="nowrap">15/10/2026 11:28</td>
             <td>Ana Ribeiro</td>
             <td>
                                                                                 <div><strong>Shipment ID</strong>: <span class="muted">(vazio)</span> → SHP-87990</div>
@@ -19638,7 +19663,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
                                                 </td>
         </tr>
             <tr>
-            <td class="nowrap">14/10/2026 11:12</td>
+            <td class="nowrap">14/10/2026 11:28</td>
             <td>Administrador</td>
             <td>
                  Carga cadastrada                             </td>
@@ -19674,12 +19699,12 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <section class="cartao ch-card">
         <div class="topo" style="margin-bottom:6px">
             <div><strong>📄 Documento / NF</strong>                 <span class="selo erro">Aberto</span>
-                <br><small class="muted">aberto por Administrador · 16/10 11:12 · com Administrador, Ana Ribeiro</small></div>
+                <br><small class="muted">aberto por Administrador · 16/10 11:28 · com Administrador, Ana Ribeiro</small></div>
                             <form method="post" action="#"> <button class="btn sec pequeno">✓ Resolvido</button></form>
                     </div>
         <div class="ch-msgs">
                             <div class="ch-msg">
-                    <small><strong>Administrador</strong> · 16/10 11:12</small>
+                    <small><strong>Administrador</strong> · 16/10 11:28</small>
                     <div>Cliente pediu a NF de transferência antes da descarga.</div>
                                     </div>
                                 </div>
@@ -19781,7 +19806,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <thead><tr><th>Data</th><th>Usuário</th><th>O que mudou</th></tr></thead>
     <tbody>
             <tr>
-            <td class="nowrap">14/10/2026 11:12</td>
+            <td class="nowrap">14/10/2026 11:28</td>
             <td>Administrador</td>
             <td>
                  Carga cadastrada                             </td>
@@ -19977,7 +20002,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="ci-icone" aria-hidden="true">🚚</div>
         <div><strong>Carga #3</strong> · Farma Bem Estar <span class="selo ativo">Motorista contratado</span>
             <br><small class="muted">São José dos Campos/SP → São Paulo/SP · contratada por
-                Ana Ribeiro em 15/10/2026 11:12</small></div>
+                Ana Ribeiro em 15/10/2026 11:28</small></div>
     </div>
 
     <div class="valores ci-resumo">
@@ -19990,8 +20015,8 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <div class="ci-grade">
         <section>
             <h3>Motorista</h3>
-            <p><strong>Juliana Souza</strong><br><small>CPF 575.726.761-54 · Cajamar/SP</small>
-                <br><small>11995615216 · <a href="https://wa.me/5511995615216" target="_blank" rel="noopener">WhatsApp</a></small>                                <br><a href="#motoristas~3" target="_blank" rel="noopener"><small>Abrir cadastro</small></a></p>
+            <p><strong>Juliana Souza</strong><br><small>CPF 047.798.750-80 · Cajamar/SP</small>
+                <br><small>11999934852 · <a href="https://wa.me/5511999934852" target="_blank" rel="noopener">WhatsApp</a></small>                                <br><a href="#motoristas~3" target="_blank" rel="noopener"><small>Abrir cadastro</small></a></p>
         </section>
         <section>
             <h3>Veículo</h3>
@@ -20006,7 +20031,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <p><span class="selo erro">GR motorista: não liberada</span>
                 <span class="selo erro">GR veículo: não liberada</span>
                 <br><small>Rastreamento: não exigido</small>
-                <br><small>Carregamento: doca 1 em 16/10 às 11:42</small></p>
+                <br><small>Carregamento: doca 1 em 16/10 às 11:58</small></p>
         </section>
     </div>
 
@@ -20040,16 +20065,16 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <section class="cartao ch-card ch-urgente-card">
         <div class="topo" style="margin-bottom:6px">
             <div><strong>⏰ Atraso na coleta/entrega</strong> <span class="selo erro">urgente</span>                <span class="selo atencao">Em atendimento</span>
-                <br><small class="muted">aberto por Ana Ribeiro · 16/10 11:12 · com Administrador, Ana Ribeiro</small></div>
+                <br><small class="muted">aberto por Ana Ribeiro · 16/10 11:28 · com Administrador, Ana Ribeiro</small></div>
                             <form method="post" action="#"> <button class="btn sec pequeno">✓ Resolvido</button></form>
                     </div>
         <div class="ch-msgs">
                             <div class="ch-msg">
-                    <small><strong>Ana Ribeiro</strong> · 16/10 11:12</small>
+                    <small><strong>Ana Ribeiro</strong> · 16/10 11:28</small>
                     <div>Motorista parado na balança de Jundiaí, previsão de atraso de 2 h na entrega.</div>
                                     </div>
                             <div class="ch-msg">
-                    <small><strong>Administrador</strong> · 16/10 11:12</small>
+                    <small><strong>Administrador</strong> · 16/10 11:28</small>
                     <div>Ciente, vou avisar o cliente.</div>
                                     </div>
                                 </div>
@@ -20073,7 +20098,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
         <div class="ci-icone" aria-hidden="true">🚚</div>
         <div><strong>Carga #1</strong> · Cosméticos Aurora <span class="selo ativo">Em andamento</span>
             <br><small class="muted">Cajamar/SP → Ribeirão Preto/SP · contratada por
-                Ana Ribeiro em 15/10/2026 11:12</small></div>
+                Ana Ribeiro em 15/10/2026 11:28</small></div>
     </div>
 
     <div class="valores ci-resumo">
@@ -20086,8 +20111,8 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <div class="ci-grade">
         <section>
             <h3>Motorista</h3>
-            <p><strong>Roberto Almeida</strong><br><small>CPF 985.460.412-88 · Cajamar/SP</small>
-                <br><small>11993513594 · <a href="https://wa.me/5511993513594" target="_blank" rel="noopener">WhatsApp</a></small>                                <br><a href="#motoristas~1" target="_blank" rel="noopener"><small>Abrir cadastro</small></a></p>
+            <p><strong>Roberto Almeida</strong><br><small>CPF 947.972.170-81 · Cajamar/SP</small>
+                <br><small>11996135530 · <a href="https://wa.me/5511996135530" target="_blank" rel="noopener">WhatsApp</a></small>                                <br><a href="#motoristas~1" target="_blank" rel="noopener"><small>Abrir cadastro</small></a></p>
         </section>
         <section>
             <h3>Veículo</h3>
@@ -20144,13 +20169,13 @@ document.querySelectorAll('.torre-drop').forEach(z => {
 </form>
 </template><template id="tpl-janela-cargas~1~acao~situacoes"><ul class="historico">
                     <li>
-                <small>16/10/2026 07:12</small>
+                <small>16/10/2026 07:28</small>
                                 <br><strong>Em trânsito</strong>                                                                                                                                            </li>
                     <li>
-                <small>16/10/2026 06:12</small>
+                <small>16/10/2026 06:28</small>
                                 <br><strong>Carregado (saiu da coleta)</strong>                                                                                                                                            </li>
                     <li>
-                <small>16/10/2026 04:12</small>
+                <small>16/10/2026 04:28</small>
                                 <br><strong>Chegou na coleta</strong>                                                                                                                                            </li>
             </ul>
 </template><template id="tpl-janela-cargas~4~acao~observacao"><p style="margin:0">Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar EPI e paleteira.</p>
@@ -20159,7 +20184,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <thead><tr><th>Data</th><th>Usuário</th><th>O que mudou</th></tr></thead>
     <tbody>
             <tr>
-            <td class="nowrap">14/10/2026 11:12</td>
+            <td class="nowrap">14/10/2026 11:28</td>
             <td>Administrador</td>
             <td>
                  Carga cadastrada                             </td>
@@ -20175,8 +20200,8 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <select id="dup-filial" name="filial_id" required><option value="1" selected>Matriz</option><option value="2" >Segura - Betim - MG</option><option value="3" >Segura - Cariacica - ES</option><option value="4" >Segura - Esteio - RS</option><option value="5" >Segura - Goiânia - GO</option><option value="6" >Segura - Itapevi - SP</option><option value="7" >Segura - Pinhais - PR</option><option value="8" >Segura - Rio de Janeiro - RJ</option><option value="9" >Segura - Sapucaia do Sul - RS</option><option value="10" >Segura - Sorocaba - SP</option><option value="11" >Segura Maringá - PR</option><option value="12" >Segura Pirapozinho - SP</option></select></div>
         <div><label for="dup-gestor">Gestor *</label>
             <select id="dup-gestor" name="gestor_id" required><option value="1" selected>Administrador</option><option value="3" >Ana Ribeiro</option><option value="4" >Carlos Mendes</option><option value="5" >Pedro da Doca</option><option value="2" >Usuário de teste</option></select></div>
-        <div><label for="dup-coleta">Coleta *</label><input id="dup-coleta" type="datetime-local" name="coleta_em" required value="2026-10-17T05:12"></div>
-        <div><label for="dup-entrega">Entrega *</label><input id="dup-entrega" type="datetime-local" name="entrega_em" required value="2026-10-17T15:12"></div>
+        <div><label for="dup-coleta">Coleta *</label><input id="dup-coleta" type="datetime-local" name="coleta_em" required value="2026-10-17T05:28"></div>
+        <div><label for="dup-entrega">Entrega *</label><input id="dup-entrega" type="datetime-local" name="entrega_em" required value="2026-10-17T15:28"></div>
         <div><label for="dup-ajc">Ajudante na coleta?</label>
             <select id="dup-ajc" name="ajudante_coleta"><option value="nao" selected>Não</option><option value="sim" >Sim</option></select></div>
         <div><label for="dup-qc">Qtde</label><input id="dup-qc" type="number" min="0" max="20" name="ajudantes_coleta" value="0"></div>
@@ -20302,8 +20327,8 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <select id="dup-filial" name="filial_id" required><option value="1" selected>Matriz</option><option value="2" >Segura - Betim - MG</option><option value="3" >Segura - Cariacica - ES</option><option value="4" >Segura - Esteio - RS</option><option value="5" >Segura - Goiânia - GO</option><option value="6" >Segura - Itapevi - SP</option><option value="7" >Segura - Pinhais - PR</option><option value="8" >Segura - Rio de Janeiro - RJ</option><option value="9" >Segura - Sapucaia do Sul - RS</option><option value="10" >Segura - Sorocaba - SP</option><option value="11" >Segura Maringá - PR</option><option value="12" >Segura Pirapozinho - SP</option></select></div>
         <div><label for="dup-gestor">Gestor *</label>
             <select id="dup-gestor" name="gestor_id" required><option value="1" selected>Administrador</option><option value="3" >Ana Ribeiro</option><option value="4" >Carlos Mendes</option><option value="5" >Pedro da Doca</option><option value="2" >Usuário de teste</option></select></div>
-        <div><label for="dup-coleta">Coleta *</label><input id="dup-coleta" type="datetime-local" name="coleta_em" required value="2026-10-17T13:12"></div>
-        <div><label for="dup-entrega">Entrega *</label><input id="dup-entrega" type="datetime-local" name="entrega_em" required value="2026-10-17T19:12"></div>
+        <div><label for="dup-coleta">Coleta *</label><input id="dup-coleta" type="datetime-local" name="coleta_em" required value="2026-10-17T13:28"></div>
+        <div><label for="dup-entrega">Entrega *</label><input id="dup-entrega" type="datetime-local" name="entrega_em" required value="2026-10-17T19:28"></div>
         <div><label for="dup-ajc">Ajudante na coleta?</label>
             <select id="dup-ajc" name="ajudante_coleta"><option value="nao" selected>Não</option><option value="sim" >Sim</option></select></div>
         <div><label for="dup-qc">Qtde</label><input id="dup-qc" type="number" min="0" max="20" name="ajudantes_coleta" value="0"></div>
@@ -20317,7 +20342,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
 </template><template id="tpl-janela-cargas~5~extras"><p class="muted">Esta carga não tem extras.</p>
 </template><template id="tpl-janela-cargas~2~acao~situacoes"><ul class="historico">
                     <li>
-                <small>16/10/2026 03:12</small>
+                <small>16/10/2026 03:28</small>
                                 <br><strong>Carregado (saiu da coleta)</strong>                                                                                                                                            </li>
             </ul>
 </template><template id="tpl-janela-cargas~3~acao~entrega"><form method="post" action="#" class="janela-form avaliacao" enctype="multipart/form-data">
@@ -20489,9 +20514,9 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <span class="selo ok">Enviado ao financeiro</span>
                     </div>
         <dl class="dados">
-            <div><dt>Lançado</dt><dd>16/10/2026 11:12 · Administrador</dd></div>
+            <div><dt>Lançado</dt><dd>16/10/2026 11:28 · Administrador</dd></div>
             <div><dt>Receita</dt><dd>R$ 380,00</dd></div>            <div><dt>Valor pago</dt><dd>R$ 250,00 · Conta bancária</dd></div>
-            <div><dt>Informado</dt><dd>16/10/2026 11:12 · Ana Ribeiro</dd></div>        </dl>
+            <div><dt>Informado</dt><dd>16/10/2026 11:28 · Ana Ribeiro</dd></div>        </dl>
         <p style="margin:6px 0 0;white-space:pre-line"><small class="muted">Observação</small><br>Ajudante extra na descarga, pedido pelo cliente.</p>
         <div style="margin-top:8px;display:flex;gap:6px">
                         <a class="btn sec pequeno" href="#adiantamentos~5">Solicitação de adiantamento</a>        </div>
@@ -20590,19 +20615,19 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <thead><tr><th>Data</th><th>Usuário</th><th>O que mudou</th></tr></thead>
     <tbody>
             <tr>
-            <td class="nowrap">16/10/2026 11:12</td>
+            <td class="nowrap">16/10/2026 11:28</td>
             <td>Ana Ribeiro</td>
             <td>
                                     Chamado aberto (URGENTE): ⏰ Atraso na coleta/entrega — Motorista parado na balança de Jundiaí, previsão de atraso de 2 h na entrega.                                                </td>
         </tr>
             <tr>
-            <td class="nowrap">16/10/2026 11:12</td>
+            <td class="nowrap">16/10/2026 11:28</td>
             <td>Administrador</td>
             <td>
                                     Extra #2/1 lançado: Diária, receita R$ 450,00 — Motorista aguardou a descarga das 8h às 18h; cliente autorizou diária.                                                </td>
         </tr>
             <tr>
-            <td class="nowrap">14/10/2026 11:12</td>
+            <td class="nowrap">14/10/2026 11:28</td>
             <td>Administrador</td>
             <td>
                  Carga cadastrada                             </td>
@@ -20615,7 +20640,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
     <thead><tr><th>Data</th><th>Usuário</th><th>O que mudou</th></tr></thead>
     <tbody>
             <tr>
-            <td class="nowrap">14/10/2026 11:12</td>
+            <td class="nowrap">14/10/2026 11:28</td>
             <td>Administrador</td>
             <td>
                  Carga cadastrada                             </td>
@@ -20729,7 +20754,7 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <span class="selo atencao">Aguardando valor</span>
                     </div>
         <dl class="dados">
-            <div><dt>Lançado</dt><dd>16/10/2026 11:12 · Administrador</dd></div>
+            <div><dt>Lançado</dt><dd>16/10/2026 11:28 · Administrador</dd></div>
             <div><dt>Receita</dt><dd>R$ 450,00</dd></div>            <div><dt>Valor pago</dt><dd>—</dd></div>
                     </dl>
         <p style="margin:6px 0 0;white-space:pre-line"><small class="muted">Observação</small><br>Motorista aguardou a descarga das 8h às 18h; cliente autorizou diária.</p>
@@ -20777,8 +20802,8 @@ document.querySelectorAll('.torre-drop').forEach(z => {
             <select id="dup-filial" name="filial_id" required><option value="1" selected>Matriz</option><option value="2" >Segura - Betim - MG</option><option value="3" >Segura - Cariacica - ES</option><option value="4" >Segura - Esteio - RS</option><option value="5" >Segura - Goiânia - GO</option><option value="6" >Segura - Itapevi - SP</option><option value="7" >Segura - Pinhais - PR</option><option value="8" >Segura - Rio de Janeiro - RJ</option><option value="9" >Segura - Sapucaia do Sul - RS</option><option value="10" >Segura - Sorocaba - SP</option><option value="11" >Segura Maringá - PR</option><option value="12" >Segura Pirapozinho - SP</option></select></div>
         <div><label for="dup-gestor">Gestor *</label>
             <select id="dup-gestor" name="gestor_id" required><option value="1" selected>Administrador</option><option value="3" >Ana Ribeiro</option><option value="4" >Carlos Mendes</option><option value="5" >Pedro da Doca</option><option value="2" >Usuário de teste</option></select></div>
-        <div><label for="dup-coleta">Coleta *</label><input id="dup-coleta" type="datetime-local" name="coleta_em" required value="2026-10-17T02:12"></div>
-        <div><label for="dup-entrega">Entrega *</label><input id="dup-entrega" type="datetime-local" name="entrega_em" required value="2026-10-17T10:12"></div>
+        <div><label for="dup-coleta">Coleta *</label><input id="dup-coleta" type="datetime-local" name="coleta_em" required value="2026-10-17T02:28"></div>
+        <div><label for="dup-entrega">Entrega *</label><input id="dup-entrega" type="datetime-local" name="entrega_em" required value="2026-10-17T10:28"></div>
         <div><label for="dup-ajc">Ajudante na coleta?</label>
             <select id="dup-ajc" name="ajudante_coleta"><option value="nao" selected>Não</option><option value="sim" >Sim</option></select></div>
         <div><label for="dup-qc">Qtde</label><input id="dup-qc" type="number" min="0" max="20" name="ajudantes_coleta" value="0"></div>
