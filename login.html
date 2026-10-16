@@ -390,20 +390,28 @@ table.contratacao tbody tr:not(.linha-obs):not(.linha-indicados):not(:first-chil
 .t-atrasado{border-left-color:var(--erro)}
 .torre-card.t-carregado{background:#f3fbf5}
 .torre-atrasado{border-left-color:var(--erro);background:#fff5f5}
-.torre-topo{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.torre-status{text-align:right}
+.torre-corpo{display:grid;grid-template-columns:minmax(200px,1fr) minmax(280px,1.6fr) minmax(190px,auto);gap:18px;align-items:start}
+.torre-numero{font-size:24px;font-weight:800;color:var(--tinta);text-decoration:none}.torre-numero:hover{color:var(--laranja-esc)}
+.torre-motorista{font-size:16px;font-weight:600;margin-top:2px}
+.torre-placa{font-size:18px;letter-spacing:1px}
+.torre-ident small{display:block;margin-top:4px}
+.torre-valores .valores{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px 12px;margin:0 0 8px}
+.torre-valores .valores div{display:flex;flex-direction:column;background:var(--neutro-bg);border-radius:6px;padding:6px 10px}
+.torre-valores .valores span{font-size:11px;color:var(--cinza)}
+.torre-anexos summary{list-style:none;display:inline-block}.torre-anexos summary::-webkit-details-marker{display:none}
+.torre-anexos ul{margin:6px 0 0;padding-left:18px}
+.torre-status{display:flex;flex-direction:column;align-items:flex-end;gap:6px;text-align:right}
 .torre-etapa{font-weight:700;font-size:16px}
 .t-carregado .torre-etapa{color:#15803d}.t-carregando .torre-etapa{color:#1d4ed8}.t-aguardando .torre-etapa{color:#b45309}
 .erro-texto{color:var(--erro);font-weight:700}
 .torre-inicio{font-size:16px;padding:10px 22px}
-.torre-anexos{margin:8px 0 0}.torre-anexos a{margin-right:10px}
 .torre-docs{margin-top:10px;border-top:1px solid var(--linha);padding-top:8px}
 .torre-docs summary{cursor:pointer;font-weight:600}
 .torre-pdfs{margin:6px 0;padding-left:18px}
 .torre-upload input[type=file]{width:auto}
 .torre-destino{display:block;margin:3px 0}
 .torre-zap{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-@media (max-width:640px){.torre-status{text-align:left}.torre-busca input{width:100%}}
+@media (max-width:900px){.torre-corpo{grid-template-columns:1fr}.torre-status{align-items:flex-start;text-align:left}.torre-busca input{width:100%}}
 /* Níveis de acesso */
 .niveis-grupos{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-bottom:12px}
 .niveis-grupo{border:1px solid var(--linha);border-radius:8px;padding:8px 12px;margin:0}
