@@ -395,6 +395,7 @@ table.contratacao tbody tr:not(.linha-obs):not(.linha-indicados):not(:first-chil
 .torre-numero{font-size:24px;font-weight:800;color:var(--tinta);text-decoration:none}.torre-numero:hover{color:var(--laranja-esc)}
 .torre-motorista{font-size:16px;font-weight:600;margin-top:2px}
 .torre-placa{font-size:18px;letter-spacing:1px}
+.torre-fone{margin-top:2px}
 .torre-ident small{display:block;margin-top:4px}
 .torre-valores .valores{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px 12px;margin:0 0 8px}
 .torre-valores .valores div{display:flex;flex-direction:column;background:var(--neutro-bg);border-radius:6px;padding:6px 10px}
@@ -1336,7 +1337,7 @@ html,body{background:var(--fundo)}
 
 <section class="cartao regra-fila">
     <div class="agora">
-        <span class="muted">Agora (sexta-feira, 16/10 08:01) · dia útil: vale o rodízio</span>
+        <span class="muted">Agora (sexta-feira, 16/10 08:16) · dia útil: vale o rodízio</span>
         <strong>Próxima carga vai para: Ana Ribeiro</strong>
         <small>Rodízio entre quem está no horário (2 pessoa(s)).</small>
     </div>
@@ -5742,7 +5743,7 @@ html,body{background:var(--fundo)}
                 <div><dt>Gerenc. de risco</dt><dd>—</dd></div>
                 <div><dt>Banco</dt><dd>—</dd></div>
                 <div><dt>Emergência</dt><dd>—</dd></div>
-                <div><dt>App</dt><dd><span class="online">● online</span></dd></div>
+                <div><dt>App</dt><dd><span class="offline">● offline</span></dd></div>
             </dl>
         </div>
             </section>
@@ -6748,7 +6749,7 @@ html,body{background:var(--fundo)}
                 <div><dt>Gerenc. de risco</dt><dd>—</dd></div>
                 <div><dt>Banco</dt><dd>—</dd></div>
                 <div><dt>Emergência</dt><dd>—</dd></div>
-                <div><dt>App</dt><dd><span class="online">● online</span></dd></div>
+                <div><dt>App</dt><dd><span class="offline">● offline</span></dd></div>
             </dl>
         </div>
             </section>
@@ -13465,7 +13466,7 @@ html,body{background:var(--fundo)}
             </form>
                                 <div class="topo">
     <h1>Situação em tempo real</h1>
-    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 08:01</small>
+    <small class="muted">Cargas com motorista contratado ou em andamento · atualiza a cada 60 s · 08:16</small>
 </div>
 
 <form class="cartao filtros" method="get">
@@ -13516,7 +13517,7 @@ html,body{background:var(--fundo)}
                     <div class="linha-tempo">
                 <span>15/10 23:59 · Carregado (saiu da coleta)</span>            </div>
             </article>
-        <article class="rt-item">
+        <article class="rt-item alerta">
         <div class="rt-cab">
             <div>
                 <strong><a href="#cargas~1">#1</a> · Cosméticos Aurora</strong>
@@ -13524,18 +13525,18 @@ html,body{background:var(--fundo)}
                 <div class="muted">Cajamar/SP → Ribeirão Preto/SP</div>
             </div>
             <div style="text-align:right">
-                                                <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-22.05,-47.55" target="_blank" rel="noopener">Ver no mapa</a>            </div>
+                                <span class="selo erro">Motorista sem sinal do app</span>                 <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-22.05,-47.55" target="_blank" rel="noopener">Ver no mapa</a>            </div>
         </div>
         <div class="rt-dados">
             <div><span>Motorista</span>Roberto Almeida
-                <small class="online">● online</small></div>
+                <small class="offline">● offline</small></div>
             <div><span>Placa</span>FTR4E21</div>
             <div><span>Gestor</span>Administrador</div>
             <div><span>Coleta</span>16/10 01:59
                 <small class="online">✓ 16/10 02:59</small></div>
             <div><span>Entrega</span>16/10 11:59
                 </div>
-            <div><span>Última localização</span>há 5 minutos</div>
+            <div><span>Última localização</span>há 20 minutos</div>
             <div><span>Parada mais próxima</span>Ribeirão Preto/SP · 100,7 km</div>
             <div><span>Falta até a entrega</span>100,7 km (linha reta)</div>
             <div><span>Distância da rota</span>290 km</div>
@@ -13543,7 +13544,7 @@ html,body{background:var(--fundo)}
                     <div class="linha-tempo">
                 <span>16/10 00:59 · Chegou na coleta</span><span>16/10 02:59 · Carregado (saiu da coleta)</span><span>16/10 03:59 · Em trânsito</span>            </div>
             </article>
-        <article class="rt-item">
+        <article class="rt-item alerta">
         <div class="rt-cab">
             <div>
                 <strong><a href="#cargas~3">#3</a> · Farma Bem Estar</strong>
@@ -13551,18 +13552,18 @@ html,body{background:var(--fundo)}
                 <div class="muted">São José dos Campos/SP → São Paulo/SP</div>
             </div>
             <div style="text-align:right">
-                                                <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-23.18,-45.87" target="_blank" rel="noopener">Ver no mapa</a>            </div>
+                                <span class="selo erro">Motorista sem sinal do app</span>                 <a class="btn sec pequeno" href="https://www.google.com/maps/search/?api=1&amp;query=-23.18,-45.87" target="_blank" rel="noopener">Ver no mapa</a>            </div>
         </div>
         <div class="rt-dados">
             <div><span>Motorista</span>Juliana Souza
-                <small class="online">● online</small></div>
+                <small class="offline">● offline</small></div>
             <div><span>Placa</span>BRA7C19</div>
             <div><span>Gestor</span>Administrador</div>
             <div><span>Coleta</span>16/10 09:59
                 </div>
             <div><span>Entrega</span>16/10 15:59
                 </div>
-            <div><span>Última localização</span>há 3 minutos</div>
+            <div><span>Última localização</span>há 18 minutos</div>
             <div><span>Parada mais próxima</span>São José dos Campos/SP · 1,8 km</div>
             <div><span>Falta até a entrega</span>88,1 km (linha reta)</div>
             <div><span>Distância da rota</span>95 km</div>
@@ -14864,6 +14865,42 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
 <table>
     <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Cadastro</th><th>O que mudou</th><th>IP</th></tr></thead>
     <tbody>
+            <tr>
+            <td class="nowrap">16/10/2026 08:16:06</td>
+            <td>Usuário de teste</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 08:16:05</td>
+            <td>Usuário de teste</td>
+            <td><span class="selo neutro">Código de acesso enviado</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 08:14:52</td>
+            <td>Usuário de teste</td>
+            <td><span class="selo neutro">Entrou no sistema</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
+            <tr>
+            <td class="nowrap">16/10/2026 08:14:52</td>
+            <td>Usuário de teste</td>
+            <td><span class="selo neutro">Código de acesso enviado</span></td>
+            <td><small></small></td>
+            <td>
+                            </td>
+            <td class="muted nowrap">127.0.0.1</td>
+        </tr>
             <tr>
             <td class="nowrap">16/10/2026 08:01:05</td>
             <td>Usuário de teste</td>
@@ -16319,152 +16356,11 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                             </td>
             <td class="muted nowrap"></td>
         </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 07:59:18</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Rota da carga</strong> #53<br><small>Rota da carga #53</small></td>
-            <td>
-                                    <div><strong>Ordem</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Cidade</strong>:
-                         Cajamar
-                                            </div>
-                                    <div><strong>UF</strong>:
-                         SP
-                                            </div>
-                                    <div><strong>Lat</strong>:
-                         -23.3253
-                                            </div>
-                                    <div><strong>Lng</strong>:
-                         -46.8743
-                                            </div>
-                                    <div><strong>Carga</strong>:
-                         26
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 07:59:18</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Carga</strong> #26<br><small>Carga #26</small></td>
-            <td>
-                                    <div><strong>Filial</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Gestor</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Responsavel</strong>:
-                         3
-                                            </div>
-                                    <div><strong>Cliente</strong>:
-                         3
-                                            </div>
-                                    <div><strong>Status em</strong>:
-                         2026-10-16 07:59:18
-                                            </div>
-                                    <div><strong>Criado por</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Cubagem</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Paletes</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Status</strong>:
-                         4
-                                            </div>
-                                    <div><strong>Coleta</strong>:
-                         2026-07-04 08:00:00
-                                            </div>
-                                    <div><strong>Entrega</strong>:
-                         2026-07-04 16:00:00
-                                            </div>
-                                    <div><strong>Entregue em</strong>:
-                         2026-07-04 08:00:00
-                                            </div>
-                                    <div><strong>Distância</strong>:
-                         330
-                                            </div>
-                                    <div><strong>Receita</strong>:
-                         3915
-                                            </div>
-                                    <div><strong>Valor NF</strong>:
-                         60000
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 07:59:18</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Contratação</strong> #21<br><small>Contratação #21</small></td>
-            <td>
-                                    <div><strong>Carga</strong>:
-                         25
-                                            </div>
-                                    <div><strong>Veículo</strong>:
-                         11
-                                            </div>
-                                    <div><strong>Valor</strong>:
-                         4200
-                                            </div>
-                                    <div><strong>Contratada em</strong>:
-                         2026-08-09 08:00:00
-                                            </div>
-                                    <div><strong>Contratado por</strong>:
-                         3
-                                            </div>
-                                    <div><strong>Adiantamento percentual</strong>:
-                         70
-                                            </div>
-                                    <div><strong>Abastecimento percentual</strong>:
-                         0
-                                            </div>
-                                    <div><strong>Valor ajudante</strong>:
-                         0
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
-            <tr>
-            <td class="nowrap">16/10/2026 07:59:18</td>
-            <td>Sistema</td>
-            <td><span class="selo ok">Criou</span></td>
-            <td><strong>Rota da carga</strong> #52<br><small>Rota da carga #52</small></td>
-            <td>
-                                    <div><strong>Ordem</strong>:
-                         1
-                                            </div>
-                                    <div><strong>Cidade</strong>:
-                         Presidente Prudente
-                                            </div>
-                                    <div><strong>UF</strong>:
-                         SP
-                                            </div>
-                                    <div><strong>Lat</strong>:
-                         -22.1256
-                                            </div>
-                                    <div><strong>Lng</strong>:
-                         -51.3889
-                                            </div>
-                                    <div><strong>Carga</strong>:
-                         25
-                                            </div>
-                            </td>
-            <td class="muted nowrap"></td>
-        </tr>
         </tbody>
 </table>
 </div>
 <nav class="paginacao">
-                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                    <a href="#registro-log">3</a>                    <a href="#registro-log">4</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">403 no total</span>
+                            <span class="atual">1</span>                    <a href="#registro-log">2</a>                    <a href="#registro-log">3</a>                    <a href="#registro-log">4</a>                <a href="#registro-log">Próxima ›</a>        <span class="muted" style="border:0;background:none">407 no total</span>
     </nav>
     </template><template id="p-cargas~1">
                                 <form method="post" action="#" class="filial-ativa">
@@ -17532,8 +17428,8 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                     <span class="selo neutro">Aguardando o motorista</span>                    </li>
                     </ul>
                         <p style="margin-bottom:0"><small class="muted">O motorista responde por este link (vale 30 dias, sem login):</small><br>
-            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794740467&amp;signature=824151eef5da9c9b953d028afd191d3e646b45f0a9deb7e4b05a173a2cac593f" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
-            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511993013783?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794740467%26signature%3D824151eef5da9c9b953d028afd191d3e646b45f0a9deb7e4b05a173a2cac593f">Enviar pelo WhatsApp</a></p>
+            <input value="http://127.0.0.1:8123/avaliacao-viagem/1?expires=1794741368&amp;signature=cfdb2604e4c6e16445150b51fad105307eba59124cb2d14c3f63967586d2716b" readonly onclick="this.select()" aria-label="Link da avaliação" style="margin:4px 0">
+            <a class="btn pequeno" target="_blank" rel="noopener" href="https://wa.me/5511993013783?text=Ol%C3%A1%21%20A%20carga%20%231%20foi%20finalizada.%20Conte%20como%20foi%20a%20viagem%3A%20http%3A%2F%2F127.0.0.1%3A8123%2Favaliacao-viagem%2F1%3Fexpires%3D1794741368%26signature%3Dcfdb2604e4c6e16445150b51fad105307eba59124cb2d14c3f63967586d2716b">Enviar pelo WhatsApp</a></p>
     </section>
     </template><template id="p-relatorios~comissao-frete">
                                 <form method="post" action="#" class="filial-ativa">
@@ -18142,6 +18038,7 @@ Descarga com agendamento no CD de Presidente Prudente. Motorista precisa levar E
                 <a class="torre-numero" href="#cargas~3">#3</a>
                 <div class="torre-motorista">Juliana Souza</div>
                 <div><strong class="torre-placa">BRA7C19</strong> <span class="muted">Toco</span></div>
+                                <div class="torre-fone">📞 (11) 99342-4179 · <a href="https://wa.me/5511993424179" target="_blank" rel="noopener">WhatsApp</a> </div>
                 <small class="muted">Farma Bem Estar · São José dos Campos → São Paulo<br>
                     coleta 16/10 09:59 · Matriz</small>
             </div>
