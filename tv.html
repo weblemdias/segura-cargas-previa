@@ -54,6 +54,7 @@ a{color:inherit}
 .sub{display:flex;height:clamp(16px,2.4vh,36px);border-radius:8px;overflow:hidden;margin:.6vh 0 .4vh;background:var(--painel2)}
 .sub span{display:flex;align-items:center;justify-content:center;font-size:clamp(10px,.8vw,16px);font-weight:700;color:#0b1220;min-width:0;white-space:nowrap;overflow:hidden}
 .legenda{display:flex;gap:1vw;flex-wrap:wrap;color:var(--fraco);font-size:clamp(10px,.8vw,16px)}.legenda i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px}
+.tabela{overflow-x:auto;max-width:100%}
 table{width:100%;border-collapse:collapse;font-size:clamp(12px,1vw,22px)}
 th{color:var(--fraco);font-weight:600;text-align:right;padding:.6vh .5vw;border-bottom:1px solid var(--linha)}th:first-child,td:first-child{text-align:left}
 td{padding:.7vh .5vw;border-bottom:1px solid var(--linha);text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
@@ -93,7 +94,32 @@ dialog button{background:var(--laranja);color:#fff;border:0;border-radius:8px;pa
 dialog .sec{background:var(--painel2);border:1px solid var(--linha)}
 dialog table{font-size:14px}dialog td{font-weight:400}
 .link{background:#052e16;border:1px solid var(--ok);padding:10px;border-radius:8px;word-break:break-all;font-family:monospace}
-@media (max-width:900px){html,body{overflow:auto}.tv{height:auto}.kpis{grid-template-columns:repeat(2,1fr)}.geral{grid-template-columns:1fr;height:auto}.kanban{grid-template-columns:1fr 1fr;height:auto}.topo{flex-wrap:wrap}}
+/* Celular / tela pequena: uma coluna, rola para baixo, nada escondido */
+@media (max-width:900px){
+  html,body{overflow-x:hidden;overflow-y:auto;height:auto}
+  .tv{max-width:100vw}
+  .tv{height:auto;min-height:100vh;padding:10px 12px;gap:10px;grid-template-rows:auto auto auto auto}
+  .topo{display:grid;grid-template-columns:1fr auto;gap:4px 10px}
+  .marca{font-size:18px}.titulo{grid-column:1/-1;order:3}.titulo h1{font-size:22px;white-space:normal}.titulo small{font-size:13px}
+  .relogio{font-size:28px}.vivo{grid-column:1/-1;order:4;font-size:12px}.ctl{grid-column:1/-1;order:5;flex-wrap:wrap}
+  .abas{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .aba{white-space:nowrap;font-size:13px;padding:6px 12px}
+  .barra{position:fixed;top:0;left:0;right:0;height:3px;border-radius:0;z-index:5}
+  .tela{overflow:visible}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .kpi{padding:10px 12px}.kpi h3{font-size:13px}.kpi .n{font-size:40px}.kpi .s{font-size:12px}
+  .geral{grid-template-columns:1fr;height:auto;gap:10px;margin-top:10px}
+  .bloco{padding:12px;overflow:visible}.bloco h2{font-size:17px}
+  .funil{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.etapa .n{font-size:34px}.etapa div{font-size:12px}
+  .sub{height:22px}.sub span{font-size:12px}.legenda{font-size:12px;gap:10px}
+  table{font-size:13px}th,td{padding:6px 4px}
+  .exc li{grid-template-columns:auto 1fr;font-size:14px;padding:8px 2px}.exc .al{grid-column:1/-1;text-align:left;font-size:13px}
+  .grade{grid-template-columns:1fr;height:auto;overflow:visible;gap:8px}
+  .card{padding:10px 12px}.card .id{font-size:20px}.card .cli{font-size:15px}.card .rota,.card .mot{font-size:13px;white-space:normal}.card .al{font-size:14px}
+  .kanban{grid-template-columns:1fr;height:auto;gap:10px}.kanban .lista{overflow:visible}.kanban .col h3{font-size:16px}
+  .vazio{font-size:16px;padding:30px 0}
+  .rodape{position:sticky;bottom:6px;height:38px}.rodape b{font-size:13px}.letreiro{font-size:14px}
+}
 </style>
 </head>
 <body>
@@ -101,14 +127,6 @@ dialog table{font-size:14px}dialog td{font-weight:400}
     <header class="topo">
         <div class="marca">Segura <span>Logística</span></div>
         <div class="titulo"><h1 id="nome-tela">Visão geral</h1><small>Torre de controle · Geral — todas as filiais</small></div>
-                <div class="ctl">
-                            <select aria-label="Filial" onchange="location.search = this.value ? '?filial=' + this.value : ''">
-                    <option value="">Geral (todas)</option>
-                    <option value="1" >Matriz</option><option value="2" >Segura - Betim - MG</option><option value="3" >Segura - Cariacica - ES</option><option value="4" >Segura - Esteio - RS</option><option value="5" >Segura - Goiânia - GO</option><option value="6" >Segura - Itapevi - SP</option><option value="7" >Segura - Pinhais - PR</option><option value="8" >Segura - Rio de Janeiro - RJ</option><option value="9" >Segura - Sapucaia do Sul - RS</option><option value="10" >Segura - Sorocaba - SP</option><option value="11" >Segura Maringá - PR</option><option value="12" >Segura Pirapozinho - SP</option>                </select>
-                        <button type="button" id="pausar" title="Pausar a troca de telas (espaço)">⏸</button>
-            <button type="button" onclick="document.documentElement.requestFullscreen?.()" title="Tela cheia">⛶</button>
-            <button type="button" onclick="document.getElementById('tvs').showModal()">📺 Links de TV</button>            <a href="http://127.0.0.1:8123" title="Voltar ao sistema">✕</a>
-        </div>
                 <div class="vivo" id="vivo"><i></i><span id="atualizado">conectando…</span></div>
         <div class="relogio" id="relogio">--:--<small id="data"></small></div>
     </header>
@@ -118,32 +136,18 @@ dialog table{font-size:14px}dialog td{font-weight:400}
     <footer class="rodape"><b id="rod-tit">Em atraso</b><div class="letreiro"><span id="letreiro"></span></div></footer>
 </div>
 
-<dialog id="tvs" >
-    <h2 style="margin-top:0">📺 Links de TV (sem login, só leitura, sem valores)</h2>
-            <form method="post" action="http://127.0.0.1:8123/gestao-a-vista/tvs" class="linha"><input type="hidden" name="_token" value="IUm4FTgzhIk6XRqAycaJBugZ5ElRyaCttI5Gk82J" autocomplete="off">        <div><label for="tv-nome">Nome da TV</label><input id="tv-nome" name="nome" maxlength="80" required placeholder="TV da operação Cajamar"></div>
-        <div><label for="tv-fil">Filial</label><select id="tv-fil" name="filial_id"><option value="">Geral (todas)</option>
-            <option value="1">Matriz</option><option value="2">Segura - Betim - MG</option><option value="3">Segura - Cariacica - ES</option><option value="4">Segura - Esteio - RS</option><option value="5">Segura - Goiânia - GO</option><option value="6">Segura - Itapevi - SP</option><option value="7">Segura - Pinhais - PR</option><option value="8">Segura - Rio de Janeiro - RJ</option><option value="9">Segura - Sapucaia do Sul - RS</option><option value="10">Segura - Sorocaba - SP</option><option value="11">Segura Maringá - PR</option><option value="12">Segura Pirapozinho - SP</option></select></div>
-        <button>Criar link</button>
-    </form>
-    <table>
-        <tr><th>TV</th><th>Filial</th><th>Último acesso</th><th></th></tr>
-                    <tr><td>TV teste</td><td>Geral</td><td>16/10 12:24</td>
-                <td><form method="post" action="http://127.0.0.1:8123/gestao-a-vista/tvs/1" onsubmit="return confirm('Desativar? O link para de funcionar.')"><input type="hidden" name="_token" value="IUm4FTgzhIk6XRqAycaJBugZ5ElRyaCttI5Gk82J" autocomplete="off"> <input type="hidden" name="_method" value="delete"><button class="sec">Desativar</button></form></td></tr>
-            </table>
-    <p style="text-align:right;margin-bottom:0"><button class="sec" onclick="document.getElementById('tvs').close()">Fechar</button></p>
-</dialog>
 
 <script>
 (() => {
-  const URL_DADOS = "http:\/\/127.0.0.1:8123\/gestao-a-vista\/dados";
+  const URL_DADOS = "http:\/\/127.0.0.1:8123\/tv\/mT9G7BNuNANzrT9qiWnEgLbtDu8roXsuQlvXLFgAtsmeBrS4\/dados";
   const q = new URLSearchParams(location.search);
-  const TEMPO = Math.max(8, parseInt(q.get('tempo') || '20', 10)) * 1000; // segundos por tela (?tempo=30)
+  const TEMPO = Math.max(8, parseInt(q.get('tempo') || (window.innerWidth <= 900 ? '30' : '20'), 10)) * 1000; // segundos por tela (?tempo=30; no celular 30)
   const FIXA = q.get('tela');                                              // ?tela=geral deixa uma tela só
   const ATUALIZA = 30000;
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const COR_ETAPA = {nao_chegou:'#94a3b8', aguardando:'#f5b301', carregando:'#38bdf8', carregado:'#22c55e'};
   const NOME_ETAPA = {nao_chegou:'Não chegou', aguardando:'Aguardando', carregando:'Carregando', carregado:'Carregado'};
-  let dados = {"atualizado_em":"2026-10-16T12:26:25-03:00","filial":null,"kpis":{"contratar":{"total":3,"atraso":0,"hoje":0},"contratadas_hoje":0,"carregamento":{"total":1,"atraso":0,"nao_chegou":0,"aguardando":1,"carregando":0,"carregado":0},"viagem":{"total":2,"atraso":1,"hoje":0},"entregues":{"total":0,"no_prazo":0,"percentual":null},"otd_mes":100,"chamados_urgentes":1},"por_filial":[{"filial":"Matriz","contratar":3,"contratar_atraso":0,"carregamento":1,"carregamento_atraso":0,"viagem":2,"viagem_atraso":1,"entregues":0}],"excecoes":[{"id":2,"filial":"Matriz","filial_id":1,"cliente":"Alimentos Vale Verde","origem":"S\u00e3o Paulo\/SP","destino":"Campinas\/SP","coleta":"16\/10 02:28","entrega":"16\/10 10:28","placa":"GHK2B47","motorista":"Marcos Vieira","hoje":false,"etapa":"Em viagem","alerta":"Entrega atrasada h\u00e1 1h57","tom":"erro","atraso_min":117,"fase":"viagem","fase_nome":"Em viagem"}],"fases":{"contratar":[{"id":4,"filial":"Matriz","filial_id":1,"cliente":"Cosm\u00e9ticos Aurora","origem":"Cajamar\/SP","destino":"Presidente Prudente\/SP","coleta":"17\/10 08:00","entrega":"18\/10 14:00","placa":null,"motorista":null,"hoje":false,"etapa":"Aguardando","alerta":"Alto \u00b7 coleta amanh\u00e3","tom":"atencao","atraso_min":0},{"id":5,"filial":"Matriz","filial_id":1,"cliente":"Qu\u00edmica Paulista","origem":"Sorocaba\/SP","destino":"S\u00e3o Paulo\/SP","coleta":"17\/10 10:00","entrega":"17\/10 17:00","placa":null,"motorista":null,"hoje":false,"etapa":"Em contrata\u00e7\u00e3o","alerta":"Alto \u00b7 coleta amanh\u00e3","tom":"atencao","atraso_min":0},{"id":6,"filial":"Matriz","filial_id":1,"cliente":"Farma Bem Estar","origem":"S\u00e3o Paulo\/SP","destino":"Sorocaba\/SP","coleta":"18\/10 07:30","entrega":"18\/10 15:00","placa":null,"motorista":null,"hoje":false,"etapa":"Aguardando aprova\u00e7\u00e3o GR","alerta":"Moderado \u00b7 coleta em 2 dias","tom":"atencao","atraso_min":0}],"carregamento":[{"id":3,"filial":"Matriz","filial_id":1,"cliente":"Farma Bem Estar","origem":"S\u00e3o Jos\u00e9 dos Campos\/SP","destino":"S\u00e3o Paulo\/SP","coleta":"16\/10 13:28","entrega":"16\/10 19:28","placa":"BRA7C19","motorista":"Juliana Souza","hoje":false,"etapa":"Aguardando carregamento","etapa_chave":"aguardando","alerta":null,"tom":"ativo","atraso_min":0}],"viagem":[{"id":2,"filial":"Matriz","filial_id":1,"cliente":"Alimentos Vale Verde","origem":"S\u00e3o Paulo\/SP","destino":"Campinas\/SP","coleta":"16\/10 02:28","entrega":"16\/10 10:28","placa":"GHK2B47","motorista":"Marcos Vieira","hoje":false,"etapa":"Em viagem","alerta":"Entrega atrasada h\u00e1 1h57","tom":"erro","atraso_min":117},{"id":1,"filial":"Matriz","filial_id":1,"cliente":"Cosm\u00e9ticos Aurora","origem":"Cajamar\/SP","destino":"Ribeir\u00e3o Preto\/SP","coleta":"16\/10 05:28","entrega":"16\/10 15:28","placa":"FTR4E21","motorista":"Roberto Almeida","hoje":false,"etapa":"Em viagem","alerta":"Entrega hoje \u00e0s 15:28","tom":"atencao","atraso_min":0}],"entregues":[]}}, idx = 0, inicio = Date.now(), pausado = false;
+  let dados = {"atualizado_em":"2026-10-16T13:43:08-03:00","filial":null,"kpis":{"contratar":{"total":3,"atraso":0,"hoje":0},"contratadas_hoje":0,"carregamento":{"total":1,"atraso":0,"nao_chegou":0,"aguardando":1,"carregando":0,"carregado":0},"viagem":{"total":2,"atraso":1,"hoje":0},"entregues":{"total":0,"no_prazo":0,"percentual":null},"otd_mes":100,"chamados_urgentes":1},"por_filial":[{"filial":"Matriz","contratar":3,"contratar_atraso":0,"carregamento":1,"carregamento_atraso":0,"viagem":2,"viagem_atraso":1,"entregues":0}],"excecoes":[{"id":2,"filial":"Matriz","filial_id":1,"cliente":"Alimentos Vale Verde","origem":"S\u00e3o Paulo\/SP","destino":"Campinas\/SP","coleta":"16\/10 02:28","entrega":"16\/10 10:28","placa":"GHK2B47","motorista":"Marcos Vieira","hoje":false,"etapa":"Em viagem","alerta":"Entrega atrasada h\u00e1 3h14","tom":"erro","atraso_min":194,"fase":"viagem","fase_nome":"Em viagem"}],"fases":{"contratar":[{"id":4,"filial":"Matriz","filial_id":1,"cliente":"Cosm\u00e9ticos Aurora","origem":"Cajamar\/SP","destino":"Presidente Prudente\/SP","coleta":"17\/10 08:00","entrega":"18\/10 14:00","placa":null,"motorista":null,"hoje":false,"etapa":"Aguardando","alerta":"Alto \u00b7 coleta amanh\u00e3","tom":"atencao","atraso_min":0},{"id":5,"filial":"Matriz","filial_id":1,"cliente":"Qu\u00edmica Paulista","origem":"Sorocaba\/SP","destino":"S\u00e3o Paulo\/SP","coleta":"17\/10 10:00","entrega":"17\/10 17:00","placa":null,"motorista":null,"hoje":false,"etapa":"Em contrata\u00e7\u00e3o","alerta":"Alto \u00b7 coleta amanh\u00e3","tom":"atencao","atraso_min":0},{"id":6,"filial":"Matriz","filial_id":1,"cliente":"Farma Bem Estar","origem":"S\u00e3o Paulo\/SP","destino":"Sorocaba\/SP","coleta":"18\/10 07:30","entrega":"18\/10 15:00","placa":null,"motorista":null,"hoje":false,"etapa":"Aguardando aprova\u00e7\u00e3o GR","alerta":"Moderado \u00b7 coleta em 2 dias","tom":"atencao","atraso_min":0}],"carregamento":[{"id":3,"filial":"Matriz","filial_id":1,"cliente":"Farma Bem Estar","origem":"S\u00e3o Jos\u00e9 dos Campos\/SP","destino":"S\u00e3o Paulo\/SP","coleta":"16\/10 13:28","entrega":"16\/10 19:28","placa":"BRA7C19","motorista":"Juliana Souza","hoje":false,"etapa":"Aguardando carregamento","etapa_chave":"aguardando","alerta":null,"tom":"ativo","atraso_min":0}],"viagem":[{"id":2,"filial":"Matriz","filial_id":1,"cliente":"Alimentos Vale Verde","origem":"S\u00e3o Paulo\/SP","destino":"Campinas\/SP","coleta":"16\/10 02:28","entrega":"16\/10 10:28","placa":"GHK2B47","motorista":"Marcos Vieira","hoje":false,"etapa":"Em viagem","alerta":"Entrega atrasada h\u00e1 3h14","tom":"erro","atraso_min":194},{"id":1,"filial":"Matriz","filial_id":1,"cliente":"Cosm\u00e9ticos Aurora","origem":"Cajamar\/SP","destino":"Ribeir\u00e3o Preto\/SP","coleta":"16\/10 05:28","entrega":"16\/10 15:28","placa":"FTR4E21","motorista":"Roberto Almeida","hoje":false,"etapa":"Em viagem","alerta":"Entrega hoje \u00e0s 15:28","tom":"atencao","atraso_min":0}],"entregues":[]}}, idx = 0, inicio = Date.now(), pausado = false;
 
   const telas = () => {
     if (!dados) return [];
@@ -205,8 +209,8 @@ dialog table{font-size:14px}dialog td{font-weight:400}
 
   function tabelaFiliais(lista) {
     const td = (n, x) => `${n}${x ? `<em>${x}⚠</em>` : ''}`;
-    return `<table><tr><th>Filial</th><th>A contratar</th><th>Carregamento</th><th>Em viagem</th><th>Entregues hoje</th></tr>
-      ${lista.map(f => `<tr><td>${esc(f.filial)}</td><td>${td(f.contratar, f.contratar_atraso)}</td><td>${td(f.carregamento, f.carregamento_atraso)}</td><td>${td(f.viagem, f.viagem_atraso)}</td><td>${f.entregues}</td></tr>`).join('')}</table>`;
+    return `<div class="tabela"><table><tr><th>Filial</th><th>A contratar</th><th>Carregam.</th><th>Em viagem</th><th>Entregues</th></tr>
+      ${lista.map(f => `<tr><td>${esc(f.filial)}</td><td>${td(f.contratar, f.contratar_atraso)}</td><td>${td(f.carregamento, f.carregamento_atraso)}</td><td>${td(f.viagem, f.viagem_atraso)}</td><td>${f.entregues}</td></tr>`).join('')}</table></div>`;
   }
   function porFilial() { return `<div class="bloco" style="height:100%"><h2>Cenário por filial <small>⚠ = em atraso</small></h2>${tabelaFiliais(dados.por_filial)}</div>`; }
 
@@ -233,7 +237,8 @@ dialog table{font-size:14px}dialog td{font-weight:400}
 
   // Esconde o que não cabe e mostra "+N" (TV não rola)
   function cortar() {
-    document.querySelectorAll('.grade,.kanban .lista').forEach(g => {
+    if (window.innerWidth <= 900) return; // no celular rola, não esconde
+    document.querySelectorAll('.grade,.kanban .lista,.exc').forEach(g => {
       const lim = g.getBoundingClientRect().bottom; let fora = 0;
       [...g.children].forEach(c => { if (c.getBoundingClientRect().bottom > lim + 1) { c.style.display = 'none'; fora++; } });
       if (fora) { const m = document.createElement('div'); m.className = 'mais'; m.textContent = `+ ${fora} — ver no sistema`; g.appendChild(m); }
@@ -247,8 +252,9 @@ dialog table{font-size:14px}dialog td{font-weight:400}
     document.getElementById('nome-tela').textContent = atual.nome;
     document.getElementById('abas').innerHTML = t.map((x, i) => `<button type="button" class="aba ${i === idx ? 'ativa' : ''} ${x.erro ? 'erro' : ''}" data-i="${i}">${esc(x.nome)}${x.n !== null && x.n !== undefined ? `<b>${x.n}</b>` : ''}</button>`).join('')
       + '<div class="barra"><i id="barra"></i></div>';
+    document.querySelector('.aba.ativa')?.scrollIntoView({inline: 'center', block: 'nearest'});
     const tela = document.getElementById('tela');
-    if (trocou) { tela.style.animation = 'none'; tela.offsetHeight; tela.style.animation = ''; }
+    if (trocou) { tela.style.animation = 'none'; tela.offsetHeight; tela.style.animation = ''; if (window.innerWidth <= 900) window.scrollTo({top: 0}); }
     tela.innerHTML = atual.render();
     const k = document.getElementById('kpis'); if (k) tela.style.setProperty('--kpih', k.offsetHeight + 'px');
     cortar();
