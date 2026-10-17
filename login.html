@@ -115,11 +115,13 @@ tr.atrasada td:first-child{box-shadow:inset 3px 0 0 var(--erro)}
 .linha-tabela .btn{justify-self:start}
 
 .menu details.grupo{border-bottom:1px solid #2b2f34}
-.menu summary{list-style:none;cursor:pointer;padding:10px 20px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#9ca3af;font-weight:600;display:flex;justify-content:space-between}
+.menu summary{list-style:none;cursor:pointer;padding:11px 20px;font-size:14px;color:#d1d5db;font-weight:600;display:flex;justify-content:space-between;align-items:center;user-select:none}
+.menu summary:hover{background:#2b2f34;color:#fff}
 .menu summary::-webkit-details-marker{display:none}
-.menu summary::after{content:'›';transition:transform .15s}
-.menu details[open] summary::after{transform:rotate(90deg)}
-.menu details[open] summary{color:#fff}
+.menu summary::after{content:'‹';font-size:18px;line-height:1;transition:transform .2s}
+.menu details[open] summary::after{transform:rotate(-90deg)}
+.menu details[open]{background:#1c1f23}
+.menu details[open] summary{color:#fff;background:#2b2f34}
 .menu details a{padding-left:28px}
 @media (max-width:860px){.menu{display:block}.menu details a{display:inline-block}}
 /* Contratação: PGR e motoristas indicados */
@@ -530,8 +532,7 @@ Teste também um e-mail de fora (ex.: ana@gmail.com) e código errado. <a href="
     <div class="marca">Segura <span>Logística</span></div>
     <div class="cartao">
         <h3 style="margin-top:0">Verificação em 2 etapas</h3>
-        <div class="aviso ok" id="aviso-ok"></div>                    
-                <form method="post" action="#">
+                        <form method="post" action="#">
                         <p style="margin-top:0">
                 <label for="codigo">Código enviado para se••••@seguralogistica.com.br</label>
                 <input id="codigo" name="codigo" required autofocus inputmode="numeric" autocomplete="one-time-code" maxlength="6"
