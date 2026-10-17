@@ -28161,6 +28161,9 @@ document.addEventListener('DOMContentLoaded', () => window.iniciarMultiBusca());
   });
   addEventListener('hashchange', abrir); abrir();
 })();
+// Menu em sanfona, como no sistema: abrir um grupo fecha os outros
+(() => { const gs = [...document.querySelectorAll('.menu details')];
+  gs.forEach(g => g.addEventListener('toggle', () => { if (g.open) gs.forEach(o => { if (o !== g) o.open = false; }); })); })();
 
 </script>
 <script>
