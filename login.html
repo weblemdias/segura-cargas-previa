@@ -520,7 +520,7 @@ a.torre-num.ativo{background:var(--tinta);color:#fff}
 html,body{background:var(--fundo)}
 .previa{background:var(--laranja-claro);color:#7a3a00;border-bottom:1px solid #f6c89b;padding:8px 16px;font-size:13px}</style></head><body>
 <div class="previa" role="note"><strong>Prévia do login.</strong> Entre com <strong>segura</strong> / <strong>segura</strong>; o código de exemplo é <strong>123456</strong>.
-Teste também um e-mail de fora (ex.: ana@gmail.com) e código errado. <a href="index.html">Ir para as telas</a></div>
+Teste também um e-mail de fora (ex.: ana@gmail.com) e código errado. Depois de entrar abrem as telas do sistema.</div>
 <div class="login" id="tela-entrar">
     <div class="marca">Segura <span>Logística</span></div>
     <form class="cartao" id="form-login" method="post" action="#">
@@ -574,6 +574,7 @@ fCodigo.addEventListener('submit', ev => { ev.preventDefault(); const c = $('#co
   tentativas++;
   if (c !== CODIGO) { const resta = 5 - tentativas; if (resta <= 0) codigoVivo = false;
     return erro('#codigo', resta > 0 ? 'Código incorreto. Tentativas restantes: ' + resta + '.' : 'Código incorreto. Passou do limite de tentativas: clique em "Reenviar código".'); }
+  try { sessionStorage.setItem('previa_logado', '1'); } catch (e) {}
   location.href = 'index.html'; });
 fReenviar.addEventListener('submit', ev => { ev.preventDefault(); const falta = 60 - Math.floor((Date.now() - enviadoEm) / 1000);
   if (falta > 0) return erro('#codigo', 'Já enviamos um código há pouco: use ele. Para pedir outro, aguarde ' + falta + ' s.');
