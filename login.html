@@ -508,6 +508,15 @@ a.torre-num.ativo{background:var(--tinta);color:#fff}
 @media (max-width:900px){.nab-linha{grid-template-columns:1fr}}
 .niveis-filiais{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:4px 12px;margin-bottom:8px}
 
+/* Consolidar carga (janela) e rota da consolidação */
+.lista-consolidar { display: grid; gap: 6px; max-height: 50vh; overflow: auto; margin: 8px 0 12px; }
+.opcao-consolidar { display: flex; gap: 10px; align-items: flex-start; padding: 8px 10px; border: 1px solid var(--linha); border-radius: 8px; cursor: pointer; font-weight: normal; }
+.opcao-consolidar input { margin-top: 3px; }
+.rota-consolidada { list-style: decimal; margin: 0 0 12px; padding-left: 28px; display: grid; gap: 6px; }
+.rota-consolidada li { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding: 8px 10px; border: 1px solid var(--linha); border-radius: 8px; }
+.rota-consolidada .rota-local { flex: 1; min-width: 180px; }
+.rota-consolidada .rota-botoes { display: flex; gap: 4px; }
+
 html,body{background:var(--fundo)}
 .previa{background:var(--laranja-claro);color:#7a3a00;border-bottom:1px solid #f6c89b;padding:8px 16px;font-size:13px}</style></head><body>
 <div class="previa" role="note"><strong>Prévia do login.</strong> Entre com <strong>segura</strong> / <strong>segura</strong>; o código de exemplo é <strong>123456</strong>.
