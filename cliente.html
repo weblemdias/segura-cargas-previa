@@ -31,6 +31,23 @@ img { max-width: 100%; }
 .p-titulo h1 { margin: 0; font-size: 26px; letter-spacing: -.4px; }
 .p-titulo p { margin: 4px 0 0; color: var(--suave); }
 
+/* navegação do topo */
+.p-nav { display: flex; gap: 4px; align-items: center; margin-left: 12px; }
+.p-nav a:not(.p-btn) { text-decoration: none; color: var(--suave); font-weight: 600; font-size: 14px; padding: 7px 12px; border-radius: 999px; }
+.p-nav a.ativa { color: var(--laranja-esc); background: var(--laranja-claro); }
+
+/* formulário do pedido */
+.p-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px 16px; }
+.p-form .largo { grid-column: 1 / -1; }
+.p-form label { display: block; font-weight: 600; font-size: 13px; margin-bottom: 5px; }
+.p-form input, .p-form select, .p-form textarea { width: 100%; border: 1px solid var(--borda); border-radius: 12px; padding: 10px 12px; font: inherit; background: #fff; }
+.p-parada { display: grid; grid-template-columns: 34px 2fr 1.2fr 70px 34px; gap: 8px; align-items: center; margin-bottom: 8px; }
+.p-parada .n { width: 26px; height: 26px; border-radius: 50%; background: var(--laranja-claro); color: var(--laranja-esc); font-weight: 800; display: grid; place-items: center; font-size: 12px; }
+.p-parada button { border: 0; background: none; font-size: 18px; color: var(--suave); cursor: pointer; }
+.p-tabela { width: 100%; border-collapse: collapse; background: #fff; border-radius: var(--raio); overflow: hidden; box-shadow: var(--sombra); }
+.p-tabela th, .p-tabela td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--borda); font-size: 14px; vertical-align: top; }
+.p-tabela th { font-size: 12px; text-transform: uppercase; letter-spacing: .4px; color: var(--suave); background: #fafbfc; }
+
 /* avisos */
 .p-aviso { padding: 12px 16px; border-radius: 12px; margin-bottom: 16px; background: var(--ok-claro); color: #14532d; }
 .p-aviso.erro { background: #fdecec; color: #8a1c1c; }
@@ -146,6 +163,14 @@ img { max-width: 100%; }
 @media (max-width: 560px) {
     .p-topo-in { padding: 10px 14px; gap: 10px; }
     .p-usuario { display: none; }
+    .p-nav { margin-left: 0; }
+    .p-nav a:not(.p-btn) { padding: 6px 8px; font-size: 13px; }
+    .p-topo-in { flex-wrap: wrap; }
+    .p-parada { grid-template-columns: 26px 1fr 64px 28px; }
+    .p-parada .end { grid-column: 2 / -1; order: 5; }
+    .p-tabela thead { display: none; }
+    .p-tabela td { display: block; border: 0; padding: 4px 14px; }
+    .p-tabela tr { display: block; border-bottom: 1px solid var(--borda); padding: 8px 0; }
     .p-pagina { padding: 16px 14px 48px; }
     .p-busca input[type=search] { min-width: 0; max-width: none; width: 100%; }
     .p-kpi strong { font-size: 24px; }
@@ -192,7 +217,12 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
 <div id="portal" hidden><header class="p-topo">
     <div class="p-topo-in">
         <a class="p-marca" href="#painel~andamento">Segura <span>Logística</span><small>Portal do cliente</small></a>
-                <div class="p-esp"></div>
+                <nav class="p-nav" aria-label="Portal">
+            <a href="#painel~andamento" class="ativa">Minhas cargas</a>
+            <a href="#pedidos" class="">Pedidos</a>
+            <a class="p-btn peq" href="#pedido-novo">+ Pedir carga</a>
+        </nav>
+        <div class="p-esp"></div>
         <div class="p-usuario"><strong>Marcos Vale Verde</strong>Alimentos Vale Verde</div>
         <a class="p-sair" href="#" id="sair">Sair</a>
     </div>
@@ -255,7 +285,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:56</small>                    </li>
+                        <small>19/10/2026 12:56</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>27/08/2026 08:00</small>                    </li>
@@ -340,7 +370,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:56</small>                    </li>
+                        <small>19/10/2026 12:56</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>18/08/2026 08:00</small>                    </li>
@@ -385,8 +415,8 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         <section class="p-bloco">
             <h2>Dados da carga</h2>
             <dl class="p-dados">
-                <div><dt>Coleta prevista</dt><dd>16/10/2026 11:56</dd></div>
-                <div><dt>Entrega prevista</dt><dd>17/10/2026 11:56</dd></div>
+                <div><dt>Coleta prevista</dt><dd>16/10/2026 12:56</dd></div>
+                <div><dt>Entrega prevista</dt><dd>17/10/2026 12:56</dd></div>
                 <div><dt>Entregue em</dt><dd>17/10/2026</dd></div>                <div><dt>Nota fiscal</dt><dd>—</dd></div>
                                                                                 <div><dt>Distância</dt><dd>95 km</dd></div>                <div><dt>Motorista</dt><dd>Paulo Teixeira</dd></div>
                 <div><dt>Placa</dt><dd>EJF3D88</dd></div>
@@ -425,16 +455,16 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:56</small>                    </li>
+                        <small>19/10/2026 12:56</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
-                        <small>18/10/2026 11:56</small>                    </li>
+                        <small>18/10/2026 12:56</small>                    </li>
                                     <li class="feito">
                         <span>Chegou na coleta</span>
                                             </li>
                                     <li class="feito">
                         <span>Carregado</span>
-                        <small>16/10/2026 13:56</small>                    </li>
+                        <small>16/10/2026 14:56</small>                    </li>
                                     <li class="feito">
                         <span>Em viagem</span>
                                             </li>
@@ -449,7 +479,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                 <section class="p-bloco">
             <h2>Atualizações</h2>
             <ul class="p-ocorr">
-                <li><span>Comprovante de entrega<br><small>São Paulo/SP</small></span><small>17/10 15:20</small></li><li><span>Comprovante de entrega</span><small>17/10 09:56</small></li><li><span>Carregado (saiu da coleta)</span><small>16/10 13:56</small></li>            </ul>
+                <li><span>Comprovante de entrega<br><small>São Paulo/SP</small></span><small>17/10 15:20</small></li><li><span>Comprovante de entrega</span><small>17/10 10:56</small></li><li><span>Carregado (saiu da coleta)</span><small>16/10 14:56</small></li>            </ul>
         </section>
             </aside>
 </div>
@@ -510,7 +540,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:56</small>                    </li>
+                        <small>19/10/2026 12:56</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>24/08/2026 08:00</small>                    </li>
@@ -595,7 +625,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:56</small>                    </li>
+                        <small>19/10/2026 12:56</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>15/08/2026 08:00</small>                    </li>
@@ -650,7 +680,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         </section>
 
                 <section class="p-bloco">
-            <h2>Onde está agora <small style="color:var(--suave);font-weight:500">· posição de 19/10 11:53 (há 3 minutos)</small></h2>
+            <h2>Onde está agora <small style="color:var(--suave);font-weight:500">· posição de 19/10 12:53 (há 3 minutos)</small></h2>
                         <iframe class="p-mapa" loading="lazy" title="Posição do veículo" referrerpolicy="no-referrer"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-46.9343,-23.3613,-46.8143,-23.2893&amp;layer=mapnik&amp;marker=-23.3253,-46.8743"></iframe>
             <p style="margin:8px 0 0;font-size:13px"><a href="https://www.google.com/maps?q=-23.3253,-46.8743" target="_blank" rel="noopener">Abrir no Google Maps</a></p>
@@ -680,10 +710,10 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:56</small>                    </li>
+                        <small>19/10/2026 12:56</small>                    </li>
                                     <li class="feito atual">
                         <span>Motorista definido</span>
-                        <small>18/10/2026 11:56</small>                    </li>
+                        <small>18/10/2026 12:56</small>                    </li>
                                     <li class="">
                         <span>Chegou na coleta</span>
                                             </li>
@@ -703,6 +733,32 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         </section>
             </aside>
 </div>
+</template><template id="pc-pedidos">
+        <div class="p-titulo">
+    <div><h1>Pedidos de carga</h1><p>Os pedidos feitos aqui no portal e o que a Segura fez com cada um.</p></div>
+    <a class="p-btn" href="#pedido-novo">+ Pedir carga</a>
+</div>
+<table class="p-tabela">
+    <thead><tr><th>Pedido</th><th>Rota</th><th>Coleta / entrega</th><th>Situação</th></tr></thead>
+    <tbody>
+            <tr>
+            <td><strong>nº 2</strong><br><small style="color:var(--suave)">19/10/2026 12:56</small></td>
+            <td>Cajamar/SP → Bauru/SP</td>
+            <td>18/10 09:00 → 18/10 18:00</td>
+            <td>
+                                    <span class="p-selo neutro">Não aceito</span><br><small>Sem carreta disponível para esse dia; podemos atender no dia seguinte.</small>
+                            </td>
+        </tr>
+            <tr>
+            <td><strong>nº 1</strong><br><small style="color:var(--suave)">19/10/2026 12:56 · NF 55120</small></td>
+            <td>Cajamar/SP → Campinas/SP<br><small style="color:var(--suave)">+1 entrega(s) no caminho</small></td>
+            <td>21/10 07:00 → 21/10 16:00</td>
+            <td>
+                                    <span class="p-selo atencao">Aguardando análise</span>
+                            </td>
+        </tr>
+        </tbody>
+</table>
 </template><template id="pc-carga~8">
         <p style="margin:0 0 10px"><a href="#painel~andamento">← Minhas cargas</a></p>
 <div class="p-titulo">
@@ -730,7 +786,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         </section>
 
                 <section class="p-bloco">
-            <h2>Onde está agora <small style="color:var(--suave);font-weight:500">· posição de 19/10 11:53 (há 3 minutos)</small></h2>
+            <h2>Onde está agora <small style="color:var(--suave);font-weight:500">· posição de 19/10 12:53 (há 3 minutos)</small></h2>
                         <iframe class="p-mapa" loading="lazy" title="Posição do veículo" referrerpolicy="no-referrer"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-46.9343,-23.3613,-46.8143,-23.2893&amp;layer=mapnik&amp;marker=-23.3253,-46.8743"></iframe>
             <p style="margin:8px 0 0;font-size:13px"><a href="https://www.google.com/maps?q=-23.3253,-46.8743" target="_blank" rel="noopener">Abrir no Google Maps</a></p>
@@ -760,10 +816,10 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:56</small>                    </li>
+                        <small>19/10/2026 12:56</small>                    </li>
                                     <li class="feito atual">
                         <span>Motorista definido</span>
-                        <small>18/10/2026 11:56</small>                    </li>
+                        <small>18/10/2026 12:56</small>                    </li>
                                     <li class="">
                         <span>Chegou na coleta</span>
                                             </li>
@@ -789,7 +845,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         <h1>Olá, Marcos 👋</h1>
         <p>Acompanhe as cargas da Alimentos Vale Verde na Segura Logística.</p>
     </div>
-    <small style="color:var(--suave)">Atualizado 19/10/2026 11:56</small>
+    <small style="color:var(--suave)">Atualizado 19/10/2026 12:56</small>
 </div>
 
 <div class="p-kpis">
@@ -869,7 +925,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:56</small>                    </li>
+                        <small>19/10/2026 12:56</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>09/08/2026 08:00</small>                    </li>
@@ -903,7 +959,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         <h1>Olá, Marcos 👋</h1>
         <p>Acompanhe as cargas da Alimentos Vale Verde na Segura Logística.</p>
     </div>
-    <small style="color:var(--suave)">Atualizado 19/10/2026 11:56</small>
+    <small style="color:var(--suave)">Atualizado 19/10/2026 12:56</small>
 </div>
 
 <div class="p-kpis">
@@ -965,7 +1021,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                 <div class="p-carga-num"><b>#2</b>                     </div>
                 <div class="p-rota">São Paulo/SP <span class="seta">→</span> Campinas/SP
                     <small style="font-weight:500;color:var(--suave)">+1 parada</small></div>
-                <div class="p-meta"><span>Coleta <b>19/10 02:56</b></span><span>Entrega <b>19/10 10:56</b></span>
+                <div class="p-meta"><span>Coleta <b>19/10 03:56</b></span><span>Entrega <b>19/10 11:56</b></span>
                     <span>Motorista <b>Marcos Vieira</b> · GHK2B47</span></div>
             </div>
             <div>
@@ -982,7 +1038,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                 <div class="p-carga-num"><b>#14</b>                     </div>
                 <div class="p-rota">Campinas/SP <span class="seta">→</span> São Paulo/SP
                     </div>
-                <div class="p-meta"><span>Coleta <b>16/10 11:56</b></span><span>Entrega <b>17/10 11:56</b></span>
+                <div class="p-meta"><span>Coleta <b>16/10 12:56</b></span><span>Entrega <b>17/10 12:56</b></span>
                     <span>Motorista <b>Paulo Teixeira</b> · EJF3D88</span></div>
             </div>
             <div>
@@ -1114,13 +1170,78 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             </div>
         </a>
     </div>
+</template><template id="pc-pedido-novo">
+        <p style="margin:0 0 10px"><a href="#pedidos">← Meus pedidos</a></p>
+<div class="p-titulo"><div><h1>Pedir carga</h1><p>Preencha o que já souber: a Segura confere, monta a carga e você recebe um e-mail quando ela for lançada.</p></div></div>
+<form method="post" action="#">
+        <section class="p-bloco">
+        <h2>Quando</h2>
+        <div class="p-form">
+                        <div><label for="coleta_em">Coleta *</label><input id="coleta_em" type="datetime-local" name="coleta_em" value="" required>
+                </div>
+            <div><label for="entrega_em">Entrega *</label><input id="entrega_em" type="datetime-local" name="entrega_em" value="" required>
+                </div>
+        </div>
+    </section>
+    <section class="p-bloco">
+        <h2>Rota <small style="color:var(--suave);font-weight:500">· coleta, entregas no caminho (até 8) e entrega final</small></h2>
+        <div id="paradas">
+                            <div class="p-parada">
+                    <span class="n">C</span>
+                    <input class="end" name="paradas[0][endereco]" value="" placeholder="Endereço (rua, nº, bairro)" aria-label="Endereço">
+                    <input name="paradas[0][cidade]" value="" placeholder="Cidade *" aria-label="Cidade" required>
+                    <input name="paradas[0][uf]" value="" placeholder="UF" maxlength="2" aria-label="UF" required style="text-transform:uppercase">
+                    <button type="button" data-tirar title="Tirar parada"  style="visibility:hidden" >×</button>
+                </div>
+                            <div class="p-parada">
+                    <span class="n">1</span>
+                    <input class="end" name="paradas[1][endereco]" value="" placeholder="Endereço (rua, nº, bairro)" aria-label="Endereço">
+                    <input name="paradas[1][cidade]" value="" placeholder="Cidade *" aria-label="Cidade" required>
+                    <input name="paradas[1][uf]" value="" placeholder="UF" maxlength="2" aria-label="UF" required style="text-transform:uppercase">
+                    <button type="button" data-tirar title="Tirar parada"  style="visibility:hidden" >×</button>
+                </div>
+                    </div>
+                <button type="button" class="p-btn sec peq" id="mais-parada">+ Entrega no caminho</button>
+    </section>
+    <section class="p-bloco">
+        <h2>Carga</h2>
+        <div class="p-form">
+            <div class="largo"><label for="produto">Produto</label><input id="produto" name="produto" value="" maxlength="255" placeholder="Ex.: cosméticos em caixas"></div>
+            <div><label for="peso_kg">Peso (kg)</label><input id="peso_kg" name="peso_kg" value="" inputmode="decimal"></div>
+            <div><label for="volumes">Volumes</label><input id="volumes" name="volumes" type="number" min="0" value=""></div>
+            <div><label for="valor_nf">Valor da NF (R$)</label><input id="valor_nf" name="valor_nf" value="" inputmode="decimal" placeholder="0,00"></div>
+            <div><label for="nota_fiscal">Nº da NF</label><input id="nota_fiscal" name="nota_fiscal" value="" maxlength="255"></div>
+            <div><label for="ordem_transporte">Ordem de transporte</label><input id="ordem_transporte" name="ordem_transporte" value="" maxlength="255"></div>
+            <div class="largo"><label for="observacoes">Observações</label><textarea id="observacoes" name="observacoes" rows="3" maxlength="2000" placeholder="Horário de recebimento, agendamento, ajudantes, cuidados com a carga…"></textarea></div>
+        </div>
+    </section>
+    <p><button class="p-btn">Enviar pedido</button></p>
+</form>
+<script>
+(() => {
+    const caixa = document.getElementById('paradas'), mais = document.getElementById('mais-parada');
+    const numerar = () => [...caixa.children].forEach((l, i) => {
+        l.querySelector('.n').textContent = i === 0 ? 'C' : i;
+        l.querySelectorAll('input').forEach(inp => inp.name = inp.name.replace(/paradas\[\d+\]/, `paradas[${i}]`));
+        l.querySelector('[data-tirar]').style.visibility = (i === 0 || i === caixa.children.length - 1) ? 'hidden' : 'visible'; // coleta e entrega final ficam
+        mais.hidden = caixa.children.length >= 10;
+    });
+    mais.addEventListener('click', () => { // nova entrega antes da entrega final
+        const nova = caixa.lastElementChild.cloneNode(true);
+        nova.querySelectorAll('input').forEach(i => i.value = '');
+        caixa.insertBefore(nova, caixa.lastElementChild); numerar(); nova.querySelector('input').focus();
+    });
+    caixa.addEventListener('click', e => { if (e.target.matches('[data-tirar]') && caixa.children.length > 2) { e.target.closest('.p-parada').remove(); numerar(); } });
+    numerar();
+})();
+</script>
 </template><template id="pc-painel~entregues">
         <div class="p-titulo">
     <div>
         <h1>Olá, Marcos 👋</h1>
         <p>Acompanhe as cargas da Alimentos Vale Verde na Segura Logística.</p>
     </div>
-    <small style="color:var(--suave)">Atualizado 19/10/2026 11:56</small>
+    <small style="color:var(--suave)">Atualizado 19/10/2026 12:56</small>
 </div>
 
 <div class="p-kpis">
@@ -1148,7 +1269,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                 <div class="p-carga-num"><b>#14</b>                     </div>
                 <div class="p-rota">Campinas/SP <span class="seta">→</span> São Paulo/SP
                     </div>
-                <div class="p-meta"><span>Coleta <b>16/10 11:56</b></span><span>Entrega <b>17/10 11:56</b></span>
+                <div class="p-meta"><span>Coleta <b>16/10 12:56</b></span><span>Entrega <b>17/10 12:56</b></span>
                     <span>Motorista <b>Paulo Teixeira</b> · EJF3D88</span></div>
             </div>
             <div>
@@ -1297,8 +1418,8 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         <section class="p-bloco">
             <h2>Dados da carga</h2>
             <dl class="p-dados">
-                <div><dt>Coleta prevista</dt><dd>19/10/2026 02:56</dd></div>
-                <div><dt>Entrega prevista</dt><dd>19/10/2026 10:56</dd></div>
+                <div><dt>Coleta prevista</dt><dd>19/10/2026 03:56</dd></div>
+                <div><dt>Entrega prevista</dt><dd>19/10/2026 11:56</dd></div>
                                 <div><dt>Nota fiscal</dt><dd>—</dd></div>
                                                                                 <div><dt>Distância</dt><dd>105 km</dd></div>                <div><dt>Motorista</dt><dd>Marcos Vieira</dd></div>
                 <div><dt>Placa</dt><dd>GHK2B47</dd></div>
@@ -1307,7 +1428,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         </section>
 
                 <section class="p-bloco">
-            <h2>Onde está agora <small style="color:var(--suave);font-weight:500">· posição de 19/10 10:21 (há 1 hora)</small></h2>
+            <h2>Onde está agora <small style="color:var(--suave);font-weight:500">· posição de 19/10 11:21 (há 1 hora)</small></h2>
                         <iframe class="p-mapa" loading="lazy" title="Posição do veículo" referrerpolicy="no-referrer"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-46.94,-23.246,-46.82,-23.174&amp;layer=mapnik&amp;marker=-23.21,-46.88"></iframe>
             <p style="margin:8px 0 0;font-size:13px"><a href="https://www.google.com/maps?q=-23.21,-46.88" target="_blank" rel="noopener">Abrir no Google Maps</a></p>
@@ -1340,19 +1461,19 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:56</small>                    </li>
+                        <small>19/10/2026 12:56</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
-                        <small>18/10/2026 11:56</small>                    </li>
+                        <small>18/10/2026 12:56</small>                    </li>
                                     <li class="feito">
                         <span>Chegou na coleta</span>
                                             </li>
                                     <li class="feito">
                         <span>Carregado</span>
-                        <small>19/10/2026 03:56</small>                    </li>
+                        <small>19/10/2026 04:56</small>                    </li>
                                     <li class="feito atual">
                         <span>Em viagem</span>
-                        <small>19/10/2026 11:56</small>                    </li>
+                        <small>19/10/2026 12:56</small>                    </li>
                                     <li class="">
                         <span>Chegou em Jundiaí/SP</span>
                                             </li>
@@ -1367,7 +1488,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                 <section class="p-bloco">
             <h2>Atualizações</h2>
             <ul class="p-ocorr">
-                <li><span>Carregado (saiu da coleta)</span><small>19/10 03:56</small></li>            </ul>
+                <li><span>Carregado (saiu da coleta)</span><small>19/10 04:56</small></li>            </ul>
         </section>
             </aside>
 </div>
@@ -1428,7 +1549,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:56</small>                    </li>
+                        <small>19/10/2026 12:56</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>12/08/2026 08:00</small>                    </li>
@@ -1462,7 +1583,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         <h1>Olá, Marcos 👋</h1>
         <p>Acompanhe as cargas da Alimentos Vale Verde na Segura Logística.</p>
     </div>
-    <small style="color:var(--suave)">Atualizado 19/10/2026 11:56</small>
+    <small style="color:var(--suave)">Atualizado 19/10/2026 12:56</small>
 </div>
 
 <div class="p-kpis">
@@ -1491,7 +1612,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         <h1>Olá, Marcos 👋</h1>
         <p>Acompanhe as cargas da Alimentos Vale Verde na Segura Logística.</p>
     </div>
-    <small style="color:var(--suave)">Atualizado 19/10/2026 11:56</small>
+    <small style="color:var(--suave)">Atualizado 19/10/2026 12:56</small>
 </div>
 
 <div class="p-kpis">
@@ -1519,7 +1640,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                 <div class="p-carga-num"><b>#2</b>                     </div>
                 <div class="p-rota">São Paulo/SP <span class="seta">→</span> Campinas/SP
                     <small style="font-weight:500;color:var(--suave)">+1 parada</small></div>
-                <div class="p-meta"><span>Coleta <b>19/10 02:56</b></span><span>Entrega <b>19/10 10:56</b></span>
+                <div class="p-meta"><span>Coleta <b>19/10 03:56</b></span><span>Entrega <b>19/10 11:56</b></span>
                     <span>Motorista <b>Marcos Vieira</b> · GHK2B47</span></div>
             </div>
             <div>
@@ -1623,7 +1744,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:56</small>                    </li>
+                        <small>19/10/2026 12:56</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>30/08/2026 08:00</small>                    </li>
@@ -1667,6 +1788,8 @@ document.addEventListener('click', ev => { const a = ev.target.closest('a');
   if (a && a.id === 'sair') { ev.preventDefault(); try { sessionStorage.removeItem('previa_cliente'); } catch (x) {} mostrar(); return; }
   if (a && a.dataset.fora) { ev.preventDefault(); aviso(/esqueci/i.test(a.textContent) ? 'Na prévia não enviamos e-mail: no sistema chega um link para criar a senha.' : 'Na prévia este link não tem exemplo (download, filtro ou página seguinte).'); }
 });
-document.addEventListener('submit', ev => { if (ev.target.closest('#pagina')) { ev.preventDefault(); aviso('Na prévia a busca não filtra: use as abas.'); } });
+document.addEventListener('submit', ev => { if (!ev.target.closest('#pagina')) return; ev.preventDefault();
+  if (ev.target.querySelector('[name=coleta_em]')) { aviso('Pedido de exemplo: no sistema ele vai para a Segura analisar e você recebe um e-mail.'); location.hash = 'pedidos'; }
+  else aviso('Na prévia a busca não filtra: use as abas.'); });
 window.addEventListener('hashchange', mostrar); mostrar();
 </script></body></html>
