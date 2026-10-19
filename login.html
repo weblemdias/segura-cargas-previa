@@ -331,6 +331,11 @@ table.contratacao tr.linha-extra:not(.linha-obs) td:first-child{box-shadow:inset
 /* Relatórios: valores sem quebrar e à direita */
 table.relatorio td,table.relatorio th{font-size:13px}
 table.relatorio .num{white-space:nowrap}
+.rot-saida{border:1px solid var(--linha);border-radius:8px;padding:8px 12px;margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px}
+.rot-saida legend{font-weight:600;padding:0 4px}
+.rot-saida label{display:flex;align-items:center;gap:6px;margin:0;font-weight:400}
+.rot-saida select{width:auto;min-width:220px}
+tr.linha-editando td{background:var(--laranja-claro)}
 tr.rota-total th{background:var(--fundo);border-top:2px solid var(--linha);font-weight:700;text-align:left}
 table.relatorio tfoot th{background:var(--fundo);border-top:2px solid var(--linha)}
 /* Chamados da carga */
