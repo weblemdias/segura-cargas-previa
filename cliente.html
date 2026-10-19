@@ -7,6 +7,7 @@
     --neutro: #6b7280; --neutro-claro: #f1f2f5; --raio: 16px; --sombra: 0 1px 2px rgba(16,24,40,.05), 0 4px 16px rgba(16,24,40,.06);
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html, body { margin: 0; }
 body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background: var(--fundo); color: var(--texto); font-size: 15px; line-height: 1.45; }
 a { color: var(--laranja-esc); }
@@ -134,6 +135,7 @@ img { max-width: 100%; }
 
 @media (max-width: 960px) {
     .p-grade { grid-template-columns: 1fr; }
+    .p-grade > aside { order: -1; } /* no celular o acompanhamento vem primeiro */
     .p-carga { grid-template-columns: 1fr; }
     .p-acoes { flex-direction: row; align-items: center; justify-content: space-between; }
     .p-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -253,7 +255,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                        <small>19/10/2026 11:23</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>27/08/2026 08:00</small>                    </li>
@@ -265,7 +267,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                                             </li>
                                     <li class="feito">
                         <span>Em viagem</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                                            </li>
                                     <li class="feito">
                         <span>Chegou em São Paulo/SP</span>
                                             </li>
@@ -338,7 +340,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                        <small>19/10/2026 11:23</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>18/08/2026 08:00</small>                    </li>
@@ -350,7 +352,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                                             </li>
                                     <li class="feito">
                         <span>Em viagem</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                                            </li>
                                     <li class="feito">
                         <span>Chegou em Sorocaba/SP</span>
                                             </li>
@@ -383,8 +385,8 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         <section class="p-bloco">
             <h2>Dados da carga</h2>
             <dl class="p-dados">
-                <div><dt>Coleta prevista</dt><dd>16/10/2026 11:20</dd></div>
-                <div><dt>Entrega prevista</dt><dd>17/10/2026 11:20</dd></div>
+                <div><dt>Coleta prevista</dt><dd>16/10/2026 11:23</dd></div>
+                <div><dt>Entrega prevista</dt><dd>17/10/2026 11:23</dd></div>
                 <div><dt>Entregue em</dt><dd>17/10/2026</dd></div>                <div><dt>Nota fiscal</dt><dd>—</dd></div>
                                                                                 <div><dt>Distância</dt><dd>95 km</dd></div>                <div><dt>Motorista</dt><dd>Paulo Teixeira</dd></div>
                 <div><dt>Placa</dt><dd>EJF3D88</dd></div>
@@ -423,19 +425,19 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                        <small>19/10/2026 11:23</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
-                        <small>18/10/2026 11:20</small>                    </li>
+                        <small>18/10/2026 11:23</small>                    </li>
                                     <li class="feito">
                         <span>Chegou na coleta</span>
                                             </li>
                                     <li class="feito">
                         <span>Carregado</span>
-                        <small>16/10/2026 13:20</small>                    </li>
+                        <small>16/10/2026 13:23</small>                    </li>
                                     <li class="feito">
                         <span>Em viagem</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                                            </li>
                                     <li class="feito">
                         <span>Chegou em São Paulo/SP</span>
                                             </li>
@@ -447,7 +449,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                 <section class="p-bloco">
             <h2>Atualizações</h2>
             <ul class="p-ocorr">
-                <li><span>Comprovante de entrega<br><small>São Paulo/SP</small></span><small>17/10 15:20</small></li><li><span>Comprovante de entrega</span><small>17/10 09:20</small></li><li><span>Carregado (saiu da coleta)</span><small>16/10 13:20</small></li>            </ul>
+                <li><span>Comprovante de entrega<br><small>São Paulo/SP</small></span><small>17/10 15:20</small></li><li><span>Comprovante de entrega</span><small>17/10 09:23</small></li><li><span>Carregado (saiu da coleta)</span><small>16/10 13:23</small></li>            </ul>
         </section>
             </aside>
 </div>
@@ -508,7 +510,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                        <small>19/10/2026 11:23</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>24/08/2026 08:00</small>                    </li>
@@ -520,7 +522,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                                             </li>
                                     <li class="feito">
                         <span>Em viagem</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                                            </li>
                                     <li class="feito">
                         <span>Chegou em São Paulo/SP</span>
                                             </li>
@@ -593,7 +595,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                        <small>19/10/2026 11:23</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>15/08/2026 08:00</small>                    </li>
@@ -605,7 +607,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                                             </li>
                                     <li class="feito">
                         <span>Em viagem</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                                            </li>
                                     <li class="feito">
                         <span>Chegou em Campinas/SP</span>
                                             </li>
@@ -648,7 +650,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         </section>
 
                 <section class="p-bloco">
-            <h2>Onde está agora <small style="color:var(--suave);font-weight:500">· posição de 19/10 11:17 (há 3 minutos)</small></h2>
+            <h2>Onde está agora <small style="color:var(--suave);font-weight:500">· posição de 19/10 11:20 (há 3 minutos)</small></h2>
                         <iframe class="p-mapa" loading="lazy" title="Posição do veículo" referrerpolicy="no-referrer"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-46.9343,-23.3613,-46.8143,-23.2893&amp;layer=mapnik&amp;marker=-23.3253,-46.8743"></iframe>
             <p style="margin:8px 0 0;font-size:13px"><a href="https://www.google.com/maps?q=-23.3253,-46.8743" target="_blank" rel="noopener">Abrir no Google Maps</a></p>
@@ -678,10 +680,10 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                        <small>19/10/2026 11:23</small>                    </li>
                                     <li class="feito atual">
                         <span>Motorista definido</span>
-                        <small>18/10/2026 11:20</small>                    </li>
+                        <small>18/10/2026 11:23</small>                    </li>
                                     <li class="">
                         <span>Chegou na coleta</span>
                                             </li>
@@ -728,7 +730,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         </section>
 
                 <section class="p-bloco">
-            <h2>Onde está agora <small style="color:var(--suave);font-weight:500">· posição de 19/10 11:17 (há 3 minutos)</small></h2>
+            <h2>Onde está agora <small style="color:var(--suave);font-weight:500">· posição de 19/10 11:20 (há 3 minutos)</small></h2>
                         <iframe class="p-mapa" loading="lazy" title="Posição do veículo" referrerpolicy="no-referrer"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-46.9343,-23.3613,-46.8143,-23.2893&amp;layer=mapnik&amp;marker=-23.3253,-46.8743"></iframe>
             <p style="margin:8px 0 0;font-size:13px"><a href="https://www.google.com/maps?q=-23.3253,-46.8743" target="_blank" rel="noopener">Abrir no Google Maps</a></p>
@@ -758,10 +760,10 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                        <small>19/10/2026 11:23</small>                    </li>
                                     <li class="feito atual">
                         <span>Motorista definido</span>
-                        <small>18/10/2026 11:20</small>                    </li>
+                        <small>18/10/2026 11:23</small>                    </li>
                                     <li class="">
                         <span>Chegou na coleta</span>
                                             </li>
@@ -787,7 +789,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         <h1>Olá, Marcos 👋</h1>
         <p>Acompanhe as cargas da Alimentos Vale Verde na Segura Logística.</p>
     </div>
-    <small style="color:var(--suave)">Atualizado 19/10/2026 11:20</small>
+    <small style="color:var(--suave)">Atualizado 19/10/2026 11:23</small>
 </div>
 
 <div class="p-kpis">
@@ -867,7 +869,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                        <small>19/10/2026 11:23</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>09/08/2026 08:00</small>                    </li>
@@ -879,7 +881,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                                             </li>
                                     <li class="feito">
                         <span>Em viagem</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                                            </li>
                                     <li class="feito">
                         <span>Chegou em Presidente Prudente/SP</span>
                                             </li>
@@ -901,7 +903,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         <h1>Olá, Marcos 👋</h1>
         <p>Acompanhe as cargas da Alimentos Vale Verde na Segura Logística.</p>
     </div>
-    <small style="color:var(--suave)">Atualizado 19/10/2026 11:20</small>
+    <small style="color:var(--suave)">Atualizado 19/10/2026 11:23</small>
 </div>
 
 <div class="p-kpis">
@@ -963,7 +965,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                 <div class="p-carga-num"><b>#2</b>                     </div>
                 <div class="p-rota">São Paulo/SP <span class="seta">→</span> Campinas/SP
                     <small style="font-weight:500;color:var(--suave)">+1 parada</small></div>
-                <div class="p-meta"><span>Coleta <b>19/10 02:20</b></span><span>Entrega <b>19/10 10:20</b></span>
+                <div class="p-meta"><span>Coleta <b>19/10 02:23</b></span><span>Entrega <b>19/10 10:23</b></span>
                     <span>Motorista <b>Marcos Vieira</b> · GHK2B47</span></div>
             </div>
             <div>
@@ -980,7 +982,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                 <div class="p-carga-num"><b>#14</b>                     </div>
                 <div class="p-rota">Campinas/SP <span class="seta">→</span> São Paulo/SP
                     </div>
-                <div class="p-meta"><span>Coleta <b>16/10 11:20</b></span><span>Entrega <b>17/10 11:20</b></span>
+                <div class="p-meta"><span>Coleta <b>16/10 11:23</b></span><span>Entrega <b>17/10 11:23</b></span>
                     <span>Motorista <b>Paulo Teixeira</b> · EJF3D88</span></div>
             </div>
             <div>
@@ -1118,7 +1120,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         <h1>Olá, Marcos 👋</h1>
         <p>Acompanhe as cargas da Alimentos Vale Verde na Segura Logística.</p>
     </div>
-    <small style="color:var(--suave)">Atualizado 19/10/2026 11:20</small>
+    <small style="color:var(--suave)">Atualizado 19/10/2026 11:23</small>
 </div>
 
 <div class="p-kpis">
@@ -1146,7 +1148,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                 <div class="p-carga-num"><b>#14</b>                     </div>
                 <div class="p-rota">Campinas/SP <span class="seta">→</span> São Paulo/SP
                     </div>
-                <div class="p-meta"><span>Coleta <b>16/10 11:20</b></span><span>Entrega <b>17/10 11:20</b></span>
+                <div class="p-meta"><span>Coleta <b>16/10 11:23</b></span><span>Entrega <b>17/10 11:23</b></span>
                     <span>Motorista <b>Paulo Teixeira</b> · EJF3D88</span></div>
             </div>
             <div>
@@ -1295,8 +1297,8 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         <section class="p-bloco">
             <h2>Dados da carga</h2>
             <dl class="p-dados">
-                <div><dt>Coleta prevista</dt><dd>19/10/2026 02:20</dd></div>
-                <div><dt>Entrega prevista</dt><dd>19/10/2026 10:20</dd></div>
+                <div><dt>Coleta prevista</dt><dd>19/10/2026 02:23</dd></div>
+                <div><dt>Entrega prevista</dt><dd>19/10/2026 10:23</dd></div>
                                 <div><dt>Nota fiscal</dt><dd>—</dd></div>
                                                                                 <div><dt>Distância</dt><dd>105 km</dd></div>                <div><dt>Motorista</dt><dd>Marcos Vieira</dd></div>
                 <div><dt>Placa</dt><dd>GHK2B47</dd></div>
@@ -1305,7 +1307,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         </section>
 
                 <section class="p-bloco">
-            <h2>Onde está agora <small style="color:var(--suave);font-weight:500">· posição de 19/10 09:45 (há 1 hora)</small></h2>
+            <h2>Onde está agora <small style="color:var(--suave);font-weight:500">· posição de 19/10 09:48 (há 1 hora)</small></h2>
                         <iframe class="p-mapa" loading="lazy" title="Posição do veículo" referrerpolicy="no-referrer"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-46.94,-23.246,-46.82,-23.174&amp;layer=mapnik&amp;marker=-23.21,-46.88"></iframe>
             <p style="margin:8px 0 0;font-size:13px"><a href="https://www.google.com/maps?q=-23.21,-46.88" target="_blank" rel="noopener">Abrir no Google Maps</a></p>
@@ -1338,19 +1340,19 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                        <small>19/10/2026 11:23</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
-                        <small>18/10/2026 11:20</small>                    </li>
+                        <small>18/10/2026 11:23</small>                    </li>
                                     <li class="feito">
                         <span>Chegou na coleta</span>
                                             </li>
                                     <li class="feito">
                         <span>Carregado</span>
-                        <small>19/10/2026 03:20</small>                    </li>
+                        <small>19/10/2026 03:23</small>                    </li>
                                     <li class="feito atual">
                         <span>Em viagem</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                        <small>19/10/2026 11:23</small>                    </li>
                                     <li class="">
                         <span>Chegou em Jundiaí/SP</span>
                                             </li>
@@ -1365,7 +1367,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                 <section class="p-bloco">
             <h2>Atualizações</h2>
             <ul class="p-ocorr">
-                <li><span>Carregado (saiu da coleta)</span><small>19/10 03:20</small></li>            </ul>
+                <li><span>Carregado (saiu da coleta)</span><small>19/10 03:23</small></li>            </ul>
         </section>
             </aside>
 </div>
@@ -1426,7 +1428,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                        <small>19/10/2026 11:23</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>12/08/2026 08:00</small>                    </li>
@@ -1438,7 +1440,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                                             </li>
                                     <li class="feito">
                         <span>Em viagem</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                                            </li>
                                     <li class="feito">
                         <span>Chegou em Presidente Prudente/SP</span>
                                             </li>
@@ -1460,7 +1462,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         <h1>Olá, Marcos 👋</h1>
         <p>Acompanhe as cargas da Alimentos Vale Verde na Segura Logística.</p>
     </div>
-    <small style="color:var(--suave)">Atualizado 19/10/2026 11:20</small>
+    <small style="color:var(--suave)">Atualizado 19/10/2026 11:23</small>
 </div>
 
 <div class="p-kpis">
@@ -1489,7 +1491,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
         <h1>Olá, Marcos 👋</h1>
         <p>Acompanhe as cargas da Alimentos Vale Verde na Segura Logística.</p>
     </div>
-    <small style="color:var(--suave)">Atualizado 19/10/2026 11:20</small>
+    <small style="color:var(--suave)">Atualizado 19/10/2026 11:23</small>
 </div>
 
 <div class="p-kpis">
@@ -1517,7 +1519,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                 <div class="p-carga-num"><b>#2</b>                     </div>
                 <div class="p-rota">São Paulo/SP <span class="seta">→</span> Campinas/SP
                     <small style="font-weight:500;color:var(--suave)">+1 parada</small></div>
-                <div class="p-meta"><span>Coleta <b>19/10 02:20</b></span><span>Entrega <b>19/10 10:20</b></span>
+                <div class="p-meta"><span>Coleta <b>19/10 02:23</b></span><span>Entrega <b>19/10 10:23</b></span>
                     <span>Motorista <b>Marcos Vieira</b> · GHK2B47</span></div>
             </div>
             <div>
@@ -1621,7 +1623,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
             <ol class="p-tempo">
                                     <li class="feito">
                         <span>Carga programada</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                        <small>19/10/2026 11:23</small>                    </li>
                                     <li class="feito">
                         <span>Motorista definido</span>
                         <small>30/08/2026 08:00</small>                    </li>
@@ -1633,7 +1635,7 @@ Telefone do motorista, tipo de veículo e valores nunca aparecem; o comprovante 
                                             </li>
                                     <li class="feito">
                         <span>Em viagem</span>
-                        <small>19/10/2026 11:20</small>                    </li>
+                                            </li>
                                     <li class="feito">
                         <span>Chegou em São Paulo/SP</span>
                                             </li>
