@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+  <infNFSe Id="NFS41069022298765432000198000000000001226102345678901">
+    <xLocEmi>Curitiba</xLocEmi><nNFSe>1226</nNFSe><dhProc>2026-10-16T10:00:00-03:00</dhProc>
+    <emit><CNPJ>98765432000198</CNPJ><xNome>MANUTENCAO DE FROTAS EXEMPLO LTDA</xNome>
+      <enderNac><xLgr>Av. Brasil</xLgr><nro>2000</nro><xBairro>Rebouças</xBairro><cMun>4106902</cMun><UF>PR</UF><CEP>80230000</CEP></enderNac></emit>
+    <valores><vLiq>1880.00</vLiq></valores>
+    <DPS versao="1.00"><infDPS Id="DPS1">
+      <dhEmi>2026-10-16T09:00:00-03:00</dhEmi><serie>900</serie><nDPS>55</nDPS>
+      <prest><CNPJ>98765432000198</CNPJ></prest>
+      <toma><CNPJ>12345678000195</CNPJ><xNome>SEGURA LOGISTICA LTDA</xNome></toma>
+      <serv><cServ><cTribNac>140101</cTribNac><xDescServ>Manutencao preventiva de caminhoes</xDescServ></cServ></serv>
+      <valores><vServPrest><vServ>2000.00</vServ></vServPrest></valores>
+    </infDPS></DPS>
+  </infNFSe>
+</NFSe>
