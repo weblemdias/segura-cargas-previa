@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH">
+    <meta name="csrf-token" content="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw">
     <title>Notas fiscais · Segura Logística</title>
     <style>:root{--laranja:#ee7203;--laranja-esc:#c95f00;--laranja-claro:#fff3e8;--tinta:#1f2328;--cinza:#6b7280;--linha:#e5e7eb;--fundo:#f6f7f9;--branco:#fff;
 --ok:#15803d;--ok-bg:#dcfce7;--erro:#b91c1c;--erro-bg:#fee2e2;--atencao:#a16207;--atencao-bg:#fef3c7;--ativo:#1d4ed8;--ativo-bg:#dbeafe;--neutro-bg:#f3f4f6}
@@ -572,6 +572,13 @@ tr.cot-total td { font-size: 18px; border-top: 2px solid var(--tinta); }
 .passos li::before{counter-increment:p;content:counter(p);position:absolute;left:12px;top:10px;width:20px;height:20px;border-radius:50%;background:var(--laranja);color:#fff;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
 pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;overflow:auto;font-size:12px}
 [hidden]{display:none !important}
+.opcoes-pagamento{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.opcoes-pagamento .opcao{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:14px 16px;border:2px solid var(--linha);border-radius:10px;background:var(--branco);font:inherit;color:var(--tinta);cursor:pointer}
+.opcoes-pagamento .opcao:hover{border-color:var(--laranja)}
+.opcoes-pagamento .opcao[aria-checked=true]{border-color:var(--laranja);background:var(--laranja-claro);box-shadow:inset 0 -3px 0 var(--laranja)}
+.opcoes-pagamento .icone{font-size:24px;line-height:1}
+.opcoes-pagamento strong{font-size:15px}
+.opcoes-pagamento small{color:var(--cinza);font-size:12px}
 </style>
     </head>
 <body>
@@ -579,9 +586,8 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
     <aside class="lateral">
         <div class="marca">Segura <span>Logística</span><small>Lançamento de notas fiscais</small></div>
                 <nav class="menu">
-                        <details class="grupo"><summary>Notas fiscais</summary>
-                <a href="index.html" class="">🧾 Lançamento boleto</a>
-                <a href="conta-pix.html" class="">🏦 Lançamento conta bancária | PIX</a>
+            <details class="grupo"><summary>Notas fiscais</summary>
+                <a href="index.html" class="">📥 Lançamento</a>
                 <a href="conferencia.html" class="">Em conferência <span class="contador">2</span></a>
                 <a href="erro.html" class="ativo">Erro no ESL </a>
                 <a href="lancadas.html" class="">Lançadas</a>
@@ -599,15 +605,14 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="usuario">
             Teste<br>
             <small class="muted">Administrador</small>
-            <form method="post" action="#"><input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off"> <button>Sair</button></form>
+            <form method="post" action="#"><input type="hidden" name="_token" value="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw" autocomplete="off"> <button>Sair</button></form>
         </div>
     </aside>
     <main class="conteudo"><div class="aviso" style="background:#fff3e8;color:#c95f00;margin-bottom:14px"><strong>Prévia estática</strong> — telas reais com notas de exemplo (CNPJs e boletos fictícios). Botões e formulários não gravam nada.</div>
                                     <div class="aviso">⚠ Integração com o ESL ainda não configurada no servidor: as notas são lidas e conferidas, mas ficam "prontas" esperando (<code>php artisan nf:esl-credenciais</code>).</div>
                 <div class="topo">
     <h1>Notas fiscais</h1>
-    <span class="muted"> Notas das duas formas de pagamento (boleto e conta bancária | PIX).
-    </span>
+    <span class="muted">Notas de todas as formas de pagamento.</span>
 </div>
 
 
@@ -637,7 +642,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
 
 <form class="cartao filtros" method="get">
     <input type="hidden" name="status" value="erro">
-    <div style="grid-column:span 2"><label for="q">Buscar</label><input id="q" name="q" value="" placeholder="Fornecedor, CNPJ, nº da nota, chave ou linha digitável"></div>
+        <div style="grid-column:span 2"><label for="q">Buscar</label><input id="q" name="q" value="" placeholder="Fornecedor, CNPJ, nº da nota, chave ou linha digitável"></div>
     <div><label for="de">Recebida de</label><input id="de" type="date" name="de" value=""></div>
     <div><label for="ate">até</label><input id="ate" type="date" name="ate" value=""></div>
     <div><button class="btn sec">Filtrar</button></div>

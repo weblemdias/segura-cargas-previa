@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH">
-    <title>Pagamento sem nota fiscal · Segura Logística</title>
+    <meta name="csrf-token" content="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw">
+    <title>Lançamento · Segura Logística</title>
     <style>:root{--laranja:#ee7203;--laranja-esc:#c95f00;--laranja-claro:#fff3e8;--tinta:#1f2328;--cinza:#6b7280;--linha:#e5e7eb;--fundo:#f6f7f9;--branco:#fff;
 --ok:#15803d;--ok-bg:#dcfce7;--erro:#b91c1c;--erro-bg:#fee2e2;--atencao:#a16207;--atencao-bg:#fef3c7;--ativo:#1d4ed8;--ativo-bg:#dbeafe;--neutro-bg:#f3f4f6}
 *{box-sizing:border-box}
@@ -572,6 +572,13 @@ tr.cot-total td { font-size: 18px; border-top: 2px solid var(--tinta); }
 .passos li::before{counter-increment:p;content:counter(p);position:absolute;left:12px;top:10px;width:20px;height:20px;border-radius:50%;background:var(--laranja);color:#fff;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
 pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;overflow:auto;font-size:12px}
 [hidden]{display:none !important}
+.opcoes-pagamento{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.opcoes-pagamento .opcao{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:14px 16px;border:2px solid var(--linha);border-radius:10px;background:var(--branco);font:inherit;color:var(--tinta);cursor:pointer}
+.opcoes-pagamento .opcao:hover{border-color:var(--laranja)}
+.opcoes-pagamento .opcao[aria-checked=true]{border-color:var(--laranja);background:var(--laranja-claro);box-shadow:inset 0 -3px 0 var(--laranja)}
+.opcoes-pagamento .icone{font-size:24px;line-height:1}
+.opcoes-pagamento strong{font-size:15px}
+.opcoes-pagamento small{color:var(--cinza);font-size:12px}
 </style>
     </head>
 <body>
@@ -579,9 +586,8 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
     <aside class="lateral">
         <div class="marca">Segura <span>Logística</span><small>Lançamento de notas fiscais</small></div>
                 <nav class="menu">
-                        <details class="grupo"><summary>Notas fiscais</summary>
-                <a href="index.html" class="">🧾 Lançamento boleto</a>
-                <a href="conta-pix.html" class="ativo">🏦 Lançamento conta bancária | PIX</a>
+            <details class="grupo"><summary>Notas fiscais</summary>
+                <a href="index.html" class="ativo">📥 Lançamento</a>
                 <a href="conferencia.html" class="">Em conferência <span class="contador">2</span></a>
                 <a href="erro.html" class="">Erro no ESL </a>
                 <a href="lancadas.html" class="">Lançadas</a>
@@ -599,21 +605,51 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="usuario">
             Teste<br>
             <small class="muted">Administrador</small>
-            <form method="post" action="#"><input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off"> <button>Sair</button></form>
+            <form method="post" action="#"><input type="hidden" name="_token" value="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw" autocomplete="off"> <button>Sair</button></form>
         </div>
     </aside>
     <main class="conteudo"><div class="aviso" style="background:#fff3e8;color:#c95f00;margin-bottom:14px"><strong>Prévia estática</strong> — telas reais com notas de exemplo (CNPJs e boletos fictícios). Botões e formulários não gravam nada.</div>
                                     <div class="aviso">⚠ Integração com o ESL ainda não configurada no servidor: as notas são lidas e conferidas, mas ficam "prontas" esperando (<code>php artisan nf:esl-credenciais</code>).</div>
                 <div class="topo">
-    <div>
-        <h1>Pagamento sem nota fiscal</h1>
-        <div class="muted">PIX ou TED que não tem nota: preencha a ficha e o pagamento vai para o contas a pagar do ESL como os outros.</div>
-    </div>
-    <a class="btn sec" href="conta-pix.html">‹ Lançamento conta bancária | PIX</a>
+    <h1>Lançamento</h1>
+    <span class="muted">Escolha como vai ser pago e preencha: o sistema lê, confere e lança no contas a pagar do ESL.</span>
 </div>
 
-<form method="post" action="#" enctype="multipart/form-data" id="ficha">
-    <input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off">    <div class="duas">
+<div class="cartao">
+    <h2>Como vai ser pago?</h2>
+    <div class="opcoes-pagamento" role="radiogroup" aria-label="Forma de pagamento">
+        <button type="button" class="opcao" data-tipo="boleto" role="radio" aria-checked="false">
+            <span class="icone">🧾</span><strong>Boleto</strong><small>Nota fiscal + boleto. Vence na data do boleto.</small></button>
+        <button type="button" class="opcao" data-tipo="conta" role="radio" aria-checked="true">
+            <span class="icone">🏦</span><strong>PIX ou transferência</strong><small>Tem nota fiscal, sem boleto. PIX/conta do fornecedor.</small></button>
+        <button type="button" class="opcao" data-tipo="sem-nota" role="radio" aria-checked="false">
+            <span class="icone">✍️</span><strong>Sem nota fiscal</strong><small>PIX ou TED sem nota: preencha a ficha do pagamento.</small></button>
+    </div>
+</div>
+
+
+<form class="cartao" method="post" action="#" enctype="multipart/form-data" id="form-envio" data-painel="boleto conta" >
+    <input type="hidden" name="_token" value="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw" autocomplete="off">    <input type="hidden" name="modalidade" id="modalidade" value="conta">
+    <h2 data-so="boleto">🧾 Boleto</h2>
+    <h2 data-so="conta">🏦 PIX ou transferência (com nota fiscal)</h2>
+    <label class="drop-arquivos drop-notas" data-max="30" data-max-mb="20" data-tipos="pdf,xml,jpg,jpeg,png,webp">
+        <span class="grande" data-so="boleto">📄 Solte aqui as notas e os boletos</span>
+        <span class="muted" data-so="boleto">ou clique para abrir a pasta · XML ou PDF da NF-e/NFS-e e o boleto em PDF (pode ser tudo num PDF só) · várias notas de uma vez</span>
+        <span class="grande" data-so="conta">📄 Solte aqui as notas (sem boleto)</span>
+        <span class="muted" data-so="conta">ou clique para abrir a pasta · XML ou PDF da NF-e/NFS-e · o vencimento vem das duplicatas ou do prazo do fornecedor e o PIX/conta do cadastro dele (o que estiver escrito na nota é comparado)</span>
+        <input type="file" id="arquivos" name="arquivos[]" multiple accept=".pdf,.xml,.jpg,.jpeg,.png,.webp,application/pdf,text/xml,application/xml,image/*">
+    </label>
+    <ul class="drop-lista" data-lista-de="arquivos"></ul>
+    <div class="erro-campo" data-erro-de="arquivos" hidden></div>
+            <div class="acoes" style="margin-top:10px">
+        <button class="btn">Ler e conferir</button>
+        <span class="muted">Com tudo conferido a nota vai sozinha para o ESL.</span>
+    </div>
+</form>
+
+<div data-painel="sem-nota"  hidden >
+    <form method="post" action="#" enctype="multipart/form-data" id="ficha">
+    <input type="hidden" name="_token" value="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw" autocomplete="off">    <div class="duas">
     <div>
         <div class="cartao">
             <h2>Fornecedor</h2>
@@ -644,7 +680,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
                     <input id="numero_documento" name="numero_documento" value="" maxlength="20" placeholder="opcional"></div>
                 <div class="largo"><label for="filial_id">Filial da Segura que paga *</label>
                     <select id="filial_id" name="filial_id" required><option value="">— escolha —</option>
-                        <option value="2" >Filial São Paulo (exemplo) · 12.345.678/0002-76</option><option value="1" >Segura (exemplo) · 12.345.678/0001-95</option>                    </select>
+                        <option value="10" >Filial São Paulo (exemplo) · 12.345.678/0002-76</option><option value="2" >SEGURA - CURITIBA / PINHAIS - Pinhais/PR · 03.147.206/0021-80</option><option value="3" >SEGURA - GOIÁS - Aparecida de Goiânia/GO · 03.147.206/0019-66</option><option value="4" >SEGURA - MARINGÁ - Maringá/PR · 03.147.206/0018-85</option><option value="5" >SEGURA - PIRAPOZINHO - Pirapozinho/SP · 03.147.206/0016-13</option><option value="6" >SEGURA - RJ - PAVUNA - Queimados/RJ · 03.147.206/0023-42</option><option value="7" >SEGURA - RS - Sapucaia do Sul/RS · 03.147.206/0013-70</option><option value="8" >SEGURA - VARGINHA MG - Varginha/MG · 03.147.206/0024-23</option><option value="1" >SEGURA TRANSPORTES E LOGISTICA LTDA (matriz) - Itapevi/SP · 03.147.206/0001-37</option><option value="9" >Segura (exemplo) · 12.345.678/0001-95</option>                    </select>
                     </div>
             </div>
         </div>
@@ -699,6 +735,93 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
     </div>
     </div>
 </form>
+</div>
+
+<h2 style="margin-top:8px">Notas e pagamentos</h2><div class="contadores">
+            <a href="http://127.0.0.1:8123?status=abertas&amp;tipo=conta" class="atual">
+            <strong>4</strong><span>Em aberto</span>
+        </a>
+            <a href="http://127.0.0.1:8123?status=conferencia&amp;tipo=conta" class="atencao">
+            <strong>2</strong><span>Em conferência</span>
+        </a>
+            <a href="http://127.0.0.1:8123?status=pronta&amp;tipo=conta" class="">
+            <strong>2</strong><span>Prontas</span>
+        </a>
+            <a href="http://127.0.0.1:8123?status=erro&amp;tipo=conta" class="erro">
+            <strong>0</strong><span>Erro no ESL</span>
+        </a>
+            <a href="http://127.0.0.1:8123?status=lancada&amp;tipo=conta" class="ok">
+            <strong>1</strong><span>Lançadas</span>
+        </a>
+            <a href="http://127.0.0.1:8123?status=duplicada&amp;tipo=conta" class="">
+            <strong>1</strong><span>Duplicadas/descartadas</span>
+        </a>
+            <a href="http://127.0.0.1:8123?status=todas&amp;tipo=conta" class="">
+            <strong>6</strong><span>Todas</span>
+        </a>
+    </div>
+
+<form class="cartao filtros" method="get">
+    <input type="hidden" name="status" value="abertas">
+    <input type="hidden" name="tipo" value="conta">    <div style="grid-column:span 2"><label for="q">Buscar</label><input id="q" name="q" value="" placeholder="Fornecedor, CNPJ, nº da nota, chave ou linha digitável"></div>
+    <div><label for="de">Recebida de</label><input id="de" type="date" name="de" value=""></div>
+    <div><label for="ate">até</label><input id="ate" type="date" name="ate" value=""></div>
+    <div><button class="btn sec">Filtrar</button></div>
+</form>
+
+<div class="tabela">
+<table>
+    <thead><tr><th>Nota</th><th>Fornecedor</th><th>Filial</th><th>Emissão</th><th style="text-align:right">Valor</th><th>Vencimento(s)</th><th>Situação</th></tr></thead>
+    <tbody>
+            <tr>
+            <td><a href="nota-1.html"><strong>Pagamento sem NF #6</strong></a>                <br><span class="selo neutro">✍️ sem NF</span>
+                <small class="muted">#6 · 23/10 16:45 · tela · DIGITADA</small></td>
+            <td>João Ajudante (exemplo)<br><small class="muted">529.982.247-25</small></td>
+            <td>Segura (exemplo)</td>
+            <td>23/10/2026</td>
+            <td style="text-align:right;white-space:nowrap">R$ 350,00</td>
+            <td><small class="muted">PIX</small><br> <span class="selo neutro">02/11/2026</span> </td>
+            <td><span class="selo ativo">Pronta para lançar</span>
+                </td>
+        </tr>
+            <tr>
+            <td><a href="nota-2.html"><strong>NFS-e 90</strong></a>                <br><span class="selo neutro">🏦 PIX/conta</span>
+                <small class="muted">#5 · 23/10 16:45 · tela · XML</small></td>
+            <td>MANUTENCAO DE FROTAS EXEMPLO LTDA<br><small class="muted">98.765.432/0001-98</small></td>
+            <td>Segura (exemplo)</td>
+            <td>17/10/2026</td>
+            <td style="text-align:right;white-space:nowrap">R$ 950,00</td>
+            <td><small class="muted">PIX</small><br> <span class="selo neutro">16/11/2026</span> </td>
+            <td><span class="selo atencao">Em conferência</span>
+                <br><small class="muted">1 pendência(s)</small></td>
+        </tr>
+            <tr>
+            <td><a href="nota-4.html"><strong>NFS-e 88</strong></a>                <br><span class="selo neutro">🧾 boleto</span>
+                <small class="muted">#3 · 23/10 16:45 · API · XML</small></td>
+            <td>MANUTENCAO DE FROTAS EXEMPLO LTDA<br><small class="muted">98.765.432/0001-98</small></td>
+            <td>Segura (exemplo)</td>
+            <td>17/10/2026</td>
+            <td style="text-align:right;white-space:nowrap">R$ 950,00</td>
+            <td>  <span class="muted">—</span> </td>
+            <td><span class="selo atencao">Em conferência</span>
+                <br><small class="muted">1 pendência(s)</small></td>
+        </tr>
+            <tr>
+            <td><a href="nota-5.html"><strong>NFS-e 1226</strong></a><small class="muted"> série 900</small>                <br><span class="selo neutro">🧾 boleto</span>
+                <small class="muted">#2 · 23/10 16:45 · tela · XML</small></td>
+            <td>MANUTENCAO DE FROTAS EXEMPLO LTDA<br><small class="muted">98.765.432/0001-98</small></td>
+            <td>Segura (exemplo)</td>
+            <td>16/10/2026</td>
+            <td style="text-align:right;white-space:nowrap">R$ 1.880,00</td>
+            <td> <span class="selo neutro">05/11/2026</span> </td>
+            <td><span class="selo ativo">Pronta para lançar</span>
+                </td>
+        </tr>
+        </tbody>
+</table>
+</div>
+<div class="paginacao"></div>
+
     </main>
 </div>
 <script>
@@ -810,6 +933,24 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
       if (j.ultimos && j.ultimos.length) ult.textContent = 'Últimos pagamentos: ' + j.ultimos.join(' · ');
     } catch (e) { /* sem consulta, preenche à mão */ }
   });
+})();
+</script>
+<script>
+// Escolha da forma de pagamento: mostra só os campos daquele caso (e guarda na URL para voltar no mesmo lugar)
+(() => {
+  const botoes = [...document.querySelectorAll('.opcoes-pagamento .opcao')];
+  if (!botoes.length) return;
+  const paineis = [...document.querySelectorAll('[data-painel]')];
+  const escolher = tipo => {
+    botoes.forEach(b => b.setAttribute('aria-checked', b.dataset.tipo === tipo ? 'true' : 'false'));
+    paineis.forEach(p => { p.hidden = !p.dataset.painel.split(' ').includes(tipo); });
+    document.querySelectorAll('[data-so]').forEach(e => { e.hidden = e.dataset.so !== tipo; });
+    const m = document.getElementById('modalidade'); if (m && tipo !== 'sem-nota') m.value = tipo;
+    const u = new URL(location.href); u.searchParams.set('tipo', tipo); history.replaceState(null, '', u);
+  };
+  botoes.forEach(b => b.addEventListener('click', () => escolher(b.dataset.tipo)));
+  const atual = botoes.find(b => b.getAttribute('aria-checked') === 'true');
+  if (atual) escolher(atual.dataset.tipo);
 })();
 </script>
 <script>document.addEventListener("submit",function(e){e.preventDefault();alert("Prévia: aqui o sistema leria, conferiria e lançaria no ESL.")},true);</script></body>

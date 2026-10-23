@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH">
+    <meta name="csrf-token" content="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw">
     <title>NFS-e 90 · Segura Logística</title>
     <style>:root{--laranja:#ee7203;--laranja-esc:#c95f00;--laranja-claro:#fff3e8;--tinta:#1f2328;--cinza:#6b7280;--linha:#e5e7eb;--fundo:#f6f7f9;--branco:#fff;
 --ok:#15803d;--ok-bg:#dcfce7;--erro:#b91c1c;--erro-bg:#fee2e2;--atencao:#a16207;--atencao-bg:#fef3c7;--ativo:#1d4ed8;--ativo-bg:#dbeafe;--neutro-bg:#f3f4f6}
@@ -572,6 +572,13 @@ tr.cot-total td { font-size: 18px; border-top: 2px solid var(--tinta); }
 .passos li::before{counter-increment:p;content:counter(p);position:absolute;left:12px;top:10px;width:20px;height:20px;border-radius:50%;background:var(--laranja);color:#fff;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
 pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;overflow:auto;font-size:12px}
 [hidden]{display:none !important}
+.opcoes-pagamento{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.opcoes-pagamento .opcao{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:14px 16px;border:2px solid var(--linha);border-radius:10px;background:var(--branco);font:inherit;color:var(--tinta);cursor:pointer}
+.opcoes-pagamento .opcao:hover{border-color:var(--laranja)}
+.opcoes-pagamento .opcao[aria-checked=true]{border-color:var(--laranja);background:var(--laranja-claro);box-shadow:inset 0 -3px 0 var(--laranja)}
+.opcoes-pagamento .icone{font-size:24px;line-height:1}
+.opcoes-pagamento strong{font-size:15px}
+.opcoes-pagamento small{color:var(--cinza);font-size:12px}
 </style>
     </head>
 <body>
@@ -579,9 +586,8 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
     <aside class="lateral">
         <div class="marca">Segura <span>Logística</span><small>Lançamento de notas fiscais</small></div>
                 <nav class="menu">
-                        <details class="grupo"><summary>Notas fiscais</summary>
-                <a href="index.html" class="">🧾 Lançamento boleto</a>
-                <a href="conta-pix.html" class="ativo">🏦 Lançamento conta bancária | PIX</a>
+            <details class="grupo"><summary>Notas fiscais</summary>
+                <a href="index.html" class="ativo">📥 Lançamento</a>
                 <a href="conferencia.html" class="">Em conferência <span class="contador">2</span></a>
                 <a href="erro.html" class="">Erro no ESL </a>
                 <a href="lancadas.html" class="">Lançadas</a>
@@ -599,7 +605,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="usuario">
             Teste<br>
             <small class="muted">Administrador</small>
-            <form method="post" action="#"><input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off"> <button>Sair</button></form>
+            <form method="post" action="#"><input type="hidden" name="_token" value="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw" autocomplete="off"> <button>Sair</button></form>
         </div>
     </aside>
     <main class="conteudo"><div class="aviso" style="background:#fff3e8;color:#c95f00;margin-bottom:14px"><strong>Prévia estática</strong> — telas reais com notas de exemplo (CNPJs e boletos fictícios). Botões e formulários não gravam nada.</div>
@@ -609,13 +615,13 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <h1>NFS-e 90             <span class="selo atencao">Em conferência</span>
             <span class="selo neutro">🏦 Conta bancária | PIX</span></h1>
         <div class="muted">MANUTENCAO DE FROTAS EXEMPLO LTDA · 98.765.432/0001-98
-            · recebida 23/10/2026 15:31 por Teste
+            · recebida 23/10/2026 16:45 por Teste
             </div>
     </div>
     <div class="acoes">
-        <a class="btn sec" href="conta-pix.html">‹ Voltar</a>
-                    <form method="post" action="#" onsubmit="return confirm('Mudar a forma de pagamento desta nota? Ela é lida de novo.')"><input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off">                <button class="btn sec" title="Entrou pelo menu errado?">⇄ Pagar por boleto</button></form>
-                            <form method="post" action="#" onsubmit="return confirm('Ler os arquivos de novo? O que foi digitado na conferência será substituído.')"><input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off"><button class="btn sec">↻ Ler de novo</button></form>
+        <a class="btn sec" href="index.html">‹ Voltar</a>
+                    <form method="post" action="#" onsubmit="return confirm('Mudar a forma de pagamento desta nota? Ela é lida de novo.')"><input type="hidden" name="_token" value="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw" autocomplete="off">                <button class="btn sec" title="Entrou pelo menu errado?">⇄ Pagar por boleto</button></form>
+                            <form method="post" action="#" onsubmit="return confirm('Ler os arquivos de novo? O que foi digitado na conferência será substituído.')"><input type="hidden" name="_token" value="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw" autocomplete="off"><button class="btn sec">↻ Ler de novo</button></form>
                     </div>
 </div>
 
@@ -627,7 +633,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
 <div class="duas">
 <div>
 <form method="post" action="#" id="form-nota">
-    <input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off"> <input type="hidden" name="_method" value="put">    <fieldset  style="border:0;padding:0;margin:0">
+    <input type="hidden" name="_token" value="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw" autocomplete="off"> <input type="hidden" name="_method" value="put">    <fieldset  style="border:0;padding:0;margin:0">
     <div class="cartao">
                 <h2>Nota fiscal</h2>
         <div class="grade">
@@ -639,7 +645,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
             <div><label for="valor_pagar">Valor líquido a pagar (R$)</label><input id="valor_pagar" name="valor_pagar" inputmode="decimal" value="950,00" placeholder="= total"></div>
             <div class="largo"><label for="filial_id">Filial da Segura (destinatário)</label>
                 <select id="filial_id" name="filial_id"><option value="">— escolha —</option>
-                    <option value="2" >Filial São Paulo (exemplo) · 12.345.678/0002-76</option><option value="1" selected>Segura (exemplo) · 12.345.678/0001-95</option>                </select>
+                    <option value="10" >Filial São Paulo (exemplo) · 12.345.678/0002-76</option><option value="2" >SEGURA - CURITIBA / PINHAIS - Pinhais/PR · 03.147.206/0021-80</option><option value="3" >SEGURA - GOIÁS - Aparecida de Goiânia/GO · 03.147.206/0019-66</option><option value="4" >SEGURA - MARINGÁ - Maringá/PR · 03.147.206/0018-85</option><option value="5" >SEGURA - PIRAPOZINHO - Pirapozinho/SP · 03.147.206/0016-13</option><option value="6" >SEGURA - RJ - PAVUNA - Queimados/RJ · 03.147.206/0023-42</option><option value="7" >SEGURA - RS - Sapucaia do Sul/RS · 03.147.206/0013-70</option><option value="8" >SEGURA - VARGINHA MG - Varginha/MG · 03.147.206/0024-23</option><option value="1" >SEGURA TRANSPORTES E LOGISTICA LTDA (matriz) - Itapevi/SP · 03.147.206/0001-37</option><option value="9" selected>Segura (exemplo) · 12.345.678/0001-95</option>                </select>
                 <small class="muted">Na nota: 12.345.678/0001-95</small>            </div>
                         <div class="largo"><label>Serviço</label>Lavagem de frota. Pagamento via PIX chave CNPJ 98.765.432/0001-98 em até 30 dias.</div>        </div>
             </div>
@@ -710,7 +716,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
 
 <div class="cartao">
     <form method="post" action="#" class="acoes" onsubmit="return confirm('Descartar esta nota? Ela não será lançada.')">
-        <input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off">        <input name="motivo" required maxlength="500" placeholder="Motivo para descartar (ex.: nota cancelada, enviada por engano)" style="flex:1;min-width:220px">
+        <input type="hidden" name="_token" value="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw" autocomplete="off">        <input name="motivo" required maxlength="500" placeholder="Motivo para descartar (ex.: nota cancelada, enviada por engano)" style="flex:1;min-width:220px">
         <button class="btn sec">Descartar</button>
     </form>
 </div>
@@ -725,7 +731,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
                     <small class="muted">· XML da NFS-e · 1 KB · <a href="arquivo-1.xml.txt">baixar</a></small></li>
                     </ul>
                 <form method="post" action="#" enctype="multipart/form-data" style="margin-top:10px">
-            <input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off">            <label class="drop-arquivos" data-max="10" data-tipos="pdf,xml,jpg,jpeg,png,webp">
+            <input type="hidden" name="_token" value="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw" autocomplete="off">            <label class="drop-arquivos" data-max="10" data-tipos="pdf,xml,jpg,jpeg,png,webp">
                 <span>+ Anexar (o boleto que faltou, o XML…)</span>
                 <input type="file" id="anexo" name="arquivos[]" multiple accept=".pdf,.xml,.jpg,.jpeg,.png,.webp">
             </label>
@@ -737,7 +743,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="cartao" style="margin-top:16px">
         <h2>Histórico</h2>
         <ul class="historico">
-                            <li>Arquivos recebidos e lidos<br><small>23/10/2026 15:31 · Teste</small></li>
+                            <li>Arquivos recebidos e lidos<br><small>23/10/2026 16:45 · Teste</small></li>
                     </ul>
     </div>
 </div>

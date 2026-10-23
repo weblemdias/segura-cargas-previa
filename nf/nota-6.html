@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH">
+    <meta name="csrf-token" content="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw">
     <title>NF-e 4521 · Segura Logística</title>
     <style>:root{--laranja:#ee7203;--laranja-esc:#c95f00;--laranja-claro:#fff3e8;--tinta:#1f2328;--cinza:#6b7280;--linha:#e5e7eb;--fundo:#f6f7f9;--branco:#fff;
 --ok:#15803d;--ok-bg:#dcfce7;--erro:#b91c1c;--erro-bg:#fee2e2;--atencao:#a16207;--atencao-bg:#fef3c7;--ativo:#1d4ed8;--ativo-bg:#dbeafe;--neutro-bg:#f3f4f6}
@@ -572,6 +572,13 @@ tr.cot-total td { font-size: 18px; border-top: 2px solid var(--tinta); }
 .passos li::before{counter-increment:p;content:counter(p);position:absolute;left:12px;top:10px;width:20px;height:20px;border-radius:50%;background:var(--laranja);color:#fff;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
 pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;overflow:auto;font-size:12px}
 [hidden]{display:none !important}
+.opcoes-pagamento{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.opcoes-pagamento .opcao{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:14px 16px;border:2px solid var(--linha);border-radius:10px;background:var(--branco);font:inherit;color:var(--tinta);cursor:pointer}
+.opcoes-pagamento .opcao:hover{border-color:var(--laranja)}
+.opcoes-pagamento .opcao[aria-checked=true]{border-color:var(--laranja);background:var(--laranja-claro);box-shadow:inset 0 -3px 0 var(--laranja)}
+.opcoes-pagamento .icone{font-size:24px;line-height:1}
+.opcoes-pagamento strong{font-size:15px}
+.opcoes-pagamento small{color:var(--cinza);font-size:12px}
 </style>
     </head>
 <body>
@@ -579,9 +586,8 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
     <aside class="lateral">
         <div class="marca">Segura <span>Logística</span><small>Lançamento de notas fiscais</small></div>
                 <nav class="menu">
-                        <details class="grupo"><summary>Notas fiscais</summary>
-                <a href="index.html" class="ativo">🧾 Lançamento boleto</a>
-                <a href="conta-pix.html" class="">🏦 Lançamento conta bancária | PIX</a>
+            <details class="grupo"><summary>Notas fiscais</summary>
+                <a href="index.html" class="ativo">📥 Lançamento</a>
                 <a href="conferencia.html" class="">Em conferência <span class="contador">2</span></a>
                 <a href="erro.html" class="">Erro no ESL </a>
                 <a href="lancadas.html" class="">Lançadas</a>
@@ -599,7 +605,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="usuario">
             Teste<br>
             <small class="muted">Administrador</small>
-            <form method="post" action="#"><input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off"> <button>Sair</button></form>
+            <form method="post" action="#"><input type="hidden" name="_token" value="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw" autocomplete="off"> <button>Sair</button></form>
         </div>
     </aside>
     <main class="conteudo"><div class="aviso" style="background:#fff3e8;color:#c95f00;margin-bottom:14px"><strong>Prévia estática</strong> — telas reais com notas de exemplo (CNPJs e boletos fictícios). Botões e formulários não gravam nada.</div>
@@ -609,7 +615,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <h1>NF-e 4521 <small class="muted">série 1</small>            <span class="selo ok">Lançada no ESL</span>
             <span class="selo neutro">🧾 Boleto</span></h1>
         <div class="muted">AUTO PECAS EXEMPLO LTDA · 11.222.333/0001-81
-            · recebida 23/10/2026 15:31 por Teste
+            · recebida 23/10/2026 16:45 por Teste
             </div>
     </div>
     <div class="acoes">
@@ -617,12 +623,12 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
                             </div>
 </div>
 
-    <div class="aviso ok">Lançada no contas a pagar do ESL em 23/10/2026 15:31: 4521/1, 4521/2.</div>
+    <div class="aviso ok">Lançada no contas a pagar do ESL em 23/10/2026 16:45: 4521/1, 4521/2.</div>
 
 <div class="duas">
 <div>
 <form method="post" action="#" id="form-nota">
-    <input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off"> <input type="hidden" name="_method" value="put">    <fieldset disabled style="border:0;padding:0;margin:0">
+    <input type="hidden" name="_token" value="RmNS2H3f6ty2GlgWQ2U2Jo9jzBSrWGcoBGewmhaw" autocomplete="off"> <input type="hidden" name="_method" value="put">    <fieldset disabled style="border:0;padding:0;margin:0">
     <div class="cartao">
                 <h2>Nota fiscal</h2>
         <div class="grade">
@@ -634,7 +640,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
             <div><label for="valor_pagar">Valor líquido a pagar (R$)</label><input id="valor_pagar" name="valor_pagar" inputmode="decimal" value="3.000,00" placeholder="= total"></div>
             <div class="largo"><label for="filial_id">Filial da Segura (destinatário)</label>
                 <select id="filial_id" name="filial_id"><option value="">— escolha —</option>
-                    <option value="2" >Filial São Paulo (exemplo) · 12.345.678/0002-76</option><option value="1" selected>Segura (exemplo) · 12.345.678/0001-95</option>                </select>
+                    <option value="10" >Filial São Paulo (exemplo) · 12.345.678/0002-76</option><option value="2" >SEGURA - CURITIBA / PINHAIS - Pinhais/PR · 03.147.206/0021-80</option><option value="3" >SEGURA - GOIÁS - Aparecida de Goiânia/GO · 03.147.206/0019-66</option><option value="4" >SEGURA - MARINGÁ - Maringá/PR · 03.147.206/0018-85</option><option value="5" >SEGURA - PIRAPOZINHO - Pirapozinho/SP · 03.147.206/0016-13</option><option value="6" >SEGURA - RJ - PAVUNA - Queimados/RJ · 03.147.206/0023-42</option><option value="7" >SEGURA - RS - Sapucaia do Sul/RS · 03.147.206/0013-70</option><option value="8" >SEGURA - VARGINHA MG - Varginha/MG · 03.147.206/0024-23</option><option value="1" >SEGURA TRANSPORTES E LOGISTICA LTDA (matriz) - Itapevi/SP · 03.147.206/0001-37</option><option value="9" selected>Segura (exemplo) · 12.345.678/0001-95</option>                </select>
                 <small class="muted">Na nota: 12.345.678/0001-95</small>            </div>
             <div class="largo"><label>Chave de acesso</label><div class="linha-digitavel">41261011222333000181550010000045211876543210</div></div>            <div class="largo"><label>Natureza da operação</label>Venda de mercadoria</div>        </div>
             </div>
@@ -704,9 +710,9 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="cartao" style="margin-top:16px">
         <h2>Histórico</h2>
         <ul class="historico">
-                            <li>Lançada no contas a pagar do ESL (2 parcela(s): 4521/1, 4521/2).<br><small>23/10/2026 15:31 · sistema</small></li>
-                            <li>Conferência automática ok: enviada ao ESL sem intervenção.<br><small>23/10/2026 15:31 · sistema</small></li>
-                            <li>Arquivos recebidos e lidos<br><small>23/10/2026 15:31 · Teste</small></li>
+                            <li>Lançada no contas a pagar do ESL (2 parcela(s): 4521/1, 4521/2).<br><small>23/10/2026 16:45 · sistema</small></li>
+                            <li>Conferência automática ok: enviada ao ESL sem intervenção.<br><small>23/10/2026 16:45 · sistema</small></li>
+                            <li>Arquivos recebidos e lidos<br><small>23/10/2026 16:45 · Teste</small></li>
                     </ul>
     </div>
 </div>

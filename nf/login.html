@@ -571,13 +571,20 @@ tr.cot-total td { font-size: 18px; border-top: 2px solid var(--tinta); }
 .passos li::before{counter-increment:p;content:counter(p);position:absolute;left:12px;top:10px;width:20px;height:20px;border-radius:50%;background:var(--laranja);color:#fff;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
 pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;overflow:auto;font-size:12px}
 [hidden]{display:none !important}
+.opcoes-pagamento{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.opcoes-pagamento .opcao{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:14px 16px;border:2px solid var(--linha);border-radius:10px;background:var(--branco);font:inherit;color:var(--tinta);cursor:pointer}
+.opcoes-pagamento .opcao:hover{border-color:var(--laranja)}
+.opcoes-pagamento .opcao[aria-checked=true]{border-color:var(--laranja);background:var(--laranja-claro);box-shadow:inset 0 -3px 0 var(--laranja)}
+.opcoes-pagamento .icone{font-size:24px;line-height:1}
+.opcoes-pagamento strong{font-size:15px}
+.opcoes-pagamento small{color:var(--cinza);font-size:12px}
 </style>
 </head>
 <body>
 <div class="login">
     <div class="marca">Segura <span>Logística</span><small>Lançamento de notas fiscais</small></div>
     <p class="aviso" style="max-width:360px;margin:0 auto 10px">Prévia: entre pelo <a href="index.html">painel de notas</a>.</p><form class="cartao" method="post" action="#">
-        <input type="hidden" name="_token" value="PXEiLXhdnVmIbEl9mlAVSbdzROygiTz26fEvfxcl" autocomplete="off">        <p style="margin-top:0">
+        <input type="hidden" name="_token" value="sLtDQ8Kocpvzb0ccLSrEmVzWBX0QnOUgOD2Fwdqh" autocomplete="off">        <p style="margin-top:0">
             <label for="email">E-mail</label>
             <input id="email" name="email" type="email" value="" required autofocus autocomplete="username" maxlength="255">
                     </p>
