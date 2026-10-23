@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="gQSqDcFWndXw0koK6n5xg1Mmi3eUOO0Muqal73S8">
+    <meta name="csrf-token" content="sHkBGh8ZWwbANvTWbF2IfiWPRY1Qy1vRIXUvjEkA">
     <title>Notas fiscais · Segura Logística</title>
     <style>:root{--laranja:#ee7203;--laranja-esc:#c95f00;--laranja-claro:#fff3e8;--tinta:#1f2328;--cinza:#6b7280;--linha:#e5e7eb;--fundo:#f6f7f9;--branco:#fff;
 --ok:#15803d;--ok-bg:#dcfce7;--erro:#b91c1c;--erro-bg:#fee2e2;--atencao:#a16207;--atencao-bg:#fef3c7;--ativo:#1d4ed8;--ativo-bg:#dbeafe;--neutro-bg:#f3f4f6}
@@ -578,11 +578,12 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
     <aside class="lateral">
         <div class="marca">Segura <span>Logística</span><small>Lançamento de notas fiscais</small></div>
                 <nav class="menu">
-            <details class="grupo"><summary>Notas fiscais</summary>
-                <a href="index.html" class="">📥 Receber e acompanhar</a>
-                <a href="http://127.0.0.1:8123?status=conferencia" class="">Em conferência <span class="contador">1</span></a>
-                <a href="http://127.0.0.1:8123?status=erro" class="ativo">Erro no ESL </a>
-                <a href="http://127.0.0.1:8123?status=lancada" class="">Lançadas</a>
+                        <details class="grupo"><summary>Notas fiscais</summary>
+                <a href="index.html" class="">🧾 Lançamento boleto</a>
+                <a href="conta-pix.html" class="">🏦 Lançamento conta bancária | PIX</a>
+                <a href="conferencia.html" class="">Em conferência <span class="contador">2</span></a>
+                <a href="erro.html" class="ativo">Erro no ESL </a>
+                <a href="lancadas.html" class="">Lançadas</a>
             </details>
                         <details class="grupo"><summary>Cadastros</summary>
                 <a href="fornecedores.html" class="">Fornecedores </a>
@@ -597,51 +598,39 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="usuario">
             Teste<br>
             <small class="muted">Administrador</small>
-            <form method="post" action="#"><input type="hidden" name="_token" value="gQSqDcFWndXw0koK6n5xg1Mmi3eUOO0Muqal73S8" autocomplete="off"> <button>Sair</button></form>
+            <form method="post" action="#"><input type="hidden" name="_token" value="sHkBGh8ZWwbANvTWbF2IfiWPRY1Qy1vRIXUvjEkA" autocomplete="off"> <button>Sair</button></form>
         </div>
     </aside>
     <main class="conteudo"><div class="aviso" style="background:#fff3e8;color:#c95f00;margin-bottom:14px"><strong>Prévia estática</strong> — telas reais com notas de exemplo (CNPJs e boletos fictícios). Botões e formulários não gravam nada.</div>
                                     <div class="aviso">⚠ Integração com o ESL ainda não configurada no servidor: as notas são lidas e conferidas, mas ficam "prontas" esperando (<code>php artisan nf:esl-credenciais</code>).</div>
                 <div class="topo">
     <h1>Notas fiscais</h1>
-    <span class="muted">Arraste o XML/PDF da nota e o boleto: o sistema lê, confere e lança no contas a pagar do ESL.</span>
+    <span class="muted"> Notas das duas formas de pagamento (boleto e conta bancária | PIX).
+    </span>
 </div>
 
-<form class="cartao" method="post" action="#" enctype="multipart/form-data" id="form-envio">
-    <input type="hidden" name="_token" value="gQSqDcFWndXw0koK6n5xg1Mmi3eUOO0Muqal73S8" autocomplete="off">    <label class="drop-arquivos drop-notas" data-max="30" data-max-mb="20" data-tipos="pdf,xml,jpg,jpeg,png,webp">
-        <span class="grande">📄 Solte aqui as notas e os boletos</span>
-        <span class="muted">ou clique para abrir a pasta · XML ou PDF da NF-e/NFS-e, boleto em PDF (pode ser tudo num PDF só) · várias notas de uma vez</span>
-        <input type="file" id="arquivos" name="arquivos[]" multiple accept=".pdf,.xml,.jpg,.jpeg,.png,.webp,application/pdf,text/xml,application/xml,image/*">
-    </label>
-    <ul class="drop-lista" data-lista-de="arquivos"></ul>
-    <div class="erro-campo" data-erro-de="arquivos" hidden></div>
-            <div class="acoes" style="margin-top:10px">
-        <button class="btn">Ler e conferir</button>
-        <span class="muted">Com tudo conferido a nota vai sozinha para o ESL.</span>
-    </div>
-</form>
 
 <div class="contadores">
-            <a href="http://127.0.0.1:8123?status=abertas" class="">
-            <strong>2</strong><span>Em aberto</span>
+            <a href="todas.html" class="">
+            <strong>3</strong><span>Em aberto</span>
         </a>
-            <a href="http://127.0.0.1:8123?status=conferencia" class="atencao">
-            <strong>1</strong><span>Em conferência</span>
+            <a href="conferencia.html" class="atencao">
+            <strong>2</strong><span>Em conferência</span>
         </a>
-            <a href="http://127.0.0.1:8123?status=pronta" class="">
+            <a href="prontas.html" class="">
             <strong>1</strong><span>Prontas</span>
         </a>
-            <a href="http://127.0.0.1:8123?status=erro" class="atual erro">
+            <a href="erro.html" class="atual erro">
             <strong>0</strong><span>Erro no ESL</span>
         </a>
-            <a href="http://127.0.0.1:8123?status=lancada" class="ok">
+            <a href="lancadas.html" class="ok">
             <strong>1</strong><span>Lançadas</span>
         </a>
-            <a href="http://127.0.0.1:8123?status=duplicada" class="">
+            <a href="duplicadas.html" class="">
             <strong>1</strong><span>Duplicadas/descartadas</span>
         </a>
-            <a href="http://127.0.0.1:8123?status=todas" class="">
-            <strong>4</strong><span>Todas</span>
+            <a href="todas.html" class="">
+            <strong>5</strong><span>Todas</span>
         </a>
     </div>
 
@@ -663,16 +652,6 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
 </div>
 <div class="paginacao"></div>
 
-<div class="cartao" style="margin-top:16px">
-    <h2>Como funciona</h2>
-    <ol class="passos">
-        <li><strong>Envia</strong><br>Tela, API ou outro sistema manda o XML/PDF da nota e o boleto.</li>
-        <li><strong>Lê</strong><br>XML, texto do PDF (DANFE, NFS-e) e linha digitável; PDF escaneado pela IA, se ligada.</li>
-        <li><strong>Confere</strong><br>Chave e CNPJ (dígito), filial, duplicidade, boleto × valor da nota, vencimento, beneficiário, histórico.</li>
-        <li><strong>Lança</strong><br>Uma conta a pagar por boleto no ESL, com o vencimento do boleto.</li>
-        <li><strong>Avisa</strong><br>Webhook para os sistemas ligados; histórico em cada nota.</li>
-    </ol>
-</div>
     </main>
 </div>
 <script>
