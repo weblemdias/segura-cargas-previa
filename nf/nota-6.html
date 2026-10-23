@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T">
+    <meta name="csrf-token" content="CnCg0VU5SQKi6YHbVgQ1JsKBUsJe9CUAccoHopZk">
     <title>NF-e 4521 · Segura Logística</title>
     <style>:root{--laranja:#ee7203;--laranja-esc:#c95f00;--laranja-claro:#fff3e8;--tinta:#1f2328;--cinza:#6b7280;--linha:#e5e7eb;--fundo:#f6f7f9;--branco:#fff;
 --ok:#15803d;--ok-bg:#dcfce7;--erro:#b91c1c;--erro-bg:#fee2e2;--atencao:#a16207;--atencao-bg:#fef3c7;--ativo:#1d4ed8;--ativo-bg:#dbeafe;--neutro-bg:#f3f4f6}
@@ -594,6 +594,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
             </details>
                         <details class="grupo"><summary>Cadastros</summary>
                 <a href="fornecedores.html" class="">Fornecedores </a>
+                <a href="plano-contas.html" class="">Plano de contas</a>
                 <a href="filiais.html" class="">Filiais (CNPJs da Segura)</a>            </details>
                         <details class="grupo"><summary>Integrações</summary>
                 <a href="api-docs.html" class="">API e webhooks</a>
@@ -605,7 +606,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="usuario">
             Teste<br>
             <small class="muted">Administrador</small>
-            <form method="post" action="#"><input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off"> <button>Sair</button></form>
+            <form method="post" action="#"><input type="hidden" name="_token" value="CnCg0VU5SQKi6YHbVgQ1JsKBUsJe9CUAccoHopZk" autocomplete="off"> <button>Sair</button></form>
         </div>
     </aside>
     <main class="conteudo"><div class="aviso" style="background:#fff3e8;color:#c95f00;margin-bottom:14px"><strong>Prévia estática</strong> — telas reais com notas de exemplo (CNPJs e boletos fictícios). Botões e formulários não gravam nada.</div>
@@ -615,7 +616,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <h1>NF-e 4521 <small class="muted">série 1</small>            <span class="selo ok">Lançada no ESL</span>
             <span class="selo neutro">🧾 Boleto</span></h1>
         <div class="muted">AUTO PECAS EXEMPLO LTDA · 11.222.333/0001-81
-            · recebida 23/10/2026 16:52 por Teste
+            · recebida 23/10/2026 17:16 por Teste
             </div>
     </div>
     <div class="acoes">
@@ -623,12 +624,12 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
                             </div>
 </div>
 
-    <div class="aviso ok">Lançada no contas a pagar do ESL em 23/10/2026 16:52: 4521/1, 4521/2.</div>
+    <div class="aviso ok">Lançada no contas a pagar do ESL em 23/10/2026 17:16: 4521/1, 4521/2.</div>
 
 <div class="duas">
 <div>
 <form method="post" action="#" id="form-nota">
-    <input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off"> <input type="hidden" name="_method" value="put">    <fieldset disabled style="border:0;padding:0;margin:0">
+    <input type="hidden" name="_token" value="CnCg0VU5SQKi6YHbVgQ1JsKBUsJe9CUAccoHopZk" autocomplete="off"> <input type="hidden" name="_method" value="put">    <fieldset disabled style="border:0;padding:0;margin:0">
     <div class="cartao">
                 <h2>Nota fiscal</h2>
         <div class="grade">
@@ -648,9 +649,266 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="cartao">
         <h2>Classificação no ESL <small class="muted">— fica salva para as próximas notas de Auto Pecas Exemplo</small></h2>
         <div class="grade">
-            <div><label for="conta_contabil_codigo">Conta contábil (código)</label><input id="conta_contabil_codigo" name="conta_contabil_codigo" value="2.3.17" placeholder="ex.: 2.3.17"></div>
-            <div><label for="conta_contabil_nome">Conta contábil (nome)</label><input id="conta_contabil_nome" name="conta_contabil_nome" value="Peças e acessórios"></div>
-            <div><label for="centro_custo_codigo">Centro de custo (código)</label><input id="centro_custo_codigo" name="centro_custo_codigo" value="1"></div>
+            <div style="grid-column:span 2"><label for="conta_contabil_codigo">Conta contábil (plano do ESL)</label>
+        <input id="conta_contabil_codigo" name="conta_contabil_codigo" list="plano-contas" value="2.5.1.1 — PEÇAS DE CAMINHÕES" autocomplete="off"
+            placeholder="digite o código ou parte do nome: peças, pneus, 2.5.1…">
+        <small class="muted">Só contas de despesa que recebem lançamento. <a href="plano-contas.html" target="_blank">Ver o plano</a></small></div>
+            <datalist id="plano-contas">
+                            <option value="2.1.1.1 — ADIANTAMENTO SALARIAL">Pessoal › SALÁRIOS</option>
+                            <option value="2.1.1.2 — ADIANTAMENTO COMBUSTÍVEL">Pessoal › SALÁRIOS</option>
+                            <option value="2.1.1.3 — SALÁRIO">Pessoal › SALÁRIOS</option>
+                            <option value="2.1.1.4 — ESTAGIÁRIOS">Pessoal › SALÁRIOS</option>
+                            <option value="2.1.1.5 — SALÁRIOS ADICIONAL">Pessoal › SALÁRIOS</option>
+                            <option value="2.1.1.6 — PARTICIPAÇÃO RESULTADOS">Pessoal › SALÁRIOS</option>
+                            <option value="2.1.2.1 — SOCIOS">Pessoal › PRO-LABORE</option>
+                            <option value="2.1.2.2 — DIRETORIA">Pessoal › PRO-LABORE</option>
+                            <option value="2.1.2.3 — AJUSTE GERAL">Pessoal › PRO-LABORE</option>
+                            <option value="2.1.3 — FÉRIAS">Pessoal</option>
+                            <option value="2.1.4 — 13º SALÁRIOS">Pessoal</option>
+                            <option value="2.1.5 — COMISSÕES">Pessoal</option>
+                            <option value="2.1.6 — SELEÇÃO DE RECRUTAMENTO">Pessoal</option>
+                            <option value="2.1.7 — BRINDES">Pessoal</option>
+                            <option value="2.1.8 — UNIFORMES">Pessoal</option>
+                            <option value="2.1.9 — INDENIZAÇÕES">Pessoal</option>
+                            <option value="2.1.10 — PENSÃO ALIMENTÍCIA">Pessoal</option>
+                            <option value="2.1.11 — AÇÃO TRABALHISTA">Pessoal</option>
+                            <option value="2.2.1 — TELEFONE (FIXO)">ADMINISTRATIVAS</option>
+                            <option value="2.2.2 — TELEFONE CELULAR">ADMINISTRATIVAS</option>
+                            <option value="2.2.3 — CORREIOS">ADMINISTRATIVAS</option>
+                            <option value="2.2.4 — ENERGIA ELÉTRICA">ADMINISTRATIVAS</option>
+                            <option value="2.2.5 — MANUTENÇÃO EQUIP. ESCRIT.">ADMINISTRATIVAS</option>
+                            <option value="2.2.6.1 — MATERIAL INFORMÁTICA">ADMINISTRATIVAS › MATERIAL ESCRITÓRIO</option>
+                            <option value="2.2.6.2 — FOTOGRAFIA">ADMINISTRATIVAS › MATERIAL ESCRITÓRIO</option>
+                            <option value="2.2.6.3 — IMPRESSOS">ADMINISTRATIVAS › MATERIAL ESCRITÓRIO</option>
+                            <option value="2.2.6.4 — MATERIAL ADM">ADMINISTRATIVAS › MATERIAL ESCRITÓRIO</option>
+                            <option value="2.2.6.5 — MATERIAL DE LIMPEZA">ADMINISTRATIVAS › MATERIAL ESCRITÓRIO</option>
+                            <option value="2.2.7 — JORNAIS E REVISTAS">ADMINISTRATIVAS</option>
+                            <option value="2.2.8.1 — CONSULTORIA - INFORMÁTICA">ADMINISTRATIVAS › CONSULTORIA</option>
+                            <option value="2.2.8.2 — CONSULTORIA - INTERNET">ADMINISTRATIVAS › CONSULTORIA</option>
+                            <option value="2.2.8.3 — CONSULTORIA - SEGURANÇA">ADMINISTRATIVAS › CONSULTORIA</option>
+                            <option value="2.2.8.4 — CONSULTORIA - CONTÁBIL">ADMINISTRATIVAS › CONSULTORIA</option>
+                            <option value="2.2.8.5 — CONSULTORIA - JURÍDICA">ADMINISTRATIVAS › CONSULTORIA</option>
+                            <option value="2.2.8.6 — CONSULTORIA - TELEFONIA">ADMINISTRATIVAS › CONSULTORIA</option>
+                            <option value="2.2.8.7 — CONSULTORIA - DESPACHANTE">ADMINISTRATIVAS › CONSULTORIA</option>
+                            <option value="2.2.8.8 — CONSULTORIA - LICITAÇÕES">ADMINISTRATIVAS › CONSULTORIA</option>
+                            <option value="2.2.8.9 — CONSULTORIA - FINANCEIRA">ADMINISTRATIVAS › CONSULTORIA</option>
+                            <option value="2.2.8.10 — CONSULTORIA - QUALIDADE">ADMINISTRATIVAS › CONSULTORIA</option>
+                            <option value="2.2.8.11 — CONSULTORIA - RH">ADMINISTRATIVAS › CONSULTORIA</option>
+                            <option value="2.2.9.1 — AUTENTICAÇÕES DE DOCTO">ADMINISTRATIVAS › CARTÓRIO</option>
+                            <option value="2.2.9.2 — CERTIDÕES">ADMINISTRATIVAS › CARTÓRIO</option>
+                            <option value="2.2.9.3 — CUSTAS CARTÓRIO">ADMINISTRATIVAS › CARTÓRIO</option>
+                            <option value="2.2.10.1 — XEROX">ADMINISTRATIVAS › DIVERSOS</option>
+                            <option value="2.2.10.2 — FOTOGRAFIA">ADMINISTRATIVAS › DIVERSOS</option>
+                            <option value="2.2.11.1 — ASSOCIAÇÕES COMERCIAL">ADMINISTRATIVAS › ASSOCIAÇÕES</option>
+                            <option value="2.2.12 — DECORAÇÕES">ADMINISTRATIVAS</option>
+                            <option value="2.2.13 — EQUIPAMENTOS DIVERSOS">ADMINISTRATIVAS</option>
+                            <option value="2.2.14.1 — MÓVEIS DE ESCRITÓRIO">ADMINISTRATIVAS › MÓVEIS</option>
+                            <option value="2.2.15 — EQUIPAMENTOS DIVERSOS - ADM">ADMINISTRATIVAS</option>
+                            <option value="2.2.16 — MANUTENÇÃO EQUIP.ESCRIT.">ADMINISTRATIVAS</option>
+                            <option value="2.2.17 — ÁGUA E ESGOTO">ADMINISTRATIVAS</option>
+                            <option value="2.2.18 — IMUNIZAÇÃO">ADMINISTRATIVAS</option>
+                            <option value="2.2.19 — DIARISTA">ADMINISTRATIVAS</option>
+                            <option value="2.2.20 — ALUGUEL">ADMINISTRATIVAS</option>
+                            <option value="2.2.21.1 — HOSPEDAGEM - ADM">ADMINISTRATIVAS › DESPESAS COM VIAGEM - ADM</option>
+                            <option value="2.2.21.2 — ESTACIONAMENTO - ADM">ADMINISTRATIVAS › DESPESAS COM VIAGEM - ADM</option>
+                            <option value="2.2.21.3 — PASSAGEM AÉREA - ADM">ADMINISTRATIVAS › DESPESAS COM VIAGEM - ADM</option>
+                            <option value="2.2.21.4 — VIAGEM">ADMINISTRATIVAS › DESPESAS COM VIAGEM - ADM</option>
+                            <option value="2.2.22 — MANUTENÇÃO PREDIAL">ADMINISTRATIVAS</option>
+                            <option value="2.2.23 — OFFICE BOY">ADMINISTRATIVAS</option>
+                            <option value="2.2.24.1 — VISITA A CLIENTES">ADMINISTRATIVAS › COMERCAL</option>
+                            <option value="2.2.25 — MOTO-BOY">ADMINISTRATIVAS</option>
+                            <option value="2.2.26 — SEGURO FIANÇA">ADMINISTRATIVAS</option>
+                            <option value="2.2.27 — SEGURO EMPRESARIAL">ADMINISTRATIVAS</option>
+                            <option value="2.2.28 — AÇÕES ANTIGAS">ADMINISTRATIVAS</option>
+                            <option value="2.2.29 — DEDETIZAÇÃO">ADMINISTRATIVAS</option>
+                            <option value="2.2.30 — TAXA ADM">ADMINISTRATIVAS</option>
+                            <option value="2.2.31 — REEMBOLSO">ADMINISTRATIVAS</option>
+                            <option value="2.2.32 — CUSTO ARMAZÉM DUPONT">ADMINISTRATIVAS</option>
+                            <option value="2.2.33 — MANUTENÇÃO GALPÃO PIRAPO">ADMINISTRATIVAS</option>
+                            <option value="2.2.34 — TARIFA PAMCARD">ADMINISTRATIVAS</option>
+                            <option value="2.2.35 — ACERTO DE CONCILIAÇÃO">ADMINISTRATIVAS</option>
+                            <option value="2.3.1 — ICMS">IMPOSTOS</option>
+                            <option value="2.3.2 — IPTU">IMPOSTOS</option>
+                            <option value="2.3.3 — SIMPLES - DAS">IMPOSTOS</option>
+                            <option value="2.3.4 — CONTRIBUIÇÃO SINDICAL EMPREGADOS">IMPOSTOS</option>
+                            <option value="2.3.5 — CONTRIBUIÇÃO SINDICAL PATRONAL">IMPOSTOS</option>
+                            <option value="2.3.6 — ASSISTENCIAL EMPREGADOS">IMPOSTOS</option>
+                            <option value="2.3.7 — ASSISTENCIAL PATRONAL">IMPOSTOS</option>
+                            <option value="2.3.8 — CONTRIBUIÇÃO CONFEDERATIVA">IMPOSTOS</option>
+                            <option value="2.3.9 — CONTRIBUIÇÃO ASSISTENCIAL">IMPOSTOS</option>
+                            <option value="2.3.10 — IMPOSTO DE RENDA S/FATURAMENTO">IMPOSTOS</option>
+                            <option value="2.3.11 — IRRF TERCEIROS">IMPOSTOS</option>
+                            <option value="2.3.12 — ISS">IMPOSTOS</option>
+                            <option value="2.3.13 — TAXA FISCALIZAÇÃO">IMPOSTOS</option>
+                            <option value="2.3.14 — TAXA DE FISCALIZAÇÃO FEDERAL">IMPOSTOS</option>
+                            <option value="2.3.15 — RETENÇÕES 4,65% DE TERCEIROS">IMPOSTOS</option>
+                            <option value="2.3.16 — PIS S/FATURAMENTO">IMPOSTOS</option>
+                            <option value="2.3.17 — COFINS S/FATURAMENTO">IMPOSTOS</option>
+                            <option value="2.3.18 — CSLL S/FATURAMENTO">IMPOSTOS</option>
+                            <option value="2.3.19 — D.T.A">IMPOSTOS</option>
+                            <option value="2.3.20 — ICMS - PARCELAMENTO">IMPOSTOS</option>
+                            <option value="2.3.21 — FEDERAL PARCELAMENTO">IMPOSTOS</option>
+                            <option value="2.3.22 — INSS- RETIDO DE TERCEIRO">IMPOSTOS</option>
+                            <option value="2.3.23 — ISS RETIDO DE TERCEIROS">IMPOSTOS</option>
+                            <option value="2.3.24 — ISS PARCELAMENTO">IMPOSTOS</option>
+                            <option value="2.3.25 — INSS S/FATURAMENTO">IMPOSTOS</option>
+                            <option value="2.3.26 — MULTA ICMS">IMPOSTOS</option>
+                            <option value="2.3.27 — IRRF AGREGADO">IMPOSTOS</option>
+                            <option value="2.3.28 — GNRE">IMPOSTOS</option>
+                            <option value="2.3.29 — CONTRIBUIÇÃO ASSOCIATIVA">IMPOSTOS</option>
+                            <option value="2.4.1.1 — PINTURA">INVESTIMENTOS › REFORMA PREDIAL</option>
+                            <option value="2.4.1.2 — ALVENARIA">INVESTIMENTOS › REFORMA PREDIAL</option>
+                            <option value="2.4.1.3 — ELETRICIDADE">INVESTIMENTOS › REFORMA PREDIAL</option>
+                            <option value="2.4.1.4 — ENCANAMENTO">INVESTIMENTOS › REFORMA PREDIAL</option>
+                            <option value="2.4.1.5 — MARCENARIA">INVESTIMENTOS › REFORMA PREDIAL</option>
+                            <option value="2.4.1.6 — FERRAGEM">INVESTIMENTOS › REFORMA PREDIAL</option>
+                            <option value="2.4.1.7 — REFRIGERAÇÃO">INVESTIMENTOS › REFORMA PREDIAL</option>
+                            <option value="2.4.2.1 — CONSÓRCIOS">INVESTIMENTOS › VEÍCULOS</option>
+                            <option value="2.4.3.1 — CARTÃO BNDES">INVESTIMENTOS › INFORMÁTICA</option>
+                            <option value="2.4.3.2 — PAGAMENTOS FAZENDA">INVESTIMENTOS › INFORMÁTICA</option>
+                            <option value="2.4.3.3 — MANUT. EQUIP. INFORMÁTICA">INVESTIMENTOS › INFORMÁTICA</option>
+                            <option value="2.4.3.4 — COMISSÕES DE ARRENDAMENTO">INVESTIMENTOS › INFORMÁTICA</option>
+                            <option value="2.4.4 — ISO 9001">INVESTIMENTOS</option>
+                            <option value="2.4.5 — INVESTIMENTOS">INVESTIMENTOS</option>
+                            <option value="2.4.6 — NOVOS PROJETOS">INVESTIMENTOS</option>
+                            <option value="2.5.1.1 — PEÇAS DE CAMINHÕES">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.2 — OF. MECÂNICA CAMINHÕES">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.3 — RECAUCHUTAGEM">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.4 — PNEUS NOVOS">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.5 — PEÇAS DE CARRO">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.6 — OF. MECÂNICA CARRO">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.7 — OF. FUNILARIA E PINTURA">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.8 — LAVAGEM LUBRIFICANTE">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.9 — LAVAGEM E LUBRIFICAÇÃO">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.10 — AUTO ELÉTRICA">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.11 — BORRACHARIA">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.12 — REVISÃO">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.13 — ADIANT. MANUTENÇÃO">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.14 — ADIANT. LAVAGEM E LUBRIFICAÇÃO">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.15 — ADIANT. BORACHARIA">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.16 — ADIANT. PRODUTO ARLA">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.17 — ADIANT. PASSAGEM ONIBUNS">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.18 — ADIANT. ESTADIA MOTORISTA">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.19 — ADIANT. OPERACIONAL">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.1.20 — IPVA CARRO">OPERACIONAIS › MANUTENÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.2.1 — GASOLINA">OPERACIONAIS › COMBUSTÍVEL</option>
+                            <option value="2.5.2.2 — DIESEL">OPERACIONAIS › COMBUSTÍVEL</option>
+                            <option value="2.5.2.3 — ÁLCOOL">OPERACIONAIS › COMBUSTÍVEL</option>
+                            <option value="2.5.2.4 — GÁS EMPILHADEIRA">OPERACIONAIS › COMBUSTÍVEL</option>
+                            <option value="2.5.2.5 — DIESEL CTF">OPERACIONAIS › COMBUSTÍVEL</option>
+                            <option value="2.5.2.6 — TAXA CTF">OPERACIONAIS › COMBUSTÍVEL</option>
+                            <option value="2.5.3.1 — REFEIÇÃO">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.2 — CONSERTO DE PNEUS">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.3 — PEDÁGIO">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.4 — LOCAÇÃO DE VEÍCULOS">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.5 — DEVOLUÇÃO DE DINHEIRO">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.6 — CARTÃO TELEFONICO">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.7 — BALSA">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.8 — ESTACIONAMENTO VIAGEM">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.9 — DIFERENÇA DE KM">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.10 — PLANILHA DE VIAGEM">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.11 — PASSAGEM ONIBUS">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.12 — FRETE RETORNO 30%">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.13 — ADIANT. DESCARGA FROTA">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.14 — ADIANT. 4X4">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.15 — ADIANT. PREMIO VG">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.3.16 — ADIANT. BALSA">OPERACIONAIS › DESPESAS VIAGEM FROTA</option>
+                            <option value="2.5.4.1 — AVARIAS">OPERACIONAIS › OCORRÊNCIAS</option>
+                            <option value="2.5.4.2 — SINISTROS">OPERACIONAIS › OCORRÊNCIAS</option>
+                            <option value="2.5.4.3 — MULTA ANTT">OPERACIONAIS › OCORRÊNCIAS</option>
+                            <option value="2.5.4.4 — MULTA POSTO FISCAL">OPERACIONAIS › OCORRÊNCIAS</option>
+                            <option value="2.5.5.1 — ADIANTAMENTO AGREGADOS">OPERACIONAIS › FRETE AGREGADO</option>
+                            <option value="2.5.5.2 — FRETE AGREGADO/AVULSO">OPERACIONAIS › FRETE AGREGADO</option>
+                            <option value="2.5.5.3 — DESCONTO CUSTO COMPROVANTE">OPERACIONAIS › FRETE AGREGADO</option>
+                            <option value="2.5.5.4 — ADTO - CUSTO PAMCARY">OPERACIONAIS › FRETE AGREGADO</option>
+                            <option value="2.5.5.5 — ADIANT. DIÁRIA AGREGADO">OPERACIONAIS › FRETE AGREGADO</option>
+                            <option value="2.5.5.6 — ADIANT. DESCARGA AGREGADO">OPERACIONAIS › FRETE AGREGADO</option>
+                            <option value="2.5.5.7 — FRETE LOCAÇÃO AGREGADO">OPERACIONAIS › FRETE AGREGADO</option>
+                            <option value="2.5.5.8 — TAG PEDÁGIO">OPERACIONAIS › FRETE AGREGADO</option>
+                            <option value="2.5.5.9 — VALE COMBUSTÍVEL AGREGADO">OPERACIONAIS › FRETE AGREGADO</option>
+                            <option value="2.5.5.10 — MATERIAL OPERACIONAL">OPERACIONAIS › FRETE AGREGADO</option>
+                            <option value="2.5.6 — PAGTO MOTORISTA DA CASA">OPERACIONAIS</option>
+                            <option value="2.5.7 — ADIANTAMENTO">OPERACIONAIS</option>
+                            <option value="2.5.8.1 — COOPERATIVAS">OPERACIONAIS › TERCEIROS</option>
+                            <option value="2.5.8.2 — CAIXINHA">OPERACIONAIS › TERCEIROS</option>
+                            <option value="2.5.8.3 — DESCARGA/CHAPA">OPERACIONAIS › TERCEIROS</option>
+                            <option value="2.5.8.4 — ICAMENTO">OPERACIONAIS › TERCEIROS</option>
+                            <option value="2.5.8.5 — PAGTO CIA AÉREA">OPERACIONAIS › TERCEIROS</option>
+                            <option value="2.5.8.6 — PAGTO AGENTES FRETES">OPERACIONAIS › TERCEIROS</option>
+                            <option value="2.5.8.7 — PAGTO FLUVIAL / REDEPASCHO">OPERACIONAIS › TERCEIROS</option>
+                            <option value="2.5.8.8 — MÃO DE OBRA TERCEIROS">OPERACIONAIS › TERCEIROS</option>
+                            <option value="2.5.8.9 — PAGTO AGENTES ARMAZENAGEM">OPERACIONAIS › TERCEIROS</option>
+                            <option value="2.5.9.1 — SEGURO DE CARGA">OPERACIONAIS › SEGUROS</option>
+                            <option value="2.5.9.2 — GERENCIAMENTO DE RISCOS">OPERACIONAIS › SEGUROS</option>
+                            <option value="2.5.9.3 — ESCOLTA">OPERACIONAIS › SEGUROS</option>
+                            <option value="2.5.9.4 — SEGURO CAMINHÃO">OPERACIONAIS › SEGUROS</option>
+                            <option value="2.5.9.5 — SEGURO DE VEÍCULO">OPERACIONAIS › SEGUROS</option>
+                            <option value="2.5.9.6 — ADTO CUSTO G.R">OPERACIONAIS › SEGUROS</option>
+                            <option value="2.5.10.1 — IPVA">OPERACIONAIS › DOCUMENTAÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.10.2 — LICENCIAMENTO">OPERACIONAIS › DOCUMENTAÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.10.3 — DPVAT">OPERACIONAIS › DOCUMENTAÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.10.4 — MULTAS DE TRÂNSITO">OPERACIONAIS › DOCUMENTAÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.10.5 — DOCUMENTAÇÃO DE VEÍCULO">OPERACIONAIS › DOCUMENTAÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.10.6 — VISTORIAS">OPERACIONAIS › DOCUMENTAÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.10.7 — MANUTENÇÃO DE EQUIPAMENTOS">OPERACIONAIS › DOCUMENTAÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.10.8 — COMPRA DE EQUIPAMENTO DIVERSOS">OPERACIONAIS › DOCUMENTAÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.10.9 — ALUGUEL DE EQUIPAMENTOS DIVERSOS">OPERACIONAIS › DOCUMENTAÇÃO DE VEÍCULOS</option>
+                            <option value="2.5.10.10 — DESCARTE DE RESIDUOS">OPERACIONAIS › DOCUMENTAÇÃO DE VEÍCULOS</option>
+                            <option value="2.6.1 — FGTS">ENCARGOS SOCIAIS</option>
+                            <option value="2.6.2 — IRRF FUNCIONÁRIOS">ENCARGOS SOCIAIS</option>
+                            <option value="2.6.3 — INSS">ENCARGOS SOCIAIS</option>
+                            <option value="2.7 — RESCISÃO CONTRATUAL"></option>
+                            <option value="2.8.1 — VALE REFEIÇÃO">BENEFICIOS</option>
+                            <option value="2.8.2 — VALE TRANSPORTE">BENEFICIOS</option>
+                            <option value="2.8.3 — PLANO DE SAÚDE">BENEFICIOS</option>
+                            <option value="2.8.4 — CESTA DE NATAL">BENEFICIOS</option>
+                            <option value="2.8.5 — SEGURO DE VIDA">BENEFICIOS</option>
+                            <option value="2.8.6 — VALE JANTA">BENEFICIOS</option>
+                            <option value="2.8.7 — HORA EXTRA">BENEFICIOS</option>
+                            <option value="2.8.8 — EXAME MÉDICO">BENEFICIOS</option>
+                            <option value="2.8.9 — DIÁRIA DE MOTORISTAS">BENEFICIOS</option>
+                            <option value="2.8.10 — CESTA BÁSICAS">BENEFICIOS</option>
+                            <option value="2.8.11 — DIARIAS FUNCIONARIOS ADM">BENEFICIOS</option>
+                            <option value="2.9.1 — CURSOS">TREINAMENTO</option>
+                            <option value="2.10 — PESSOAL"></option>
+                            <option value="2.11.1 — TROCA DE CHEGUE">NÃO APLICAVEIS</option>
+                            <option value="2.11.2 — CAUÇÃO GARANTIA">NÃO APLICAVEIS</option>
+                            <option value="2.11.3 — AJUSTES">NÃO APLICAVEIS</option>
+                            <option value="2.12 — DOAÇÕES"></option>
+                            <option value="2.13.1 — PROPAGANDA RÁDIO">MARKETING</option>
+                            <option value="2.13.2 — IMPRESSOS MARKETING">MARKETING</option>
+                            <option value="2.13.3 — PROPAGANDA E MARKETING">MARKETING</option>
+                            <option value="2.14.1 — EMPRÉSTIMO FUNCIONÁRIOS">EMPRÉSTIMO</option>
+                            <option value="2.15.1 — IOF">BANCO</option>
+                            <option value="2.15.2 — CPMF">BANCO</option>
+                            <option value="2.15.3 — TARIFA DOC">BANCO</option>
+                            <option value="2.15.4 — TARIFA DE SERVIÇOS">BANCO</option>
+                            <option value="2.15.5 — TARIFA DE COBRANÇA">BANCO</option>
+                            <option value="2.15.6 — TARIFA DE PROTESTO">BANCO</option>
+                            <option value="2.15.7 — TARIFA DE BAIXA DE TÍTULO">BANCO</option>
+                            <option value="2.15.8 — TARIFA DE MANUT. PROTESTO">BANCO</option>
+                            <option value="2.15.9 — TARIFA SISPAG">BANCO</option>
+                            <option value="2.15.10 — TARIFA TED">BANCO</option>
+                            <option value="2.15.11 — TARIFA BANKLINE">BANCO</option>
+                            <option value="2.15.12 — ENCARGOS CONTA GARANTIA">BANCO</option>
+                            <option value="2.15.13 — TARIFA CHEGUE VLR SUPERIOR">BANCO</option>
+                            <option value="2.15.14 — TARIFA DE BAIXA DE TITULO">BANCO</option>
+                            <option value="2.15.15 — TRANSFERÊNCIA ENTRE CONTAS">BANCO</option>
+                            <option value="2.15.16 — QUITAÇÃO TITULO DESCONTADO">BANCO</option>
+                            <option value="2.16.1 — APLICAÇÕES">FINANCEIRAS</option>
+                            <option value="2.16.2 — JUROS ATIVOS">FINANCEIRAS</option>
+                            <option value="2.16.3 — DESCONTOS CONCEDIDOS">FINANCEIRAS</option>
+                            <option value="2.16.4 — EMPRÉSTIMOS BANCÁRIOS">FINANCEIRAS</option>
+                            <option value="2.16.5 — FINANCIAMENTO/LEASING">FINANCEIRAS</option>
+                            <option value="2.16.6 — JUROS MORA DESCONTO">FINANCEIRAS</option>
+                            <option value="2.16.7 — CAPITAL DE GIRO">FINANCEIRAS</option>
+                            <option value="2.16.8 — FINAME">FINANCEIRAS</option>
+                            <option value="2.16.9 — EMPRÉSTIMO DIVERSOS">FINANCEIRAS</option>
+                            <option value="2.16.10 — DESPESAS GERAIS DRE">FINANCEIRAS</option>
+                            <option value="2.16.11 — DESPESAS GERAIS">FINANCEIRAS</option>
+                            <option value="2.16.12 — PREVIDENCIA PRIVADA">FINANCEIRAS</option>
+                    </datalist>
+                <div><label for="centro_custo_codigo">Centro de custo (código)</label><input id="centro_custo_codigo" name="centro_custo_codigo" value="1"></div>
             <div><label for="centro_custo_nome">Centro de custo (nome)</label><input id="centro_custo_nome" name="centro_custo_nome" value="Operacional"></div>
         </div>
     </div>
@@ -710,9 +968,9 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="cartao" style="margin-top:16px">
         <h2>Histórico</h2>
         <ul class="historico">
-                            <li>Lançada no contas a pagar do ESL (2 parcela(s): 4521/1, 4521/2).<br><small>23/10/2026 16:52 · sistema</small></li>
-                            <li>Conferência automática ok: enviada ao ESL sem intervenção.<br><small>23/10/2026 16:52 · sistema</small></li>
-                            <li>Arquivos recebidos e lidos<br><small>23/10/2026 16:52 · Teste</small></li>
+                            <li>Lançada no contas a pagar do ESL (2 parcela(s): 4521/1, 4521/2).<br><small>23/10/2026 17:16 · sistema</small></li>
+                            <li>Conferência automática ok: enviada ao ESL sem intervenção.<br><small>23/10/2026 17:16 · sistema</small></li>
+                            <li>Arquivos recebidos e lidos<br><small>23/10/2026 17:16 · Teste</small></li>
                     </ul>
     </div>
 </div>
