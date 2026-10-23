@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="CnCg0VU5SQKi6YHbVgQ1JsKBUsJe9CUAccoHopZk">
+    <meta name="csrf-token" content="wUqR4DuLrhKOF2NiD7wVl2iV0s80o4I23UfC0yuM">
     <title>Plano de contas · Segura Logística</title>
     <style>:root{--laranja:#ee7203;--laranja-esc:#c95f00;--laranja-claro:#fff3e8;--tinta:#1f2328;--cinza:#6b7280;--linha:#e5e7eb;--fundo:#f6f7f9;--branco:#fff;
 --ok:#15803d;--ok-bg:#dcfce7;--erro:#b91c1c;--erro-bg:#fee2e2;--atencao:#a16207;--atencao-bg:#fef3c7;--ativo:#1d4ed8;--ativo-bg:#dbeafe;--neutro-bg:#f3f4f6}
@@ -606,20 +606,20 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="usuario">
             Teste<br>
             <small class="muted">Administrador</small>
-            <form method="post" action="#"><input type="hidden" name="_token" value="CnCg0VU5SQKi6YHbVgQ1JsKBUsJe9CUAccoHopZk" autocomplete="off"> <button>Sair</button></form>
+            <form method="post" action="#"><input type="hidden" name="_token" value="wUqR4DuLrhKOF2NiD7wVl2iV0s80o4I23UfC0yuM" autocomplete="off"> <button>Sair</button></form>
         </div>
     </aside>
     <main class="conteudo"><div class="aviso" style="background:#fff3e8;color:#c95f00;margin-bottom:14px"><strong>Prévia estática</strong> — telas reais com notas de exemplo (CNPJs e boletos fictícios). Botões e formulários não gravam nada.</div>
                                     <div class="aviso">⚠ Integração com o ESL ainda não configurada no servidor: as notas são lidas e conferidas, mas ficam "prontas" esperando (<code>php artisan nf:esl-credenciais</code>).</div>
                 <div class="topo">
     <h1>Plano de contas</h1>
-    <span class="muted">O mesmo do ESL. Na classificação do fornecedor só aparecem as contas de <strong>despesa</strong> que recebem lançamento (sem contas filhas) e ativas.</span>
+    <span class="muted">Despesas do plano de contas do ESL. Na classificação só aparecem as contas que recebem lançamento (sem contas filhas) e ativas.</span>
 </div>
 
 <form class="cartao acoes" method="post" action="#" enctype="multipart/form-data">
-    <input type="hidden" name="_token" value="CnCg0VU5SQKi6YHbVgQ1JsKBUsJe9CUAccoHopZk" autocomplete="off">    <div style="flex:1;min-width:240px"><label for="arquivo">Atualizar com o PDF do ESL</label>
+    <input type="hidden" name="_token" value="wUqR4DuLrhKOF2NiD7wVl2iV0s80o4I23UfC0yuM" autocomplete="off">    <div style="flex:1;min-width:240px"><label for="arquivo">Atualizar com o PDF do ESL</label>
         <input id="arquivo" type="file" name="arquivo" accept=".pdf,.txt" required>
-        <small class="muted">No ESL: Financeiro › Plano de contas › abrir todos os grupos › imprimir como PDF. Conta que sumiu fica desativada (nada é apagado).</small>
+        <small class="muted">No ESL: Financeiro › Plano de contas › abrir todos os grupos › imprimir como PDF. Só as despesas entram; conta que sumiu fica desativada.</small>
         </div>
     <button class="btn">Atualizar plano</button>
 </form>
@@ -630,2259 +630,1745 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
 </form>
 
 <div class="tabela"><table>
-    <thead><tr><th>Código</th><th>Conta</th><th>Tipo</th><th>Lançamento</th><th>Fornecedores</th></tr></thead>
+    <thead><tr><th>Código</th><th>Conta</th><th>Lançamento</th><th>Fornecedores</th></tr></thead>
     <tbody>
-            <tr >
-            <td style="white-space:nowrap">1</td>
-            <td style="padding-left:10px"><strong>Receitas</strong></td>
-            <td>Receita</td>
-            <td><span class="muted">grupo</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.1</td>
-            <td style="padding-left:28px"><strong>CLIENTES</strong></td>
-            <td>Receita</td>
-            <td><span class="muted">grupo</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.1.1</td>
-            <td style="padding-left:46px">RECTO DE CLIENTES</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.1.2</td>
-            <td style="padding-left:46px">RECTO DE AGENTES</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.1.3</td>
-            <td style="padding-left:46px">DESCONTO DE DUPLICATA</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.1.4</td>
-            <td style="padding-left:46px">ADIANTAMENTO CLIENTES</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.1.5</td>
-            <td style="padding-left:46px">-FRETE RETORNO</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.2</td>
-            <td style="padding-left:28px"><strong>VENDAS</strong></td>
-            <td>Receita</td>
-            <td><span class="muted">grupo</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.2.1</td>
-            <td style="padding-left:46px">ATIVO FIXO</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.3</td>
-            <td style="padding-left:28px"><strong>RESTITUIÇÕES</strong></td>
-            <td>Receita</td>
-            <td><span class="muted">grupo</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.3.1</td>
-            <td style="padding-left:46px">EMPRÉSTIMOS</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.3.2</td>
-            <td style="padding-left:46px">AVARIAS</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.3.3</td>
-            <td style="padding-left:46px">FALTA DE MERCADORIAS</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.3.4</td>
-            <td style="padding-left:46px">SINISTROS</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.3.5</td>
-            <td style="padding-left:46px">ACERTO DE ADIANTAMENTO</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.3.6</td>
-            <td style="padding-left:46px">DESCONTO FUNCIONÁRIOS</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.3.7</td>
-            <td style="padding-left:46px">ACERTO DE COMBUSTIVEL</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.3.8</td>
-            <td style="padding-left:46px">AÇÃO TRABALHISTA</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.3.9</td>
-            <td style="padding-left:46px">DEVOLUÇÃO DE FRETE</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.4</td>
-            <td style="padding-left:28px"><strong>APLICAÇÕES</strong></td>
-            <td>Receita</td>
-            <td><span class="muted">grupo</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.4.1</td>
-            <td style="padding-left:46px">RESGATE SUPER DI</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.4.2</td>
-            <td style="padding-left:46px">RESGATE APLIC AUT</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.4.3</td>
-            <td style="padding-left:46px">JUROS DE APLICAÇÕES</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.5</td>
-            <td style="padding-left:28px"><strong>FINANCEIRAS</strong></td>
-            <td>Receita</td>
-            <td><span class="muted">grupo</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.5.1</td>
-            <td style="padding-left:46px">DESCONTOS OBTIDOS</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.5.2</td>
-            <td style="padding-left:46px">DEVOLUÇÃO DE CHEGUES COMPENSADOS</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.5.3</td>
-            <td style="padding-left:46px">CONSORCIO CARTA COMPENSADOS</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.5.4</td>
-            <td style="padding-left:46px">DEVOLUÇÃO DE TARIFAS</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.5.5</td>
-            <td style="padding-left:46px">RECEBIMENTO DE TÍTULOS DESCONTADOS</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.5.6</td>
-            <td style="padding-left:46px">TED DEVOLVIDA</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr >
-            <td style="white-space:nowrap">1.5.7</td>
-            <td style="padding-left:46px">MOVIMENTO BANCÁRIO</td>
-            <td>Receita</td>
-            <td><span class="muted">—</span></td>
-            <td></td>
-        </tr>
-            <tr  style="opacity:.55" >
-            <td style="white-space:nowrap">1.6</td>
-            <td style="padding-left:28px">INATIVA</td>
-            <td>Receita</td>
-            <td><span class="selo neutro">desativada</span></td>
-            <td></td>
-        </tr>
             <tr >
             <td style="white-space:nowrap">2</td>
             <td style="padding-left:10px"><strong>Despesas</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1</td>
             <td style="padding-left:28px"><strong>Pessoal</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.1</td>
             <td style="padding-left:46px"><strong>SALÁRIOS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.1.1</td>
             <td style="padding-left:64px">ADIANTAMENTO SALARIAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.1.2</td>
             <td style="padding-left:64px">ADIANTAMENTO COMBUSTÍVEL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.1.3</td>
             <td style="padding-left:64px">SALÁRIO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.1.4</td>
             <td style="padding-left:64px">ESTAGIÁRIOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.1.5</td>
             <td style="padding-left:64px">SALÁRIOS ADICIONAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.1.6</td>
             <td style="padding-left:64px">PARTICIPAÇÃO RESULTADOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.2</td>
             <td style="padding-left:46px"><strong>PRO-LABORE</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.2.1</td>
             <td style="padding-left:64px">SOCIOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.2.2</td>
             <td style="padding-left:64px">DIRETORIA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.2.3</td>
             <td style="padding-left:64px">AJUSTE GERAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.3</td>
             <td style="padding-left:46px">FÉRIAS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.4</td>
             <td style="padding-left:46px">13º SALÁRIOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.5</td>
             <td style="padding-left:46px">COMISSÕES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.6</td>
             <td style="padding-left:46px">SELEÇÃO DE RECRUTAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.7</td>
             <td style="padding-left:46px">BRINDES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.8</td>
             <td style="padding-left:46px">UNIFORMES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.9</td>
             <td style="padding-left:46px">INDENIZAÇÕES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.10</td>
             <td style="padding-left:46px">PENSÃO ALIMENTÍCIA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.1.11</td>
             <td style="padding-left:46px">AÇÃO TRABALHISTA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2</td>
             <td style="padding-left:28px"><strong>ADMINISTRATIVAS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.1</td>
             <td style="padding-left:46px">TELEFONE (FIXO)</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.2</td>
             <td style="padding-left:46px">TELEFONE CELULAR</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.3</td>
             <td style="padding-left:46px">CORREIOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.4</td>
             <td style="padding-left:46px">ENERGIA ELÉTRICA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.5</td>
             <td style="padding-left:46px">MANUTENÇÃO EQUIP. ESCRIT.</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.6</td>
             <td style="padding-left:46px"><strong>MATERIAL ESCRITÓRIO</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.6.1</td>
             <td style="padding-left:64px">MATERIAL INFORMÁTICA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.6.2</td>
             <td style="padding-left:64px">FOTOGRAFIA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.6.3</td>
             <td style="padding-left:64px">IMPRESSOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.6.4</td>
             <td style="padding-left:64px">MATERIAL ADM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.6.5</td>
             <td style="padding-left:64px">MATERIAL DE LIMPEZA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.7</td>
             <td style="padding-left:46px">JORNAIS E REVISTAS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.8</td>
             <td style="padding-left:46px"><strong>CONSULTORIA</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.8.1</td>
             <td style="padding-left:64px">CONSULTORIA - INFORMÁTICA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.8.2</td>
             <td style="padding-left:64px">CONSULTORIA - INTERNET</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.8.3</td>
             <td style="padding-left:64px">CONSULTORIA - SEGURANÇA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.8.4</td>
             <td style="padding-left:64px">CONSULTORIA - CONTÁBIL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.8.5</td>
             <td style="padding-left:64px">CONSULTORIA - JURÍDICA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.8.6</td>
             <td style="padding-left:64px">CONSULTORIA - TELEFONIA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.8.7</td>
             <td style="padding-left:64px">CONSULTORIA - DESPACHANTE</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.8.8</td>
             <td style="padding-left:64px">CONSULTORIA - LICITAÇÕES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.8.9</td>
             <td style="padding-left:64px">CONSULTORIA - FINANCEIRA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.8.10</td>
             <td style="padding-left:64px">CONSULTORIA - QUALIDADE</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.8.11</td>
             <td style="padding-left:64px">CONSULTORIA - RH</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.9</td>
             <td style="padding-left:46px"><strong>CARTÓRIO</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.9.1</td>
             <td style="padding-left:64px">AUTENTICAÇÕES DE DOCTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.9.2</td>
             <td style="padding-left:64px">CERTIDÕES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.9.3</td>
             <td style="padding-left:64px">CUSTAS CARTÓRIO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.10</td>
             <td style="padding-left:46px"><strong>DIVERSOS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.10.1</td>
             <td style="padding-left:64px">XEROX</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.10.2</td>
             <td style="padding-left:64px">FOTOGRAFIA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.11</td>
             <td style="padding-left:46px"><strong>ASSOCIAÇÕES</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.11.1</td>
             <td style="padding-left:64px">ASSOCIAÇÕES COMERCIAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.12</td>
             <td style="padding-left:46px">DECORAÇÕES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.13</td>
             <td style="padding-left:46px">EQUIPAMENTOS DIVERSOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.14</td>
             <td style="padding-left:46px"><strong>MÓVEIS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.14.1</td>
             <td style="padding-left:64px">MÓVEIS DE ESCRITÓRIO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.15</td>
             <td style="padding-left:46px">EQUIPAMENTOS DIVERSOS - ADM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.16</td>
             <td style="padding-left:46px">MANUTENÇÃO EQUIP.ESCRIT.</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.17</td>
             <td style="padding-left:46px">ÁGUA E ESGOTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.18</td>
             <td style="padding-left:46px">IMUNIZAÇÃO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.19</td>
             <td style="padding-left:46px">DIARISTA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.20</td>
             <td style="padding-left:46px">ALUGUEL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.21</td>
             <td style="padding-left:46px"><strong>DESPESAS COM VIAGEM - ADM</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.21.1</td>
             <td style="padding-left:64px">HOSPEDAGEM - ADM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.21.2</td>
             <td style="padding-left:64px">ESTACIONAMENTO - ADM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.21.3</td>
             <td style="padding-left:64px">PASSAGEM AÉREA - ADM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.21.4</td>
             <td style="padding-left:64px">VIAGEM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.22</td>
             <td style="padding-left:46px">MANUTENÇÃO PREDIAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.23</td>
             <td style="padding-left:46px">OFFICE BOY</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.24</td>
             <td style="padding-left:46px"><strong>COMERCAL</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.24.1</td>
             <td style="padding-left:64px">VISITA A CLIENTES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.25</td>
             <td style="padding-left:46px">MOTO-BOY</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.26</td>
             <td style="padding-left:46px">SEGURO FIANÇA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.27</td>
             <td style="padding-left:46px">SEGURO EMPRESARIAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.28</td>
             <td style="padding-left:46px">AÇÕES ANTIGAS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.29</td>
             <td style="padding-left:46px">DEDETIZAÇÃO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.30</td>
             <td style="padding-left:46px">TAXA ADM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.31</td>
             <td style="padding-left:46px">REEMBOLSO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.32</td>
             <td style="padding-left:46px">CUSTO ARMAZÉM DUPONT</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.33</td>
             <td style="padding-left:46px">MANUTENÇÃO GALPÃO PIRAPO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.34</td>
             <td style="padding-left:46px">TARIFA PAMCARD</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.2.35</td>
             <td style="padding-left:46px">ACERTO DE CONCILIAÇÃO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3</td>
             <td style="padding-left:28px"><strong>IMPOSTOS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.1</td>
             <td style="padding-left:46px">ICMS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.2</td>
             <td style="padding-left:46px">IPTU</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.3</td>
             <td style="padding-left:46px">SIMPLES - DAS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.4</td>
             <td style="padding-left:46px">CONTRIBUIÇÃO SINDICAL EMPREGADOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.5</td>
             <td style="padding-left:46px">CONTRIBUIÇÃO SINDICAL PATRONAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.6</td>
             <td style="padding-left:46px">ASSISTENCIAL EMPREGADOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.7</td>
             <td style="padding-left:46px">ASSISTENCIAL PATRONAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.8</td>
             <td style="padding-left:46px">CONTRIBUIÇÃO CONFEDERATIVA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.9</td>
             <td style="padding-left:46px">CONTRIBUIÇÃO ASSISTENCIAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.10</td>
             <td style="padding-left:46px">IMPOSTO DE RENDA S/FATURAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.11</td>
             <td style="padding-left:46px">IRRF TERCEIROS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.12</td>
             <td style="padding-left:46px">ISS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.13</td>
             <td style="padding-left:46px">TAXA FISCALIZAÇÃO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.14</td>
             <td style="padding-left:46px">TAXA DE FISCALIZAÇÃO FEDERAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.15</td>
             <td style="padding-left:46px">RETENÇÕES 4,65% DE TERCEIROS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.16</td>
             <td style="padding-left:46px">PIS S/FATURAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.17</td>
             <td style="padding-left:46px">COFINS S/FATURAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.18</td>
             <td style="padding-left:46px">CSLL S/FATURAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.19</td>
             <td style="padding-left:46px">D.T.A</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.20</td>
             <td style="padding-left:46px">ICMS - PARCELAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.21</td>
             <td style="padding-left:46px">FEDERAL PARCELAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.22</td>
             <td style="padding-left:46px">INSS- RETIDO DE TERCEIRO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.23</td>
             <td style="padding-left:46px">ISS RETIDO DE TERCEIROS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.24</td>
             <td style="padding-left:46px">ISS PARCELAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.25</td>
             <td style="padding-left:46px">INSS S/FATURAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.26</td>
             <td style="padding-left:46px">MULTA ICMS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.27</td>
             <td style="padding-left:46px">IRRF AGREGADO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.28</td>
             <td style="padding-left:46px">GNRE</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.3.29</td>
             <td style="padding-left:46px">CONTRIBUIÇÃO ASSOCIATIVA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4</td>
             <td style="padding-left:28px"><strong>INVESTIMENTOS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.1</td>
             <td style="padding-left:46px"><strong>REFORMA PREDIAL</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.1.1</td>
             <td style="padding-left:64px">PINTURA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.1.2</td>
             <td style="padding-left:64px">ALVENARIA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.1.3</td>
             <td style="padding-left:64px">ELETRICIDADE</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.1.4</td>
             <td style="padding-left:64px">ENCANAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.1.5</td>
             <td style="padding-left:64px">MARCENARIA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.1.6</td>
             <td style="padding-left:64px">FERRAGEM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.1.7</td>
             <td style="padding-left:64px">REFRIGERAÇÃO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.2</td>
             <td style="padding-left:46px"><strong>VEÍCULOS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.2.1</td>
             <td style="padding-left:64px">CONSÓRCIOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.3</td>
             <td style="padding-left:46px"><strong>INFORMÁTICA</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.3.1</td>
             <td style="padding-left:64px">CARTÃO BNDES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.3.2</td>
             <td style="padding-left:64px">PAGAMENTOS FAZENDA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.3.3</td>
             <td style="padding-left:64px">MANUT. EQUIP. INFORMÁTICA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.3.4</td>
             <td style="padding-left:64px">COMISSÕES DE ARRENDAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.4</td>
             <td style="padding-left:46px">ISO 9001</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.5</td>
             <td style="padding-left:46px">INVESTIMENTOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.4.6</td>
             <td style="padding-left:46px">NOVOS PROJETOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5</td>
             <td style="padding-left:28px"><strong>OPERACIONAIS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1</td>
             <td style="padding-left:46px"><strong>MANUTENÇÃO DE VEÍCULOS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.1</td>
             <td style="padding-left:64px">PEÇAS DE CAMINHÕES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td>1</td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.2</td>
             <td style="padding-left:64px">OF. MECÂNICA CAMINHÕES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td>1</td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.3</td>
             <td style="padding-left:64px">RECAUCHUTAGEM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.4</td>
             <td style="padding-left:64px">PNEUS NOVOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.5</td>
             <td style="padding-left:64px">PEÇAS DE CARRO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.6</td>
             <td style="padding-left:64px">OF. MECÂNICA CARRO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.7</td>
             <td style="padding-left:64px">OF. FUNILARIA E PINTURA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.8</td>
             <td style="padding-left:64px">LAVAGEM LUBRIFICANTE</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.9</td>
             <td style="padding-left:64px">LAVAGEM E LUBRIFICAÇÃO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.10</td>
             <td style="padding-left:64px">AUTO ELÉTRICA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.11</td>
             <td style="padding-left:64px">BORRACHARIA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.12</td>
             <td style="padding-left:64px">REVISÃO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.13</td>
             <td style="padding-left:64px">ADIANT. MANUTENÇÃO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.14</td>
             <td style="padding-left:64px">ADIANT. LAVAGEM E LUBRIFICAÇÃO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.15</td>
             <td style="padding-left:64px">ADIANT. BORACHARIA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.16</td>
             <td style="padding-left:64px">ADIANT. PRODUTO ARLA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.17</td>
             <td style="padding-left:64px">ADIANT. PASSAGEM ONIBUNS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.18</td>
             <td style="padding-left:64px">ADIANT. ESTADIA MOTORISTA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.19</td>
             <td style="padding-left:64px">ADIANT. OPERACIONAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.1.20</td>
             <td style="padding-left:64px">IPVA CARRO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.2</td>
             <td style="padding-left:46px"><strong>COMBUSTÍVEL</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.2.1</td>
             <td style="padding-left:64px">GASOLINA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.2.2</td>
             <td style="padding-left:64px">DIESEL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.2.3</td>
             <td style="padding-left:64px">ÁLCOOL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.2.4</td>
             <td style="padding-left:64px">GÁS EMPILHADEIRA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.2.5</td>
             <td style="padding-left:64px">DIESEL CTF</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.2.6</td>
             <td style="padding-left:64px">TAXA CTF</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3</td>
             <td style="padding-left:46px"><strong>DESPESAS VIAGEM FROTA</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.1</td>
             <td style="padding-left:64px">REFEIÇÃO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.2</td>
             <td style="padding-left:64px">CONSERTO DE PNEUS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.3</td>
             <td style="padding-left:64px">PEDÁGIO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.4</td>
             <td style="padding-left:64px">LOCAÇÃO DE VEÍCULOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.5</td>
             <td style="padding-left:64px">DEVOLUÇÃO DE DINHEIRO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.6</td>
             <td style="padding-left:64px">CARTÃO TELEFONICO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.7</td>
             <td style="padding-left:64px">BALSA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.8</td>
             <td style="padding-left:64px">ESTACIONAMENTO VIAGEM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.9</td>
             <td style="padding-left:64px">DIFERENÇA DE KM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.10</td>
             <td style="padding-left:64px">PLANILHA DE VIAGEM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.11</td>
             <td style="padding-left:64px">PASSAGEM ONIBUS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.12</td>
             <td style="padding-left:64px">FRETE RETORNO 30%</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.13</td>
             <td style="padding-left:64px">ADIANT. DESCARGA FROTA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.14</td>
             <td style="padding-left:64px">ADIANT. 4X4</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.15</td>
             <td style="padding-left:64px">ADIANT. PREMIO VG</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.3.16</td>
             <td style="padding-left:64px">ADIANT. BALSA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.4</td>
             <td style="padding-left:46px"><strong>OCORRÊNCIAS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.4.1</td>
             <td style="padding-left:64px">AVARIAS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.4.2</td>
             <td style="padding-left:64px">SINISTROS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.4.3</td>
             <td style="padding-left:64px">MULTA ANTT</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.4.4</td>
             <td style="padding-left:64px">MULTA POSTO FISCAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.5</td>
             <td style="padding-left:46px"><strong>FRETE AGREGADO</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.5.1</td>
             <td style="padding-left:64px">ADIANTAMENTO AGREGADOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.5.2</td>
             <td style="padding-left:64px">FRETE AGREGADO/AVULSO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.5.3</td>
             <td style="padding-left:64px">DESCONTO CUSTO COMPROVANTE</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.5.4</td>
             <td style="padding-left:64px">ADTO - CUSTO PAMCARY</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.5.5</td>
             <td style="padding-left:64px">ADIANT. DIÁRIA AGREGADO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.5.6</td>
             <td style="padding-left:64px">ADIANT. DESCARGA AGREGADO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.5.7</td>
             <td style="padding-left:64px">FRETE LOCAÇÃO AGREGADO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.5.8</td>
             <td style="padding-left:64px">TAG PEDÁGIO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.5.9</td>
             <td style="padding-left:64px">VALE COMBUSTÍVEL AGREGADO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.5.10</td>
             <td style="padding-left:64px">MATERIAL OPERACIONAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.6</td>
             <td style="padding-left:46px">PAGTO MOTORISTA DA CASA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.7</td>
             <td style="padding-left:46px">ADIANTAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.8</td>
             <td style="padding-left:46px"><strong>TERCEIROS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.8.1</td>
             <td style="padding-left:64px">COOPERATIVAS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.8.2</td>
             <td style="padding-left:64px">CAIXINHA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.8.3</td>
             <td style="padding-left:64px">DESCARGA/CHAPA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td>1</td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.8.4</td>
             <td style="padding-left:64px">ICAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.8.5</td>
             <td style="padding-left:64px">PAGTO CIA AÉREA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.8.6</td>
             <td style="padding-left:64px">PAGTO AGENTES FRETES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.8.7</td>
             <td style="padding-left:64px">PAGTO FLUVIAL / REDEPASCHO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.8.8</td>
             <td style="padding-left:64px">MÃO DE OBRA TERCEIROS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.8.9</td>
             <td style="padding-left:64px">PAGTO AGENTES ARMAZENAGEM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.9</td>
             <td style="padding-left:46px"><strong>SEGUROS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.9.1</td>
             <td style="padding-left:64px">SEGURO DE CARGA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.9.2</td>
             <td style="padding-left:64px">GERENCIAMENTO DE RISCOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.9.3</td>
             <td style="padding-left:64px">ESCOLTA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.9.4</td>
             <td style="padding-left:64px">SEGURO CAMINHÃO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.9.5</td>
             <td style="padding-left:64px">SEGURO DE VEÍCULO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.9.6</td>
             <td style="padding-left:64px">ADTO CUSTO G.R</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.10</td>
             <td style="padding-left:46px"><strong>DOCUMENTAÇÃO DE VEÍCULOS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.10.1</td>
             <td style="padding-left:64px">IPVA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.10.2</td>
             <td style="padding-left:64px">LICENCIAMENTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.10.3</td>
             <td style="padding-left:64px">DPVAT</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.10.4</td>
             <td style="padding-left:64px">MULTAS DE TRÂNSITO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.10.5</td>
             <td style="padding-left:64px">DOCUMENTAÇÃO DE VEÍCULO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.10.6</td>
             <td style="padding-left:64px">VISTORIAS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.10.7</td>
             <td style="padding-left:64px">MANUTENÇÃO DE EQUIPAMENTOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.10.8</td>
             <td style="padding-left:64px">COMPRA DE EQUIPAMENTO DIVERSOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.10.9</td>
             <td style="padding-left:64px">ALUGUEL DE EQUIPAMENTOS DIVERSOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.5.10.10</td>
             <td style="padding-left:64px">DESCARTE DE RESIDUOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.6</td>
             <td style="padding-left:28px"><strong>ENCARGOS SOCIAIS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.6.1</td>
             <td style="padding-left:46px">FGTS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.6.2</td>
             <td style="padding-left:46px">IRRF FUNCIONÁRIOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.6.3</td>
             <td style="padding-left:46px">INSS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.7</td>
             <td style="padding-left:28px">RESCISÃO CONTRATUAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.8</td>
             <td style="padding-left:28px"><strong>BENEFICIOS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.8.1</td>
             <td style="padding-left:46px">VALE REFEIÇÃO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.8.2</td>
             <td style="padding-left:46px">VALE TRANSPORTE</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.8.3</td>
             <td style="padding-left:46px">PLANO DE SAÚDE</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.8.4</td>
             <td style="padding-left:46px">CESTA DE NATAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.8.5</td>
             <td style="padding-left:46px">SEGURO DE VIDA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.8.6</td>
             <td style="padding-left:46px">VALE JANTA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.8.7</td>
             <td style="padding-left:46px">HORA EXTRA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.8.8</td>
             <td style="padding-left:46px">EXAME MÉDICO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.8.9</td>
             <td style="padding-left:46px">DIÁRIA DE MOTORISTAS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.8.10</td>
             <td style="padding-left:46px">CESTA BÁSICAS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.8.11</td>
             <td style="padding-left:46px">DIARIAS FUNCIONARIOS ADM</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.9</td>
             <td style="padding-left:28px"><strong>TREINAMENTO</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.9.1</td>
             <td style="padding-left:46px">CURSOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.10</td>
             <td style="padding-left:28px">PESSOAL</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.11</td>
             <td style="padding-left:28px"><strong>NÃO APLICAVEIS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.11.1</td>
             <td style="padding-left:46px">TROCA DE CHEGUE</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.11.2</td>
             <td style="padding-left:46px">CAUÇÃO GARANTIA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.11.3</td>
             <td style="padding-left:46px">AJUSTES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.12</td>
             <td style="padding-left:28px">DOAÇÕES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.13</td>
             <td style="padding-left:28px"><strong>MARKETING</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.13.1</td>
             <td style="padding-left:46px">PROPAGANDA RÁDIO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.13.2</td>
             <td style="padding-left:46px">IMPRESSOS MARKETING</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.13.3</td>
             <td style="padding-left:46px">PROPAGANDA E MARKETING</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.14</td>
             <td style="padding-left:28px"><strong>EMPRÉSTIMO</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.14.1</td>
             <td style="padding-left:46px">EMPRÉSTIMO FUNCIONÁRIOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15</td>
             <td style="padding-left:28px"><strong>BANCO</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.1</td>
             <td style="padding-left:46px">IOF</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.2</td>
             <td style="padding-left:46px">CPMF</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.3</td>
             <td style="padding-left:46px">TARIFA DOC</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.4</td>
             <td style="padding-left:46px">TARIFA DE SERVIÇOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.5</td>
             <td style="padding-left:46px">TARIFA DE COBRANÇA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.6</td>
             <td style="padding-left:46px">TARIFA DE PROTESTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.7</td>
             <td style="padding-left:46px">TARIFA DE BAIXA DE TÍTULO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.8</td>
             <td style="padding-left:46px">TARIFA DE MANUT. PROTESTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.9</td>
             <td style="padding-left:46px">TARIFA SISPAG</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.10</td>
             <td style="padding-left:46px">TARIFA TED</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.11</td>
             <td style="padding-left:46px">TARIFA BANKLINE</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.12</td>
             <td style="padding-left:46px">ENCARGOS CONTA GARANTIA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.13</td>
             <td style="padding-left:46px">TARIFA CHEGUE VLR SUPERIOR</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.14</td>
             <td style="padding-left:46px">TARIFA DE BAIXA DE TITULO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.15</td>
             <td style="padding-left:46px">TRANSFERÊNCIA ENTRE CONTAS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.15.16</td>
             <td style="padding-left:46px">QUITAÇÃO TITULO DESCONTADO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.16</td>
             <td style="padding-left:28px"><strong>FINANCEIRAS</strong></td>
-            <td>Despesa</td>
             <td><span class="muted">grupo</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.16.1</td>
             <td style="padding-left:46px">APLICAÇÕES</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.16.2</td>
             <td style="padding-left:46px">JUROS ATIVOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.16.3</td>
             <td style="padding-left:46px">DESCONTOS CONCEDIDOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.16.4</td>
             <td style="padding-left:46px">EMPRÉSTIMOS BANCÁRIOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.16.5</td>
             <td style="padding-left:46px">FINANCIAMENTO/LEASING</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.16.6</td>
             <td style="padding-left:46px">JUROS MORA DESCONTO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.16.7</td>
             <td style="padding-left:46px">CAPITAL DE GIRO</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.16.8</td>
             <td style="padding-left:46px">FINAME</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.16.9</td>
             <td style="padding-left:46px">EMPRÉSTIMO DIVERSOS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.16.10</td>
             <td style="padding-left:46px">DESPESAS GERAIS DRE</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.16.11</td>
             <td style="padding-left:46px">DESPESAS GERAIS</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr >
             <td style="white-space:nowrap">2.16.12</td>
             <td style="padding-left:46px">PREVIDENCIA PRIVADA</td>
-            <td>Despesa</td>
             <td><span class="selo ok">recebe</span></td>
             <td></td>
         </tr>
             <tr  style="opacity:.55" >
             <td style="white-space:nowrap">2.17</td>
             <td style="padding-left:28px"><strong>INATIVOS</strong></td>
-            <td>Despesa</td>
             <td><span class="selo neutro">desativada</span></td>
             <td></td>
         </tr>
             <tr  style="opacity:.55" >
             <td style="white-space:nowrap">2.17.1</td>
             <td style="padding-left:46px">Block</td>
-            <td>Despesa</td>
             <td><span class="selo neutro">desativada</span></td>
             <td></td>
         </tr>
