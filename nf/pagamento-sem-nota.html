@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="KkwmAfnD02qvxn3HXN9q6f32dM1Ypgz8zNcoetoX">
+    <meta name="csrf-token" content="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH">
     <title>Pagamento sem nota fiscal · Segura Logística</title>
     <style>:root{--laranja:#ee7203;--laranja-esc:#c95f00;--laranja-claro:#fff3e8;--tinta:#1f2328;--cinza:#6b7280;--linha:#e5e7eb;--fundo:#f6f7f9;--branco:#fff;
 --ok:#15803d;--ok-bg:#dcfce7;--erro:#b91c1c;--erro-bg:#fee2e2;--atencao:#a16207;--atencao-bg:#fef3c7;--ativo:#1d4ed8;--ativo-bg:#dbeafe;--neutro-bg:#f3f4f6}
@@ -599,7 +599,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="usuario">
             Teste<br>
             <small class="muted">Administrador</small>
-            <form method="post" action="#"><input type="hidden" name="_token" value="KkwmAfnD02qvxn3HXN9q6f32dM1Ypgz8zNcoetoX" autocomplete="off"> <button>Sair</button></form>
+            <form method="post" action="#"><input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off"> <button>Sair</button></form>
         </div>
     </aside>
     <main class="conteudo"><div class="aviso" style="background:#fff3e8;color:#c95f00;margin-bottom:14px"><strong>Prévia estática</strong> — telas reais com notas de exemplo (CNPJs e boletos fictícios). Botões e formulários não gravam nada.</div>
@@ -613,7 +613,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
 </div>
 
 <form method="post" action="#" enctype="multipart/form-data" id="ficha">
-    <input type="hidden" name="_token" value="KkwmAfnD02qvxn3HXN9q6f32dM1Ypgz8zNcoetoX" autocomplete="off">    <div class="duas">
+    <input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off">    <div class="duas">
     <div>
         <div class="cartao">
             <h2>Fornecedor</h2>
@@ -625,6 +625,7 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
                     <input id="nome" name="nome" value="" required maxlength="255">
                     </div>
             </div>
+            <div class="aviso receita" id="receita" hidden></div>
         </div>
 
         <div class="cartao">
@@ -777,17 +778,31 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
   // CPF/CNPJ: busca o que já existe do fornecedor e preenche o que estiver vazio
   const sit = document.getElementById('doc-situacao'), banco = document.getElementById('banco-situacao'), ult = document.getElementById('ultimos');
   const encher = (n, v) => { if (v && !f[n].value) f[n].value = v; };
+  const quadro = document.getElementById('receita');
+  const esc = t => String(t ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  // dados da Receita Federal (CNPJ): razão social oficial no nome e situação cadastral em destaque
+  const mostrarReceita = r => {
+    if (!r) { quadro.hidden = true; return; }
+    quadro.className = 'aviso receita ' + (r.ativa ? 'ok' : 'erro');
+    quadro.innerHTML = `<strong>Receita Federal:</strong> ${esc(r.nome)}${r.nome_fantasia ? ' (' + esc(r.nome_fantasia) + ')' : ''}<br>`
+      + `Situação: <strong>${esc(r.situacao || '—')}</strong>${r.data_situacao ? ' desde ' + esc(r.data_situacao) : ''}`
+      + (r.abertura ? ' · aberta em ' + esc(r.abertura) : '') + (r.atividade ? '<br>' + esc(r.atividade) : '')
+      + (r.endereco ? '<br>' + esc(r.endereco) : '') + (r.ativa ? '' : '<br>⚠ CNPJ não está ATIVO: o pagamento vai ficar em conferência.');
+    quadro.hidden = false;
+    f.nome.value = r.nome;
+  };
   f.documento.addEventListener('change', async () => {
-    sit.textContent = ''; ult.textContent = '';
+    sit.textContent = ''; ult.textContent = ''; quadro.hidden = true;
     const doc = f.documento.value.replace(/[^0-9A-Za-z]/g, '');
     if (doc.length !== 11 && doc.length !== 14) return;
     try {
       const r = await fetch("http:\/\/127.0.0.1:8123\/consulta-fornecedor" + '?documento=' + encodeURIComponent(doc), {headers: {Accept: 'application/json'}});
       const j = await r.json();
       if (!j.valido) { sit.textContent = '⚠ CPF/CNPJ inválido'; return; }
+      if (doc.length === 14) { if (j.receita) mostrarReceita(j.receita); else sit.textContent = 'Receita Federal não respondeu agora; '; }
       encher('nome', j.nome);
-      if (!j.cadastrado) { sit.textContent = '✚ Fornecedor novo (será cadastrado)'; return; }
-      sit.textContent = '✓ Fornecedor já cadastrado';
+      if (!j.cadastrado) { sit.textContent += '✚ Fornecedor novo (será cadastrado)'; return; }
+      sit.textContent += '✓ Fornecedor já cadastrado';
       ['conta_contabil_codigo', 'conta_contabil_nome', 'centro_custo_codigo', 'centro_custo_nome'].forEach(n => encher(n, j[n]));
       if (j.pix_chave) { f.querySelector('input[name=forma][value=pix]').checked = true; trocar(); encher('pix_chave', j.pix_chave); }
       else if (j.conta) { f.querySelector('input[name=forma][value=ted]').checked = true; trocar(); ['banco_codigo', 'agencia', 'conta', 'conta_tipo'].forEach(n => encher(n, j[n])); }

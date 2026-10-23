@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="KkwmAfnD02qvxn3HXN9q6f32dM1Ypgz8zNcoetoX">
+    <meta name="csrf-token" content="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH">
     <title>Filiais · Segura Logística</title>
     <style>:root{--laranja:#ee7203;--laranja-esc:#c95f00;--laranja-claro:#fff3e8;--tinta:#1f2328;--cinza:#6b7280;--linha:#e5e7eb;--fundo:#f6f7f9;--branco:#fff;
 --ok:#15803d;--ok-bg:#dcfce7;--erro:#b91c1c;--erro-bg:#fee2e2;--atencao:#a16207;--atencao-bg:#fef3c7;--ativo:#1d4ed8;--ativo-bg:#dbeafe;--neutro-bg:#f3f4f6}
@@ -599,28 +599,28 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="usuario">
             Teste<br>
             <small class="muted">Administrador</small>
-            <form method="post" action="#"><input type="hidden" name="_token" value="KkwmAfnD02qvxn3HXN9q6f32dM1Ypgz8zNcoetoX" autocomplete="off"> <button>Sair</button></form>
+            <form method="post" action="#"><input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off"> <button>Sair</button></form>
         </div>
     </aside>
     <main class="conteudo"><div class="aviso" style="background:#fff3e8;color:#c95f00;margin-bottom:14px"><strong>Prévia estática</strong> — telas reais com notas de exemplo (CNPJs e boletos fictícios). Botões e formulários não gravam nada.</div>
                                     <div class="aviso">⚠ Integração com o ESL ainda não configurada no servidor: as notas são lidas e conferidas, mas ficam "prontas" esperando (<code>php artisan nf:esl-credenciais</code>).</div>
                 <div class="topo"><h1>Filiais (CNPJs da Segura)</h1><span class="muted">A nota precisa ter como destinatário/tomador um destes CNPJs. É a filial do lançamento no ESL.</span></div>
 <form class="cartao grade" method="post" action="#">
-    <input type="hidden" name="_token" value="KkwmAfnD02qvxn3HXN9q6f32dM1Ypgz8zNcoetoX" autocomplete="off">    <div><label for="nome">Nome</label><input id="nome" name="nome" value="" required placeholder="Matriz Curitiba"></div>
-    <div><label for="cnpj">CNPJ</label><input id="cnpj" name="cnpj" value="" required placeholder="00.000.000/0000-00"></div>
+    <input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off">    <div><label for="cnpj">CNPJ</label><input id="cnpj" name="cnpj" value="" required placeholder="00.000.000/0000-00">        <small class="muted" id="cnpj-situacao">Busca os dados na Receita Federal.</small></div>
+    <div><label for="nome">Nome</label><input id="nome" name="nome" value="" placeholder="vem da Receita (pode trocar)"></div>
     <div style="align-self:end"><button class="btn">+ Cadastrar</button></div>
 </form>
 <div class="tabela"><table>
     <thead><tr><th>Nome</th><th>CNPJ</th><th>Ativa</th><th></th></tr></thead>
     <tbody>
             <tr>
-            <td><form id="f-2" method="post" action="#"><input type="hidden" name="_token" value="KkwmAfnD02qvxn3HXN9q6f32dM1Ypgz8zNcoetoX" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-2" name="nome" value="Filial São Paulo (exemplo)" required></td>
+            <td><form id="f-2" method="post" action="#"><input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-2" name="nome" value="Filial São Paulo (exemplo)" required></td>
             <td>12.345.678/0002-76</td>
             <td><input form="f-2" type="hidden" name="ativo" value="0"><input form="f-2" type="checkbox" name="ativo" value="1" checked></td>
             <td><button form="f-2" class="btn sec pequeno">Salvar</button></td>
         </tr>
             <tr>
-            <td><form id="f-1" method="post" action="#"><input type="hidden" name="_token" value="KkwmAfnD02qvxn3HXN9q6f32dM1Ypgz8zNcoetoX" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-1" name="nome" value="Segura (exemplo)" required></td>
+            <td><form id="f-1" method="post" action="#"><input type="hidden" name="_token" value="Ot3v49IJBqlpdMvhqjIvYrO1h0Q4lVyCgUSJ1RWH" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-1" name="nome" value="Segura (exemplo)" required></td>
             <td>12.345.678/0001-95</td>
             <td><input form="f-1" type="hidden" name="ativo" value="0"><input form="f-1" type="checkbox" name="ativo" value="1" checked></td>
             <td><button form="f-1" class="btn sec pequeno">Salvar</button></td>
@@ -686,6 +686,20 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
     zona.addEventListener('drop', e => juntar([...e.dataTransfer.files]));
   });
 })();
+</script>
+<script>
+document.getElementById('cnpj').addEventListener('change', async e => {
+  const c = e.target.value.replace(/[^0-9A-Za-z]/g, ''), s = document.getElementById('cnpj-situacao'), nome = document.getElementById('nome');
+  if (c.length !== 14) return;
+  s.textContent = 'Consultando a Receita…';
+  try {
+    const j = await (await fetch("http:\/\/127.0.0.1:8123\/cnpj" + '?cnpj=' + c, {headers: {Accept: 'application/json'}})).json();
+    if (!j.valido) { s.textContent = '⚠ CNPJ inválido'; return; }
+    if (!j.encontrado) { s.textContent = 'Receita não respondeu agora: informe o nome.'; return; }
+    if (!nome.value) nome.value = j.nome_fantasia || j.nome;
+    s.textContent = j.nome + ' · ' + (j.situacao || '') + (j.endereco ? ' · ' + j.endereco : '');
+  } catch (x) { s.textContent = 'Receita não respondeu agora: informe o nome.'; }
+});
 </script>
 <script>document.addEventListener("submit",function(e){e.preventDefault();alert("Prévia: aqui o sistema leria, conferiria e lançaria no ESL.")},true);</script></body>
 </html>
