@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="USkVh36ClU0r6kES1RCEVr6GpyWVs5E15pYKex1f">
+    <meta name="csrf-token" content="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T">
     <title>Filiais · Segura Logística</title>
     <style>:root{--laranja:#ee7203;--laranja-esc:#c95f00;--laranja-claro:#fff3e8;--tinta:#1f2328;--cinza:#6b7280;--linha:#e5e7eb;--fundo:#f6f7f9;--branco:#fff;
 --ok:#15803d;--ok-bg:#dcfce7;--erro:#b91c1c;--erro-bg:#fee2e2;--atencao:#a16207;--atencao-bg:#fef3c7;--ativo:#1d4ed8;--ativo-bg:#dbeafe;--neutro-bg:#f3f4f6}
@@ -605,14 +605,14 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
         <div class="usuario">
             Teste<br>
             <small class="muted">Administrador</small>
-            <form method="post" action="#"><input type="hidden" name="_token" value="USkVh36ClU0r6kES1RCEVr6GpyWVs5E15pYKex1f" autocomplete="off"> <button>Sair</button></form>
+            <form method="post" action="#"><input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off"> <button>Sair</button></form>
         </div>
     </aside>
     <main class="conteudo"><div class="aviso" style="background:#fff3e8;color:#c95f00;margin-bottom:14px"><strong>Prévia estática</strong> — telas reais com notas de exemplo (CNPJs e boletos fictícios). Botões e formulários não gravam nada.</div>
                                     <div class="aviso">⚠ Integração com o ESL ainda não configurada no servidor: as notas são lidas e conferidas, mas ficam "prontas" esperando (<code>php artisan nf:esl-credenciais</code>).</div>
                 <div class="topo"><h1>Filiais (CNPJs da Segura)</h1><span class="muted">A nota precisa ter como destinatário/tomador um destes CNPJs. É a filial do lançamento no ESL.</span></div>
 <form class="cartao grade" method="post" action="#">
-    <input type="hidden" name="_token" value="USkVh36ClU0r6kES1RCEVr6GpyWVs5E15pYKex1f" autocomplete="off">    <div><label for="cnpj">CNPJ</label><input id="cnpj" name="cnpj" value="" required placeholder="00.000.000/0000-00">        <small class="muted" id="cnpj-situacao">Busca os dados na Receita Federal.</small></div>
+    <input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off">    <div><label for="cnpj">CNPJ</label><input id="cnpj" name="cnpj" value="" required placeholder="00.000.000/0000-00">        <small class="muted" id="cnpj-situacao">Busca os dados na Receita Federal.</small></div>
     <div><label for="nome">Nome</label><input id="nome" name="nome" value="" placeholder="vem da Receita (pode trocar)"></div>
     <div style="align-self:end"><button class="btn">+ Cadastrar</button></div>
 </form>
@@ -620,61 +620,61 @@ pre.codigo{background:#1f2328;color:#e5e7eb;padding:12px 14px;border-radius:8px;
     <thead><tr><th>Nome</th><th>CNPJ</th><th>Ativa</th><th></th></tr></thead>
     <tbody>
             <tr>
-            <td><form id="f-10" method="post" action="#"><input type="hidden" name="_token" value="USkVh36ClU0r6kES1RCEVr6GpyWVs5E15pYKex1f" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-10" name="nome" value="Filial São Paulo (exemplo)" required></td>
+            <td><form id="f-10" method="post" action="#"><input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-10" name="nome" value="Filial São Paulo (exemplo)" required></td>
             <td>12.345.678/0002-76</td>
             <td><input form="f-10" type="hidden" name="ativo" value="0"><input form="f-10" type="checkbox" name="ativo" value="1" checked></td>
             <td><button form="f-10" class="btn sec pequeno">Salvar</button></td>
         </tr>
             <tr>
-            <td><form id="f-2" method="post" action="#"><input type="hidden" name="_token" value="USkVh36ClU0r6kES1RCEVr6GpyWVs5E15pYKex1f" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-2" name="nome" value="SEGURA - CURITIBA / PINHAIS" required></td>
+            <td><form id="f-2" method="post" action="#"><input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-2" name="nome" value="SEGURA - CURITIBA / PINHAIS" required></td>
             <td>03.147.206/0021-80</td>
             <td><input form="f-2" type="hidden" name="ativo" value="0"><input form="f-2" type="checkbox" name="ativo" value="1" checked></td>
             <td><button form="f-2" class="btn sec pequeno">Salvar</button></td>
         </tr>
             <tr>
-            <td><form id="f-3" method="post" action="#"><input type="hidden" name="_token" value="USkVh36ClU0r6kES1RCEVr6GpyWVs5E15pYKex1f" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-3" name="nome" value="SEGURA - GOIÁS" required></td>
+            <td><form id="f-3" method="post" action="#"><input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-3" name="nome" value="SEGURA - GOIÁS" required></td>
             <td>03.147.206/0019-66</td>
             <td><input form="f-3" type="hidden" name="ativo" value="0"><input form="f-3" type="checkbox" name="ativo" value="1" checked></td>
             <td><button form="f-3" class="btn sec pequeno">Salvar</button></td>
         </tr>
             <tr>
-            <td><form id="f-4" method="post" action="#"><input type="hidden" name="_token" value="USkVh36ClU0r6kES1RCEVr6GpyWVs5E15pYKex1f" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-4" name="nome" value="SEGURA - MARINGÁ" required></td>
+            <td><form id="f-4" method="post" action="#"><input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-4" name="nome" value="SEGURA - MARINGÁ" required></td>
             <td>03.147.206/0018-85</td>
             <td><input form="f-4" type="hidden" name="ativo" value="0"><input form="f-4" type="checkbox" name="ativo" value="1" checked></td>
             <td><button form="f-4" class="btn sec pequeno">Salvar</button></td>
         </tr>
             <tr>
-            <td><form id="f-5" method="post" action="#"><input type="hidden" name="_token" value="USkVh36ClU0r6kES1RCEVr6GpyWVs5E15pYKex1f" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-5" name="nome" value="SEGURA - PIRAPOZINHO" required></td>
+            <td><form id="f-5" method="post" action="#"><input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-5" name="nome" value="SEGURA - PIRAPOZINHO" required></td>
             <td>03.147.206/0016-13</td>
             <td><input form="f-5" type="hidden" name="ativo" value="0"><input form="f-5" type="checkbox" name="ativo" value="1" checked></td>
             <td><button form="f-5" class="btn sec pequeno">Salvar</button></td>
         </tr>
             <tr>
-            <td><form id="f-6" method="post" action="#"><input type="hidden" name="_token" value="USkVh36ClU0r6kES1RCEVr6GpyWVs5E15pYKex1f" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-6" name="nome" value="SEGURA - RJ" required></td>
+            <td><form id="f-6" method="post" action="#"><input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-6" name="nome" value="SEGURA - RJ- PAVUNA" required></td>
             <td>03.147.206/0023-42</td>
             <td><input form="f-6" type="hidden" name="ativo" value="0"><input form="f-6" type="checkbox" name="ativo" value="1" checked></td>
             <td><button form="f-6" class="btn sec pequeno">Salvar</button></td>
         </tr>
             <tr>
-            <td><form id="f-7" method="post" action="#"><input type="hidden" name="_token" value="USkVh36ClU0r6kES1RCEVr6GpyWVs5E15pYKex1f" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-7" name="nome" value="SEGURA - RS" required></td>
+            <td><form id="f-7" method="post" action="#"><input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-7" name="nome" value="SEGURA - RS" required></td>
             <td>03.147.206/0013-70</td>
             <td><input form="f-7" type="hidden" name="ativo" value="0"><input form="f-7" type="checkbox" name="ativo" value="1" checked></td>
             <td><button form="f-7" class="btn sec pequeno">Salvar</button></td>
         </tr>
             <tr>
-            <td><form id="f-8" method="post" action="#"><input type="hidden" name="_token" value="USkVh36ClU0r6kES1RCEVr6GpyWVs5E15pYKex1f" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-8" name="nome" value="SEGURA - VARGINHA MG" required></td>
+            <td><form id="f-8" method="post" action="#"><input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-8" name="nome" value="SEGURA - VARGINHA MG" required></td>
             <td>03.147.206/0024-23</td>
             <td><input form="f-8" type="hidden" name="ativo" value="0"><input form="f-8" type="checkbox" name="ativo" value="1" checked></td>
             <td><button form="f-8" class="btn sec pequeno">Salvar</button></td>
         </tr>
             <tr>
-            <td><form id="f-1" method="post" action="#"><input type="hidden" name="_token" value="USkVh36ClU0r6kES1RCEVr6GpyWVs5E15pYKex1f" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-1" name="nome" value="SEGURA TRANSPORTES E LOGISTICA LTDA" required></td>
+            <td><form id="f-1" method="post" action="#"><input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-1" name="nome" value="SEGURA TRANSPORTES E LOGISTICA LTDA" required></td>
             <td>03.147.206/0001-37</td>
             <td><input form="f-1" type="hidden" name="ativo" value="0"><input form="f-1" type="checkbox" name="ativo" value="1" checked></td>
             <td><button form="f-1" class="btn sec pequeno">Salvar</button></td>
         </tr>
             <tr>
-            <td><form id="f-9" method="post" action="#"><input type="hidden" name="_token" value="USkVh36ClU0r6kES1RCEVr6GpyWVs5E15pYKex1f" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-9" name="nome" value="Segura (exemplo)" required></td>
+            <td><form id="f-9" method="post" action="#"><input type="hidden" name="_token" value="EAYWjRWMNP6LYXrDJvj63deTCuRKdQE6jZRkim6T" autocomplete="off"> <input type="hidden" name="_method" value="put"></form><input form="f-9" name="nome" value="Segura (exemplo)" required></td>
             <td>12.345.678/0001-95</td>
             <td><input form="f-9" type="hidden" name="ativo" value="0"><input form="f-9" type="checkbox" name="ativo" value="1" checked></td>
             <td><button form="f-9" class="btn sec pequeno">Salvar</button></td>
